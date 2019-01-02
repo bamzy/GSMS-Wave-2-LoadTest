@@ -1,0 +1,16 @@
+[Click_Awards_Portal_Tab_ExtrSearchForAwardsLink]
+SnapshotIndex=I1_Click_Awards_Portal_Tab_ExtrSearchForAwardsLink
+[Click_Awards_Portal_Tab_ExtrInterruptionReportLink]
+SnapshotIndex=I1_Click_Awards_Portal_Tab_ExtrInterruptionReportLink
+[Perform_Search_For_An_Award]
+SnapshotIndex=I1_Perform_Search_For_An_Award
+[vuser_init]
+SnapshotIndex=I1_vuser_init
+[vuser_end]
+SnapshotIndex=I1_vuser_end
+[Perform_Interruption_Report_link]
+SnapshotIndex=I1_Perform_Interruption_Report_link
+[Click_Manage_Award_link]
+SnapshotIndex=I1_Click_Manage_Award_link
+[Click_Search_For_Award_Link]
+SnapshotIndex=I1_Click_Search_For_Award_Link

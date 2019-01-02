@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VugenScriptMetadata>
+  <ScriptName>GSMSAwardsWaveTwoComprehensive</ScriptName>
+  <Protocol>Web - HTTP/HTML</Protocol>
+  <ActionFiles>
+    <FileEntry Name="vuser_init.c" Filter="2" />
+    <FileEntry Name="dummy.c" Filter="2" />
+    <FileEntry Name="Click_Awards_Portal_Tab_ExtrSearchForAwardsLink.c" Filter="2" />
+    <FileEntry Name="Click_Search_For_Award_Link.c" Filter="2" />
+    <FileEntry Name="Perform_Search_For_An_Award.c" Filter="2" />
+    <FileEntry Name="Click_Manage_Award_link_of_random_result.c" Filter="2" />
+    <FileEntry Name="Click_Awards_Portal_Tab_ExtrInterruptionReportLink.c" Filter="2" />
+    <FileEntry Name="Perform_Interruption_Report_link.c" Filter="2" />
+    <FileEntry Name="Extract_Interruption_Report_Results.c" Filter="2" />
+    <FileEntry Name="Click_Awards_Portal_Tab_ExtrSearchForCompetitionLink.c" Filter="2" />
+    <FileEntry Name="Click_Search_For_Competition_Link.c" Filter="2" />
+    <FileEntry Name="ClickSearchForApplicant.c" Filter="2" />
+    <FileEntry Name="PerformApplicantSearch.c" Filter="2" />
+    <FileEntry Name="vuser_end.c" Filter="2" />
+  </ActionFiles>
+  <GeneralFiles>
+    <FileEntry Name="GSMSAwardsWaveTwoComprehensive.usr" Filter="4" />
+    <FileEntry Name="default.cfg" Filter="4" />
+    <FileEntry Name="default.usp" Filter="4" />
+    <FileEntry Name="GSMSAwardsWaveTwoComprehensive.prm" Filter="2" />
+    <FileEntry Name="globals.h" Filter="2" />
+    <FileEntry Name="CourseOrThesis.dat" Filter="2" />
+    <FileEntry Name="Department.dat" Filter="2" />
+    <FileEntry Name="Citizenship.dat" Filter="2" />
+    <FileEntry Name="Password.dat" Filter="2" />
+    <FileEntry Name="Program.dat" Filter="2" />
+    <FileEntry Name="Watches.xml" Filter="2" />
+    <FileEntry Name="combined_GSMSAwardsWaveTwoComprehensive.c" Filter="2" />
+    <FileEntry Name="pre_cci.c" Filter="2" />
+    <FileEntry Name="110431234440.idx" Filter="1" />
+    <FileEntry Name="169143536440.idx" Filter="1" />
+    <FileEntry Name="200075985440.idx" Filter="1" />
+    <FileEntry Name="266340683440.idx" Filter="1" />
+    <FileEntry Name="39197351440.idx" Filter="1" />
+    <FileEntry Name="Bookmarks.xml" Filter="1" />
+    <FileEntry Name="Breakpoints.xml" Filter="1" />
+    <FileEntry Name="CompilerLogMetadata.xml" Filter="1" />
+    <FileEntry Name="custom_body_variables.txt" Filter="1" />
+    <FileEntry Name="data.zip" Filter="1" />
+    <FileEntry Name="FundingType.dat" Filter="1" />
+    <FileEntry Name="GSMSAwardsWaveTwoComprehensive.c.pickle" Filter="1" />
+    <FileEntry Name="GSMSAwardsWaveTwoComprehensive.ci" Filter="1" />
+    <FileEntry Name="GSMSAwardsWaveTwoComprehensive.prm.bak" Filter="1" />
+    <FileEntry Name="logfile.log" Filter="1" />
+    <FileEntry Name="lrw_custom_body.h" Filter="1" />
+    <FileEntry Name="mdrv.log" Filter="1" />
+    <FileEntry Name="mdrv_cmd.txt" Filter="1" />
+    <FileEntry Name="options.txt" Filter="1" />
+    <FileEntry Name="output.bak" Filter="1" />
+    <FileEntry Name="output.txt" Filter="1" />
+    <FileEntry Name="OutputColoringDatabase.json" Filter="1" />
+    <FileEntry Name="Pending.dat" Filter="1" />
+    <FileEntry Name="ReplaySummaryReport.xml" Filter="1" />
+    <FileEntry Name="ScriptUploadMetadata.xml" Filter="1" />
+    <FileEntry Name="ThumbnailsCache.tmp" Filter="1" />
+    <FileEntry Name="UserTasks.xml" Filter="1" />
+    <FileEntry Name="data\" Filter="1" />
+    <FileEntry Name="result1\" Filter="1" />
+  </GeneralFiles>
+</VugenScriptMetadata>

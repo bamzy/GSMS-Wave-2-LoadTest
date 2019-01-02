@@ -1,0 +1,7 @@
+[t120]
+SnapshotXmlFile=snapshot_120.xml
+RequestHeaderFile=t120_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t120_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

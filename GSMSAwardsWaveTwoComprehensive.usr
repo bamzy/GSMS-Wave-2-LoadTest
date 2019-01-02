@@ -1,0 +1,126 @@
+[General]
+Type=Multi
+DefaultCfg=default.cfg
+ParameterFile=GSMSAwardsWaveTwoComprehensive.prm
+GlobalParameterFile=
+NewFunctionHeader=1
+RunType=cci
+ActionLogicExt=action_logic
+LastActiveAction=Action
+MajorVersion=12
+MinorVersion=60
+ActiveTypes=QTWeb
+GenerateTypes=QTWeb
+AdditionalTypes=QTWeb
+DevelopTool=Vugen
+LastModifyVer=12.60.0.971
+ParamLeftBrace={
+ParamRightBrace=}
+ScriptLanguage=C
+LastCodeGenerationVer=12.60.0.971
+DisableRegenerate=0
+Encoding=ANSI
+Description=
+ScriptLocale=en-CA
+[Actions]
+vuser_init=vuser_init.c
+dummy=dummy.c
+Click_Awards_Portal_Tab_ExtrSearchForAwardsLink=Click_Awards_Portal_Tab_ExtrSearchForAwardsLink.c
+Click_Search_For_Award_Link=Click_Search_For_Award_Link.c
+Perform_Search_For_An_Award=Perform_Search_For_An_Award.c
+Click_Manage_Award_link_of_random_result=Click_Manage_Award_link_of_random_result.c
+Click_Awards_Portal_Tab_ExtrInterruptionReportLink=Click_Awards_Portal_Tab_ExtrInterruptionReportLink.c
+Perform_Interruption_Report_link=Perform_Interruption_Report_link.c
+Extract_Interruption_Report_Results=Extract_Interruption_Report_Results.c
+Click_Awards_Portal_Tab_ExtrSearchForCompetitionLink=Click_Awards_Portal_Tab_ExtrSearchForCompetitionLink.c
+Click_Search_For_Competition_Link=Click_Search_For_Competition_Link.c
+ClickSearchForApplicant=ClickSearchForApplicant.c
+PerformApplicantSearch=PerformApplicantSearch.c
+vuser_end=vuser_end.c
+[RunLogicFiles]
+Default Profile=default.usp
+[VuserProfiles]
+Profiles=Default Profile
+[CfgFiles]
+Default Profile=default.cfg
+[ExtraFiles]
+globals.h=
+[Modified Actions]
+vuser_init=1
+dummy=1
+Click_Awards_Portal_Tab_ExtrSearchForAwardsLink=1
+Click_Search_For_Award_Link=1
+Perform_Search_For_An_Award=1
+Click_Manage_Award_link_of_random_result=1
+Click_Awards_Portal_Tab_ExtrInterruptionReportLink=1
+Perform_Interruption_Report_link=1
+Extract_Interruption_Report_Results=1
+Click_Awards_Portal_Tab_ExtrSearchForCompetitionLink=1
+Click_Search_For_Competition_Link=0
+ClickSearchForApplicant=1
+PerformApplicantSearch=1
+vuser_end=1
+[Recorded Actions]
+vuser_init=1
+dummy=1
+Click_Awards_Portal_Tab_ExtrSearchForAwardsLink=0
+Click_Search_For_Award_Link=0
+Perform_Search_For_An_Award=0
+Click_Manage_Award_link_of_random_result=0
+Click_Awards_Portal_Tab_ExtrInterruptionReportLink=0
+Perform_Interruption_Report_link=0
+Extract_Interruption_Report_Results=0
+Click_Awards_Portal_Tab_ExtrSearchForCompetitionLink=0
+Click_Search_For_Competition_Link=0
+ClickSearchForApplicant=1
+PerformApplicantSearch=0
+vuser_end=0
+[Replayed Actions]
+vuser_init=1
+dummy=1
+Click_Awards_Portal_Tab_ExtrSearchForAwardsLink=1
+Click_Search_For_Award_Link=1
+Perform_Search_For_An_Award=1
+Click_Manage_Award_link_of_random_result=1
+Click_Awards_Portal_Tab_ExtrInterruptionReportLink=1
+Perform_Interruption_Report_link=1
+Extract_Interruption_Report_Results=0
+Click_Awards_Portal_Tab_ExtrSearchForCompetitionLink=0
+Click_Search_For_Competition_Link=0
+ClickSearchForApplicant=1
+PerformApplicantSearch=1
+vuser_end=1
+[Interpreters]
+vuser_init=cci
+dummy=cci
+Click_Awards_Portal_Tab_ExtrSearchForAwardsLink=cci
+Click_Search_For_Award_Link=cci
+Perform_Search_For_An_Award=cci
+Click_Manage_Award_link_of_random_result=cci
+Click_Awards_Portal_Tab_ExtrInterruptionReportLink=cci
+Perform_Interruption_Report_link=cci
+Extract_Interruption_Report_Results=cci
+Click_Awards_Portal_Tab_ExtrSearchForCompetitionLink=cci
+Click_Search_For_Competition_Link=cci
+ClickSearchForApplicant=cci
+PerformApplicantSearch=cci
+vuser_end=cci
+[TransactionsOrder]
+Order="login__*delimiter*__navigate to awards portal__*delimiter*__search for competition__*delimiter*__search for awards__*delimiter*__manage financial accounts__*delimiter*__interruption report__*delimiter*__award tenture report__*delimiter*__navigate to awards tab__*delimiter*__create package__*delimiter*__award tab award search__*delimiter*__awards tab applicant search"
+[StateManagement]
+LastReplayStatus=3
+[ActiveReplay]
+LastReplayedRunName=result1
+ActiveRunName=result1
+[Transactions]
+login=
+"navigate to awards portal"=
+"search for competition"=
+"search for awards"=
+"manage financial accounts"=
+"interruption report"=
+"award tenture report"=
+"navigate to awards tab"=
+"create package"=
+"award tab award search"=
+"awards tab applicant search"=

@@ -1,0 +1,8475 @@
+<!-- start of HTML from body-start-tabs.hts  -->
+<!DOCTYPE html>
+<html lang="en-gb">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+
+	<link rel="shortcut icon" href="../css/uoa_files/ico/favicon.ico">
+
+    <title>e:Vision Portal</title>
+
+    <link rel="stylesheet" href="../css/sits.css">
+    <link rel="stylesheet" href="../css/sv.css">
+    <link rel="stylesheet" href="../plugins/css/ui/sits-ui.css">
+    <!-- Additional style for Admissions buttons - temporary until full responsive review project -->
+    <style>
+        .sv-btn-adm {
+            text-transform: uppercase;
+            font-weight: 600 !important;
+        }
+    </style>	
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="../plugins/javascript/html5shiv.min.js"></script>
+      <script src="../plugins/javascript/respond.min.js"></script>
+    <![endif]-->
+
+
+    <script src="../plugins/javascript/jquery.js?v=910.1"></script>
+    <script src="../plugins/javascript/jquery-ui.js?v=910.1"></script>
+
+    <script src="../plugins/javascript/sv.min.js?v=910.1"></script>
+
+    <script src="../javascript/settings.js?v=881.2"></script>
+	<script src="../javascript/sits_ajax.js?v=881.2"></script>
+  
+    <script src="../plugins/javascript/tablesaw/tablesaw.min.js?v=930.1"></script>
+    <script src="../plugins/javascript/datatables/media/js/jquery.dataTables.js"></script>
+ 	<script src="../plugins/javascript/datatables/media/js/dataTables.tribal.js"></script>  
+ 
+
+	  <script>
+		  function uSubmit(){} //include dummy function to prevent errors when submitting
+	  </script>
+
+
+<!--[if lt IE 7]><script>
+var root = document.documentElement;
+root.className += " lt-ie10";
+root.className += " lt-ie9";
+root.className += " lt-ie8";
+root.className += " lt-ie7";
+</script><![endif]-->
+<!--[if IE 7]><script>
+var root = document.documentElement;
+root.className += " lt-ie10";
+root.className += " lt-ie9";
+root.className += " lt-ie8";
+root.className += " ie7";
+</script><![endif]-->
+<!--[if IE 8]><script>
+var root = document.documentElement;
+root.className += " lt-ie10";
+root.className += " lt-ie9";
+root.className += " ie8";
+</script><![endif]-->
+<!--[if IE 9]><script>
+var root = document.documentElement;
+root.className += " lt-ie10";
+root.className += " ie9";
+</script><![endif]-->
+<!--[if IE 10]><script>
+var root = document.documentElement;
+root.className += " ie10";
+</script><![endif]-->
+
+
+	<!-- The Head Scripts: MODERNIZR ONLY!-->
+	<script src="../css/uoa_files/index_files/modernizr.min.js"></script>
+	<script>(!window.Modernizr)||document.write('<script src="../css/uoa_files/index_files/modernizr.js"><\/script>');</script>
+
+
+<!-- System Wide Error Messaging -->
+<link media="all" href="../css/siw_ymes.css" rel="stylesheet" type="text/css" />
+
+<!-- Alberta Foundation StyleSheet -->
+<link rel="stylesheet" href="../css/uoa_files/css/framework.css" media="screen">
+<link rel="stylesheet" href="../css/uoa_files/css/framework-ie.css" media="screen">
+
+<!-- Aberta System Override StyleSheet -->
+<link rel="stylesheet" href="../css/uoa-sits.css" media="screen">
+
+<!-- The Print Sheets -->
+<link rel="stylesheet" href="../css/uoa_files/css/print.css" media="print">
+
+<!-- any required page header html should go here, in place of this default SITS header HTML.
+     It is good practice to use 'class="sitsscreenonly" on any header images
+     which would not be required in a printed version of the page.
+ -->
+<!-- overall page DIV -->
+
+<header>           
+	<div class="blade-container" style="height: 4em;">
+    <div class="blade-inner">
+        <a class="brand" href="http://uofa.ualberta.ca/">
+            <img src="../css/uoa_files/img/logo2.svg" alt="University of Alberta">
+		</a>
+        <nav class="blade-navigation">
+            <ul class="quick-links-container">
+                <li id="ql" class="dropdown">
+                    <a href="https://training.sitecore.ualberta.ca/departments/another-department#" id="ql-toggle" class="btn btn-grey btn-small hidden-desktop" data-toggle="dropdown">
+                        <span class="quick-links-text">Quick Links <b class="caret"></b>                        </span>
+                        <span class="icon-bar quick-links-button"></span>
+                        <span class="icon-bar quick-links-button"></span>
+                        <span class="icon-bar quick-links-button"></span>
+                    </a>
+                    <ul class="quick-links" role="menu" aria-labelledby="ql-toggle">
+                    	<li role="menuitem"><a href="http://webapps.srv.ualberta.ca/search/" target="">Find a Person</a></li>
+                       <li role="menuitem"><a href="http://onecard.ualberta.ca/" target="">ONEcard</a></li>
+                       <li role="menuitem"><a href="https://www.beartracks.ualberta.ca/" target="">Bear Tracks</a></li>
+                       <li role="menuitem"><a href="http://www.campusmap.ualberta.ca/" target="">Maps</a></li>
+                       <li role="menuitem"><a href="http://apps.ualberta.ca/" target="">Email &amp; Apps</a></li>
+                       <li role="menuitem"><a href="https://eclass.srv.ualberta.ca/portal/" target="">eClass</a></li>
+                       <li role="menuitem"><a href="http://www.library.ualberta.ca/" target="">Libraries</a></li>
+                    </ul>
+                   </li>            
+			</ul>        
+		</nav>        
+		<div class="blade-search">
+            <i class="icon-search"></i>
+            <input type="search" class="search-query" placeholder="search">
+            <button type="button" class="btn btn-grey btn-small global-search-btn">Search</button>
+        </div>
+    </div>
+	</div>
+	<div class="banner-container">
+		<div class="banner-inner">
+			<a href="http://uofa.ualberta.ca/" class="site-title">Faculty of Graduate Studies and Research</a>
+			<p style="width: 100%; color: red; font-size: 24px; font-weight: bold; background-color: white;">User / Acceptance Testing environment - not Production</p>
+			<div class="banner-logo">
+				<span class="site-logo"></span>				
+			</div>
+		</div>
+		<div class="oval oval1"></div>
+		<div class="oval oval2"></div>
+		<div class="oval oval3"></div>
+		<div class="oval oval4"></div>
+	</div>
+	<div class="navigation-container">
+		<nav id="main-nav" class="navigation-inner">
+			<ul>
+				<li>
+					<a class="navigation-toggle collapsed"><span>Show Navigation</span><i class="icon-toggle-nav"></i>
+					</a>
+					<ul id="nav-list" class="main-navigation hidden-phone collapse" style="height: 0px;">
+						<!-- The Tab list field contains each page tab as a li item, child page tabs will create a new ul within the outer ul -->
+						<li class="normaltab" >
+<a href="siw_portal.url?93C3A1A885424892BAWCPUQxtGVjmD1IKVji1euG1RANClVtd5ayOZmEhfR4Hlf7pqaDGLyaxPoEBd6HLclIoSAGUIbDqhG1-5796RIXLLJVICHzif_h9tIADXg" id="GSWFL01" title="Manage Applications"><span>Admissions</span></a>
+
+</li>
+<li class="activetab" >
+<a href="siw_portal.url?C9F55F856FB44D4D7NQ7CDCKsC5tyVu7LeMv4nAwBPB8OmFr5cuEAIpiMiw6VMmvXIOystWBfsecfoc-4nplfiMXdD77Xw9Wep4_Qycq-dlJQHZs3gkfiGj4MME" id="GSAWD_AWD_01" ><span>Awards Portal</span></a>
+
+</li>
+<li class="normaltab" >
+<a href="siw_portal.url?9C314EE10A29400C0eMNEv5mQu6aCuKbg_ktwrf-M-PAXTtrc33nMwd6q_CBUq1RQ8BYHT50W9pOyyt3GZd9LyTAIno-Zpo08388w1DvH7avn-yhwkpbJeHrGhI" id="GSAWD_NOM_01" ><span>Awards</span></a>
+
+</li>
+<li class="normaltab" >
+<a href="siw_portal.url?0FEA62EA63344C42FZpr98xSZX69CQrqcBddno08ILAt1yqisBs4Ds78jWK0h-eBXZR4aWKkTiB25BMXBzRDQztivtibnWhfu9j27IUtoh32jCrN_DxUqXO-zgk" id="GSMSG01" ><span>Admissions Messages</span></a>
+
+</li>
+
+						<li class="normaltab">
+							
+						</li>
+						<!--
+						<li class="normaltab">
+							<a href="../run/SIW_PORTAL_PCO.start_url?C1CFC22AA4DE494CSemChZbja0qwTSd3hiB3Tqtrz2X7DsykX2BoLHFaEQ-Ccgpi4USK5pCEwUsy29E8EB_bjHs1whHs__1lpeM_X21liDewkoWnuJfTRX1QoY0XWZX1NJiMVPwXVwzfLF6T" target="_self">Content</a> 
+						</li>
+						-->
+						<li class="normaltab">
+							<a href="../run/SIW_LGN_LOGOUT.start_url?CA8B9B87759F47C8JqeGPAaRWOBG1QZPqPV1ZR79BdYkndys12tp-wWftsi609-rt7xDoJMw58qjWKVD7ge3NJPodZ1j_0O0F4_8PMTWtS3PLmFf3dFoc4_uDfQ" target="_self">Logout</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+	</div>
+<div class="nav-mobile">
+<div class="nav-wrapper">
+    
+            <ul class="level-0">
+                <!-- The Tab list field contains each page tab as a li item, child page tabs will create a new ul within the outer ul -->
+						<li class="normaltab" >
+<a href="siw_portal.url?93C3A1A885424892BAWCPUQxtGVjmD1IKVji1euG1RANClVtd5ayOZmEhfR4Hlf7pqaDGLyaxPoEBd6HLclIoSAGUIbDqhG1-5796RIXLLJVICHzif_h9tIADXg" id="GSWFL01" title="Manage Applications"><span>Admissions</span></a>
+
+</li>
+<li class="activetab" >
+<a href="siw_portal.url?C9F55F856FB44D4D7NQ7CDCKsC5tyVu7LeMv4nAwBPB8OmFr5cuEAIpiMiw6VMmvXIOystWBfsecfoc-4nplfiMXdD77Xw9Wep4_Qycq-dlJQHZs3gkfiGj4MME" id="GSAWD_AWD_01" ><span>Awards Portal</span></a>
+
+</li>
+<li class="normaltab" >
+<a href="siw_portal.url?9C314EE10A29400C0eMNEv5mQu6aCuKbg_ktwrf-M-PAXTtrc33nMwd6q_CBUq1RQ8BYHT50W9pOyyt3GZd9LyTAIno-Zpo08388w1DvH7avn-yhwkpbJeHrGhI" id="GSAWD_NOM_01" ><span>Awards</span></a>
+
+</li>
+<li class="normaltab" >
+<a href="siw_portal.url?0FEA62EA63344C42FZpr98xSZX69CQrqcBddno08ILAt1yqisBs4Ds78jWK0h-eBXZR4aWKkTiB25BMXBzRDQztivtibnWhfu9j27IUtoh32jCrN_DxUqXO-zgk" id="GSMSG01" ><span>Admissions Messages</span></a>
+
+</li>
+
+						<li class="normaltab">
+							
+						</li>
+						<!--
+						<li class="normaltab">
+							<a href="../run/SIW_PORTAL_PCO.start_url?C1CFC22AA4DE494CSemChZbja0qwTSd3hiB3Tqtrz2X7DsykX2BoLHFaEQ-Ccgpi4USK5pCEwUsy29E8EB_bjHs1whHs__1lpeM_X21liDewkoWnuJfTRX1QoY0XWZX1NJiMVPwXVwzfLF6T" target="_self">Content</a> 
+						</li>
+						-->
+						<li class="normaltab">
+							<a href="../run/SIW_LGN_LOGOUT.start_url?CA8B9B87759F47C8JqeGPAaRWOBG1QZPqPV1ZR79BdYkndys12tp-wWftsi609-rt7xDoJMw58qjWKVD7ge3NJPodZ1j_0O0F4_8PMTWtS3PLmFf3dFoc4_uDfQ" target="_self">Logout</a>
+						</li>
+           
+            </ul>
+        
+</div>
+
+</div>
+</header>
+
+      <!-- DIV sitspagecontent (see sits.css) encloses main page content.
+          It is opened in body-start, body-start-tabs, body-start-ipp and
+          closed in body-end, body-end-ipp
+       -->
+      <div id="sitspagecontent" class="container row-fluid">
+
+<!-- end of HTML from body-start.hts  -->
+<script type="text/javascript">sits_widget_bp = {"dt":{"emptyTable":"No information available","info":"Showing _START_ to _END_ of _TOTAL_ entries","infoEmpty":"No entries to show","infoFiltered":" (filtered from _MAX_ total entries)","lengthMenu":"Show _MENU_ entries","loadingRecords":"Loading...","processing":"Processing...","search":"Filter:","zeroRecords":"No matching entries found","paginate":{"first":"First","last":"Last","next":"Next","previous":"Previous"},"aria":{"sortAscending":": use to sort column ascending","sortDescending":": use to sort column descending"},"tribal":{"detailsLabelOpen":"Activate to show additional details for this row","detailsLabelClose":"Activate to hide additional details for this row","detailsLabelDataOpen":"Activate to show additional details for _DATA_","detailsLabelDataClose":"Activate to hide additional details for _DATA_"}},"ts":{"modes":["Stack","Swipe","Toggle"],"columns":"Col<span class=\"a11y-sm\">umn<\/span>s","columnBtnText":"Columns","columnsDialogError":"No eligible columns.","sort":"Sort","prevBtnText":"Show previous column on the following table","nextBtnText":"Show next column on the following table","prevBtnDisabledText":"Show previous column on the following table (not currently available)","nextBtnDisabledText":"Show next column on the following table (not currently available)","sortAscText":": use to sort column ascending","sortDescText":": use to sort column descending"},"pg":{"infoText":"Showing page {0} of {1}","infoWithRecsText":"Showing page {0} of {1} with {2} records per page","firstBtnText":"First","prevBtnText":"Previous","nextBtnText":"Next","lastBtnText":"Last","firstBtnAriaText":"Show first page","prevBtnAriaText":"Show previous page","nextBtnAriaText":"Show next page","lastBtnAriaText":"Show last page","pageBtnAriaText":"Show page {0}"},"tp":{"currentText":"Now","closeText":"Done","timeOnlyTitle":"Choose Time","timeText":"Time","hourText":"Hour","minuteText":"Minute","secondText":"Second","millisecText":"Millisecond","microsecText":"Microsecond","timezoneText":"Time Zone"},"ui":{"dialogOk":"Ok","dialogCancel":"Cancel","tabsClose":"Close","dialogClose":"Close","moreDetails":"More Details","datePickerDate":"Select a date","datePickerTime":"Select a time","datePickerDateTime":"Select a date\/time","loading":"Loading...","selectAllTitle":"Select All","selectAll":"Select All","selectNone":"Select None","invertAll":"Invert All","errorText":"Error","datePickerMonth":"Select a month","datePickerYear":"Select a year","tabsScrollLeft":"Scroll left","tabsScrollRight":"Scroll right"},"ld":{"loadTitle":"Loading","loadContent":"Loading, please wait...","processTitle":"Processing","processContent":"Processing, please wait...","saveTitle":"Saving","saveContent":"Saving, please wait..."},"to":{"sessionTitle":"Session Expiry","sessionContent":"Your session is due to expire in approximately {0} minute(s). If you would like to continue using this session, please click \"Continue\".","pageTitle":"Page Expiry","pageContent":"This page is due to expire in approximately {0} minute(s). If you would like to continue using this page, please click \"Continue\".","buttonContinue":"Continue"}};</script>
+<script>sits_user_timeout = "E823AA977E9748835Pm3yNOfgoPoO7zIasDEgjicPq78uSsS9Grg82shfqCtTEMqaqtdT9DbrF2w1K5KCdH52CyMyUrGVmeQgRGy38nS44s4YFl5";</script>
+<!-- body-start.hts page header include ends here -->
+
+<!-- adding head.dum1 -->
+
+    
+<input type="hidden" name="%.DUM1.MENSYS" value="RBFceU7pzE9Qh+DBIOWK5Yl5xy4UhTQJpdXt1s0DQLQ=;new;;" />
+<!-- end of head.dum1 -->
+
+<!-- Start Of Extra Javascripts -->
+<script>
+  var sits_in_portal = true; //used by sits_ajax.js to determine whether the current screen is the portal
+  
+  function sits_popup(mypage, myname, w, h, scroll, resize, directories,location, menubar, status, toolbar) {
+    var winl = (screen.width - w) / 2;
+    var wint = (screen.height - h) / 2;
+    var winprops = 'height='+h+',width='+w+',top='+wint+',left='+winl+',scrollbars='+scroll+',resizable='+resize+',location='+location+',menubar='+menubar+',status='+status+',toolbar='+toolbar+'';
+    win = window.open(mypage, myname, winprops)
+    if ( parseInt(navigator.appVersion) >= 4 ) { win.window.focus(); }
+  }
+
+  function SITSShowHelp(code){
+    var helptitle = $( "#" + code + "_TITLE" ).html();
+    var helptext  = $( "#" + code + "_TEXT" ).html();;
+    
+    var btn = {};
+    btn['Close'] = function() {     //cancel button
+      sits_dialog_close(true,"siw_portal_help_dialog");
+      return false;
+    }
+    sits_dialog(helptitle,helptext,btn,true,true,true,0,"siw_portal_help_dialog",true,0.5);
+  }
+  
+  function SITSToggleIt(ThisSecID) {
+    var sectionId = document.getElementById(ThisSecID);
+    if (sectionId == null) return;
+    if (sectionId.style.display == '') {
+      sectionId.style.display = 'none';
+    }
+    else {
+      sectionId.style.display = '';
+    }
+  }
+  function Hide(obj) {
+    var oDiv = document.getElementById(obj);
+    if(oDiv != null) oDiv.style.display = "none";
+  }
+</script>
+<!-- End Of Extra Scripts -->
+
+<!-- main content of Portal starts here -->
+
+
+<!-- all portal containers html starts here -->
+
+  
+<!-- Portal Page Heading section  -->
+<div id="sitsportalpagetitlesection" class="sitsportalpagetitlesection">
+  <h1 id="sitsportalpagetitle" class="sitsportalpagetitle">
+  Awards
+  </h1>
+  <p id="sitsportalpagedesc" class="sitsportalpagedesc">
+    
+  </p>
+</div>
+<!-- end of portal page heading section  -->
+ 
+  <div id="sitsportalcontainersection">  
+ <!-- 1st Column -->
+<div id="sitscolumn1notabs" class="sitscolumn1notabs" style="width:70%;">
+
+<!-- Start of Container GSAWD_AWD_01_001-->
+<div class="sitscontainernotabs">
+<!-- Display Container title GSAWD_AWD_01_001 -->
+  <div class="DBLUECONTITLE" >     <p class="sitscontitleiconnotabs">
+       
+      
+    </p>
+    <p class="sitsconrightimagenotabs">&nbsp;</p>
+    <span class="sitscontitlenotabs">My Awards
+    <span class="sitsnewcontextnotabs">&nbsp;</span></span>  </div>
+<!-- end of container title for GSAWD_AWD_01_001 -->
+   <div class="sitsconbordernotabs" >
+    <p class="sitscontrolsnotabs" style="width:100%;">
+        
+        
+        <a href='../run/SIW_PORTAL.MIN?0669F29DC9A64C79C-IZi8HzgcVQ0MVAaV_WfSqqWTxv-_HmumFik7OLheFRzyTao4SybsRn_6-hqKzJ2i44DLW2y6nwpVhNU8SjUm-N1tT5BY2CWdd9y4xJPzrBYu6bo0eeL6fN_hEyOpLEEHRWwbgRg7ZrpTjtF1vT6w'><img src="../images/siw_portal_min.png" style="border:0px;width:24px;height:24px" title="Minimise My Awards." alt="Minimise My Awards."></a>
+        <a href='../run/SIW_PORTAL.CLOSE?0669F29DC9A64C79C-IZi8HzgcVQ0MVAaV_WfSqqWTxv-_HmumFik7OLheFRzyTao4SybsRn_6-hqKzJ2i44DLW2y6nwpVhNU8SjUm-N1tT5BY2CWdd9y4xJPzrBYu6bo0eeL6fN_hEyOpLEEHRWwbgRg7ZrpTjtF1vT6w'><img src="../images/siw_portal_close.png" style="border:0px;width:24px;height:24px" title="Close My Awards." alt="Close My Awards."></a>
+      </p>
+      <!-- Hidden section html is here -->
+       <div id="GSAWD_AWD_01_001_CON_UHLP.CON" class="sitsconhelp"> 
+        <script type="text/javascript">
+          Hide('GSAWD_AWD_01_001_CON_UHLP.CON');
+        </script>
+        
+      </div>
+<!-- start of copsection for GSAWD_AWD_01_001 -->
+<div class="sitscopsectionnotabs">
+<style>
+	/* prevent datatables wrapper extending the table rows beyond the panel but allow the actions drop down to be visible on top by making overflow visible */
+	div.dataTables_wrapper {
+		width: auto;
+		overflow: visible;
+	}
+	/* override default styling for drop down list to fit in table */
+	div.sv-dropdown .sv-btn-default {
+		margin: 0px;
+		padding: 0.3em 0.8em;
+	}
+</style>
+
+<div class='sv-table-container'>
+
+<table class='sv-table sv-table-striped sv-table-hover sv-table-responsive sv-datatable' data-sv-dt='Y'>
+
+<thead>
+<tr>
+<th scope='col' role='columnheader'>ID</th>
+<th scope='col' role='columnheader'>Name</th>
+<th scope='col' role='columnheader'>No. Apps</th>
+<th scope='col' role='columnheader'>No. Awds</th>
+<th scope='col' role='columnheader'>$ Value</th>
+<th scope='col' role='columnheader'>App Deadline</th>
+<th scope='col' role='columnheader'>Nom. Deadline</th>
+<th scope='col' role='columnheader'>Final Meeting</th>
+<th scope='col' role='columnheader'>Status</th>
+<th scope='col' role='columnheader'>Action(s)</th>
+</tr>
+</thead>
+
+<tbody>
+
+
+
+
+
+<tr>
+<td scope='row' role='gridcell'>004459</td>
+<td scope='row' role='gridcell'><a href='../run/SIW_YGSL.start_url?2EF0E87F994842FEzbJEz02XFts4u5YgaKnMX0pWVvQ59icMf9XxRjrIARCIUgnsW5TjJST04hZu6H-gfqRPFw6Wc82UXrAamYP6sAThyVO4exH_FgwqA_3qUEqe-dQUHgQZbQZ6wRPSMr32x35HMOgqu_1NRXxqxuBxXXnuPda37kDXtcMFvZyGwa0xG2-SI87a1K19WN55CdLN' target='_blank'>fasdfa<br />
+</a></td>
+<td scope='row' role='gridcell'>0</td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'>
+	<div role='group' class='sv-dropdown'>
+		<button id='divid' aria-haspopup='true' aria-expanded='false' type='button' class='sv-btn sv-btn-default sv-dropdown-toggle' data-sv-toggle='sv-dropdown'><span class='sv-caret'></button>
+		<ul class='sv-dropdown-menu' aria-labelledby='divid'>
+			<li><a href='../run/SIW_YMHD.start_url?9118C612178A4BEBN2KWSVVI350wMHCTFn6GsRsSvjuSQXPAlEwblHcS-GdTLzqIvzRu6gdB-B9SMIUdqv1PT1q9iYAHlIQPkZjfFmY3HTrjPxq4HedgKQCfv5ZMpbz3U8bq57tnHwbQn48jUJVHm0Z8FjJOkVGgfIPEZeZTCCrCPV4wuz7RNo7xtBs' target='_blank'>Manage Award</a></li>
+		<!--HIDDEN FOR WAVE 2 GO LIVE	<li><a href='../run/SIW_YMHD.start_url?E6E5C60EB4164FEE5mN1iJLbEPVEIB7x1zR5TNU34VOIiuj-kS8EEohpDy9DMf_T8-SCQJi9_UuaxAcXtMX_g_yIdtCC7FvzebuZe074HIL5yft9z_xe1snbQjPJQbYQlw-jHxeYtRyg2i9Oxt1oJBgphsIiH9PefV4Q7joP2ahOczHCJ82jy0d_BBy_FWKtLUNf8BkS13JUh2Bg' target='_blank'>View Apps</a></li>-->
+		</ul>
+	</div>
+</td>
+</tr>
+
+
+
+
+<tr>
+<td scope='row' role='gridcell'>004460</td>
+<td scope='row' role='gridcell'><a href='../run/SIW_YGSL.start_url?A1B2428C9FA34404VbSOmXMV0AOW1pc2ExIbhaX7KEXXICLQo9nQVg8FecBo4baKed_-phzcH8vWiJ9CmWy0NHNvub1kVVAvNg2au-fvuehBa09xKrud9H8im2dL_JmTm1Ec78R_7csvx3qA0SU4_kERw8bNmBWja9mXitMyDKpPQnmWMfBzYRofCh2ncoVLR_56gGUZwQirGbV_' target='_blank'>fasdfa<br />
+</a></td>
+<td scope='row' role='gridcell'>0</td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'>
+	<div role='group' class='sv-dropdown'>
+		<button id='divid' aria-haspopup='true' aria-expanded='false' type='button' class='sv-btn sv-btn-default sv-dropdown-toggle' data-sv-toggle='sv-dropdown'><span class='sv-caret'></button>
+		<ul class='sv-dropdown-menu' aria-labelledby='divid'>
+			<li><a href='../run/SIW_YMHD.start_url?0457254060B041D6rjRPXWj3HUdS1KBzP1jVrQmqcrue655fVHeO-WvQZbihgkyKv9wWaFg98UY7jB_csRBkPszHUCQlFmMFY29OcglNJdez2b5Sizzg2joPdOFg-zMFPM647gkSABcMSjLrQY2K5brbRrEqhHgDa-JxPK8GOOixyIW26ijEK5S7jDE' target='_blank'>Manage Award</a></li>
+		<!--HIDDEN FOR WAVE 2 GO LIVE	<li><a href='../run/SIW_YMHD.start_url?A4D3EEBB85824BEB70wvk3OJfApzzJeZ-5fFQZ9xr3-UW96TC_8jUYnOy5CIH1C7r6RYQU1-rQF9xw5_1r2fRDqAPlFL08evjrhnYBYTmyx9gEQ5Pl_nFBmTV9W1si0BjiwBgYBoOdXfo6L6cnvXaJiqvdw4mIqFiHUhaezZu0Ntph0gMlbCBieCjxvsMsJA3KgZ7cENBYaErmoM' target='_blank'>View Apps</a></li>-->
+		</ul>
+	</div>
+</td>
+</tr>
+
+
+
+
+<tr>
+<td scope='row' role='gridcell'>004461</td>
+<td scope='row' role='gridcell'><a href='../run/SIW_YGSL.start_url?1731142F8BA24CE5QfR98cZuYBFdOJaYNKshxxbiGn9Vb6T1SPvBC1jSr3XEB5deaCR05xUhNzNUPBZO-mXSH_NMsxm3IogFHwjXbe6TScB8AvG0IAS0mpSAmT5e_Nfcjy72aY-fF9YXNb_fP4jggas5K8jbEugyGXuhQYBE5wOM8EY2FfwV_gUvd7AVa3Jeqnemg_7jdFMphbN5' target='_blank'>fsdfasf<br />
+</a></td>
+<td scope='row' role='gridcell'>0</td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'>
+	<div role='group' class='sv-dropdown'>
+		<button id='divid' aria-haspopup='true' aria-expanded='false' type='button' class='sv-btn sv-btn-default sv-dropdown-toggle' data-sv-toggle='sv-dropdown'><span class='sv-caret'></button>
+		<ul class='sv-dropdown-menu' aria-labelledby='divid'>
+			<li><a href='../run/SIW_YMHD.start_url?50C568A0CC2E470E5DzKZ5Cn0QvdkWUhQXU_9rJqQ7BMLK70UudaqjMNMkiUT8DaIa9ua2b5vnMIjXAURVPVdZf5Ip7bg4tso0oHvRamr3cacJSjXrqJQ-67aPyhKSM0B-UrZkopSjd1aPZA7v2o7i0B6XShc9qhltucDGuvrwC7JVIu41f-oBg7i9E' target='_blank'>Manage Award</a></li>
+		<!--HIDDEN FOR WAVE 2 GO LIVE	<li><a href='../run/SIW_YMHD.start_url?903B0602EC41478DE3PQQCa5SMzFBlNrY_IRZDwy_PTyauyKTc5Uq1sZUB9rpuqzbgk-f-v0W_Zyz-Ly0nRUjJHoNWZ_k7cZSuZExWnbq6NbMb1F5V-wvl7MotLi1eYFEMuPkw-G5nPxbWD_CzK6LqpiQ7Tk473ebNQRORPpGQxxQKPSwGMsXG04YJJahHzS5EguXh1zmEs_KOFc' target='_blank'>View Apps</a></li>-->
+		</ul>
+	</div>
+</td>
+</tr>
+
+
+
+
+<tr>
+<td scope='row' role='gridcell'>004462</td>
+<td scope='row' role='gridcell'><a href='../run/SIW_YGSL.start_url?DF3992697EF84184NnvL0RL9X5noiJbIIp8AZw52PaRt00FjKw-NKunhYK7PSY9UZ-7il9iVT36J52P1kY8R5GHIePmPIfZs761ldmARQHgvUdzazhLvy-wdpgr9Zf5EnEYSlS_e6yBuC_vwoKtMZmGqhk58X-7FIj4XFDVOU9hQuUsmeJNJY-ohn4AjfX-pz8d8nsNp4xSvqC0h' target='_blank'>fasdfas<br />
+</a></td>
+<td scope='row' role='gridcell'>0</td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'>
+	<div role='group' class='sv-dropdown'>
+		<button id='divid' aria-haspopup='true' aria-expanded='false' type='button' class='sv-btn sv-btn-default sv-dropdown-toggle' data-sv-toggle='sv-dropdown'><span class='sv-caret'></button>
+		<ul class='sv-dropdown-menu' aria-labelledby='divid'>
+			<li><a href='../run/SIW_YMHD.start_url?03D6E60EBB2448B7rtFdFji5CCP-uzG2mxKNp3S-GhxW2ct5KQo3U5b96TVFURTSfC1fNHE4xD8FiokB2G__beJpKExPmmUkiJMwPCVtYHwk8Au6OltGIQCrGuCIVRk0-Oj1uF9TLVRTTARta6VjViLLFpIeeHpA26D-UAW171kthIOoL50UlqL1GWo' target='_blank'>Manage Award</a></li>
+		<!--HIDDEN FOR WAVE 2 GO LIVE	<li><a href='../run/SIW_YMHD.start_url?4E787C8DB39F425AWJQQqCShp3RlqzW7lMRQ1k9gwef3hRc1_ucJD9Q5HDAttqPZ00RadD5tMFht2Bs0czMSo3T55y_-yfzczVgtMWJuYbG8-MsuWANQh99mXoxDd6Z_rsujSeJg3W8gx9NdhKaluA9NGgAoFY3zglrhBa9FnQzJdV7DBgmASzPI3ebEX3Tr_DN7nwJNmhwHKOou' target='_blank'>View Apps</a></li>-->
+		</ul>
+	</div>
+</td>
+</tr>
+
+
+
+
+<tr>
+<td scope='row' role='gridcell'>004463</td>
+<td scope='row' role='gridcell'><a href='../run/SIW_YGSL.start_url?967D4BC45F404A93gTr2PBWJqb-CeCDe18EFT9E9KXJs03ujYCrD8HCXndMjrqv84Y9Nl4HRNLs8CXOuLjG82ESFA3XJqJ1m8WssShh325yUgVE87Yyhij7q_kSNCm_cgmeJYLmv5YHUovrcZMyoH1iRNmyvYL6LrHhjmtO5tUKpA28gZCKQzEWwH_mPynHts6PDNtPiC9U8vR1M' target='_blank'>Dummy Award Full Name<br />
+</a></td>
+<td scope='row' role='gridcell'>0</td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'>
+	<div role='group' class='sv-dropdown'>
+		<button id='divid' aria-haspopup='true' aria-expanded='false' type='button' class='sv-btn sv-btn-default sv-dropdown-toggle' data-sv-toggle='sv-dropdown'><span class='sv-caret'></button>
+		<ul class='sv-dropdown-menu' aria-labelledby='divid'>
+			<li><a href='../run/SIW_YMHD.start_url?87715D9C7A25447EbTQ02a2O4O0O4cloVd_nKhwFQUztnixKxBCUK_0phdN6c8QHZukRY52ZRyozOzbw3fJ0P9Wanedvj0ddO1hQ2nQNx-jwie6Ni3ShGBS5N-IpvNzbVPO_QwhLBWpqtiPv1EZqKgxqlagzfF3nuNwpn1jd9XFuGGL85fKc6T5j9oQ' target='_blank'>Manage Award</a></li>
+		<!--HIDDEN FOR WAVE 2 GO LIVE	<li><a href='../run/SIW_YMHD.start_url?9037656B19D94742--tHRQtY8sakYTvnTPXr5wqxEcY5oecm6_bsGv2ImhNHqkgl5K6p4Njt0i1BX9rFHPT7kdDelXaC503YVP0nIanlPr9qLuTeDdGvuc1IbVSaCzu6JWubm7WYwpilaj_DXyh2Lo8iatgpF_vOqdvw0S8fd6k_Xb2UsyA6wM2OVlq7TczThoIxwE_aCt2C2w47' target='_blank'>View Apps</a></li>-->
+		</ul>
+	</div>
+</td>
+</tr>
+
+
+
+
+<tr>
+<td scope='row' role='gridcell'>004464</td>
+<td scope='row' role='gridcell'><a href='../run/SIW_YGSL.start_url?7C1077760FB14B6FG3U3H1vAagHtdwYo2aOwWNjJ2hxlQ1nd3gNTO8SIXli2R7pr2QXrYvkgEnhLluxE2MNkZRO2aH3nP0PVCD5KYwsjahjM4bh7twBrzKf-rhI_IjPRAqkl6iXntcFG7mxIzx1fF4yTyCbGt0KONrNokKjtft44Q9DOcRQHB6-nV2a0zjCLEELQDgSLBBTtIXBl' target='_blank'>Dummy Award Full Name<br />
+</a></td>
+<td scope='row' role='gridcell'>0</td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'>
+	<div role='group' class='sv-dropdown'>
+		<button id='divid' aria-haspopup='true' aria-expanded='false' type='button' class='sv-btn sv-btn-default sv-dropdown-toggle' data-sv-toggle='sv-dropdown'><span class='sv-caret'></button>
+		<ul class='sv-dropdown-menu' aria-labelledby='divid'>
+			<li><a href='../run/SIW_YMHD.start_url?5B320252C78A4C69f1mtxyelacT8g9Mfd20kaqQqWFkkVV8p-fVOr33j6OtrheumhYDIAfULwF7bLTqB0Eh00NV70VWYFx5X3XTgzQg3BG-0-rp7DJ4vYX0JOno5W67As0z0yDPZmwGSPGRRXFt5-E8QZxpR8nC07BLq8YZbc1kJ4TZs6g_xS2PpoS8' target='_blank'>Manage Award</a></li>
+		<!--HIDDEN FOR WAVE 2 GO LIVE	<li><a href='../run/SIW_YMHD.start_url?619033C225454DA9tUtyiN2ky5JtTaQgsyeuGyPPF3AuaOHU8EcI-BOsvoHwcBoa8kO3PL6Io8DgNwfSB4OSPyTJs2GSnipeTQn5uoYmY6fnqY5dmGDrBjS0MkYxiiyGwc7E-mBDiJWcp0t7lNusdClD7pwz8Qba-ryY6pbrYK77LHU0cBbijxvw3bj9FjgmaDF4VSPSvc5Ik2ot' target='_blank'>View Apps</a></li>-->
+		</ul>
+	</div>
+</td>
+</tr>
+
+
+
+
+<tr>
+<td scope='row' role='gridcell'>004465</td>
+<td scope='row' role='gridcell'><a href='../run/SIW_YGSL.start_url?59183EE695A44E25sHzzHhJ325Er77hVvsLrv8cOpSRazDtjSKVsf1Ge3AKfLklD4KiBjoq6sp-Gq03RwHh7KOVu6WM-mNgk1jSVMZDDt16S27pBOHIbq3W_fpzNWgxkO5TE5pTDUdtJOg2ACeszUAOhyAMvNrA5QY4osttQ-LfgrVh3pJhCU0fuo_0t3EEfoM83UZunEdHKb0Fb' target='_blank'>Dummy Award Full Name<br />
+</a></td>
+<td scope='row' role='gridcell'>0</td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'>
+	<div role='group' class='sv-dropdown'>
+		<button id='divid' aria-haspopup='true' aria-expanded='false' type='button' class='sv-btn sv-btn-default sv-dropdown-toggle' data-sv-toggle='sv-dropdown'><span class='sv-caret'></button>
+		<ul class='sv-dropdown-menu' aria-labelledby='divid'>
+			<li><a href='../run/SIW_YMHD.start_url?69581302C62F42C4u6059NDOOG6x80ixB74p68KBqLX2Sgf2iicIh7_3007U-ttFfbpl7H9AFI5ybGxeTdU5jhKV9AReQ57nvH4Zyrcpf_6LfQU48c0L_ZGGFAUV8A_kTLuuhX5wqIQGwjBgKv4uUfBQ6MrM7Kdz9nAzTDM6tyl6bgkLvMljuxMGyoc' target='_blank'>Manage Award</a></li>
+		<!--HIDDEN FOR WAVE 2 GO LIVE	<li><a href='../run/SIW_YMHD.start_url?C8E21F155C6C4A51rWf7BDSRv8EYDTnLgTwoQ_peUY4JB7lF60d2Z77bw7CIGLBLtUpUW4J4eCQlsoz_5XXGitkiPt52OyevOgLjW-KudrB59O_tC1mtVm27EvN7kLKKHjN7xPh1TFV2JP95HX-d-yeUX_Jq03QfB_KEtTZUjpF1zZmbUD_KJzGwEvwg9-P_1VtPZT3fjXLJKhHx' target='_blank'>View Apps</a></li>-->
+		</ul>
+	</div>
+</td>
+</tr>
+
+
+
+
+<tr>
+<td scope='row' role='gridcell'>004466</td>
+<td scope='row' role='gridcell'><a href='../run/SIW_YGSL.start_url?34B683A26A3B45735jvSf106mMHzrunHjORU-d1vVTFwfTk9_Mshd4w0oHBEMR2d9fYzhJH-gU3c4fmgesztCkeTiDDsMsG5gggnVZClgYpEBchIAYL6_C7mrZHs2rszwP4hG3prhEBMQQxqk0wxtcTrbXATTxSKQBhAQ0nnQgnYHxHjhy2y4A6_oDfdS0K5ij-4SWpcsqEDDL5A' target='_blank'>Dummy Award Full Name<br />
+</a></td>
+<td scope='row' role='gridcell'>0</td>
+<td scope='row' role='gridcell'>4000</td>
+<td scope='row' role='gridcell'>    4,000.00</td>
+<td scope='row' role='gridcell'>19/Sep/2018</td>
+<td scope='row' role='gridcell'>19/Sep/2018</td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'>Open</td>
+<td scope='row' role='gridcell'>
+	<div role='group' class='sv-dropdown'>
+		<button id='divid' aria-haspopup='true' aria-expanded='false' type='button' class='sv-btn sv-btn-default sv-dropdown-toggle' data-sv-toggle='sv-dropdown'><span class='sv-caret'></button>
+		<ul class='sv-dropdown-menu' aria-labelledby='divid'>
+			<li><a href='../run/SIW_YMHD.start_url?C36E49B4F4524B9EglGLPIpU2ZG9jULBRXz_Oi3ddxtar_xoryCRmaeI8vQUQqTggzw7t96smMWcQTVLb6wT_jMAPzg_yCcP2dsND0i4D025PgX9Jx3l4ArZe2cJgk9p4ZBsAlsDGwtS-NRPL85DnhTHVxDVQc_fyr3z4bs6RZ7zD1MUUsECFMoxDJw' target='_blank'>Manage Award</a></li>
+		<!--HIDDEN FOR WAVE 2 GO LIVE	<li><a href='../run/SIW_YMHD.start_url?EBAD4647405F4B0CL6mgsuMteR9ud510ecsTi5RZXdd_sn-Hp0mgl6FzZOTq8eJe8PmfLgGG_s_FFr5GXqSYPDpIzMBqWj0Uy53apPL4awubg8WZqfkPW63KUG5xKh74PL2EUambMYwtBie2MceXxjtokCWOfIZqEhzO45vBrHR_Sb1TXdzQfHD0lhF57hUICiYw6EAHxOe_Ngs9' target='_blank'>View Apps</a></li>-->
+		</ul>
+	</div>
+</td>
+</tr>
+
+
+
+
+<tr>
+<td scope='row' role='gridcell'>004467</td>
+<td scope='row' role='gridcell'><a href='../run/SIW_YGSL.start_url?A0CFCEB4D280499CTaORxM7_YjUthBDfw7gFA27jGWUO2MoORFWE5IDltxScq1aKCZpUWBEMVB9MO-9BwyHo5IeAb6BAlr9uqDrXja_Pjy-SWjpKPjvDWCqu7w1dZb9G-bm03wFUUcJ8iOhDJUBFG-B0bYDbadiYcjdfcvi3ZXDAREGbjt6ow_hQ3FioZLWPVZ9-Tr5zhtaYqiz2' target='_blank'>Dummy Award Full Name<br />
+</a></td>
+<td scope='row' role='gridcell'>0</td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'>
+	<div role='group' class='sv-dropdown'>
+		<button id='divid' aria-haspopup='true' aria-expanded='false' type='button' class='sv-btn sv-btn-default sv-dropdown-toggle' data-sv-toggle='sv-dropdown'><span class='sv-caret'></button>
+		<ul class='sv-dropdown-menu' aria-labelledby='divid'>
+			<li><a href='../run/SIW_YMHD.start_url?CB8F77AFE01E4D06kht2goDSYls9yjBXMH0pcVT1gzj03k0HixH1xpZDZBmCrPuscPawpjuqFUDVeVBcoYDPO0RwKF_s41bFv_-PTscer2Rwni4ADGdD13TiVfnfS25Ls1jT94hZB9gGzx9QPnCmvpU85MTO_T8HWLxmfYpYOmhRi26x4WE6FOVh3Qg' target='_blank'>Manage Award</a></li>
+		<!--HIDDEN FOR WAVE 2 GO LIVE	<li><a href='../run/SIW_YMHD.start_url?789AEF4E094F4BC5lU2NTEAPLx85EYTStkoOrAMFvpawZoiupEIcybdJGhfH81tFbJGyEWi76Mheu3y52urkwqssRgj1W_idS40JI8ShaOnVWoqjj5HDIbMwuSRaWIIIf_3yahoVRSyOtfjThMfNwFgPzf7YjBgpTICBARxcIVsfLGWYRiTPquDuQYm3pPeK8i_yDIkJZbLe4DVd' target='_blank'>View Apps</a></li>-->
+		</ul>
+	</div>
+</td>
+</tr>
+
+
+
+
+<tr>
+<td scope='row' role='gridcell'>004468</td>
+<td scope='row' role='gridcell'><a href='../run/SIW_YGSL.start_url?7C531F5329B54E7AOFLlhw7lqK6Px8sbwq6FHVevmozX6VjdfZNJZAQPOZkKfvqaG5zovLi1g7YVgkQ9B9HJ-2xHiilchY_z49LKGJAZNQdTlcDTC2nrvTQy8qKgiiFfqzxM9ptqto4T0dvWpUJy4CbZwKBjJADLpvacPpDC_43F7FHoVDCI1TNofFpM7ahiMP0toQPlcc--M2tQ' target='_blank'>Dummy Award Full Name<br />
+</a></td>
+<td scope='row' role='gridcell'>0</td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'>
+	<div role='group' class='sv-dropdown'>
+		<button id='divid' aria-haspopup='true' aria-expanded='false' type='button' class='sv-btn sv-btn-default sv-dropdown-toggle' data-sv-toggle='sv-dropdown'><span class='sv-caret'></button>
+		<ul class='sv-dropdown-menu' aria-labelledby='divid'>
+			<li><a href='../run/SIW_YMHD.start_url?51E2574E57C548D0soU9JEHb19Fs4xYzQBqT00DQPCNQH_IJAO_lqWTEetUM8YLb6WPaS7w9Lzcv2rWS-q_YlZahKiGmz-h0JHPYwBfN0-zzZW-RNOhKkTpvHuRUosqfPzMRHu6kYVDUkhDQHt3KlRighnJ1wnnCyJcwlS8CncK4LoJyMjJOKvcKosQ' target='_blank'>Manage Award</a></li>
+		<!--HIDDEN FOR WAVE 2 GO LIVE	<li><a href='../run/SIW_YMHD.start_url?62D5D84B6A7E4811bXlJP50nCnsrs1YzxLsPIi8oacposn1pKfQPrSfP1idXhRO5htGMFqzwoqupTnBjdMYuuEtr9Q4r1Z-5z-dDwN8ECN2GxXAOCRhMdmJrCu3uJF0MrQz0pisVYf3uj8WHNslpiSHW1C7ygozYMah1Po44tWjFVxT5KzRJEwMHlNM9jXUs7rrz6KHyX8o1kqvR' target='_blank'>View Apps</a></li>-->
+		</ul>
+	</div>
+</td>
+</tr>
+
+
+
+
+<tr>
+<td scope='row' role='gridcell'>004469</td>
+<td scope='row' role='gridcell'><a href='../run/SIW_YGSL.start_url?BD965681A4144175u2_VpgjWA84Xcl-I1exTne5yUllh7eYCp11gMKLiHliSZ9jxuw2O9X4MPIuiIxtLJCXccTtApYLk1nSlC9rHxsVzCYwls6sIUKxdC3HAmHWJRZgNRrgorRTgb5EUZGjfARBGbcMENdg6IfxNEadUwKr1RrlNGhrbUV75P5YKE0lPSNIdmPG8LwgEB-ssd3Sj' target='_blank'>Dummy Award Full Name<br />
+</a></td>
+<td scope='row' role='gridcell'>0</td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'>
+	<div role='group' class='sv-dropdown'>
+		<button id='divid' aria-haspopup='true' aria-expanded='false' type='button' class='sv-btn sv-btn-default sv-dropdown-toggle' data-sv-toggle='sv-dropdown'><span class='sv-caret'></button>
+		<ul class='sv-dropdown-menu' aria-labelledby='divid'>
+			<li><a href='../run/SIW_YMHD.start_url?E86865B2F28347B67LprzpH2CsPQLEsK5BCCa-Y5RjHYuc99sHZ-5h6yWUkNZNikLan1ayj--m5AXeseAa1omIIAT23Lk2VNr7r5vcxWjA95QWuGkpNQet62nTzt9e49TbM_heLsY8htePjJgPSuJMmYhENaxi5ncT4iubcGFKhOOyxptdVAJoFZWNQ' target='_blank'>Manage Award</a></li>
+		<!--HIDDEN FOR WAVE 2 GO LIVE	<li><a href='../run/SIW_YMHD.start_url?DFB6D1D146774430sosOaXdf-6e7d3kqrscufC4cxZBF5B85NyE9x-g9uzs7rIWo4TtRFZjWuujA5Vow5O9VnGwqjDhj6ROA0Hny8qHREZUjHAKFXpbAeWiYxtXsShqHCBqdvQVRwU_ZvN2varuCn4L0LE1JZ9MiLS8r7wjQOSV52853oz4kthTKLFK0MWdf06r8oOoB-iORj0yc' target='_blank'>View Apps</a></li>-->
+		</ul>
+	</div>
+</td>
+</tr>
+
+
+
+
+<tr>
+<td scope='row' role='gridcell'>004470</td>
+<td scope='row' role='gridcell'><a href='../run/SIW_YGSL.start_url?501D5D6305EB4950wH1kvZE2XFCNvCQSzjdD-U8AmxdKAAoVzt8aNwy57atuA0J20rGzrYv_E9c2SW6AoYSn9ZpqeiBYURUiZwiuqvlEa0RNL-E072C8Glnp5oaiupRU9Y2YYbiaaj1uHMMG-u8OYfV2-9kNfUeJahqdBwR9zOxUB9shiOtduRSo79-wL_jCL4zbNlUCBFe_2QSY' target='_blank'>Dummy Award Full Name<br />
+</a></td>
+<td scope='row' role='gridcell'>0</td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'>
+	<div role='group' class='sv-dropdown'>
+		<button id='divid' aria-haspopup='true' aria-expanded='false' type='button' class='sv-btn sv-btn-default sv-dropdown-toggle' data-sv-toggle='sv-dropdown'><span class='sv-caret'></button>
+		<ul class='sv-dropdown-menu' aria-labelledby='divid'>
+			<li><a href='../run/SIW_YMHD.start_url?68601382BE584DFAlPWk1AZ2RNKeQwMR15jPXMzO5F2bfsQIX1AmDwTqn1qbIia-WNOCiGuXBxYDxtLwKzMJUmoWo3X52vTei8qxbt_oeshwMjXeUhniTF7689-_01c9Ie5lSEsB8QCokrLkTgtEUTJeHAN8qnak9pvmkTEshU2dtjmUet7plX-vkbE' target='_blank'>Manage Award</a></li>
+		<!--HIDDEN FOR WAVE 2 GO LIVE	<li><a href='../run/SIW_YMHD.start_url?958E1C80A3F74E0B0uCZFPIs6b9-5zj3HfybmbdW2aWUupe75pgKZOjQ7Wcayc5p0XEytDazNgIdJGiIWIvWT3E5e7PterQxMMwdg3p2r6vk-NFcuYnLygC9psTddqD0zhLeRUQZEwHWix_U9xJL40ZCUN5znLIkefBB4xCdJVMSMLQRoBJ0lnJSA5USjNWFobZahIYEQBRVj6Hn' target='_blank'>View Apps</a></li>-->
+		</ul>
+	</div>
+</td>
+</tr>
+
+
+
+
+<tr>
+<td scope='row' role='gridcell'>004471</td>
+<td scope='row' role='gridcell'><a href='../run/SIW_YGSL.start_url?A2128CB4B2E1498C2T1PlLzTtqW3YoiRRymzUnTERzDeUj26JE6fcWU_278LgeOrGg_Ci3_ynyqC3fQCzb7fNFzX6vZEfgYVSmSTBANsfGXbS7EaXS8R0_HR3Jg38fyI6QRUJbmmfSGpBOALaTexY_ulU0-BoXaRRXOqBHKieqlig5iZDOb7HDYuqHSn6j7SnDbo93s2-tkVHTnB' target='_blank'>Dummy Award Full Name<br />
+</a></td>
+<td scope='row' role='gridcell'>0</td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'>
+	<div role='group' class='sv-dropdown'>
+		<button id='divid' aria-haspopup='true' aria-expanded='false' type='button' class='sv-btn sv-btn-default sv-dropdown-toggle' data-sv-toggle='sv-dropdown'><span class='sv-caret'></button>
+		<ul class='sv-dropdown-menu' aria-labelledby='divid'>
+			<li><a href='../run/SIW_YMHD.start_url?CA52F7BCB92C4239hj0Qtgz3OiZwK9TyV1BYvUh-F16Bej6uJzMGDSeU-P_7aKG3WB2M0673K6NANQ4t18tgbTpiFFNeg2TPpo4xe5XRLDJ5oe6ecC_lZq3e7V3jj-nlFJt4PkQHT51gsajKoR1RMYfU_cDWeF1u_jytAaHB32BasVTFGhU4SCnil84' target='_blank'>Manage Award</a></li>
+		<!--HIDDEN FOR WAVE 2 GO LIVE	<li><a href='../run/SIW_YMHD.start_url?5F724F4552DE4951vn0zQh5xQmTOXPyp5PPeiahymup10NHcE4Q9XA0RUgUl5UXOsYVjmsLmddDZg695zjJwzLRsWIlWuS3pWqgQ0Ohwr603imstgKkLmsyGscz9gQ160CQ9Usn3MV2ZW-xSHRP2svxQQyHh2mYSToYWmUd7hXXOuWNkpK3gBUkxHB5lwc0NocCrFkwcGA9dA4vH' target='_blank'>View Apps</a></li>-->
+		</ul>
+	</div>
+</td>
+</tr>
+
+
+
+
+<tr>
+<td scope='row' role='gridcell'>004472</td>
+<td scope='row' role='gridcell'><a href='../run/SIW_YGSL.start_url?9BF6F512A8F84BC6X3yNIlmxT1Q12brPLuPx-fT4u2YCe2Mi9K-p8GNlkUBKuyUearw7NAaYjEBKix9HJBUt7grm1HXy1IX8sM5Ul4vnUO6snvQBlhrGvqtEK23pVSrZcG0RrYhskoDTDti1aRyTJgscvhJDHq1WJOZ7wExrBxLQa_fmcgkT7ujFhbZB49gbFRfmkOpmJd9uAc88' target='_blank'>Dummy Award Full Name<br />
+</a></td>
+<td scope='row' role='gridcell'>0</td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'>
+	<div role='group' class='sv-dropdown'>
+		<button id='divid' aria-haspopup='true' aria-expanded='false' type='button' class='sv-btn sv-btn-default sv-dropdown-toggle' data-sv-toggle='sv-dropdown'><span class='sv-caret'></button>
+		<ul class='sv-dropdown-menu' aria-labelledby='divid'>
+			<li><a href='../run/SIW_YMHD.start_url?F4A4F1F5FE0045C6ZoLNSmr5VMRdHO-UYF4zZ9_A-WLPvgSuU4IyoVR0o_FYQP0_wjdO6zirCNozKdoB7fvuuazFs4OL2hhpvWXosGFGpOuocojwZ0csShjUb69WUhRlRrdJtOQMU1K-sAB5mCr7Y9G3Pfg65N4ALRkrgQWLWDHJYuH3ACGKQgbjgsk' target='_blank'>Manage Award</a></li>
+		<!--HIDDEN FOR WAVE 2 GO LIVE	<li><a href='../run/SIW_YMHD.start_url?4E80EA25273A480BOGc-9CuxJulQCRRA5YrMv5ZcMImETGoD7mNzJQN317xFCqKB6oJlnRwClf6Gvo1itEHPLFWw143z8-VS23NXzB79_ygH59Z32E57_zdec1nc3NNIsFkmZls4KMvVaXlF-heo0WxWxoDpq_1tNumtf_56LHaJlNM7UOo4cV9-wP6UI5ig5mSloXszp5t_nYKb' target='_blank'>View Apps</a></li>-->
+		</ul>
+	</div>
+</td>
+</tr>
+
+
+
+
+<tr>
+<td scope='row' role='gridcell'>004473</td>
+<td scope='row' role='gridcell'><a href='../run/SIW_YGSL.start_url?A195DB05070C4801sjGCFxAF41M5-Fqyvsp4JbUM2yjeCgbjTxIQ7jw7pD8svBcMDGsTiqLIaZ9_JWssR9EXcT2hIrsd2w6B92vQEqh-SjAZc700JtwJoFA298_NxULOn6anUTO_nR0g_7EhvmEHG_bjl-L5UO1_G5Z2IhJ5Hb-7JkvnmuplXYuEtdhQ7xbSuIQaqH8yG-Rdp5Gb' target='_blank'>Dummy Award Full Name<br />
+</a></td>
+<td scope='row' role='gridcell'>0</td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'>
+	<div role='group' class='sv-dropdown'>
+		<button id='divid' aria-haspopup='true' aria-expanded='false' type='button' class='sv-btn sv-btn-default sv-dropdown-toggle' data-sv-toggle='sv-dropdown'><span class='sv-caret'></button>
+		<ul class='sv-dropdown-menu' aria-labelledby='divid'>
+			<li><a href='../run/SIW_YMHD.start_url?4E015CDF5B454249KdoKtg4uBLNMXjk3rqlPNDSXiQy-XPQ-WeIcr0gXvL74zyEkaFz61_3XfnjLBJ25PAmL6NktYxoXvwWVJmE2rhFqdxubPGtENZZcIr6mn_XKQwG8itQ61BaBaAfIvp7nxkISKsc08Otr7ccENqPYQp3ZCoOJwN6xw1koqkm46tI' target='_blank'>Manage Award</a></li>
+		<!--HIDDEN FOR WAVE 2 GO LIVE	<li><a href='../run/SIW_YMHD.start_url?4293D53971614FD3UDtYsWnaY2CbZs6b2GTbVNny0npDqrgX12CDwdkjEZn50GQPqtGkQ-ecGFQZA42ulHMLH9lm6XjXuBPxJtE3JPyPHxDZOESaI8FZln7igxj-5dFZTyttOnRZTImWJky7N6LBCWcvTVltjq9j3oaNJqa8fc_WoPWb-upxicpn4IkiYMBQ1YGu0EUTCr_hAPVB' target='_blank'>View Apps</a></li>-->
+		</ul>
+	</div>
+</td>
+</tr>
+
+
+
+
+<tr>
+<td scope='row' role='gridcell'>004474</td>
+<td scope='row' role='gridcell'><a href='../run/SIW_YGSL.start_url?990AC4A92E8947FAWuobw3pLwVbf90Ht0yYPwqK7KxlFiaSdC69VWPQ7WlJF0VGEqOXesw3cDla3n7A_FlSXT7mG_VGRycNvcB1wseZoY93nkIsYzy5RkBwP-8_s5yat4k_K8_d01nTknvJVBgQwd-Es9Lu_82a3E2sneoKqYQnlalRZumpuZwKWZ5YxlckWkqTBTRhpDaGthDXP' target='_blank'>Dummy Award Full Name<br />
+</a></td>
+<td scope='row' role='gridcell'>0</td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'>
+	<div role='group' class='sv-dropdown'>
+		<button id='divid' aria-haspopup='true' aria-expanded='false' type='button' class='sv-btn sv-btn-default sv-dropdown-toggle' data-sv-toggle='sv-dropdown'><span class='sv-caret'></button>
+		<ul class='sv-dropdown-menu' aria-labelledby='divid'>
+			<li><a href='../run/SIW_YMHD.start_url?5895CC819BD74EF9aOIJPV01w5-c5RKOwguXG-L3GVqAxYKSkUyD3tmgjvKHkphEStErc3JM6McQ8ApJ2AFFySVksB_t-aLQ-kU3ARI6YzfU5nEH5-YCD45WGqPM5bufnNRvgoKICYMAafxp3NLgItdTEPZh0M9bpnS00svAwPY9Y7X9-YAGjO_AbAU' target='_blank'>Manage Award</a></li>
+		<!--HIDDEN FOR WAVE 2 GO LIVE	<li><a href='../run/SIW_YMHD.start_url?D58DA5F63C94417C8QuFNgl7wvuGrmWRxOZz5FRC-HHYy0MCHYZXjVdwfAjwDgRF6f-G-NCJSrqoA58SbmK_EO1nIInZZCXIVj-H9aHf4IiRN8MVTHmNiqGPTrW6Yu27njcLblLeXGPJtu-jRNNjCnZNBqcEC_STHNj-7IjgJn27HFc365QTNooML56OCCx-YnjWQS33MJeXKKhA' target='_blank'>View Apps</a></li>-->
+		</ul>
+	</div>
+</td>
+</tr>
+
+
+
+
+<tr>
+<td scope='row' role='gridcell'>004475</td>
+<td scope='row' role='gridcell'><a href='../run/SIW_YGSL.start_url?8866F614090A405DRA82k5qqnTVxVchL4utYmidpuJRxT8lLXdZrPnwfCqLokS-Y0WR1MDhDJT6bJTZ3_eku0RmYSMPN1cirgLAAjil5dicaiAcCsgYm4JEd6QBA6r1_ssWOWai6tOcfMD1jQGkNPSZmvnq38R8tE_KCKfyNe6Vr4E1MpNXZet8RTB7yydqV-dyhtjI14JwrQPZd' target='_blank'>Dummy Award Full Name<br />
+</a></td>
+<td scope='row' role='gridcell'>0</td>
+<td scope='row' role='gridcell'>4000</td>
+<td scope='row' role='gridcell'>    4,000.00</td>
+<td scope='row' role='gridcell'>19/Sep/2018</td>
+<td scope='row' role='gridcell'>19/Sep/2018</td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'>Open</td>
+<td scope='row' role='gridcell'>
+	<div role='group' class='sv-dropdown'>
+		<button id='divid' aria-haspopup='true' aria-expanded='false' type='button' class='sv-btn sv-btn-default sv-dropdown-toggle' data-sv-toggle='sv-dropdown'><span class='sv-caret'></button>
+		<ul class='sv-dropdown-menu' aria-labelledby='divid'>
+			<li><a href='../run/SIW_YMHD.start_url?7A2C1B26D14C467FDx-FtgacgN8pcE6Ybh1SszZAqZJFK800LIPsjX5kfjozXGF-8ojqaiI3eILGsDYWiDAJgrEmfKNjrXt-XPl0MNfLCBcQ5AaTYi8FYzBk9XHBJbPyqhY0cMEwkioEaGlGD0rRrJnNUpsvsReb9G4-hko7w1qCr47pCJbWZk_HL9o' target='_blank'>Manage Award</a></li>
+		<!--HIDDEN FOR WAVE 2 GO LIVE	<li><a href='../run/SIW_YMHD.start_url?A06A02D1428F4FE8OtMiKwIMHUyESgFsBiz0qrZzTGLrJ4NFraSGQypE6CPtfbLknU70vUUqwlTA_adxPY2FbQmBRQXJYVVk0PEJGAHhFgfIgb7oDkO9lCdrd8j5ml--tF5N5njdfIVGDLj8VCF541TYpTbCxTZC6KlCMFKvKeRVie6j7GppsmqzfT_CrRaphXzWVUqykO30QYu2' target='_blank'>View Apps</a></li>-->
+		</ul>
+	</div>
+</td>
+</tr>
+
+
+
+
+<tr>
+<td scope='row' role='gridcell'>004476</td>
+<td scope='row' role='gridcell'><a href='../run/SIW_YGSL.start_url?6C47731E2CF84075K_Zx4SKMTbRMh3OQLYLHdGHNtRfDEBMNLVyTj76-B_L1oAhlHEBcbBn8dTAMSHXujtqnuIZHwSgb645uJG_gM-lY2iOqOeB9oxHZYXI8nytWlOo5I_zVoz6U1z-OSUyURoZRsuHHTM7F15Iv9bPWtRhsXoN4owaEdqhkLCQGETC_23MbSe2_mxtza2oKILuM' target='_blank'>Dummy Award Full Name<br />
+</a></td>
+<td scope='row' role='gridcell'>0</td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'>
+	<div role='group' class='sv-dropdown'>
+		<button id='divid' aria-haspopup='true' aria-expanded='false' type='button' class='sv-btn sv-btn-default sv-dropdown-toggle' data-sv-toggle='sv-dropdown'><span class='sv-caret'></button>
+		<ul class='sv-dropdown-menu' aria-labelledby='divid'>
+			<li><a href='../run/SIW_YMHD.start_url?031AAD9E1059440AA0Hk7-xvBLdka5LZKeTYaphWXeznuGMv69dT8a5Arz9YgCsRrrDAKqBlEw5LOZ_RQVJdpnTv1qNdOvCvXDisv4yBeXFl3wzQsaLZ2ls1cUKXHOtb89S_3s1oBsfhHFSp9xybtas2KXokzP0tl4q2kOJNFAzTXKSPxA3jjzR3Wkc' target='_blank'>Manage Award</a></li>
+		<!--HIDDEN FOR WAVE 2 GO LIVE	<li><a href='../run/SIW_YMHD.start_url?A0831E8D3F4B4AABQqOHOY3TCvv83lKYIUbdvp8bWolSjUC-7DTxuHrJJAsQwngGfxOy85kTYCRvLemnjKoM6yba_20Dv3dUyj05gk4mxHf2J43bfEpYAu6dLjARi4Ubkj7OBumFC1lsil8nj1kbhIgoHzihDzXRRyQpqwsMmdY6seZuJ-Jn8a0ogeQcc82uZNDXu6P3YMyrnEHj' target='_blank'>View Apps</a></li>-->
+		</ul>
+	</div>
+</td>
+</tr>
+
+
+
+
+<tr>
+<td scope='row' role='gridcell'>004477</td>
+<td scope='row' role='gridcell'><a href='../run/SIW_YGSL.start_url?67A9BD6F27C34A3BaGvtj9JQ96HbCdyxknI8m_Dk1la1fY9jekEiz2tEXBpHxP3xoQ8X5HtsfXi5RY0_SdpYsCf2sUXgOfMsegw-O6BxpxCfWPOIZl2lvJL2qYiLm0lTDB_LhsBRvE94B4V1PYBzdf6LD8OqodVLxtnWz1dQ_LGOOEMKDaq78P_uHRGUK9HpyWgI_xA2efx875Hn' target='_blank'>Dummy Award Full Name<br />
+</a></td>
+<td scope='row' role='gridcell'>0</td>
+<td scope='row' role='gridcell'>4000</td>
+<td scope='row' role='gridcell'>    4,000.00</td>
+<td scope='row' role='gridcell'>19/Sep/2018</td>
+<td scope='row' role='gridcell'>19/Sep/2018</td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'>Open</td>
+<td scope='row' role='gridcell'>
+	<div role='group' class='sv-dropdown'>
+		<button id='divid' aria-haspopup='true' aria-expanded='false' type='button' class='sv-btn sv-btn-default sv-dropdown-toggle' data-sv-toggle='sv-dropdown'><span class='sv-caret'></button>
+		<ul class='sv-dropdown-menu' aria-labelledby='divid'>
+			<li><a href='../run/SIW_YMHD.start_url?36DE1B5A7C3746B31RXjMd1mwaGRemjw_LiOMkq_16dxSX8drp1Q1w6tTURh3vRRlWzAmNqEPRRhBPsdBBOKHprHvJ0rzcqmzuKLFv_MchuRGtZBfTnfBHoAzxIH_DXY-WLP3ZClUoKnECos4Y_vPBb-DskBeFFjnO_fuWc6D2Yvkqknn7DlQScam7o' target='_blank'>Manage Award</a></li>
+		<!--HIDDEN FOR WAVE 2 GO LIVE	<li><a href='../run/SIW_YMHD.start_url?308CCC346E59467EpfVmzzcWX5Y8PKSvmFDDlW4XoLXjXFBf19S-dMx3VHnAe3m7BJ7K992DqN0xINCQh6ioZToOSHpzSv-_VW3qqrNthkr_LWG9qhz_YGwmxRMosS6zOI_yZutRJ5l2KaakgUMce38Rky8as8SwCG3N7YvOEfrux6hjUbaL3p7_WKJXj4YRnCjZ6WeqAHBBB9cj' target='_blank'>View Apps</a></li>-->
+		</ul>
+	</div>
+</td>
+</tr>
+
+
+
+
+<tr>
+<td scope='row' role='gridcell'>004478</td>
+<td scope='row' role='gridcell'><a href='../run/SIW_YGSL.start_url?174225E0B89544C5J1N5YwxFWOUk6X3i99cYWTBiEFlrSIDCpPhU-1hAqNyByPNZjZKpN-TZD-RxsrYgXVflKs6BjbE1fwCmv33o3ePo2hlRWFAmtpL3kkK0rRG4AYRWZM9tfSQ5Zs9gqS_GFT7PWRHPa_1tcwVATTgm1d5gPotEeKZBpc61DDdigPAxQLlMVAIqk8_Cxa7RiBYq' target='_blank'>Dummy Award Full Name<br />
+</a></td>
+<td scope='row' role='gridcell'>0</td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'>
+	<div role='group' class='sv-dropdown'>
+		<button id='divid' aria-haspopup='true' aria-expanded='false' type='button' class='sv-btn sv-btn-default sv-dropdown-toggle' data-sv-toggle='sv-dropdown'><span class='sv-caret'></button>
+		<ul class='sv-dropdown-menu' aria-labelledby='divid'>
+			<li><a href='../run/SIW_YMHD.start_url?415D33922A8C4566egfyA1raHuJJGmUgw-ok7mHNPypu52vw6yJnoH9oQeqgpwXneGZVqbtx5dpNQ6ncS6D3Gp-01o7ItZ2nJnI6i_yYr7H0v6FAXx0AYfN8qM0BHKJxqVXhQmhAs-LM-MojjtpuyphAtoj6gY1t8SAw89zR8IAadDKamBdWUxv737U' target='_blank'>Manage Award</a></li>
+		<!--HIDDEN FOR WAVE 2 GO LIVE	<li><a href='../run/SIW_YMHD.start_url?63369F114E414FC1Q9542N15A3kc6Zt6zncmGu3olUKZOrcudqYKRgY_YNhPIM7amKOgYgLf9NLe2U1ru1HG9DrOICjyODKD6vYdWiI6MzG3inHaMRO_WMXw1Z8bV4ytXUAb-O9YTsJdVBIkzuR0nmR_2cxNFjnrHuuN3o4o3p_sLy4KBeuJbjD7eeueaOic3-wOsYMqsfc937Po' target='_blank'>View Apps</a></li>-->
+		</ul>
+	</div>
+</td>
+</tr>
+
+
+
+
+<tr>
+<td scope='row' role='gridcell'>004479</td>
+<td scope='row' role='gridcell'><a href='../run/SIW_YGSL.start_url?70130F2B372A45566Ex9-DOQZUw8ssRcY3GfSUNp1Bg_tiMvM8qrOxFSNIA6MWqXsNmMErnrAmMM-aCWCFWOB6z2yyxN0s3SjXMQ2GufqtxKHhIJ8g2PjVCZycyOb0DdRWSsuoF-wruuLnTp3WKIP1T7fRSePlj8HIYZdHqnh4oplzQ7bKMtpwuMvwYUCWCIuYZLoKihUBFWcQe2' target='_blank'>Dummy Award Full Name<br />
+</a></td>
+<td scope='row' role='gridcell'>0</td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'>
+	<div role='group' class='sv-dropdown'>
+		<button id='divid' aria-haspopup='true' aria-expanded='false' type='button' class='sv-btn sv-btn-default sv-dropdown-toggle' data-sv-toggle='sv-dropdown'><span class='sv-caret'></button>
+		<ul class='sv-dropdown-menu' aria-labelledby='divid'>
+			<li><a href='../run/SIW_YMHD.start_url?C86FC45B86FF494CnnszXyJELeIlz8847__7A7OgiAg4YtreG-QRCB8ljQsV0OieH_dpVnd0yU8OQMFpz7XJ4BCYQollZuVZvjORau4bSDgGwcShFbNsWXjoYNG_q0KTozt6nDXcDvWVjrkzrsKPtHGzwOOpjSmJQHu6_lK5I3azz5-F8iYvtjw3Dpg' target='_blank'>Manage Award</a></li>
+		<!--HIDDEN FOR WAVE 2 GO LIVE	<li><a href='../run/SIW_YMHD.start_url?BC1951AA6AAC4CADsWM7eRur6t7l5QUUv98tv8-mZw4yBNBs5v_bU8ulrVrsYn5fq-tZPDNKa5TXpRnQwK8TexaKNzcjscd4HikjlxORYZiMsXHJuLVh6AoIeqjF30j2NRmZR9tsUdqTwMI3UWK0YIg3LkLzhin6mnORFXHAz89Pfa1c22is6ZqSD9MqSVfMQy56k8XA7DXcE2a-' target='_blank'>View Apps</a></li>-->
+		</ul>
+	</div>
+</td>
+</tr>
+
+
+
+
+<tr>
+<td scope='row' role='gridcell'>004480</td>
+<td scope='row' role='gridcell'><a href='../run/SIW_YGSL.start_url?5C5B96ECB838406AeLblYgnyXSWCeke1c3Nj0FjMUOMuN_bk0_sn_V0k1w6tUtPjyF30AuZEIXui1Lx4IsPH8NsTavNLhxG3Kf2ju911oIRlcYub7VGNhAXKR4VVcxzL6aqKNHDD7zOAVAN4RPed6lDMQDo7WGVjyXIIxyQUApmMynSOtuY1aBQQSfese3aXcusSwTt0oHDlxhLl' target='_blank'>Dummy Award Full Name<br />
+</a></td>
+<td scope='row' role='gridcell'>0</td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'>
+	<div role='group' class='sv-dropdown'>
+		<button id='divid' aria-haspopup='true' aria-expanded='false' type='button' class='sv-btn sv-btn-default sv-dropdown-toggle' data-sv-toggle='sv-dropdown'><span class='sv-caret'></button>
+		<ul class='sv-dropdown-menu' aria-labelledby='divid'>
+			<li><a href='../run/SIW_YMHD.start_url?AE904F6E923342D00h1w4pB5QU_-AFIqqg4qvfR98OL66zmebyppl3Cpj9W-1uMeQ4aOZDxhPYAxK-ub0Mrn3LJc-r8NXRaBz8JMbmJiJcsq0CcjRVd_SU5imwH_DY0EBSfc9ECHCekgbMs4x6GfcaMQ2XoqlGlg-wc676C9ldy-wo8NO5zV8MlVPzE' target='_blank'>Manage Award</a></li>
+		<!--HIDDEN FOR WAVE 2 GO LIVE	<li><a href='../run/SIW_YMHD.start_url?AE04045AE1CF4A1DJCHEX23RC9KADpHPDZflZA5yrdJc2V7a4sKGkAE_KYT1qwZwHjYeUj7_Kck0iMKiH1Dg0HFjjCK8BcwFaWeDe8Da4jiMPAvzZSN8EG8qc1vhRWT7rMjGWM8AZc0rqgJHAcyLzyz3jHGxVGP9xk1Lo1IrQacKGMfKvenFqaG2Vnlh4mtxjEXs_j360ay_J1X2' target='_blank'>View Apps</a></li>-->
+		</ul>
+	</div>
+</td>
+</tr>
+
+
+
+
+<tr>
+<td scope='row' role='gridcell'>004481</td>
+<td scope='row' role='gridcell'><a href='../run/SIW_YGSL.start_url?1C6B978A2AA841C33-Xy2OSTLKTQ7pN9rTCgsHyOrcEjC9tgtSDLFcaBQML_nPkyIBIYI8ov4SX3JDEYukIEd83w-Bb5R_VbYiOqOEHMPOmUN7qd6vf3Ni-RqnowPK1L7TJcbh4n94jbvv8ys-kgKgKgDB3r3IkcRDDCKRpI9H8lfvO1LwcYT5FD7Yeoj1hvVtlViY-Fx5cP8KUV' target='_blank'>Dummy Award Full Name<br />
+</a></td>
+<td scope='row' role='gridcell'>0</td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'>
+	<div role='group' class='sv-dropdown'>
+		<button id='divid' aria-haspopup='true' aria-expanded='false' type='button' class='sv-btn sv-btn-default sv-dropdown-toggle' data-sv-toggle='sv-dropdown'><span class='sv-caret'></button>
+		<ul class='sv-dropdown-menu' aria-labelledby='divid'>
+			<li><a href='../run/SIW_YMHD.start_url?2991FDAD4C1F4306rovAVEL-ZQUIofHVHANaJyWxlSYLhWnjhsB5anf04BrYlkbVxOVhIEjtzLPtT8bV776BMUijqKLhHwCsKc24tJegdkfTQqAzXQaFG8dRWRs_v0Zeb34S9dhKqklllhFTQZy53Q9HZecs344-pCLejsmVm_ZuntfOakSxX0ugzeY' target='_blank'>Manage Award</a></li>
+		<!--HIDDEN FOR WAVE 2 GO LIVE	<li><a href='../run/SIW_YMHD.start_url?672A8ACF61A046C4Z_hKYgfEnXWu1G6_zMmuEUS8t11GIo1o7TikyeZQRsN42CKwqJqoX0Ckr5eIhB2xpY8Aua-sEm4vDH1KrTFPEAGfHZerAweHe2Mb_p85EbgJN2h8eKXjGV3F6W59WjgU3aOJr7V65dRK_5Lz9PYy32HqNjyrQu2jRoXKW5Yw3llvmL0jKaAkN0EyV2xSbY0x' target='_blank'>View Apps</a></li>-->
+		</ul>
+	</div>
+</td>
+</tr>
+
+
+
+
+<tr>
+<td scope='row' role='gridcell'>004482</td>
+<td scope='row' role='gridcell'><a href='../run/SIW_YGSL.start_url?C9408025AFE84F40b7EBnd9SyNhKETNV4bxxJpot0QLI33Jks3A5nW8UgZ4b9gryGPP86tdeD0E--t0iqdTCTcLSDDGwQ9-V-tQ8xI5J3dzEHAp1RAZ8613eKJnNiRaowqgB3vSfiJNc0SPbT51q8tECV8I7EVb4pzAXZVWvBOj_2GxXQwpL48gu4mk0YQL0-eVAWL3mHgaeBKXt' target='_blank'>Dummy Award Full Name<br />
+</a></td>
+<td scope='row' role='gridcell'>0</td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'>
+	<div role='group' class='sv-dropdown'>
+		<button id='divid' aria-haspopup='true' aria-expanded='false' type='button' class='sv-btn sv-btn-default sv-dropdown-toggle' data-sv-toggle='sv-dropdown'><span class='sv-caret'></button>
+		<ul class='sv-dropdown-menu' aria-labelledby='divid'>
+			<li><a href='../run/SIW_YMHD.start_url?290ACC7505E44BCCClM6OopDFXG07pPZhNfOBiKq83xq_0kStWTlvqRE-g2L9OlJqfndeqxareNfjhLwt7aRiXWZa0gjT-xttU91Fzdz4vZvsHDm6vUg8aKGEnu68WsHyhT0TItWArXP47iXtD3d-zZ1MVAfSPC6ijh8vKzLzq-0yfHBKlxEtXP88Ug' target='_blank'>Manage Award</a></li>
+		<!--HIDDEN FOR WAVE 2 GO LIVE	<li><a href='../run/SIW_YMHD.start_url?6E97F4024E3F495Cw7tpANe2pLrmDr2C7YdZAz7ZFDC_VuDhkX4E9QEUkLCudMzSSoB19-LFJKvUOCcbWJLNO_Dch8k8P_RkTsRei7yRT73ZsQAAj-ZpPBGIBkqYovqdI1ypkTrl9rlerAt8rfANemf2XYD5y4kc42vvcBp0adflovkGr7G2YGYdNtSisJPuZiF_ejY6bJbkWj9i' target='_blank'>View Apps</a></li>-->
+		</ul>
+	</div>
+</td>
+</tr>
+
+
+
+
+<tr>
+<td scope='row' role='gridcell'>004483</td>
+<td scope='row' role='gridcell'><a href='../run/SIW_YGSL.start_url?E9B695E176D34628ngxGdFK96gOXL8KAgDJwZyYpZrAo8pNCVdn48Ft40E4FwUmHXJMQ4jZ_S9OCnUx0mDQl0UC9W1pBRQI2XcF2m8Lw7hpBWzEC8Boz2eM0NjOCSAAYiD-GoVu14VQoK2VXLFfyMwbpe3LDruBX5G70s5k4tfPtydO1v6Xd23fLr63gt009Pd6mr5iZgNwqO2hW' target='_blank'>Dummy Award Full Name<br />
+</a></td>
+<td scope='row' role='gridcell'>0</td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'>
+	<div role='group' class='sv-dropdown'>
+		<button id='divid' aria-haspopup='true' aria-expanded='false' type='button' class='sv-btn sv-btn-default sv-dropdown-toggle' data-sv-toggle='sv-dropdown'><span class='sv-caret'></button>
+		<ul class='sv-dropdown-menu' aria-labelledby='divid'>
+			<li><a href='../run/SIW_YMHD.start_url?4900217382884F2BWpP9BQbexwxEnFe-8cZGtZ3I7rwsWGutPIKQ8kdApKTPvFVqmqLffvZty3qB2Zl6gFrJvRwTNFO4_v1UjygDPcXNCU7CUZYJ6Nr468xDEkZFRuIQmRN8_seISHrfCpPi0GfjyQYC7gujNGJWr5zNbMDKeuZcxCVLYkyUxW2rWxs' target='_blank'>Manage Award</a></li>
+		<!--HIDDEN FOR WAVE 2 GO LIVE	<li><a href='../run/SIW_YMHD.start_url?DFC68AE0BDEB4856a2xPzDeDiC1l-GJXq9fMVzadMM8bqfl9mPCN679IQ91eiPSMNWBarmT_mRboKkSQk6BBdySPDYI3f1ISxrI-lkpaz8UYmtobLWa4qd0_DgNN7jjWhkYfZO3lp8fTlQcsYZaqi0rFam6LFEH6G4sj1qQL5BCy1OVtfeQlxTQVQpw2x2h6owzX_Ie_WlgibVB2' target='_blank'>View Apps</a></li>-->
+		</ul>
+	</div>
+</td>
+</tr>
+
+
+
+
+<tr>
+<td scope='row' role='gridcell'>004484</td>
+<td scope='row' role='gridcell'><a href='../run/SIW_YGSL.start_url?01908772891047B7xVTQV0T_cM6ERthuWR6Gqa1JK7Sg7KOPcKaUaBq89ZmIb9QruMFy3OvUrAnArgOhGGHteWi2I6_tPwmoWX_1MLdmGAx4asuc81VvLPghityquT483eXKApa0TtVGoXCGwd6gZO4DvkeAmea0siSGW3NDWJSA0sb_d0wNV977-sr8xe2z6ahD66lZjqhkbGSS' target='_blank'>Dummy Award Full Name<br />
+</a></td>
+<td scope='row' role='gridcell'>0</td>
+<td scope='row' role='gridcell'>4000</td>
+<td scope='row' role='gridcell'>    4,000.00</td>
+<td scope='row' role='gridcell'>19/Sep/2018</td>
+<td scope='row' role='gridcell'>19/Sep/2018</td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'>Open</td>
+<td scope='row' role='gridcell'>
+	<div role='group' class='sv-dropdown'>
+		<button id='divid' aria-haspopup='true' aria-expanded='false' type='button' class='sv-btn sv-btn-default sv-dropdown-toggle' data-sv-toggle='sv-dropdown'><span class='sv-caret'></button>
+		<ul class='sv-dropdown-menu' aria-labelledby='divid'>
+			<li><a href='../run/SIW_YMHD.start_url?09162E8859E0447AhsdZ8j-ew4bpUk4ghz5B9fsfoT6eoUhKz7Fn-KrXyQl7ZQFIm82EedvGw9LLkWQqwM2L9oarmoumXS-EYiy5PDr2sXU8Ktiuz90tXj_4Wb_NGgr2WgDS0gqxaB8SOE2WJa7N2YztfvJavz5MSBSuziUgqzC9m9nbwGfR_xtDiYw' target='_blank'>Manage Award</a></li>
+		<!--HIDDEN FOR WAVE 2 GO LIVE	<li><a href='../run/SIW_YMHD.start_url?29AFEDA3E44E4A07MdvRQpfXuJcHJ4bH3EVwsLcthjGAKRXQjO8Hcn1rAcko-7UiEhL9sZhCZvE4fDUb4aEIUwAoStxk-rE55zHFapHq_6sbD7BJM0hxtXLb0vhx2q63snron9C1MPXIM2NJvp8tZm0yDpi2-NxomivyV-WOHMGtLblxWcmMfdhbTIW4T5cgC1nEpAyYqZ9KOgBw' target='_blank'>View Apps</a></li>-->
+		</ul>
+	</div>
+</td>
+</tr>
+
+
+
+
+<tr>
+<td scope='row' role='gridcell'>004485</td>
+<td scope='row' role='gridcell'><a href='../run/SIW_YGSL.start_url?F12D279FA04D4AFFdwW7HSKUcy7IoNuC7QYrhir-IfEehI9VMFQLSHVwXVNsuHXbIKoIlHJnnCO_z5BSYs4hVjaMb-88lpJLcfAhs1kDVaQ16PZzfxBrq1KA_oJ682SPhiWggmM9I2Z2p7pzGH3E7Y81t7AoWrg1iECa3O3iNO8MLdYy0TqI9M26YXz9mFhrbIW74n0KA2JTKGnP' target='_blank'>Dummy Award Full Name<br />
+</a></td>
+<td scope='row' role='gridcell'>0</td>
+<td scope='row' role='gridcell'>4000</td>
+<td scope='row' role='gridcell'>    4,000.00</td>
+<td scope='row' role='gridcell'>19/Sep/2018</td>
+<td scope='row' role='gridcell'>19/Sep/2018</td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'>Open</td>
+<td scope='row' role='gridcell'>
+	<div role='group' class='sv-dropdown'>
+		<button id='divid' aria-haspopup='true' aria-expanded='false' type='button' class='sv-btn sv-btn-default sv-dropdown-toggle' data-sv-toggle='sv-dropdown'><span class='sv-caret'></button>
+		<ul class='sv-dropdown-menu' aria-labelledby='divid'>
+			<li><a href='../run/SIW_YMHD.start_url?095BDFC9849F4E097gnzqfPUMJzXfJJOrsBDh3jK-9YRRcrdWVP6yR_1gkgVlBGzCK1soj38J1WDhgyXvFIpCe_JdOUr-aDqeSC3A-1vAwUAuMy4RLdvEhYyDAJ2-43iC_UdWRqx2qx5mWk-K1IURt7VyKMHcd_-CHqTHmlTwc8S7CmqTbRL70IflrE' target='_blank'>Manage Award</a></li>
+		<!--HIDDEN FOR WAVE 2 GO LIVE	<li><a href='../run/SIW_YMHD.start_url?683BE94AAFDC44E62tyddwhzCnOp0ZQUJKYN7b9NJWtERM28ao0CZxkcvSSfT4mD0ysUqucwCKfnsUb4gBrIZy59OCxiSn5Lqe6P6_tU1JJKSoNWUhDpkGlTwBRPYSItkj2La3v1O9Trtxjch2Ox5YnUWnc3b7GhqQ1wMNrao29kwyj7--dzp3O8hPt2V-fAi7rgZZ3ev9gK_9gn' target='_blank'>View Apps</a></li>-->
+		</ul>
+	</div>
+</td>
+</tr>
+
+
+
+
+<tr>
+<td scope='row' role='gridcell'>004486</td>
+<td scope='row' role='gridcell'><a href='../run/SIW_YGSL.start_url?32242615181542225zQwqydKvZEowGtzT9Ykdne0frOCSZ6F4kfEEf-o18WXYB3DqpPxX5VPkVoFUip13VmcW_PRLxnqEgBELHg4G727c_ZNVzq98VJbv8nila6wj9NNXQZNwRWDUKqCQuUdJiu7AhAzcAc9E29cmtdF6GwaA8gdbl8OpRB8REHd8wzBXxTT6XhHLQd70pINGaws' target='_blank'>dsfasdfa<br />
+</a></td>
+<td scope='row' role='gridcell'>0</td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'>
+	<div role='group' class='sv-dropdown'>
+		<button id='divid' aria-haspopup='true' aria-expanded='false' type='button' class='sv-btn sv-btn-default sv-dropdown-toggle' data-sv-toggle='sv-dropdown'><span class='sv-caret'></button>
+		<ul class='sv-dropdown-menu' aria-labelledby='divid'>
+			<li><a href='../run/SIW_YMHD.start_url?54022B3A2C614A39lYKKICTyAGDcGbN61lpLpoPPB49HrNtghy1FdolKt2aBTK9UnzVNn0owfk8oTeLWrqkbkb-AkF9-EIQu1ozsYed5XN20ZMwUmGszdY0N_bKSiCNBK2kUniEsT07naZ-jzsC3IoB7PwH_bGvEJgHZswQ9PRVYc1TOT8Z6bbNDx_Q' target='_blank'>Manage Award</a></li>
+		<!--HIDDEN FOR WAVE 2 GO LIVE	<li><a href='../run/SIW_YMHD.start_url?FAAE576E91264D32P8s_rQH77u7UDJSFmlVdligGpdkQQ5GJ1jxLfqsOe4QV0EAEE3ynqreYcDHUKp9wkDqHamUSZKalRlSGkih-He7Isva9Al1l0meT_w9y1f8Boo5XxaEv0G6zk1EVMqKOugC35qJiz1SzViEcgAPunELYzIS1mWNnnSVwqlXha18g-UoTMPHz-dUHoqi25KOx' target='_blank'>View Apps</a></li>-->
+		</ul>
+	</div>
+</td>
+</tr>
+</tbody>
+
+</table>
+</div>
+</div>
+<!-- end of copsection-->
+</div>
+<!-- end of bordersection-->
+</div>
+<!-- end of container GSAWD_AWD_01_001 -->
+
+
+<!-- Start of Container GSAWD_AWD_01_002-->
+<div class="sitscontainernotabs">
+<!-- Display Container title GSAWD_AWD_01_002 -->
+  <div class="DBLUECONTITLE" >     <p class="sitscontitleiconnotabs">
+       
+      
+    </p>
+    <p class="sitsconrightimagenotabs">&nbsp;</p>
+    <span class="sitscontitlenotabs">Upcoming Awards
+    <span class="sitsnewcontextnotabs">&nbsp;</span></span>  </div>
+<!-- end of container title for GSAWD_AWD_01_002 -->
+   <div class="sitsconbordernotabs" >
+    <p class="sitscontrolsnotabs" style="width:100%;">
+        
+        
+        <a href='../run/SIW_PORTAL.MIN?B881B37A86EF48EC1yVc-5qLn4sQS0uszgE6izIQuhkm0c3LsW51ovQoKJGr648Jq70ne_YmLcfIKRidyihf-d8j6uOO2B30zd3QczG7tus5IgIvddocbN2Qi0W0lCgnB4zXuLii10WHKzTY82tBKpL7SX3VEE9kBX3pNw'><img src="../images/siw_portal_min.png" style="border:0px;width:24px;height:24px" title="Minimise Upcoming Awards." alt="Minimise Upcoming Awards."></a>
+        <a href='../run/SIW_PORTAL.CLOSE?B881B37A86EF48EC1yVc-5qLn4sQS0uszgE6izIQuhkm0c3LsW51ovQoKJGr648Jq70ne_YmLcfIKRidyihf-d8j6uOO2B30zd3QczG7tus5IgIvddocbN2Qi0W0lCgnB4zXuLii10WHKzTY82tBKpL7SX3VEE9kBX3pNw'><img src="../images/siw_portal_close.png" style="border:0px;width:24px;height:24px" title="Close Upcoming Awards." alt="Close Upcoming Awards."></a>
+      </p>
+      <!-- Hidden section html is here -->
+       <div id="GSAWD_AWD_01_002_CON_UHLP.CON" class="sitsconhelp"> 
+        <script type="text/javascript">
+          Hide('GSAWD_AWD_01_002_CON_UHLP.CON');
+        </script>
+        
+      </div>
+<!-- start of copsection for GSAWD_AWD_01_002 -->
+<div class="sitscopsectionnotabs">
+<div class='sv-table-container sv-table-responsive'>
+	<table class='sv-table sv-table-striped sv-table-hover sv-datatable' data-sv-dt='Y'>
+		<thead>
+			<tr>
+				<th scope='col' role='columnheader'>Next Deadline</th>
+				<th scope='col' role='columnheader'>Award ID</th>
+				<th scope='col' role='columnheader'>Name</th>
+				<th scope='col' role='columnheader'>No. Apps</th>
+				<th scope='col' role='columnheader'>App Deadline</th>
+				<th scope='col' role='columnheader'>Nom. Deadline</th>
+				<th scope='col' role='columnheader'>Final Meeting</th>
+				<th scope='col' role='columnheader'>Primary Advisor</th>
+				<th scope='col' role='columnheader'>Status</th>
+				<th scope='col' role='columnheader'>Action(s)</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+<tr>
+<td scope='row' role='gridcell'>20/Dec/2018</td>
+<td scope='row' role='gridcell'>000002</td>
+<td scope='row' role='gridcell'><a href='../run/SIW_YGSL.start_url?74EFD7EACD9941EBnpXfq6P_97W91oSu5iLFCXt8-kTn3vJxtszMXrDQIFN5PvZrMD-qg6FlkppgtOD65hchcELUggb6ivgDFpRrOIg0aE8bGXnw2tn7blY62eV1QjDKjGbk0t2QpZ5i_Nq3igTzrrKBoIn3H5S8aF64_PM7d0pGLC1x9KT7I5TciZr4H-ZhPZG2J_0xuqjR8b1v' target='_blank'>Izaak Walton Killam Memorial Scholarship 2019/20<br />
+</a></td>
+<td scope='row' role='gridcell'>5</td>
+<td scope='row' role='gridcell'>20/Dec/2018</td>
+<td scope='row' role='gridcell'>15/Feb/2019</td>
+<td scope='row' role='gridcell'>20/Mar/2019</td>
+<td scope='row' role='gridcell'>Qjzzij Ritcaij</td>
+<td scope='row' role='gridcell'>Open</td>
+<td scope='row' role='gridcell'>
+	<div class='sv-dropdown' role='group'>
+		<button id='divid2' aria-haspopup='true' aria-expanded='false' type='button' class='sv-btn sv-btn-default sv-dropdown-toggle' data-sv-toggle='sv-dropdown'>
+			<span class='sv-caret'></span>
+		</button>
+		<ul class='sv-dropdown-menu' aria-labelledby='divid2'>
+			<li><a href='../run/SIW_YMHD.start_url?59EBD31925064AE46gzrnRTZVIA09jLbNqAmbuxPbwLnAXaeyi7QcwvJGVm_Zd96lFJVDqr4maG7ZM8a0HDQ-ItVmo53BL_UVUJDoi9LqQ61CHZI4mZmkffTAA9s6pP6-c_X9igoVNw9IDKDqiGS01PkVmIKite0m3SI0ZPGnCdBS9kHmkeof4BhHkg' target='_blank'>Manage Award</a></li>
+	<!-- HIDDEN FOR WAVE 2 GO LIVE		<li><a href='../run/SIW_YMHD.start_url?641511EEF6C44FF7vJLnLjQRiXDsdvLCkKdZGylxKv2Cl9PsZflq12Z1IKxbqNfL0ZyXACOKVa0il6MAPjh2W9rC0foghguAfC387ekDGhf_LHM3OQEUdnh_5B5I1khnP3S55gQFNr24YFWLimMpjRsZQEBke450eT55p-YNSGXsFUNO-umdPmNlVdo9I5p_G4BjU9W7IOM56fbL' target='_blank'>View Apps</a></li>-->
+		</ul>
+	</div>
+</td>
+</tr>
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+<tr>
+<td scope='row' role='gridcell'>15/Jan/2019</td>
+<td scope='row' role='gridcell'>000010</td>
+<td scope='row' role='gridcell'><a href='../run/SIW_YGSL.start_url?D96E19A3F3834DA2FmvU34_UFvktrwt6uB_UcIA1Lj7jIx8-I6DQhxRlaF6EPfIGBnr165fVsB4OnNyXjx0PpxxyV-T4oNb75dxkdFlhvQpzZXU76UjcM_cjDDUevMWrQsfl_KupDzi30kybBw0T7tyItJqMxsvWQ7X17yIoJ_grCSpPcj0WReAY5OEYPsJoB82gb2BXSDJd_vpj' target='_blank'>Dr EW Gauk-Westfield Award 2018/19<br />
+</a></td>
+<td scope='row' role='gridcell'>0</td>
+<td scope='row' role='gridcell'>&nbsp;</td>
+<td scope='row' role='gridcell'>01/Oct/2018</td>
+<td scope='row' role='gridcell'>15/Jan/2019</td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'>
+	<div class='sv-dropdown' role='group'>
+		<button id='divid2' aria-haspopup='true' aria-expanded='false' type='button' class='sv-btn sv-btn-default sv-dropdown-toggle' data-sv-toggle='sv-dropdown'>
+			<span class='sv-caret'></span>
+		</button>
+		<ul class='sv-dropdown-menu' aria-labelledby='divid2'>
+			<li><a href='../run/SIW_YMHD.start_url?9C2E4E4D9774473A6uPXAVftvcv1BLZ_UyE6eoA4q1VVPht91JyENEINrgc4n5D2Xp-_k-evt1rihNcl6AKa-7o9QRw011IsNfA88iASstEaxWyfSQNyqC8EMfA5GhFZL7erPLw-KBcQ4KQPf7yQo7yIjCC9J93rLg_NqPNh2flKJ4T7UktKlj2I3V4' target='_blank'>Manage Award</a></li>
+	<!-- HIDDEN FOR WAVE 2 GO LIVE		<li><a href='../run/SIW_YMHD.start_url?E1D7E42B4CE347651zutB1GGWI9qAN5ijkgr3C2h4ZRhkBodOEDoL-CjVJZGVXEYcIDm21I_EcZcm6MjHvuJXe5wg9X1KM0YNc-OuCoGEL1Hx4x92P3YxTnCKXooTPzqb-NGT7N7VSo1YE024Q1feIpP-lcUrvZFrRsnPOc6aSep5jEVuJT0IcjbAvR1H6FS7nRciPlJCLAIA1r0' target='_blank'>View Apps</a></li>-->
+		</ul>
+	</div>
+</td>
+</tr>
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+<tr>
+<td scope='row' role='gridcell'>15/Jan/2019</td>
+<td scope='row' role='gridcell'>000011</td>
+<td scope='row' role='gridcell'><a href='../run/SIW_YGSL.start_url?247D50C0C6FE4258NU7kXSO3vv8P1juwd1sCTLgvJobnbA4H5uUXtRGcC-IWXcFseQ0zO517yvPFt7LdL4flm_IGfV8LtDs0OQuEwkY9WGFEODHKSYQHnsZzi-iL93nvRGOcnzHQiVCNIm2YOVohejuHJC6Toyb5XmuetxQ0ywmDE_oQPL4XD6JxbrASQZ058fbqeL5ux_ojIIor' target='_blank'>Henry Kroeger Memorial Graduate Scholarship 2018/19<br />
+</a></td>
+<td scope='row' role='gridcell'>1</td>
+<td scope='row' role='gridcell'>&nbsp;</td>
+<td scope='row' role='gridcell'>01/Oct/2018</td>
+<td scope='row' role='gridcell'>15/Jan/2019</td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'>
+	<div class='sv-dropdown' role='group'>
+		<button id='divid2' aria-haspopup='true' aria-expanded='false' type='button' class='sv-btn sv-btn-default sv-dropdown-toggle' data-sv-toggle='sv-dropdown'>
+			<span class='sv-caret'></span>
+		</button>
+		<ul class='sv-dropdown-menu' aria-labelledby='divid2'>
+			<li><a href='../run/SIW_YMHD.start_url?D74CA8C1C4F0448F-OYJkCqZWYhrvFC9kXEFihbjRa9bZd82R0um-pxUUhG0oLPQVigh3Jp6uZk1F0lpopfz7t29Bj6I1REQRqvN0kC-dWgGZJN1hrWGAWm5waEvmA-tRIlcaMui4-VEvvxDJdAaqnKIzEO0Kz1g_1SWC-ultkbKpfnDittRskzYkg0' target='_blank'>Manage Award</a></li>
+	<!-- HIDDEN FOR WAVE 2 GO LIVE		<li><a href='../run/SIW_YMHD.start_url?51FD3DBFFD504431przZO7tf-atPlyU-WHd2vXpSlwAPKhVOXBq1v5dnUA6KmDcVh8CoulAB4EJuye0xNoQrW9WYHe_stwcnpeRrz4_aLnsZ4S8-YIZdHy-MaKQmllwT8B6xwjJt_VPK90oqVlkFRC55IvDxF9m4Burusuw4uSYo_sf6hi_lIwtK9dAk49rW-9VVG9zCy57iQkVb' target='_blank'>View Apps</a></li>-->
+		</ul>
+	</div>
+</td>
+</tr>
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+<tr>
+<td scope='row' role='gridcell'>15/Jan/2019</td>
+<td scope='row' role='gridcell'>000019</td>
+<td scope='row' role='gridcell'><a href='../run/SIW_YGSL.start_url?D06221BA4C754257IFRjeF9Il6mz8HGiFl7WFfny_KHEop9ChQKoU6e3qEfSBqjNZmwW9gCSt597kUBWhmRkwFlK6idKV-sqBTUpgjLwFhOLnt4eiKDo_lgWvQrbIhoMl5xqP9ynOA6LufR8Um535hRVBLwc-1UjcOshy0VQ6JnMZkhx1SVVA36jtD64tefIIY3j-q_kfq0qjwl-' target='_blank'>Mary Louise Imrie Graduate Student Award 2018/19<br />
+</a></td>
+<td scope='row' role='gridcell'>72</td>
+<td scope='row' role='gridcell'>15/Jan/2019</td>
+<td scope='row' role='gridcell'>&nbsp;</td>
+<td scope='row' role='gridcell'>29/Jan/2019</td>
+<td scope='row' role='gridcell'>Qjzzij Ritcaij</td>
+<td scope='row' role='gridcell'>Open</td>
+<td scope='row' role='gridcell'>
+	<div class='sv-dropdown' role='group'>
+		<button id='divid2' aria-haspopup='true' aria-expanded='false' type='button' class='sv-btn sv-btn-default sv-dropdown-toggle' data-sv-toggle='sv-dropdown'>
+			<span class='sv-caret'></span>
+		</button>
+		<ul class='sv-dropdown-menu' aria-labelledby='divid2'>
+			<li><a href='../run/SIW_YMHD.start_url?5AACA116DB704E48URO80WMulmLU0nmHnIFYAI3xr855W71vVe6Mc1gYFhHrIIcHWg46M0NhFNw_QCQseCAmtC7-8Lqt-FQeCm5GzrMjN5QBNMUlIWvz7vJhyVr_fT1j_CxrLCCszdt0CfOEly9FJG7BgDIiSBKzoL9XQWuzqJgfPYlOu1LEzcaXdrU' target='_blank'>Manage Award</a></li>
+	<!-- HIDDEN FOR WAVE 2 GO LIVE		<li><a href='../run/SIW_YMHD.start_url?EB4D0BA229F24B69tGs8RLjSoYMzCj0jUlawu78dlPYLCU_7e22Zlp6mJO9Xq4PqTbA74Oo0GMIqVfsghVHDTxg3osE0JjleQppuGlZnkFM4zrKm2xOA-N3eU3kv2OMGCE2U96QIrYYUJFFnQizNghj4dNHzHUDYUGomPPrIGvHfplh2GxVdcxA9jPIHICyGpWsZ5InFkWJoJWVx' target='_blank'>View Apps</a></li>-->
+		</ul>
+	</div>
+</td>
+</tr>
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+<tr>
+<td scope='row' role='gridcell'>03/Jan/2019</td>
+<td scope='row' role='gridcell'>000061</td>
+<td scope='row' role='gridcell'><a href='../run/SIW_YGSL.start_url?51B7B10676BF42B7RQnrgF-cgpoVrBU-A8e_kwlH2xKXor0Tp3h2exgvN5jVlfmu8I5ru_sWOiO59vrOAH6GNNa0GEOtSAb-Ib2J_gsRDeyMiaE0AE1-V0SoB6lYsNXedSQndRvaj5W7BdKUPtN-gvd4aUrgc2-_2L4JZAuHoq3R_Ez33g4_xoyPOMxv7SCCzlkfY7D1QM9rCfZQ' target='_blank'>Sarah Nettie Christie Travel Bursary 2018/19<br />
+</a></td>
+<td scope='row' role='gridcell'>14</td>
+<td scope='row' role='gridcell'>&nbsp;</td>
+<td scope='row' role='gridcell'>01/Oct/2018</td>
+<td scope='row' role='gridcell'>03/Jan/2019</td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'>
+	<div class='sv-dropdown' role='group'>
+		<button id='divid2' aria-haspopup='true' aria-expanded='false' type='button' class='sv-btn sv-btn-default sv-dropdown-toggle' data-sv-toggle='sv-dropdown'>
+			<span class='sv-caret'></span>
+		</button>
+		<ul class='sv-dropdown-menu' aria-labelledby='divid2'>
+			<li><a href='../run/SIW_YMHD.start_url?FF08959E38B14BA9MEc65lu6G8uiaZc8AhuBz3yVGRFWfFuIRN96eeiusGtgeMsTv82p6c0Jy7sHSdsMpxoSBGg2UihnhlcTn2eaIzxU028FRwA8AuIDy5iOzUWQrkDWdkDOG_x7-Zb04wzhoqrK_MCQ2wWz32uZQs1XKmAjFgVOWHa6uIAyYZyLwJU' target='_blank'>Manage Award</a></li>
+	<!-- HIDDEN FOR WAVE 2 GO LIVE		<li><a href='../run/SIW_YMHD.start_url?EE49553CD1CF44C5PkWnfhlHHW6Xt1a2WcDUgSRCDHfoToOWZKzsGmi_zava3dcI_pvos27fialyx0O83w9QDiuKy_Oi7Kk1cuHGG4JHbSfE5Ex8-84iYWXvE7fifsIPC5ZZdJlghIhqrZPKYvQrTucVfuBEeyihZGgJnH9Lsd08hgAyZzmScVJcmdoBTgNpU0O-qAeko8-B3_mY' target='_blank'>View Apps</a></li>-->
+		</ul>
+	</div>
+</td>
+</tr>
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+<tr>
+<td scope='row' role='gridcell'>04/Jan/2019</td>
+<td scope='row' role='gridcell'>000133</td>
+<td scope='row' role='gridcell'><a href='../run/SIW_YGSL.start_url?C2E43D8CDD4E44ABUAhSw5qMRmE1X7I4aMOGDrIj230SuHXM7ktZ5Jjuoo1GoGPrxWntBX4NJ5aRbQCxUVK9_HoE9sI_pC54kI21id3AR5PTvtNG36symJM3pOWnn0L_llTeERku4TduXfp38uVdCxXf6sD70czsla4n9kYNBVUE-ALmb9QHpspyP5TsSR4ZmxtfME7GGzqTjPUy' target='_blank'>Helen E Penhale Graduate Research Travel Award 2018/19<br />
+</a></td>
+<td scope='row' role='gridcell'>3</td>
+<td scope='row' role='gridcell'>&nbsp;</td>
+<td scope='row' role='gridcell'>01/Jun/2018</td>
+<td scope='row' role='gridcell'>04/Jan/2019</td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'>
+	<div class='sv-dropdown' role='group'>
+		<button id='divid2' aria-haspopup='true' aria-expanded='false' type='button' class='sv-btn sv-btn-default sv-dropdown-toggle' data-sv-toggle='sv-dropdown'>
+			<span class='sv-caret'></span>
+		</button>
+		<ul class='sv-dropdown-menu' aria-labelledby='divid2'>
+			<li><a href='../run/SIW_YMHD.start_url?EFA3B149E0984CAAi6j3X2bsez-Y29xNdfrMbIYHpyo685dfWQkDhAKqHbHc9r0QFhp0IxJ4ee8D466_H4zIJnMpapT4565Y8k2ld3ExoA5yBaLJ7782jRKZqPpAOk3nfexHjax1vER--vsSAD5RLiPM719yeCXuo3VMlRi4MgWegLFnAnAQ7qjVFpw' target='_blank'>Manage Award</a></li>
+	<!-- HIDDEN FOR WAVE 2 GO LIVE		<li><a href='../run/SIW_YMHD.start_url?961E2E7BAA214BBFN8PHwxuQwqXM4onLYCqRPxvcmwW6MwNTRIkEKN7QY2RII3K9Tdusm3Ex7XuoNXu6Tb11gZvlVTUeMb3UiZxcz_NCWhKu5oj_-4nWBQUzFO33v8et2tatWfhnkilISkkcmJ_z8H6rAa5jArtcC12ugVeTDugFfcOgKNj4kzkYn_VdiriNl0vGIbW4Mxmr0bBj' target='_blank'>View Apps</a></li>-->
+		</ul>
+	</div>
+</td>
+</tr>
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+<tr>
+<td scope='row' role='gridcell'>03/Jan/2019</td>
+<td scope='row' role='gridcell'>000147</td>
+<td scope='row' role='gridcell'><a href='../run/SIW_YGSL.start_url?A98C1C7E2413433EoN2RH3NZ06ODkv0ONHgPxVTQW3MjVyjcqxzFy8nXICiOd4P5XXZa48-tEE-c9JEKDV56lZgAWxgapDObbJh44ztrJjMZEoLFoYwV0HxGmjyEjSxqG1aEKnAsJkRb1DaQMnnNBBTLYCuPpbXkUgrm9rhht0lA_pQa85klNzv2Flvl0ZSpT_RCL7mZ1RlC1zDF' target='_blank'>Ruminant Animal Digestive Physiology and Metabolism Travel Award 2018/19<br />
+</a></td>
+<td scope='row' role='gridcell'>4</td>
+<td scope='row' role='gridcell'>&nbsp;</td>
+<td scope='row' role='gridcell'>31/Mar/2018</td>
+<td scope='row' role='gridcell'>03/Jan/2019</td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'>
+	<div class='sv-dropdown' role='group'>
+		<button id='divid2' aria-haspopup='true' aria-expanded='false' type='button' class='sv-btn sv-btn-default sv-dropdown-toggle' data-sv-toggle='sv-dropdown'>
+			<span class='sv-caret'></span>
+		</button>
+		<ul class='sv-dropdown-menu' aria-labelledby='divid2'>
+			<li><a href='../run/SIW_YMHD.start_url?B5F0A336453543E16oXEMoGNiLNOw0mQWodrwswCZxxC9Gfg1jhPcpq381sjLDynMBwqKBcd5B3U8dFhnjfkkO2F3FmKSMEBvEEIBa7Eh50Ja1sKMqifLsRlyCmM9hdgA24fWSuS8JRI1fxNtVJPUJoO50odekMgCppb174cW9CHB39KZghgzpCZr3E' target='_blank'>Manage Award</a></li>
+	<!-- HIDDEN FOR WAVE 2 GO LIVE		<li><a href='../run/SIW_YMHD.start_url?7E7E2F2E2E0B4EF347AwJ7kydTdyUqcoDN61M2ruFpUUtWIumwbe5SvU1uN4QNmk3YvPsrgEPBrDLDHx1kyDdI4CwRHV2yHx0RqQWoVy2njUBz61JY1KZLpJhFSJR5pTPsrDp2wXG5EHODm87jN9B3PEhyw7Sm9U0AylON3xO_1j7Xcjww-jf_QwClQl8iUinakIebEFFkdg1OfD' target='_blank'>View Apps</a></li>-->
+		</ul>
+	</div>
+</td>
+</tr>
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+<tr>
+<td scope='row' role='gridcell'>04/Jan/2019</td>
+<td scope='row' role='gridcell'>000158</td>
+<td scope='row' role='gridcell'><a href='../run/SIW_YGSL.start_url?DC0763C2C281446AhLANj1mx-sdt2tPT56PC7DZSKTn5Qc-5HJ08MOTmhvcB72CIAvh00w91TeCwatT3OJDzW1zUCKFwuo7H7dleWLMNuFuFCxXUPyvl65SRd5QtE-e52FWtmeE6ozvDnHapjiBGfnHqefLX-IrbIMMg9LOA9H7wiHGnSeJvsSsyA1JR0eq9dmcpbrKBwxYAdUiw' target='_blank'>Robert Simonet Travel Award 2018/19<br />
+</a></td>
+<td scope='row' role='gridcell'>2</td>
+<td scope='row' role='gridcell'>&nbsp;</td>
+<td scope='row' role='gridcell'>01/Jun/2018</td>
+<td scope='row' role='gridcell'>04/Jan/2019</td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'>
+	<div class='sv-dropdown' role='group'>
+		<button id='divid2' aria-haspopup='true' aria-expanded='false' type='button' class='sv-btn sv-btn-default sv-dropdown-toggle' data-sv-toggle='sv-dropdown'>
+			<span class='sv-caret'></span>
+		</button>
+		<ul class='sv-dropdown-menu' aria-labelledby='divid2'>
+			<li><a href='../run/SIW_YMHD.start_url?0563C400CD8F4FA11LCDeEBKV5Gr9y6bNsm6uGGCGhfH9cGfDeBK4wx3yFNeEpD7MtJIOmqdpPxYi-_CUXNFO2vaa1Dbneu6dxaQt2niCnHhFiFK2OXh_w_GT0t3D3wfJ2zoqMdND-nC767WIwS8B_pAnj9Xz9Hf-CYhjAytlgsV2woLKCF4cOtSvFQ' target='_blank'>Manage Award</a></li>
+	<!-- HIDDEN FOR WAVE 2 GO LIVE		<li><a href='../run/SIW_YMHD.start_url?3A845513C10A4015OYxYkmeqqqqlATinXS-LTK6Pw98GBsdHRbaQxXv9CK2hvKnx9C-Z3Hpzag0nk_sOnYHNDy59-E0HA-YtWTGUzsIpLvafGtjAnkEx8sOmyNXu2SEnr-FW0dVgxXbHFW612Bw6AE1KD_pHSBw_JxexIDTy9HhPSopX25-uKMpV2j1X-md0kht93A9rcNLI3wHX' target='_blank'>View Apps</a></li>-->
+		</ul>
+	</div>
+</td>
+</tr>
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+<tr>
+<td scope='row' role='gridcell'>04/Jan/2019</td>
+<td scope='row' role='gridcell'>000393</td>
+<td scope='row' role='gridcell'><a href='../run/SIW_YGSL.start_url?413D0320988B433F_sQyEUDqj37qOCIn_i7wWjv4i18TPFG-yI5cav2qIZDRwrutFQTuk2iyP-NLc9ebg7VpsJWoR7iPENdC8N688ZB0iPLUALAE8LddQRVvRDeJNhChHp2GrOojfL9DhLtK78SIp3bUfL3KcRIeQqVgDwjroYjCCb_ijemWPOeZ-vWkvi4_bB-L6G0ruSQ57RSC' target='_blank'>Dr Bruce Jeffery Canola Travel Award 2018/19<br />
+</a></td>
+<td scope='row' role='gridcell'>0</td>
+<td scope='row' role='gridcell'>&nbsp;</td>
+<td scope='row' role='gridcell'>01/Jun/2018</td>
+<td scope='row' role='gridcell'>04/Jan/2019</td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'>
+	<div class='sv-dropdown' role='group'>
+		<button id='divid2' aria-haspopup='true' aria-expanded='false' type='button' class='sv-btn sv-btn-default sv-dropdown-toggle' data-sv-toggle='sv-dropdown'>
+			<span class='sv-caret'></span>
+		</button>
+		<ul class='sv-dropdown-menu' aria-labelledby='divid2'>
+			<li><a href='../run/SIW_YMHD.start_url?2F5A902A9062456DlZIKUNZg4GPcrOCyuHBY25SYTeDDalBAzrK0qpg498HDQUMKfjBAeBLURkCVkBB3ZBTSY-AAWjW7MAgMSjEw72RsGPzL93-z3NNuoCeUYsy0ZVMP0opvxhqMJ4YJ9ITEEiEnDZASy4BJJjcC0ZkfR-No_Hj6fHqaSJ5VuTvgVMI' target='_blank'>Manage Award</a></li>
+	<!-- HIDDEN FOR WAVE 2 GO LIVE		<li><a href='../run/SIW_YMHD.start_url?F06F39EA127643CFY01fstu5ug8gUL6IHfG5Wo15e0GrOIG1pBsBdB73sXMtqi24tv35kXkPUXzGmeXcJXUJcJ-KzhD11KPzr-d74o3WxLur7eSOcUU8JnGl3KfCz6-kzs-6wZR41YQJP9yLRfrpbVRdcEcI0H07sHePujCs1FKq1vNYq75tP2mMkJdZOyGFDBHIkoYwAx0WEJzU' target='_blank'>View Apps</a></li>-->
+		</ul>
+	</div>
+</td>
+</tr>
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+<tr>
+<td scope='row' role='gridcell'>15/Dec/2018</td>
+<td scope='row' role='gridcell'>002463</td>
+<td scope='row' role='gridcell'><a href='../run/SIW_YGSL.start_url?FC4E01C621CB407EKlGvcF_rzACuW4WxskjwuGDwjHCbgYt7_XGuiqb2N7dmQUS1qAh8HM5ljUkK5fhy3_1ih1DOnzp3SsX2LRCcMpVpJRGqklIqwqjmkAuyCCD4KTDUTyr432uKKG5LhdoOuEdZRxKKujcQ_lCP1u6U5oGcWc7d_7r8UU9VWolCcK5l8iT8Vo6iSI7p9_aDZXCL' target='_blank'>Bacchus Graduate Research Prize 2018/19<br />
+</a></td>
+<td scope='row' role='gridcell'>0</td>
+<td scope='row' role='gridcell'>15/Dec/2018</td>
+<td scope='row' role='gridcell'>15/Jan/2019</td>
+<td scope='row' role='gridcell'>&nbsp;</td>
+<td scope='row' role='gridcell'>Qjzzij Ritcaij</td>
+<td scope='row' role='gridcell'>Open</td>
+<td scope='row' role='gridcell'>
+	<div class='sv-dropdown' role='group'>
+		<button id='divid2' aria-haspopup='true' aria-expanded='false' type='button' class='sv-btn sv-btn-default sv-dropdown-toggle' data-sv-toggle='sv-dropdown'>
+			<span class='sv-caret'></span>
+		</button>
+		<ul class='sv-dropdown-menu' aria-labelledby='divid2'>
+			<li><a href='../run/SIW_YMHD.start_url?153EA15EBEE34125DDS4x2GADHwYpKWStCJ1DFN4qOl00qxdmomSI_TuoAwAQpJnzA7dRAHzaJf7HlTFzCdR2_Yf8Pv3N_PGZ-noBwdnBZ25W4FNkRONUeTtiQoi2nR0ietbmhOAmjo79VTI_GuN9Czmgyek6rcm_EQcTy2jG655Oo5Kn8cODVv_L8Y' target='_blank'>Manage Award</a></li>
+	<!-- HIDDEN FOR WAVE 2 GO LIVE		<li><a href='../run/SIW_YMHD.start_url?50D2ACD0A6664F51qgQsfPBY7kaBg8m3eUF7bydvXhCYtppGJOPgZCssj-qeiIWRoXyMpkYGBGqA_MPs_LjErs8sflf9VcHOI0pIxZQ2mBolbYL6QRTGCc22YdoijoG6BTY7EfSSy2CKxdIaelxXDLDuraZOVe2LFcP51kauY6GjnJFFNPZZjyZkDSM0ZuufwpW-w61Mf5QEx7CR' target='_blank'>View Apps</a></li>-->
+		</ul>
+	</div>
+</td>
+</tr>
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+<tr>
+<td scope='row' role='gridcell'>09/Jan/2019</td>
+<td scope='row' role='gridcell'>003138</td>
+<td scope='row' role='gridcell'><a href='../run/SIW_YGSL.start_url?67D1A5DF8BD84397vlDbjTphMess97OZSXNqf7SkQToLq9osucBNRq0BGp_KOMttiA2OMrZiwkbvurD6yyfWgdyBCC4dXnhSpy8FxtCs-IwR0y3-s5a_mZQFFiE9coNKYsH9QGlN-ecQsixUDQSTXjb9b6FX9gZIVTdCyVTC_Wif92-15KfYdEHZdr-c6a1WrCryNprlbnVCJuEJ' target='_blank'>Len Bolger Memorial Scholarship in Energy Research Excellence 2019/20<br />
+</a></td>
+<td scope='row' role='gridcell'>12</td>
+<td scope='row' role='gridcell'>09/Jan/2019</td>
+<td scope='row' role='gridcell'>22/Jan/2019</td>
+<td scope='row' role='gridcell'>&nbsp;</td>
+<td scope='row' role='gridcell'>Qjzzij Ritcaij</td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'>
+	<div class='sv-dropdown' role='group'>
+		<button id='divid2' aria-haspopup='true' aria-expanded='false' type='button' class='sv-btn sv-btn-default sv-dropdown-toggle' data-sv-toggle='sv-dropdown'>
+			<span class='sv-caret'></span>
+		</button>
+		<ul class='sv-dropdown-menu' aria-labelledby='divid2'>
+			<li><a href='../run/SIW_YMHD.start_url?38FACC80510F43199d-Lusx4y9Pmy7W91DXjoNbSDfoDIxCfXl_f9f4LdYJkkVSm2UojnskGNikcwIG7sMFoGiCbcnjTe1j3hbzTM-3ry7dPLNTNezi5ckyrz7hpmS4H0efHE_26qxatlVe9PVYCxA3LcvWErQZWXjSGM6lnXUT4IdO4sIILyoitiR8' target='_blank'>Manage Award</a></li>
+	<!-- HIDDEN FOR WAVE 2 GO LIVE		<li><a href='../run/SIW_YMHD.start_url?1AEC7AF2F23D4B2Ckk6JQIl8dJtOUbVy58pbXKLqXL1m7TRtDxDXnXXDOO7aj_vD-IF8mTFXE5wdWgn1d_YchnALLIZMoqPj6OotUJK3t_9q2k8bWqTBr5tept9kwy3TRrUFRJP-DTko5goW5UaB1MsHFJocDpv9OC2YDyzd1vzyFr6tprzdzCKLPu3dB2yxfQrKZ20UnV5EXVCH' target='_blank'>View Apps</a></li>-->
+		</ul>
+	</div>
+</td>
+</tr>
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+<tr>
+<td scope='row' role='gridcell'>15/Jan/2019</td>
+<td scope='row' role='gridcell'>003168</td>
+<td scope='row' role='gridcell'><a href='../run/SIW_YGSL.start_url?9399A39B27AB4DD4MVIMnbulLOp7i1LqSz4j9QamLpV1oVuh0BfrDugCMHzhTY8Tlrlrm-L5eaChBg-2b0lbVD4j5fWz6GXoGMfDxxWtE9jsgcY7TeynidvvSh6vK2QDH-Ep2vOmxHas8PiC4ulpzQmew162q3yPXclcM4nZNItTvp3EC1w5H_sNuAC8amU9wAVEOPvxzm3kpzuT' target='_blank'>Dr Ronald Micetich Memorial Graduate Scholarship 2018/19<br />
+</a></td>
+<td scope='row' role='gridcell'>0</td>
+<td scope='row' role='gridcell'>15/Jan/2019</td>
+<td scope='row' role='gridcell'>20/Feb/2019</td>
+<td scope='row' role='gridcell'>&nbsp;</td>
+<td scope='row' role='gridcell'>Qjzzij Ritcaij</td>
+<td scope='row' role='gridcell'>Open</td>
+<td scope='row' role='gridcell'>
+	<div class='sv-dropdown' role='group'>
+		<button id='divid2' aria-haspopup='true' aria-expanded='false' type='button' class='sv-btn sv-btn-default sv-dropdown-toggle' data-sv-toggle='sv-dropdown'>
+			<span class='sv-caret'></span>
+		</button>
+		<ul class='sv-dropdown-menu' aria-labelledby='divid2'>
+			<li><a href='../run/SIW_YMHD.start_url?548723B551134A23oMb4kNjxkLDQh0LAYeRIyka09niz2MRQcMFEIq6PsOZ0ZDZUjrX5gIVnbpZ4VX4fxxUo5DaO6SyjQqNsPLCHMtOIzldl6nEHSMwphwiXYLQWEgiitA-_RWR9k-PPl4ad1x6OrdPVRGrabOp7q5hOGm8p_XQpePmCQFfTc1IPwus' target='_blank'>Manage Award</a></li>
+	<!-- HIDDEN FOR WAVE 2 GO LIVE		<li><a href='../run/SIW_YMHD.start_url?3B26796B0BC64A27Kv-zjTfDnrfPuGJpWD5xkn0SgtnyT6r4NxzhPhhA3sD9p4TvafLAJJbIjT8qvs30akdU-5s_HitAEAPcRlxMZG6Qn3VLSpa2uk8WfTjgQ9PoJDd-4XLdV1vkKMADhGPJUAAqh7708T1Ck3howc-iqKYlssALYUjkXioCM9M3QvCuP5hYlK6xQDJPfesDv-EU' target='_blank'>View Apps</a></li>-->
+		</ul>
+	</div>
+</td>
+</tr>
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+<tr>
+<td scope='row' role='gridcell'>15/Dec/2018</td>
+<td scope='row' role='gridcell'>003198</td>
+<td scope='row' role='gridcell'><a href='../run/SIW_YGSL.start_url?FC2DAB7A4D2B44A9keOiGR21d_BeCRSKGaK2o-jvTsl1_DrQ2ztWvPNnS7fzRcA7sTa1TL9S1wFBIXQuRpGAUfdHIi_o572azpYb5zwtuavNR9grmnl-qruSqMJoyuQaJlQBGGKK0ApWDXPfrqnpzi4hJCTm4QcuLFRcC5E3QMEIuBWPTJPIopiIqCNV6HBZkxs8WteD37Dw52-E' target='_blank'>Economics Society of Northern Alberta MA Scholarship in Economics 2018/19<br />
+</a></td>
+<td scope='row' role='gridcell'>0</td>
+<td scope='row' role='gridcell'>15/Dec/2018</td>
+<td scope='row' role='gridcell'>15/Jan/2019</td>
+<td scope='row' role='gridcell'>&nbsp;</td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'>Open</td>
+<td scope='row' role='gridcell'>
+	<div class='sv-dropdown' role='group'>
+		<button id='divid2' aria-haspopup='true' aria-expanded='false' type='button' class='sv-btn sv-btn-default sv-dropdown-toggle' data-sv-toggle='sv-dropdown'>
+			<span class='sv-caret'></span>
+		</button>
+		<ul class='sv-dropdown-menu' aria-labelledby='divid2'>
+			<li><a href='../run/SIW_YMHD.start_url?C4015C4BA7804DA8qoodSWm6b77MQs3XTm6jZGQc33mgu-LJjvVROGN4Zj3kDjdVGXcElrFAk3QMJEiMCsE2doK_6OrBV5A5hGMHFvlNp55WKY2H0V2Tpb78HnEFQ4HxuUFNJWuhEgkHOnnt0x67jXl336jc32GjyQsl8rWNMFwLKxUYZxNxGNqK-TE' target='_blank'>Manage Award</a></li>
+	<!-- HIDDEN FOR WAVE 2 GO LIVE		<li><a href='../run/SIW_YMHD.start_url?40A0CA414AB04932OrPmVab2YVATFcb5Yj2fg1ptEnIbzMqXsAdxyPH4DMkcdqCFlxzdIMvqOACbJb5zmy1hPx45eUhI-uy7--Gx6NfO8Wdr5WLksWHNIFTLCtTqRmB0wy5JUaJg9-K0Ew4QTHBlAtRfC9XYam4rK1G_n9C1hQAiliNA9tY0tXhuUdbxqLXRrUjC56tzGCGWawtv' target='_blank'>View Apps</a></li>-->
+		</ul>
+	</div>
+</td>
+</tr>
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+<tr>
+<td scope='row' role='gridcell'>03/Jan/2019</td>
+<td scope='row' role='gridcell'>003259</td>
+<td scope='row' role='gridcell'><a href='../run/SIW_YGSL.start_url?F6D0B01D9AFC413E_k0C0tC5WlTN3AujN2k91qWjTIeSFw69LlkEVGeCyKzU5oINXUsRdbjL7ShHZ5kdPvbI94I9TUgl2OP7sHKhugILyiPvTW0N3TCuobZ3v1YXjZG-9MCRHxrW9kDs2IzwiaGItj4oTDp9Um1bDLpY_yMoeJX7cKevS6n9AyiV5uxDdkar5SrSaOs3DIa3ng6h' target='_blank'>Larry McKill Graduate Recruitment Award 2018/19<br />
+</a></td>
+<td scope='row' role='gridcell'>0</td>
+<td scope='row' role='gridcell'>&nbsp;</td>
+<td scope='row' role='gridcell'>01/Oct/2018</td>
+<td scope='row' role='gridcell'>03/Jan/2019</td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'>
+	<div class='sv-dropdown' role='group'>
+		<button id='divid2' aria-haspopup='true' aria-expanded='false' type='button' class='sv-btn sv-btn-default sv-dropdown-toggle' data-sv-toggle='sv-dropdown'>
+			<span class='sv-caret'></span>
+		</button>
+		<ul class='sv-dropdown-menu' aria-labelledby='divid2'>
+			<li><a href='../run/SIW_YMHD.start_url?E0CE4F2DC1AD43ECGXeTXWsLWEvH41ZE7gE7YzCDrI4vwNS4qLlc9wGRNQsLn40krfOcZONRa-6mL20OQZ716df9jXJpv7ijcSNapBjwqmjo3ozYQR4yI9rCucQSZljnsh-PcOsL6B0bKtFA1nYVdHpzZBBzRWcgPhiWjVpv7NvSK2S5q9fZBSTAufM' target='_blank'>Manage Award</a></li>
+	<!-- HIDDEN FOR WAVE 2 GO LIVE		<li><a href='../run/SIW_YMHD.start_url?EF65739B9C61488AqazFEok8x6o6rAkYkugIPY58drqFXvhhyUJDAOYfp_XBufAByY9bql8qwmAdlb0t1VLNL_SfF2Bs3VLMJiFL37viaFR8Bpd0VIkBB75UJZvl1T3CuuB0bS5khWFYqb3W5iTTa8vEJ34QFk2pPpoWz-1__b5oX4_uMzuI625XEUuomiKQelIM_Ze68vTqMJ-B' target='_blank'>View Apps</a></li>-->
+		</ul>
+	</div>
+</td>
+</tr>
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+<tr>
+<td scope='row' role='gridcell'>28/Dec/2018</td>
+<td scope='row' role='gridcell'>004487</td>
+<td scope='row' role='gridcell'><a href='../run/SIW_YGSL.start_url?65B78B8006124439nMJxTyUQXNTd0f02CXgViQyEd5wLW_JgErZFRatz3SjeUD1tG_EQHYhXetuzKoSjJw9M_Gj-HfnGfiWVFnGU_XU5Z-M-sNyjnCATWQGx70RzgyZIUS2bGAiUZ2c8WnyK2wBvTRwcUwc-whDR5O_UKXWhvxd8FTuQb5KJA5pVcRJz2GNg0z33vLR-ISogXpRC' target='_blank'>Testing Offer Process 2019/20<br />
+</a></td>
+<td scope='row' role='gridcell'>11</td>
+<td scope='row' role='gridcell'>28/Dec/2018</td>
+<td scope='row' role='gridcell'>&nbsp;</td>
+<td scope='row' role='gridcell'>20/Mar/2019</td>
+<td scope='row' role='gridcell'>Qjzzij Ritcaij</td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'>
+	<div class='sv-dropdown' role='group'>
+		<button id='divid2' aria-haspopup='true' aria-expanded='false' type='button' class='sv-btn sv-btn-default sv-dropdown-toggle' data-sv-toggle='sv-dropdown'>
+			<span class='sv-caret'></span>
+		</button>
+		<ul class='sv-dropdown-menu' aria-labelledby='divid2'>
+			<li><a href='../run/SIW_YMHD.start_url?AD47DF1F80304AA0BnMwi19wqqyZgmrqEdchyQTlOMK1UdGR8SIGMKsKtJ3j2nG1kYb_wbF8Db0mGDmG6nGRWTzr8wn5d_hUVM79CyDBkkWDeEtzg6tl0CfzpE6YWx7H4Ao8cxC9AuRyuxuUFpPCXzx4nQOK9DkpeRWjJ9A2z8pD2KRTVynfSGQ9Nd0' target='_blank'>Manage Award</a></li>
+	<!-- HIDDEN FOR WAVE 2 GO LIVE		<li><a href='../run/SIW_YMHD.start_url?F7F49B5118C5432F0Od0Y-SwV2XVTSNBoPZ7QVeI1HEHGimejiYwEAWubO7MnYXwNPHKu39qjUBZ8iBStMiTda8PpBs2iF-XumLEGAqGhy0tzNhLQXX4_sO-niXh4IeLy9xK5z0yTuHACJnp-slr-5wr0wPC9OQBes_c4szIbHNeelmTygdFEBD64YO5GvITRdzZI_7nj7NL2ggq' target='_blank'>View Apps</a></li>-->
+		</ul>
+	</div>
+</td>
+</tr>
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+<tr>
+<td scope='row' role='gridcell'>29/Dec/2018</td>
+<td scope='row' role='gridcell'>004488</td>
+<td scope='row' role='gridcell'><a href='../run/SIW_YGSL.start_url?12CEA22F84AE4423YgNpMJViIT6L2i7be9nFmPIJWt_8In8nrmydlQmNKTiyZUQgiPCcX2P_qt4rz2tWqceIq9wgpEh6NGOjvzHAsm-DbxOhTyFQpcxfYOW1Yrvbp67rgtmY_0Znpm6dSgq0XfPr-srKCqjYctcrBwzXfIzxn9xTKny_2MUjt2jwimKN2Xf7SGWFV43ZgJnEsPDF' target='_blank'>Sample to show Cancel Application<br />
+</a></td>
+<td scope='row' role='gridcell'>9</td>
+<td scope='row' role='gridcell'>29/Dec/2018</td>
+<td scope='row' role='gridcell'>&nbsp;</td>
+<td scope='row' role='gridcell'>20/Mar/2019</td>
+<td scope='row' role='gridcell'>Qjzzij Ritcaij</td>
+<td scope='row' role='gridcell'></td>
+<td scope='row' role='gridcell'>
+	<div class='sv-dropdown' role='group'>
+		<button id='divid2' aria-haspopup='true' aria-expanded='false' type='button' class='sv-btn sv-btn-default sv-dropdown-toggle' data-sv-toggle='sv-dropdown'>
+			<span class='sv-caret'></span>
+		</button>
+		<ul class='sv-dropdown-menu' aria-labelledby='divid2'>
+			<li><a href='../run/SIW_YMHD.start_url?AD50AD22F8A94366mNcYgg5BFDqOk1-VU4og3jPldpoUNZehEyYZ6Rpofvy88uY4SYoYowRUdVLchqdrEbYR5Dn005wG5bJ5Ob6Ba1TDfvPoVDS2JhiHito-6zqn57QnUl8i8vzkY4r-DrIqeiGN7og1sNmpYh4CtAYfOPgo2DPq0CPaGYrniXzlSq8' target='_blank'>Manage Award</a></li>
+	<!-- HIDDEN FOR WAVE 2 GO LIVE		<li><a href='../run/SIW_YMHD.start_url?BC93DC72BC7B4F2DpPWp72D1vGDWNJ9VjoZllcCIx3KU1EycedoQP1PEWmF2ZmJMJ4kMfErWflIA5o3nrYU4gU3-RhSqn-WzvCNH7YS7J0lB8JQ9pZNxHYK4p2QhNHPwf_Y6cQIqZ-FNx-BBhoXlYOPQZTAsreeUCLo-d0wj6iByHG6oO4L4F4TSH4lIF48HfqktlEJiGKbU-6zZ' target='_blank'>View Apps</a></li>-->
+		</ul>
+	</div>
+</td>
+</tr>
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+	
+
+
+
+	
+
+
+
+	
+
+
+
+	
+	
+
+
+		</tbody>
+	</table>
+</div> 
+</div>
+<!-- end of copsection-->
+</div>
+<!-- end of bordersection-->
+</div>
+<!-- end of container GSAWD_AWD_01_002 -->
+
+</div>
+<!-- end of 1st column --><!-- 2nd Column -->
+<div id="sitscolumn2notabs" class="sitscolumn2notabs" style="width:30%;">
+
+<!-- Start of Container GSAWD_AWD_01_003-->
+<div class="sitscontainernotabs">
+   <div class="sitsconbordernotabs" >
+      <!-- Hidden section html is here -->
+       <div id="GSAWD_AWD_01_003_CON_UHLP.CON" class="sitsconhelp"> 
+        <script type="text/javascript">
+          Hide('GSAWD_AWD_01_003_CON_UHLP.CON');
+        </script>
+        
+      </div>
+<!-- start of copsection for GSAWD_AWD_01_003 -->
+<div class="sitscopsectionnotabs">
+  
+<!-- This HTS only used for display Advanced Intray in Content mode -->
+<!-- Start Of Extra Javascripts -->
+<script type="text/javascript" src="../javascript/siw_intray_con_rsp.js"></script>
+<!-- End Of Extra Javascripts -->
+
+  
+    
+      
+    
+  
+  
+    
+      <div id="div8026F101-2B87-4E07-9BF8-71419A5CCA95"></div><script>sits_attach_event(window,"load",function(){sv_load_intray({"DIVID":"div8026F101-2B87-4E07-9BF8-71419A5CCA95","REFRESH":120000,"ISSC":"B981E544-717F-4F47-86ED-E5E2AA092977","PAGE":"","IMG2":"<img src=\"..\/images\/cross.gif\" style=\"border:0px;width:13px;height:18px\" alt=\"Red cross to show error has occurred.\">","IMG1":"<img src=\"..\/images\/working.gif\" style=\"border:0px;width:13px;height:13px\" alt=\"Spinning image to show page is loading.\">","ORDR":"","MHVC":"GSAWD_001","NKEY":"FDE975B18F3F4B61wXGypHGFtjkqC3YCAjfqmY6iIaxfQWtAeXJ2iw-qbR5ks-HZII-YzXgfcnphP_v4xdPNmbI7g3q5uRUcZmidyeLM2zvwIK_fh9nx753r_JOs4LCpOG6E7rEHtqvWhqZEJLOIVuRuLD5yJPTVg7-ZxgqqrDaPWGu8QvibRvsPcEcH-6TMwMjl5sygEfflA_P4"})})</script>   
+    
+  <input type="hidden" name="%.DUMMY.MENSYS.1" value="FBYHC8QoCloevnM9St2pcr8mtuTxSudOQEXKFeo4na8=;new;;" />   
+<!-- End of Advanced Intray -->
+
+</div>
+<!-- end of copsection-->
+</div>
+<!-- end of bordersection-->
+</div>
+<!-- end of container GSAWD_AWD_01_003 -->
+
+
+<!-- Start of Container GSAWD_AWD_01_004-->
+<div class="sitscontainernotabs">
+<!-- Display Container title GSAWD_AWD_01_004 -->
+  <div class="DBLUECONTITLE" >     <p class="sitscontitleiconnotabs">
+       
+      
+    </p>
+    <p class="sitsconrightimagenotabs">&nbsp;</p>
+    <span class="sitscontitlenotabs">Functions
+    <span class="sitsnewcontextnotabs">&nbsp;</span></span>  </div>
+<!-- end of container title for GSAWD_AWD_01_004 -->
+   <div class="sitsconbordernotabs" >
+    <p class="sitscontrolsnotabs" style="width:100%;">
+        
+        
+        <a href='../run/SIW_PORTAL.MIN?4266AB21A04F49C0F_nRI_-wOgc2Xjcy7oi_ne7eB9u4f68Bgehz2J0cO4brKp4sYtc2wO6zxVISc1dgnutW9SPPnNZSIgSmXmM6_-OzlKo87s81Iklp4Xn_pIu9Oc6r_2fi98Wdt2cXPga4zeRIcVqmpdG4dI7aiwQ06A'><img src="../images/siw_portal_min.png" style="border:0px;width:24px;height:24px" title="Minimise Functions." alt="Minimise Functions."></a>
+        <a href='../run/SIW_PORTAL.CLOSE?4266AB21A04F49C0F_nRI_-wOgc2Xjcy7oi_ne7eB9u4f68Bgehz2J0cO4brKp4sYtc2wO6zxVISc1dgnutW9SPPnNZSIgSmXmM6_-OzlKo87s81Iklp4Xn_pIu9Oc6r_2fi98Wdt2cXPga4zeRIcVqmpdG4dI7aiwQ06A'><img src="../images/siw_portal_close.png" style="border:0px;width:24px;height:24px" title="Close Functions." alt="Close Functions."></a>
+      </p>
+      <!-- Hidden section html is here -->
+       <div id="GSAWD_AWD_01_004_CON_UHLP.CON" class="sitsconhelp"> 
+        <script type="text/javascript">
+          Hide('GSAWD_AWD_01_004_CON_UHLP.CON');
+        </script>
+        
+      </div>
+<!-- start of copsection for GSAWD_AWD_01_004 -->
+<div class="sitscopsectionnotabs">
+<p class="sitscop"><a href="SIW_YMHD.start_url?22AA5F26F64B4B0BkacEy33JEXGGbhZXayZM87aRY8B6Nxaeph-2jYIe_Bf1-k3nerwqiCxImxER8wItJHATrb7YmeQFFlgZVd2uEzAvQLPep24fCDQjWlXVygj2ZmgqNKFh2MgwzPN7wa1brQZ7g5w9pWU23ogLBtSlPVzmhLi7L1XE9x9qFsih0pthE7--YCELJkkS1jTj86mF9WUsDMCMw7GWd6OLevVNKGptBoOrF1qvgjlge1XEmwc" target="_self"  >Search for an Award</a><span class="sitsnewcoptext"></span></p>
+<p class="sitscop"><a href="SIW_YMHD.start_url?58DF68FB70814662lPOzRjr7fFaun6jUcShpLGgNBh84mrK9MFaRoJ_bESHUjpy7QKrZD-9dJf-d8x26hKum8QSAwM62oi0OC8M-kvc2Utx6k6onF0NYUcmPwZ5Iur49VdbLF4h-nTC8JSgPWTyG-GqmV2ytssPlvRtJlmSfMs8-ZfIviGNKn1y-2_vxOWZbVJruPxZazNWbgtFwhQTVu-LswoNWWX6Efgqyv5V20-WrF13nLkxKpOnJKo8" target="_blank"  >Add New Award</a><span class="sitsnewcoptext"></span></p>
+<p class="sitscop"><a href="SIW_DMX.start_url?8543968D5E194E67zkboOu5ekUg0Uwk6_FiAvpOPu9FQt73ijD4IC6999xKtP3QkAjd3AGH_-3NTRZEwT0DFAzFQnUiSvc740gLQ5TDCncb2wRop49_5acnVZkGErrTz_OIYuP4dGnDGO6z2VUtUFH5IfmXqNXqATVeUMaTAWpr9cZkrQzYNcHBmtzZM-3IriWqSzLaeW03KtWxxQGyrdl9u_fFSkSuGxT7-3hfu9OEiY7-mDbAfah8w4kq1D6oZOB_PDp2SPvjwm04hAWIxZIY5wTplHCWX7HfoYUqh0svE9WMk0_5jqUuDfro" target="_blank"  >Manage Financial Accounts</a><span class="sitsnewcoptext"></span></p>
+<p class="sitscop"><a href="SIW_YMHD.start_url?CB1C64A3806A4323pqgGWW1TJjcX6NBvgTYAWbBL0EQ87bXAY-PEKberYrlfwDvx3MyEWTjxnO_3ykf7BC_eFGIcsBaiM_WpeRAy3ANi8z2hNwz1JGjZ1MsQh5W6n9sbH2q5pE1m8P4MR1PxO-Meri_-DxQ1R2pCa5MCicppAkJaJKMIU6kf7JTomg0_vc1WEMXRbnVZhwlquVOK-oqDuTv66-HkvDWCq16BFmWuSoKDGE1olrmmZM1ZY8I" target="_self"  >Search for a Competition</a><span class="sitsnewcoptext"></span></p>
+
+</div>
+<!-- end of copsection-->
+</div>
+<!-- end of bordersection-->
+</div>
+<!-- end of container GSAWD_AWD_01_004 -->
+
+
+<!-- Start of Container GSAWD_AWD_01_005-->
+<div class="sitscontainernotabs">
+<!-- Display Container title GSAWD_AWD_01_005 -->
+  <div class="DBLUECONTITLE" >     <p class="sitscontitleiconnotabs">
+       
+      
+    </p>
+    <p class="sitsconrightimagenotabs">&nbsp;</p>
+    <span class="sitscontitlenotabs">Reports
+    <span class="sitsnewcontextnotabs">&nbsp;</span></span>  </div>
+<!-- end of container title for GSAWD_AWD_01_005 -->
+   <div class="sitsconbordernotabs" >
+    <p class="sitscontrolsnotabs" style="width:100%;">
+        
+        
+        <a href='../run/SIW_PORTAL.MIN?73057C85812A4E65P656Ojs5K7fGa10ePAqxyka2t2717ko0t7gMJhb4w8y_6kqCfh50GRz2_unbjlhiWVlgbT0jUUabT_6ClX35YSZhMwhR4xibZA19vr1vbMLfdE__nn4K-3ksYCS2FpZd7zx0M9iviuruwUOgq5hd-ItI-gb7KPAnMxo4q4r-SX93mMMidKVxwEy67dbGKU-Y'><img src="../images/siw_portal_min.png" style="border:0px;width:24px;height:24px" title="Minimise Reports." alt="Minimise Reports."></a>
+        <a href='../run/SIW_PORTAL.CLOSE?73057C85812A4E65P656Ojs5K7fGa10ePAqxyka2t2717ko0t7gMJhb4w8y_6kqCfh50GRz2_unbjlhiWVlgbT0jUUabT_6ClX35YSZhMwhR4xibZA19vr1vbMLfdE__nn4K-3ksYCS2FpZd7zx0M9iviuruwUOgq5hd-ItI-gb7KPAnMxo4q4r-SX93mMMidKVxwEy67dbGKU-Y'><img src="../images/siw_portal_close.png" style="border:0px;width:24px;height:24px" title="Close Reports." alt="Close Reports."></a>
+      </p>
+      <!-- Hidden section html is here -->
+       <div id="GSAWD_AWD_01_005_CON_UHLP.CON" class="sitsconhelp"> 
+        <script type="text/javascript">
+          Hide('GSAWD_AWD_01_005_CON_UHLP.CON');
+        </script>
+        
+      </div>
+<!-- start of copsection for GSAWD_AWD_01_005 -->
+<div class="sitscopsectionnotabs">
+<p class="sitscop"><a href="SIW_YMHD.start_url?34EBBA6528CF471155aJdPeJh821qwaJ0fePfS7M1xQjL33MS53SM3reBS6xRaiy80Zs3zCgQ4BkBPe3wIpJUYgmSWy1pP5LcLnrHBFvsmshl4t6Z3RLUzNS0ZMkSRs_exYuqM0jzBIRB2AN8Xsq00uIO5Q2d6S6JZVTNv26mjZHW0VZiDjIHezSyKASTKEPRfMjkIa49xdUiPO-WuiJX6P4YOnXGg2klrYc1MQTlrHL-8OuItVDztzakMQ" target="_blank"  >Award Tenure Report</a><span class="sitsnewcoptext"></span></p>
+<p class="sitscop"><a href="SIW_POD.start_url?7C53473A476F4032z3Hv3oUcK0BBID-d8Ew-nI5ufE15Kle3d5RIy40esMX-zcznsR-NYwZ4mIXjbjQGva5lxz73IBzCO9ZgDV--jwnLan8mKIjbjhqJaxrlji_IA9Tdxr-r6C-5WCFmRrvn8DLfKCEJW4KNJol6MtLyXaD__sIUrf6lUesyMO_rqaJ0_MOVDGxzY1z-ydkRXoCq" target="_blank"  >Interruptions Report</a><span class="sitsnewcoptext"></span></p>
+
+</div>
+<!-- end of copsection-->
+</div>
+<!-- end of bordersection-->
+</div>
+<!-- end of container GSAWD_AWD_01_005 -->
+
+
+<!-- Start of Container GSAWD_AWD_01_006-->
+<div class="sitscontainernotabs">
+<!-- Display Container title GSAWD_AWD_01_006 -->
+  <div class="DBLUECONTITLE" >     <p class="sitscontitleiconnotabs">
+       
+      
+    </p>
+    <p class="sitsconrightimagenotabs">&nbsp;</p>
+    <span class="sitscontitlenotabs">Help
+    <span class="sitsnewcontextnotabs">&nbsp;</span></span>  </div>
+<!-- end of container title for GSAWD_AWD_01_006 -->
+   <div class="sitsconbordernotabs" style="border-left:0px solid ;border-right:0px solid ;border-bottom:0px solid ;">
+    <p class="sitscontrolsnotabs" style="width:100%;">
+        
+        
+        
+        <a href='../run/SIW_PORTAL.CLOSE?61FE6ABBD78F4B95fmotgh-hrdI8x8wupspvMR07h32hICTSPjVdJFcd2rrIhinB5ugzA7An5U3Su0YI2Wf6Cg2UXMQR6PnH7kRgnakni4TurYOOcv74mingXa8W20TObRFvJSuOYppM7U00Aa09DfDVnt3LCjPox61cuFQuGrroyF2c2MOKA-8j1PzsS8u2WggWZ9ilLPbOcI3w'><img src="../images/siw_portal_close.png" style="border:0px;width:24px;height:24px" title="Close Help." alt="Close Help."></a>
+      </p>
+      <!-- Hidden section html is here -->
+       <div id="GSAWD_AWD_01_006_CON_UHLP.CON" class="sitsconhelp"> 
+        <script type="text/javascript">
+          Hide('GSAWD_AWD_01_006_CON_UHLP.CON');
+        </script>
+        
+      </div>
+<!-- start of copsection for GSAWD_AWD_01_006 -->
+<div class="sitscopsectionnotabs">
+Training Material
+</div>
+<!-- end of copsection-->
+</div>
+<!-- end of bordersection-->
+</div>
+<!-- end of container GSAWD_AWD_01_006 -->
+
+</div>
+<!-- end of last column -->
+</div>
+<!-- end of container section -->
+ 
+<input type="hidden" name="%.PORTAL.MENSYS.1" value="fogmngVc04AdhJiDRNlXCtrGOW9XexYN6oUsP0i/U74=;new;;" /> 
+<!-- all portal containers html ends here -->
+
+
+<!-- body-end.hts page header include starts here -->
+  
+    <!-- start of HTML from body-end.hts  -->
+
+        </div>
+        <!-- end of sitspagecontent -->
+</div>
+<footer>
+<div class="bottom-footer-row">
+    <div class="footer-container container">
+        <div class="footer-inner row-fluid">
+            <div class="span12 footer-copyright">
+                <ul class="footer-quick-links">
+                    
+                            
+                            <li><a href="https://www.ualberta.ca/about/contact" target="">Contact Us</a></li>
+                        
+                            <li><a href="https://www.surveymonkey.com/s/ualberta-web-feedback" target="">Feedback</a></li>
+                        
+                            <li><a href="http://www.registrar.ualberta.ca/calendar/" target="">University Calendar</a></li>
+                        
+                            <li><a href="http://www.careers.ualberta.ca/" target="">Careers</a></li>
+                        
+                            <li><a href="http://www.rms.ualberta.ca/en/EmergNumbers.aspx" target="">Emergency</a></li>
+                        
+                            <li><a href="https://policiesonline.ualberta.ca/" target="_blank">Policies</a></li>
+                        
+                            <li><a href="http://www.weatheroffice.gc.ca/city/pages/ab-50_metric_e.html" target="">Weather</a></li>
+                        
+                            <li><a href="http://www.edmonton.ca/" target="">Edmonton</a></li>
+                        
+                            <li><a href="https://www.ualberta.ca/privacy" target="">Privacy</a></li>
+                        
+                            <li><a href="https://www.ualberta.ca/keepintouch" target="">Keep in Touch</a></li>
+                        
+                        
+                    <li><a href="https://training.sitecore.ualberta.ca/departments/another-department#">Back to Top</a></li>
+                </ul>
+                <p>
+                    © 2015
+                    <span id="phfooter_0_ualberta_address">University of Alberta 116 St. and 85 Ave., <br class="visible-phone">Edmonton, AB, Canada T6G 2R3</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+                
+            </footer>
+
+
+<!-- overall background div (opened in header files) -->
+
+<script>
+if(typeof(sits_ajax_version)=="string") {
+	sits_attach_event(window, "load", function(){	
+		sits_include_file("../css/uoa_files/index_files/all.js");
+	})
+}
+</script>
+<!--[if IE]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<!-- end of HTML from body-end.hts  -->
+  </body>
+</html>
+  

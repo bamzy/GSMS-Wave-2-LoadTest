@@ -1,0 +1,450 @@
+<!-- start of HTML from body-start-tabs.hts  -->
+<!DOCTYPE html>
+<html lang="en-gb">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+
+	<link rel="shortcut icon" href="../css/uoa_files/ico/favicon.ico">
+
+    <title>e:Vision Portal</title>
+
+    <link rel="stylesheet" href="../css/sits.css">
+    <link rel="stylesheet" href="../css/sv.css">
+    <link rel="stylesheet" href="../plugins/css/ui/sits-ui.css">
+    <!-- Additional style for Admissions buttons - temporary until full responsive review project -->
+    <style>
+        .sv-btn-adm {
+            text-transform: uppercase;
+            font-weight: 600 !important;
+        }
+    </style>	
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="../plugins/javascript/html5shiv.min.js"></script>
+      <script src="../plugins/javascript/respond.min.js"></script>
+    <![endif]-->
+
+
+    <script src="../plugins/javascript/jquery.js?v=910.1"></script>
+    <script src="../plugins/javascript/jquery-ui.js?v=910.1"></script>
+
+    <script src="../plugins/javascript/sv.min.js?v=910.1"></script>
+
+    <script src="../javascript/settings.js?v=881.2"></script>
+	<script src="../javascript/sits_ajax.js?v=881.2"></script>
+  
+    <script src="../plugins/javascript/tablesaw/tablesaw.min.js?v=930.1"></script>
+    <script src="../plugins/javascript/datatables/media/js/jquery.dataTables.js"></script>
+ 	<script src="../plugins/javascript/datatables/media/js/dataTables.tribal.js"></script>  
+ 
+
+	  <script>
+		  function uSubmit(){} //include dummy function to prevent errors when submitting
+	  </script>
+
+
+<!--[if lt IE 7]><script>
+var root = document.documentElement;
+root.className += " lt-ie10";
+root.className += " lt-ie9";
+root.className += " lt-ie8";
+root.className += " lt-ie7";
+</script><![endif]-->
+<!--[if IE 7]><script>
+var root = document.documentElement;
+root.className += " lt-ie10";
+root.className += " lt-ie9";
+root.className += " lt-ie8";
+root.className += " ie7";
+</script><![endif]-->
+<!--[if IE 8]><script>
+var root = document.documentElement;
+root.className += " lt-ie10";
+root.className += " lt-ie9";
+root.className += " ie8";
+</script><![endif]-->
+<!--[if IE 9]><script>
+var root = document.documentElement;
+root.className += " lt-ie10";
+root.className += " ie9";
+</script><![endif]-->
+<!--[if IE 10]><script>
+var root = document.documentElement;
+root.className += " ie10";
+</script><![endif]-->
+
+
+	<!-- The Head Scripts: MODERNIZR ONLY!-->
+	<script src="../css/uoa_files/index_files/modernizr.min.js"></script>
+	<script>(!window.Modernizr)||document.write('<script src="../css/uoa_files/index_files/modernizr.js"><\/script>');</script>
+
+
+<!-- System Wide Error Messaging -->
+<link media="all" href="../css/siw_ymes.css" rel="stylesheet" type="text/css" />
+
+<!-- Alberta Foundation StyleSheet -->
+<link rel="stylesheet" href="../css/uoa_files/css/framework.css" media="screen">
+<link rel="stylesheet" href="../css/uoa_files/css/framework-ie.css" media="screen">
+
+<!-- Aberta System Override StyleSheet -->
+<link rel="stylesheet" href="../css/uoa-sits.css" media="screen">
+
+<!-- The Print Sheets -->
+<link rel="stylesheet" href="../css/uoa_files/css/print.css" media="print">
+
+<!-- any required page header html should go here, in place of this default SITS header HTML.
+     It is good practice to use 'class="sitsscreenonly" on any header images
+     which would not be required in a printed version of the page.
+ -->
+<!-- overall page DIV -->
+
+<header>           
+	<div class="blade-container" style="height: 4em;">
+    <div class="blade-inner">
+        <a class="brand" href="http://uofa.ualberta.ca/">
+            <img src="../css/uoa_files/img/logo2.svg" alt="University of Alberta">
+		</a>
+        <nav class="blade-navigation">
+            <ul class="quick-links-container">
+                <li id="ql" class="dropdown">
+                    <a href="https://training.sitecore.ualberta.ca/departments/another-department#" id="ql-toggle" class="btn btn-grey btn-small hidden-desktop" data-toggle="dropdown">
+                        <span class="quick-links-text">Quick Links <b class="caret"></b>                        </span>
+                        <span class="icon-bar quick-links-button"></span>
+                        <span class="icon-bar quick-links-button"></span>
+                        <span class="icon-bar quick-links-button"></span>
+                    </a>
+                    <ul class="quick-links" role="menu" aria-labelledby="ql-toggle">
+                    	<li role="menuitem"><a href="http://webapps.srv.ualberta.ca/search/" target="">Find a Person</a></li>
+                       <li role="menuitem"><a href="http://onecard.ualberta.ca/" target="">ONEcard</a></li>
+                       <li role="menuitem"><a href="https://www.beartracks.ualberta.ca/" target="">Bear Tracks</a></li>
+                       <li role="menuitem"><a href="http://www.campusmap.ualberta.ca/" target="">Maps</a></li>
+                       <li role="menuitem"><a href="http://apps.ualberta.ca/" target="">Email &amp; Apps</a></li>
+                       <li role="menuitem"><a href="https://eclass.srv.ualberta.ca/portal/" target="">eClass</a></li>
+                       <li role="menuitem"><a href="http://www.library.ualberta.ca/" target="">Libraries</a></li>
+                    </ul>
+                   </li>            
+			</ul>        
+		</nav>        
+		<div class="blade-search">
+            <i class="icon-search"></i>
+            <input type="search" class="search-query" placeholder="search">
+            <button type="button" class="btn btn-grey btn-small global-search-btn">Search</button>
+        </div>
+    </div>
+	</div>
+	<div class="banner-container">
+		<div class="banner-inner">
+			<a href="http://uofa.ualberta.ca/" class="site-title">Faculty of Graduate Studies and Research</a>
+			<p style="width: 100%; color: red; font-size: 24px; font-weight: bold; background-color: white;">User / Acceptance Testing environment - not Production</p>
+			<div class="banner-logo">
+				<span class="site-logo"></span>				
+			</div>
+		</div>
+		<div class="oval oval1"></div>
+		<div class="oval oval2"></div>
+		<div class="oval oval3"></div>
+		<div class="oval oval4"></div>
+	</div>
+	<div class="navigation-container">
+		<nav id="main-nav" class="navigation-inner">
+			<ul>
+				<li>
+					<a class="navigation-toggle collapsed"><span>Show Navigation</span><i class="icon-toggle-nav"></i>
+					</a>
+					<ul id="nav-list" class="main-navigation hidden-phone collapse" style="height: 0px;">
+						<!-- The Tab list field contains each page tab as a li item, child page tabs will create a new ul within the outer ul -->
+						<li class="nav-current" >
+<a href="siw_portal.url?1A52D5AD78334D5ARzfpboznHllYP8GOmWRzjt9sJGdSjjpIA4HyWVh1TzadCFwl6t_ILEZgsYJLq89EwMKyB_CIZkYh73bjCMt1R9PEuBINDuiQkVOiK4XNiDc" id="GSWFL01" title="Manage Applications"><span>Admissions</span></a>
+
+</li>
+<li class="normaltab" >
+<a href="siw_portal.url?CEA4BAF22E5641A90IEDyMmDWvhPG77zVmen_QRzbta1RUpHUZgUITNVr3Y3_J9Fl48XWWAhH4dZwfwiJX_JrPlyZexWq1Kt9-nawRNu80VC_P6OUB423Q1gfQM" id="GSAWD_AWD_01" ><span>Awards Portal</span></a>
+
+</li>
+<li class="normaltab" >
+<a href="siw_portal.url?6A3756968E8B4C52n2oL86vaW6sH9p7z-dLxTVpOsedWopqRG5xgiGPVop9WDRKdW1PAo4Xg-X2L_Y4s7uTjh8TmGquArYgQ5vkynMa7_DXec5JbcIh3rVzWijo" id="GSAWD_NOM_01" ><span>Awards</span></a>
+
+</li>
+<li class="normaltab" >
+<a href="siw_portal.url?A552EF8A47204B6FzykLm_T2-933sEQieNn679fOR3v2b5PmAp7kMq9QffCEbsrrwMMS-d9OtU4RG5OyCB6neW-zxdOWSP42fjssqyubRs0HpNA6Gj8fId1TjRQ" id="GSMSG01" ><span>Admissions Messages</span></a>
+
+</li>
+
+						<li class="normaltab">
+							
+						</li>
+						<!--
+						<li class="normaltab">
+							<a href="../run/SIW_PORTAL_PCO.start_url?B79781F33A654828I98bFyRPtu90KtEBM-aEzkxvvv3bWHY-0-zlg4lx9IaUlJNMCz-myt55v4ChC46YTziH5IYedZ_AXC2ZX68x7eG-_1DzfSENaaBCrwE09eo" target="_self">Content</a> 
+						</li>
+						-->
+						<li class="normaltab">
+							<a href="../run/SIW_LGN_LOGOUT.start_url?A29E5C817FB2457Anc8nz7hGEOQOyDlYsjvWCVTeC4foG9GjpuUFfsy4Q4ivYCJNrHMs_LZc21tZDX58TqnkqA0JaX-Jo7J6wAe9wV_FhSjLE1TZL_kdcE-DWxw" target="_self">Logout</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+	</div>
+<div class="nav-mobile">
+<div class="nav-wrapper">
+    
+            <ul class="level-0">
+                <!-- The Tab list field contains each page tab as a li item, child page tabs will create a new ul within the outer ul -->
+						<li class="nav-current" >
+<a href="siw_portal.url?1A52D5AD78334D5ARzfpboznHllYP8GOmWRzjt9sJGdSjjpIA4HyWVh1TzadCFwl6t_ILEZgsYJLq89EwMKyB_CIZkYh73bjCMt1R9PEuBINDuiQkVOiK4XNiDc" id="GSWFL01" title="Manage Applications"><span>Admissions</span></a>
+
+</li>
+<li class="normaltab" >
+<a href="siw_portal.url?CEA4BAF22E5641A90IEDyMmDWvhPG77zVmen_QRzbta1RUpHUZgUITNVr3Y3_J9Fl48XWWAhH4dZwfwiJX_JrPlyZexWq1Kt9-nawRNu80VC_P6OUB423Q1gfQM" id="GSAWD_AWD_01" ><span>Awards Portal</span></a>
+
+</li>
+<li class="normaltab" >
+<a href="siw_portal.url?6A3756968E8B4C52n2oL86vaW6sH9p7z-dLxTVpOsedWopqRG5xgiGPVop9WDRKdW1PAo4Xg-X2L_Y4s7uTjh8TmGquArYgQ5vkynMa7_DXec5JbcIh3rVzWijo" id="GSAWD_NOM_01" ><span>Awards</span></a>
+
+</li>
+<li class="normaltab" >
+<a href="siw_portal.url?A552EF8A47204B6FzykLm_T2-933sEQieNn679fOR3v2b5PmAp7kMq9QffCEbsrrwMMS-d9OtU4RG5OyCB6neW-zxdOWSP42fjssqyubRs0HpNA6Gj8fId1TjRQ" id="GSMSG01" ><span>Admissions Messages</span></a>
+
+</li>
+
+						<li class="normaltab">
+							
+						</li>
+						<!--
+						<li class="normaltab">
+							<a href="../run/SIW_PORTAL_PCO.start_url?B79781F33A654828I98bFyRPtu90KtEBM-aEzkxvvv3bWHY-0-zlg4lx9IaUlJNMCz-myt55v4ChC46YTziH5IYedZ_AXC2ZX68x7eG-_1DzfSENaaBCrwE09eo" target="_self">Content</a> 
+						</li>
+						-->
+						<li class="normaltab">
+							<a href="../run/SIW_LGN_LOGOUT.start_url?A29E5C817FB2457Anc8nz7hGEOQOyDlYsjvWCVTeC4foG9GjpuUFfsy4Q4ivYCJNrHMs_LZc21tZDX58TqnkqA0JaX-Jo7J6wAe9wV_FhSjLE1TZL_kdcE-DWxw" target="_self">Logout</a>
+						</li>
+           
+            </ul>
+        
+</div>
+
+</div>
+</header>
+
+      <!-- DIV sitspagecontent (see sits.css) encloses main page content.
+          It is opened in body-start, body-start-tabs, body-start-ipp and
+          closed in body-end, body-end-ipp
+       -->
+      <div id="sitspagecontent" class="container row-fluid">
+
+<!-- end of HTML from body-start.hts  -->
+<script type="text/javascript">sits_widget_bp = {"dt":{"emptyTable":"No information available","info":"Showing _START_ to _END_ of _TOTAL_ entries","infoEmpty":"No entries to show","infoFiltered":" (filtered from _MAX_ total entries)","lengthMenu":"Show _MENU_ entries","loadingRecords":"Loading...","processing":"Processing...","search":"Filter:","zeroRecords":"No matching entries found","paginate":{"first":"First","last":"Last","next":"Next","previous":"Previous"},"aria":{"sortAscending":": use to sort column ascending","sortDescending":": use to sort column descending"},"tribal":{"detailsLabelOpen":"Activate to show additional details for this row","detailsLabelClose":"Activate to hide additional details for this row","detailsLabelDataOpen":"Activate to show additional details for _DATA_","detailsLabelDataClose":"Activate to hide additional details for _DATA_"}},"ts":{"modes":["Stack","Swipe","Toggle"],"columns":"Col<span class=\"a11y-sm\">umn<\/span>s","columnBtnText":"Columns","columnsDialogError":"No eligible columns.","sort":"Sort","prevBtnText":"Show previous column on the following table","nextBtnText":"Show next column on the following table","prevBtnDisabledText":"Show previous column on the following table (not currently available)","nextBtnDisabledText":"Show next column on the following table (not currently available)","sortAscText":": use to sort column ascending","sortDescText":": use to sort column descending"},"pg":{"infoText":"Showing page {0} of {1}","infoWithRecsText":"Showing page {0} of {1} with {2} records per page","firstBtnText":"First","prevBtnText":"Previous","nextBtnText":"Next","lastBtnText":"Last","firstBtnAriaText":"Show first page","prevBtnAriaText":"Show previous page","nextBtnAriaText":"Show next page","lastBtnAriaText":"Show last page","pageBtnAriaText":"Show page {0}"},"tp":{"currentText":"Now","closeText":"Done","timeOnlyTitle":"Choose Time","timeText":"Time","hourText":"Hour","minuteText":"Minute","secondText":"Second","millisecText":"Millisecond","microsecText":"Microsecond","timezoneText":"Time Zone"},"ui":{"dialogOk":"Ok","dialogCancel":"Cancel","tabsClose":"Close","dialogClose":"Close","moreDetails":"More Details","datePickerDate":"Select a date","datePickerTime":"Select a time","datePickerDateTime":"Select a date\/time","loading":"Loading...","selectAllTitle":"Select All","selectAll":"Select All","selectNone":"Select None","invertAll":"Invert All","errorText":"Error","datePickerMonth":"Select a month","datePickerYear":"Select a year","tabsScrollLeft":"Scroll left","tabsScrollRight":"Scroll right"},"ld":{"loadTitle":"Loading","loadContent":"Loading, please wait...","processTitle":"Processing","processContent":"Processing, please wait...","saveTitle":"Saving","saveContent":"Saving, please wait..."},"to":{"sessionTitle":"Session Expiry","sessionContent":"Your session is due to expire in approximately {0} minute(s). If you would like to continue using this session, please click \"Continue\".","pageTitle":"Page Expiry","pageContent":"This page is due to expire in approximately {0} minute(s). If you would like to continue using this page, please click \"Continue\".","buttonContinue":"Continue"}};</script>
+<script>sits_user_timeout = "A97CB6CC40F945C6ZZMFWGuAj3jTDI51gV7A0hjs2rwQSBpdqQuhgDKXdE5L8sCWxkoMvqiTbtYy0cI0AaYQ5AH1R4rehMcy6P2kxD7uplaQx4HP";</script>
+<!-- body-start.hts page header include ends here -->
+
+<!-- adding head.dum1 -->
+
+    
+<input type="hidden" name="%.DUM1.MENSYS" value="RBFceU7pzE9Qh+DBIOWK5Yl5xy4UhTQJpdXt1s0DQLQ=;new;;" />
+<!-- end of head.dum1 -->
+
+<!-- Start Of Extra Javascripts -->
+<script>
+  var sits_in_portal = true; //used by sits_ajax.js to determine whether the current screen is the portal
+  
+  function sits_popup(mypage, myname, w, h, scroll, resize, directories,location, menubar, status, toolbar) {
+    var winl = (screen.width - w) / 2;
+    var wint = (screen.height - h) / 2;
+    var winprops = 'height='+h+',width='+w+',top='+wint+',left='+winl+',scrollbars='+scroll+',resizable='+resize+',location='+location+',menubar='+menubar+',status='+status+',toolbar='+toolbar+'';
+    win = window.open(mypage, myname, winprops)
+    if ( parseInt(navigator.appVersion) >= 4 ) { win.window.focus(); }
+  }
+
+  function SITSShowHelp(code){
+    var helptitle = $( "#" + code + "_TITLE" ).html();
+    var helptext  = $( "#" + code + "_TEXT" ).html();;
+    
+    var btn = {};
+    btn['Close'] = function() {     //cancel button
+      sits_dialog_close(true,"siw_portal_help_dialog");
+      return false;
+    }
+    sits_dialog(helptitle,helptext,btn,true,true,true,0,"siw_portal_help_dialog",true,0.5);
+  }
+  
+  function SITSToggleIt(ThisSecID) {
+    var sectionId = document.getElementById(ThisSecID);
+    if (sectionId == null) return;
+    if (sectionId.style.display == '') {
+      sectionId.style.display = 'none';
+    }
+    else {
+      sectionId.style.display = '';
+    }
+  }
+  function Hide(obj) {
+    var oDiv = document.getElementById(obj);
+    if(oDiv != null) oDiv.style.display = "none";
+  }
+</script>
+<!-- End Of Extra Scripts -->
+
+<!-- main content of Portal starts here -->
+
+
+<!-- all portal containers html starts here -->
+
+  
+<!-- Portal Page Heading section  -->
+<div id="sitsportalpagetitlesection" class="sitsportalpagetitlesection">
+  <h1 id="sitsportalpagetitle" class="sitsportalpagetitle">
+  Admissions
+  </h1>
+  <p id="sitsportalpagedesc" class="sitsportalpagedesc">
+    
+  </p>
+</div>
+<!-- end of portal page heading section  -->
+ 
+  <div id="sitsportalcontainersection">  
+ <!-- 1st Column -->
+<div id="sitscolumn1notabs" class="sitscolumn1notabs" style="width:100%;">
+
+<!-- Start of Container GSWFL01_01-->
+<div class="sitscontainernotabs">
+   <div class="sitsconbordernotabs" >
+      <!-- Hidden section html is here -->
+       <div id="GSWFL01_01_CON_UHLP.CON" class="sitsconhelp"> 
+        <script type="text/javascript">
+          Hide('GSWFL01_01_CON_UHLP.CON');
+        </script>
+        
+      </div>
+<!-- start of copsection for GSWFL01_01 -->
+<div class="sitscopsectionnotabs">
+<p class="sitscop"><a href="SIW_YMHD.start_url?2001143956664FF4fSE4xWrXJvkxcQVlgPMfnBsj6wpUp9_KfmDLHx_BC-BQEdE9jUj2F4zQ9ZqC_McNKbNyc1qMIp9_Ntlt2Col4mSvss28kZwSqU-tfahG2NTTNscazYMpxZ3T_xn2DxZIs9uxCy_Zbj2lbIRO_C0Kcys_vxEVsoNk4uy_hwO-4UOnNazYQBW1A83wNaprNV83qJkWPiRpC0XFUQx40_DGtA" target="_blank"  >Applicant Search</a><span class="sitsnewcoptext">      
+<img src="../images/newupdated/newcop.gif" style="border:0px" alt="Indicates a new option">
+</span></p>
+<p class="sitscop"><a href="SIW_ADM_DSH.start_url?693B43C7B6B34C77U9nZaQLlf9zoyUBJooFMfdcx5KoEVDZrF7kg6pD6cHFpbYcqPzLzfCsFruWNxIoZj6QrxxJR6lBze9fy8jXndQC_uZKS788qJ7La6MTV4igJ8rHL6ScumssLPqdhdBzWruXzq-TkzbFN_TSVgJzDvuxBGlUF9iE58VvqvCAcppwaD2BaHEPMlguDB1GiQul_" target="_self"  >Admission Desk 2019-2020</a><span class="sitsnewcoptext">      
+<img src="../images/newupdated/newcop.gif" style="border:0px" alt="Indicates a new option">
+</span></p>
+<p class="sitscop"><a href="SIW_ADM_DSH.start_url?41A3A7ABDD3C480Asbrtvdpsla_e_LOJTe7i6ClskR1zT8C9JscSii8LS7Zeg7PNk36i42-toAqkIrbx5D2zf_8tMlsndmvyqgS_7NNp6_K06ZwSZocj6YYDlrHfyJagR3TrmC2Jj7NmSSvRvFOGfR4Jypbi1r4avc2a2JTDSVvoPGzV7yXRCbOPpN5mbWKLF30ZLXaLgSK2igSD" target="_self"  >Admission Desk 2018-2019</a><span class="sitsnewcoptext">      
+<img src="../images/newupdated/newcop.gif" style="border:0px" alt="Indicates a new option">
+</span></p>
+<p class="sitscop"><a href="SIW_ADM_DSH.start_url?F6FE8977AD6A47BCYcncOZrMtpkvM74r-79QlKObz1kNEWpU4roR32KK2gkRCbe5lL8gLjkW_jTxoA0ehoUjNxVeXLqEDyXidBOJJIkDN_YOyDstQGeh9TE_WD32idUestmAOutbrJh_xM7kjDMYiYH0BlZ46_4gCluIc_q_H63lCYHhbReiYCgeHKoE67S23iJaxM52pCMK6qCP" target="_self"  >Admission Desk 2017-2018</a><span class="sitsnewcoptext">      
+<img src="../images/newupdated/newcop.gif" style="border:0px" alt="Indicates a new option">
+</span></p>
+<p class="sitscop"><a href="SIW_ADM_DSH.start_url?4917B92770F94BFD8O-AsaP3bZr6_Uy9NQaav4KTIeYvX1RV8HDpEQ829QXdcn7XyiTpbjphFmz-lNGx65iBVLJqtfnjWiKYe-rTTpFjnOvAvRkYSHUIA82i47MFB8zwsl21sI0u3nvaDdzTcQnqpsT780LJ-gJZdCr2ViDttx02dAf4jbQj7JplbfsGOHAfNP4EcqwvI1VPI3ao" target="_self"  >Admission Desk 2016-2017</a><span class="sitsnewcoptext">      
+<img src="../images/newupdated/newcop.gif" style="border:0px" alt="Indicates a new option">
+</span></p>
+<p class="sitscop"><a href="SIW_YMHD.start_url?011CD6F62CB54153lN83NQSHMbvtKvNlLKGKdozEnWYSTHg9hoj7x-64tiMHRwMuom5XWPEHYq86DGAAET1xTLqG9cpkQDMkWuYSyFi-AlMIpQroHiXmXU_ERU_tbM6xhqj6Qu1sWqpgdT_nglDnPkkn0xOCBwuzKHrdr-UCbvXHNzZQNaNNe9E0MdfAZld_a1CrU1veuVW4kTFaYJ0I0f2cDMITOUYuQzR1qw" target="_blank"  >Send post-deadline application link</a><span class="sitsnewcoptext"></span></p>
+<p class="sitscop"><a href="SIW_YMHD.start_url?5762E67AF3E244F5qIdxQnAek_EYxZO9z_yM4ZWQONfhUmGWkoNDuFemCmPwZdWLVILYo1eW-9PPgn-9pZV0jPRHvhMHfiDIRbVhKwbDgI9L-AJTbSOg2Up1OgX3x-8Xcnr-5nJFm4-QV02ZSrES_aJQqb2tZd-IGi4LWmGpZzD-fypAqOE11l8-3jxrGBNB1T-ALX3bCqqIuTXMnXBPgN_96GJrV6UDsCJvtg" target="_blank"  >View post-deadline applications</a><span class="sitsnewcoptext"></span></p>
+
+</div>
+<!-- end of copsection-->
+</div>
+<!-- end of bordersection-->
+</div>
+<!-- end of container GSWFL01_01 -->
+
+
+<!-- Start of Container GSWFL01_03-->
+<div class="sitscontainernotabs">
+   <div class="sitsconbordernotabs" >
+      <!-- Hidden section html is here -->
+       <div id="GSWFL01_03_CON_UHLP.CON" class="sitsconhelp"> 
+        <script type="text/javascript">
+          Hide('GSWFL01_03_CON_UHLP.CON');
+        </script>
+        
+      </div>
+<!-- start of copsection for GSWFL01_03 -->
+<div class="sitscopsectionnotabs">
+<p class="sitscop"><a href="SIW_ADM_DSH.start_url?98FC54B74C494A81cGt7ghSIuIfDcjwU1rNyo9ZDY0iLCTUKzUUv5usyFmlSnYH_dHBaa70vD9dY_r3w--k9Qb75Mr--BGs2smtiXiugZUXScBCgX4icOWBFb-5ovWCv-9ceNPrJoRcqGHL0vqru-cTcjrKu5sEayxFpmb0zpdoSa3m2n_0rFiS5EC7Bih2FpKbmd9AxYXiNgqBd" target="_self"  >FGSR Admissions Desk</a><span class="sitsnewcoptext"></span></p>
+<p class="sitscop"><a href="SIW_YMHD.start_url?2629968002FB45C6Bp3kfYnpyL6cDbqj3RHm3khxUS8iQo-DmTeoJNoDXIpRBVM59X97HVk4GNoIsnptFEbwDaGjDXUROynhS3nsrvoTb1w_3tMsUQu_DB6XmgtrwsCPpij7x9GkR3XZWhz571izQTn9RywXjRJ5CwhNqPKlCrDAC9tlzD3edCboDzQ6athGgADc2gKImromXOblvbTfeL5NviGLtMq85bscAA" target="_blank"  >Applicant Search</a><span class="sitsnewcoptext">      
+<img src="../images/newupdated/newcop.gif" style="border:0px" alt="Indicates a new option">
+</span></p>
+
+</div>
+<!-- end of copsection-->
+</div>
+<!-- end of bordersection-->
+</div>
+<!-- end of container GSWFL01_03 -->
+
+</div>
+<!-- end of last column -->
+</div>
+<!-- end of container section -->
+ 
+<input type="hidden" name="%.PORTAL.MENSYS.1" value="fogmngVc04AdhJiDRNlXCtrGOW9XexYN6oUsP0i/U74=;new;;" /> 
+<!-- all portal containers html ends here -->
+
+
+<!-- body-end.hts page header include starts here -->
+  
+    <!-- start of HTML from body-end.hts  -->
+
+        </div>
+        <!-- end of sitspagecontent -->
+</div>
+<footer>
+<div class="bottom-footer-row">
+    <div class="footer-container container">
+        <div class="footer-inner row-fluid">
+            <div class="span12 footer-copyright">
+                <ul class="footer-quick-links">
+                    
+                            
+                            <li><a href="https://www.ualberta.ca/about/contact" target="">Contact Us</a></li>
+                        
+                            <li><a href="https://www.surveymonkey.com/s/ualberta-web-feedback" target="">Feedback</a></li>
+                        
+                            <li><a href="http://www.registrar.ualberta.ca/calendar/" target="">University Calendar</a></li>
+                        
+                            <li><a href="http://www.careers.ualberta.ca/" target="">Careers</a></li>
+                        
+                            <li><a href="http://www.rms.ualberta.ca/en/EmergNumbers.aspx" target="">Emergency</a></li>
+                        
+                            <li><a href="https://policiesonline.ualberta.ca/" target="_blank">Policies</a></li>
+                        
+                            <li><a href="http://www.weatheroffice.gc.ca/city/pages/ab-50_metric_e.html" target="">Weather</a></li>
+                        
+                            <li><a href="http://www.edmonton.ca/" target="">Edmonton</a></li>
+                        
+                            <li><a href="https://www.ualberta.ca/privacy" target="">Privacy</a></li>
+                        
+                            <li><a href="https://www.ualberta.ca/keepintouch" target="">Keep in Touch</a></li>
+                        
+                        
+                    <li><a href="https://training.sitecore.ualberta.ca/departments/another-department#">Back to Top</a></li>
+                </ul>
+                <p>
+                    © 2015
+                    <span id="phfooter_0_ualberta_address">University of Alberta 116 St. and 85 Ave., <br class="visible-phone">Edmonton, AB, Canada T6G 2R3</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+                
+            </footer>
+
+
+<!-- overall background div (opened in header files) -->
+
+<script>
+if(typeof(sits_ajax_version)=="string") {
+	sits_attach_event(window, "load", function(){	
+		sits_include_file("../css/uoa_files/index_files/all.js");
+	})
+}
+</script>
+<!--[if IE]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<!-- end of HTML from body-end.hts  -->
+  </body>
+</html>
+  

@@ -1,0 +1,11 @@
+[t97]
+FileName1=t97.htm
+URL1=https://graduate-studies-apply-test.ualberta.ca/urd/sits.urd/run/SIW_YMHD.start_url?D73EC990BBC844D5PjD96wsHFGXjsZZjGLd86mvKnIcWa1KatnBuKEd4ZF8MUSHnjTI8CGpAjQK6JRylUuGa4UEQ4qCQgcXMqaHXFkqUXrgqiUmrC1Uq3t4ge7jt5e9VDdlwqpO9Zyj2-d9pb_NO4VEFi9do2oIDsCQGCfxKnQdyMse8AusaV3dT1oRcCZz2wbQKUGr4ArBTjklUH5t2B1BqLthkQRLiC9vNNE4leHQh84JtOUtGJdAK_-U
+Total=1
+RequestHeaderFile=t97_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t97_ResponseHeader.txt
+ContentType=text/html
+SnapshotXmlFile=snapshot_97.xml
+[ProtocolInfo]
+ProtocolId=QTWeb

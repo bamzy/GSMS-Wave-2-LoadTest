@@ -1,0 +1,404 @@
+
+
+    
+        <!-- start of HTML from body-start.hts  -->
+<!DOCTYPE html>
+<html lang="en-gb">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+
+	<link rel="shortcut icon" href="../css/uoa_files/ico/favicon.ico">
+
+    <title>Log in to the portal</title>
+
+
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="../plugins/javascript/html5shiv.min.js"></script>
+      <script src="../plugins/javascript/respond.min.js"></script>
+    <![endif]-->
+
+    <script src="../plugins/javascript/tablesaw/tablesaw.min.js?v=930.1"></script>
+    <script src="../plugins/javascript/jquery.js?v=910.1"></script>
+    <script src="../plugins/javascript/jquery-ui.js?v=910.1"></script>
+
+	<!-- System Wide Error Messaging -->
+	<link rel="shortcut icon" href="../css/uoa_files/ico/favicon.ico">
+	<link media="all" href="../css/siw_ymes.css" rel="stylesheet" type="text/css" />
+
+	<!-- Alberta Foundation StyleSheet -->
+	<link rel="stylesheet" href="../css/uoa_files/css/framework.css" media="screen">
+	<link rel="stylesheet" href="../css/uoa_files/css/framework-ie.css" media="screen">
+
+	<!-- Aberta System Override StyleSheet -->
+	<link rel="stylesheet" href="../css/uoa_files/css/uoa-sits.css" media="screen">
+
+	<!-- The Print Sheets -->
+	<link rel="stylesheet" href="../css/uoa_files/css/print.css" media="print">
+
+    <!-- Additional style for Admissions buttons - temporary until full responsive review project -->
+    <style>
+        .sv-btn-adm {
+            text-transform: uppercase;
+            font-weight: 600 !important;
+        }
+    </style>	
+
+    <script src="../plugins/javascript/sv.min.js?v=910.1"></script>
+
+    <script src="../javascript/settings.js?v=930.1"></script>
+	<script src="../javascript/sits_ajax.js?v=930.1"></script>
+  
+    <script src="../plugins/javascript/datatables/media/js/jquery.dataTables.js"></script>
+ 	<script src="../plugins/javascript/datatables/media/js/dataTables.tribal.js"></script>  
+	
+
+	  <script>
+		  function uSubmit(){} //include dummy function to prevent errors when submitting
+	  </script>
+  
+  <!--[if lt IE 7]><script>
+var root = document.documentElement;
+root.className += " lt-ie10";
+root.className += " lt-ie9";
+root.className += " lt-ie8";
+root.className += " lt-ie7";
+</script><![endif]-->
+<!--[if IE 7]><script>
+var root = document.documentElement;
+root.className += " lt-ie10";
+root.className += " lt-ie9";
+root.className += " lt-ie8";
+root.className += " ie7";
+</script><![endif]-->
+<!--[if IE 8]><script>
+var root = document.documentElement;
+root.className += " lt-ie10";
+root.className += " lt-ie9";
+root.className += " ie8";
+</script><![endif]-->
+<!--[if IE 9]><script>
+var root = document.documentElement;
+root.className += " lt-ie10";
+root.className += " ie9";
+</script><![endif]-->
+<!--[if IE 10]><script>
+var root = document.documentElement;
+root.className += " ie10";
+</script><![endif]-->
+
+	<!-- The Head Scripts: MODERNIZR ONLY!-->
+	<script src="../css/uoa_files/index_files/modernizr.min.js"></script>
+	<script>(!window.Modernizr)||document.write('<script src="../css/uoa_files/index_files/modernizr.js"><\/script>');</script>
+
+
+<!-- any required page header html should go here, in place of this default SITS header HTML.
+     It is good practice to use 'class="sitsscreenonly" on any header images
+     which would not be required in a printed version of the page.
+ -->
+ 
+</head>
+
+
+
+
+
+  <body>
+
+<header>           
+	<div class="blade-container" style="height: 4em;">
+    <div class="blade-inner">
+        <a class="brand" href="http://uofa.ualberta.ca/">
+            <img src="../css/uoa_files/img/logo2.svg" alt="University of Alberta">
+		</a>
+        <nav class="blade-navigation">
+            <ul class="quick-links-container">
+                <li id="ql" class="dropdown">
+                    <a href="https://training.sitecore.ualberta.ca/departments/another-department#" id="ql-toggle" class="btn btn-grey btn-small hidden-desktop" data-toggle="dropdown">
+                        <span class="quick-links-text">Quick Links <b class="caret"></b>                        </span>
+                        <span class="icon-bar quick-links-button"></span>
+                        <span class="icon-bar quick-links-button"></span>
+                        <span class="icon-bar quick-links-button"></span>
+                    </a>
+                    <ul class="quick-links" role="menu" aria-labelledby="ql-toggle">
+                    	<li role="menuitem"><a href="http://webapps.srv.ualberta.ca/search/" target="">Find a Person</a></li>
+                       <li role="menuitem"><a href="http://onecard.ualberta.ca/" target="">ONEcard</a></li>
+                       <li role="menuitem"><a href="https://www.beartracks.ualberta.ca/" target="">Bear Tracks</a></li>
+                       <li role="menuitem"><a href="http://www.campusmap.ualberta.ca/" target="">Maps</a></li>
+                       <li role="menuitem"><a href="http://apps.ualberta.ca/" target="">Email &amp; Apps</a></li>
+                       <li role="menuitem"><a href="https://eclass.srv.ualberta.ca/portal/" target="">eClass</a></li>
+                       <li role="menuitem"><a href="http://www.library.ualberta.ca/" target="">Libraries</a></li>
+                    </ul>
+                   </li>            
+			</ul>        
+		</nav>        
+		<div class="blade-search">
+            <i class="icon-search"></i>
+            <input type="search" class="search-query" placeholder="search">
+            <button type="button" class="btn btn-grey btn-small global-search-btn">Search</button>
+        </div>
+    </div>
+	</div>
+	<div class="banner-container">
+		<div class="banner-inner">
+			<a href="http://uofa.ualberta.ca/" class="site-title">Faculty of Graduate Studies and Research</a>
+			<div class="banner-logo">
+				<span class="site-logo"></span>				
+			</div>
+		</div>
+		<div class="oval oval1"></div>
+		<div class="oval oval2"></div>
+		<div class="oval oval3"></div>
+		<div class="oval oval4"></div>
+	</div>
+<div class="nav-mobile">
+<div class="nav-wrapper">
+            <ul class="level-0">
+                <!-- The Tab list field contains each page tab as a li item, child page tabs will create a new ul within the outer ul -->
+						<<TAB_LIST.DUMMY>>
+						<li class="normaltab">
+							<<VCON.DUMMY>>
+						</li>
+						<!--
+						<li class="normaltab">
+							<<CONTENT.DUMMY>> 
+						</li>
+						-->
+						<li class="normaltab">
+							<<LOGOUT.DUMMY>>
+						</li>
+           
+            </ul>
+</div>
+
+</div>
+</header>
+
+      <!-- DIV sitspagecontent (see sits.css) encloses main page content.
+          It is opened in body-start, body-start-tabs, body-start-ipp and
+          closed in body-end, body-end-ipp
+       -->
+      <div id="sitspagecontent" class="container">
+
+<!-- end of HTML from body-start.hts  -->
+
+    
+<input type="hidden" name="%.WEB_HEAD.MENSYS.1" value="S8ubErgTUT7KJxHrml4ixRL1rqmrqZuOdyuZo0uLTQ8=;new;;" />
+<!-- body-start.hts page header include ends here -->
+
+<!-- Start Of Extra Javascripts -->
+<script type="text/javascript" src="../javascript/siw_lgn.js"></script>
+<!-- End Of Extra Javascripts -->
+<script>
+    sits_attach_event(window, "load", load);
+</script>
+
+<!-- Start Of Extra Stylesheets -->
+    <script type="text/javascript">
+<!-- Alberta Foundation StyleSheet -->
+sits_include_file("../css/uoa_files/css/framework.css");
+sits_include_file("../css/uoa_files/css/framework-ie.css");
+        <!-- Aberta System Override StyleSheet -->
+        sits_include_file("../css/uoa_files/css/uoa-ipp.css");
+        //sits_include_file("../css/uoa_files/css/uoa-sits.css");
+    </script>
+<!-- End Of Extra Stylesheets -->
+
+<!-- there was a body javascript need to attach to load using sits_Attach_Event ??? -->
+<form method="POST" action="SIW_LGN" name="f" autocomplete="off" onSubmit="show()">
+  <div class="sv-row">
+    <div class="sv-col-md-12">
+      
+        
+          
+        
+      
+    </div>
+  </div>
+
+
+    <!-- data section  -->
+  <div class="sv-row">
+    <div class="sv-col-md-12">
+      
+        
+          
+<input type="hidden" name="SCREEN_WIDTH.DUMMY.MENSYS.1" id="sits_screen_width" value="" />
+<input type="hidden" name="SCREEN_HEIGHT.DUMMY.MENSYS.1" id="sits_screen_height" value="" />
+<script type="text/javascript">
+  var inp = null;
+  if(inp=document.getElementById("sits_screen_width")) {
+    inp.value = screen.width;
+  }
+  if(inp=document.getElementById("sits_screen_height")) {
+    inp.value = screen.height;
+  }
+</script>
+        
+      <input type="hidden" name="%.DUMMY.MENSYS.1" value="FBYHC8QoCloevnM9St2pcr8mtuTxSudOQEXKFeo4na8=;new;;" />
+    </div>
+  </div>
+
+  <!-- title section  -->
+  <div class="sv-row">
+    <div class="sv-col-md-12">
+      <div class="sv-page-header sv-hidden-xs">
+        
+          
+			<div class="row-fluid">
+				<div class="hidden-phone span4">						
+					&nbsp;
+				</div>
+				<div class="span4">
+					<div class="row-fluid pad-top">
+						<div class="span12">
+							<span id="working"><h4>Checking your application status:</h4></span>
+							 
+<p>You can use this Applicant Portal to check the status of your application, including if references have been received, upload new documents and accept your Offer of Admission.</p>
+							<p>You are not required to send any official documents until you receive an official Offer of Admission from the University of Alberta.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+          
+        
+      </div>
+    </div>
+  </div>
+
+  
+    
+      <input type="hidden" name="RUNTIME.DUMMY.MENSYS.1" value="2018101814440259%1BDC6C22090004C1308FBC8E8105B94D2E963524F027E130F42EC0E109937CA6600281CEDA28FFDC3A8331DC1DFA67CF6B0C758EE47AA7A0170954DB1C9B087247%1B9A60B608C6B647978DC1BFE4FE778EDE%1BNONE" />
+      <input type="hidden" name="PARS.DUMMY.MENSYS.1" value="" />
+      
+        
+	<div class="row-fluid">
+		<div class="hidden-phone span4">						
+			&nbsp;
+		</div>
+		<div class="span4">
+			<div class="row-fluid">
+				<div class="span12">
+					<fieldset class="noline">
+						<legend class="noline"><h3>Applicant / Department Portal Login</h3></legend>
+						<label for="MUA_CODE.DUMMY.MENSYS" class="hidden">Username</label>
+							<input type="text" name="MUA_CODE.DUMMY.MENSYS.1" value="" id="MUA_CODE.DUMMY.MENSYS" size="20" tabindex="1" placeholder="Login Account Email Address/CCID" class="span12" />               
+						<label for="PASSWORD.DUMMY.MENSYS" class="hidden">Password</label>
+							<input type="password" name="PASSWORD.DUMMY.MENSYS.1" value="" id="PASSWORD.DUMMY.MENSYS" size="20" tabindex="2" placeholder="Password" class="span12" />
+					</fieldset>				
+				</div>
+				<div class="row-fluid">
+					<div class="span12">
+						<input type="submit" name="BP101.DUMMY_B.MENSYS.1" value="Log in" class="btn btn-green" />
+							</div>
+						</div>
+						<div class="row-fluid pad-top">
+							<div class="span12">
+								<span id="html"><a href="../run/siw_pqs.forgot?">Forgot your Login Account password?</a></span>
+							</div>
+						<div class="row-fluid pad-top">
+							<div class="span12">
+								<span id="html"><a href="https://ist.ualberta.ca/content/reset-forgotten-password">Forgot Campus Computing ID (CCID) Password?</a></span>
+							</div>
+							</div>
+						</div>
+<hr>
+				<div class="span12" style="margin-top: -20px;">
+					<span id="working"><h4>To continue with your un-submitted application or submit a new application:</h4></span>
+					<p>Please click the “Application Portal” button.</p>
+					<input  class="btn btn-green" type="button" value="Application Portal" onclick="window.location.href='https://' + window.location.hostname + '/urd/sits.urd/run/siw_ipp_lgn.login?process=siw_ipp_app_crss';">
+					<p style="margin-top: 10px;">If you have question about the online graduate application, please contact <a href="mailto:grad.webadm@ualberta.ca">grad.webadm@ualberta.ca</a></p>
+				</div>
+				<div class="row-fluid">
+					<div class="span12">
+						
+						          
+						          
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="hidden-phone span4">						
+			&nbsp;
+		</div>
+	</div>  	 
+        
+      
+    
+  
+</form>
+
+<!-- body-end.hts page header include starts here -->
+
+    <!-- start of HTML from body-end.hts  -->
+
+        </div>
+        <!-- end of sitspagecontent -->
+</div>
+<footer>
+<div class="bottom-footer-row">
+    <div class="footer-container container">
+        <div class="footer-inner row-fluid">
+            <div class="span12 footer-copyright">
+                <ul class="footer-quick-links">
+                    
+                            
+                            <li><a href="https://www.ualberta.ca/about/contact" target="">Contact Us</a></li>
+                        
+                            <li><a href="https://www.surveymonkey.com/s/ualberta-web-feedback" target="">Feedback</a></li>
+                        
+                            <li><a href="http://www.registrar.ualberta.ca/calendar/" target="">University Calendar</a></li>
+                        
+                            <li><a href="http://www.careers.ualberta.ca/" target="">Careers</a></li>
+                        
+                            <li><a href="http://www.rms.ualberta.ca/en/EmergNumbers.aspx" target="">Emergency</a></li>
+                        
+                            <li><a href="https://policiesonline.ualberta.ca/" target="_blank">Policies</a></li>
+                        
+                            <li><a href="http://www.weatheroffice.gc.ca/city/pages/ab-50_metric_e.html" target="">Weather</a></li>
+                        
+                            <li><a href="http://www.edmonton.ca/" target="">Edmonton</a></li>
+                        
+                            <li><a href="https://www.ualberta.ca/privacy" target="">Privacy</a></li>
+                        
+                            <li><a href="https://www.ualberta.ca/keepintouch" target="">Keep in Touch</a></li>
+                        
+                        
+                    <li><a href="https://training.sitecore.ualberta.ca/departments/another-department#">Back to Top</a></li>
+                </ul>
+                <p>
+                    © 2015
+                    <span id="phfooter_0_ualberta_address">University of Alberta 116 St. and 85 Ave., <br class="visible-phone">Edmonton, AB, Canada T6G 2R3</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+                
+            </footer>
+
+
+<!-- overall background div (opened in header files) -->
+
+<script>
+if(typeof(sits_ajax_version)=="string") {
+	sits_attach_event(window, "load", function(){	
+		sits_include_file("../css/uoa_files/index_files/all.js");
+	})
+}
+</script>
+<!--[if IE]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<!-- end of HTML from body-end.hts  -->
+  </body>
+</html>

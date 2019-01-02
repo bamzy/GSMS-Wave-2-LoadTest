@@ -1,0 +1,13 @@
+[t166]
+FileName1=t166.htm
+URL1=https://graduate-studies-apply-uat.ualberta.ca/urd/sits.urd/run/SIW_POD.start_url?7C53473A476F4032z3Hv3oUcK0BBID-d8Ew-nI5ufE15Kle3d5RIy40esMX-zcznsR-NYwZ4mIXjbjQGva5lxz73IBzCO9ZgDV--jwnLan8mKIjbjhqJaxrlji_IA9Tdxr-r6C-5WCFmRrvn8DLfKCEJW4KNJol6MtLyXaD__sIUrf6lUesyMO_rqaJ0_MOVDGxzY1z-ydkRXoCq
+Total=2
+RequestHeaderFile=t166_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t166_ResponseHeader.txt
+ContentType=text/html
+SnapshotXmlFile=snapshot_166.xml
+FileName2=t166_siw_ygsl.html
+URL2=https://graduate-studies-apply-uat.ualberta.ca/urd/sits.urd/javascript/siw_ygsl.js
+[ProtocolInfo]
+ProtocolId=QTWeb

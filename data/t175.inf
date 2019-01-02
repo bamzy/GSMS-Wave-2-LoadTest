@@ -1,0 +1,11 @@
+[t175]
+FileName1=t175.htm
+URL1=https://graduate-studies-apply-uat.ualberta.ca/urd/sits.urd/run/siw_portal.url?9C314EE10A29400C0eMNEv5mQu6aCuKbg_ktwrf-M-PAXTtrc33nMwd6q_CBUq1RQ8BYHT50W9pOyyt3GZd9LyTAIno-Zpo08388w1DvH7avn-yhwkpbJeHrGhI
+Total=1
+RequestHeaderFile=t175_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t175_ResponseHeader.txt
+ContentType=text/html
+SnapshotXmlFile=snapshot_175.xml
+[ProtocolInfo]
+ProtocolId=QTWeb

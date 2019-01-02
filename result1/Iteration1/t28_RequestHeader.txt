@@ -1,0 +1,9 @@
+GET /urd/sits.urd/run/SIW_YGSL.start_url?6DAF2F9B4D724FD695bNhP-iLY1UzCreR70tVm-99bm98bff1oOZ1lVeEYO5QEKwFdZA8cNJM96Uu_1omnWt5CbM2acME-TByPouPZP9LQLvVFYhfczHIheMAEO8Tmm9MAxPULsipC2dVrJtxk7hbp1f8qmlT6uy3BFkZexaZ6EgJqB1ee_WS7Mzp6k HTTP/1.1
+Referer: https://graduate-studies-apply-uat.ualberta.ca/urd/sits.urd/run/siw_portal.url?40AEB196D50A4297rhwYdDEqWyu83TDyn6bNxZisWwBWy9-jq7MKK2q9zFpx6EAEQtThxEUjZUbb6n9YBuPEgrSdgO47aRcmwBKnSwhQv2Z-aMXn27l8yO-F8IR6B-MgBHZ0aPOpFukS0O3b
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0
+Accept-Encoding: gzip, deflate
+Accept-Language: en-GB,en;q=0.5
+Accept: */*
+Host: graduate-studies-apply-uat.ualberta.ca
+Cookie: EVISIONLOGINLANG=; EVISIONLOGINHTV=; EVISIONID=929E6D0264894915A5F622D092703D79; JSESSIONID=48A11FCA8DB91A46F93292F7E0F6BAF3; BIGipServerSITSAPP-UAT-HTTP.app~SITSAPP-UAT-HTTP_pool=1109531308.36895.0000; BIGipServerSharedIIS-UAT=757209772.20480.0000
+

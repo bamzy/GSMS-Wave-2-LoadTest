@@ -1,0 +1,13 @@
+[t62]
+FileName1=t62.htm
+URL1=https://graduate-studies-apply-test.ualberta.ca/urd/sits.urd/run/SIW_INTRAY.getintray
+Total=2
+RequestHeaderFile=t62_RequestHeader.txt
+RequestBodyFile=t62_RequestBody.txt
+ResponseHeaderFile=t62_ResponseHeader.txt
+ContentType=text/html
+SnapshotXmlFile=snapshot_62.xml
+FileName2=t62_emailred.jpg
+URL2=https://graduate-studies-apply-test.ualberta.ca/urd/sits.urd/images/emailred.jpg
+[ProtocolInfo]
+ProtocolId=QTWeb

@@ -1,0 +1,12 @@
+HTTP/1.1 200 OK
+Cache-Control: no-cache
+Content-Type: text/html;charset=UTF-8
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+X-Powered-By: ARR/3.0
+X-Powered-By: ASP.NET
+Date: Wed, 02 Jan 2019 18:26:29 GMT
+Content-Length: 3010
+Vary: Accept-Encoding
+Content-Encoding: gzip
+Connection: Keep-Alive
+

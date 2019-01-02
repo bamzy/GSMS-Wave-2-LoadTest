@@ -1,0 +1,543 @@
+<!-- start of HTML from body-start-tabs.hts  -->
+<!DOCTYPE html>
+<html lang="en-gb">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+
+	<link rel="shortcut icon" href="../css/uoa_files/ico/favicon.ico">
+
+    <title>e:Vision Portal</title>
+
+    <link rel="stylesheet" href="../css/sits.css">
+    <link rel="stylesheet" href="../css/sv.css">
+    <link rel="stylesheet" href="../plugins/css/ui/sits-ui.css">
+    <!-- Additional style for Admissions buttons - temporary until full responsive review project -->
+    <style>
+        .sv-btn-adm {
+            text-transform: uppercase;
+            font-weight: 600 !important;
+        }
+    </style>	
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="../plugins/javascript/html5shiv.min.js"></script>
+      <script src="../plugins/javascript/respond.min.js"></script>
+    <![endif]-->
+
+
+    <script src="../plugins/javascript/jquery.js?v=910.1"></script>
+    <script src="../plugins/javascript/jquery-ui.js?v=910.1"></script>
+
+    <script src="../plugins/javascript/sv.min.js?v=910.1"></script>
+
+    <script src="../javascript/settings.js?v=881.2"></script>
+	<script src="../javascript/sits_ajax.js?v=881.2"></script>
+  
+    <script src="../plugins/javascript/tablesaw/tablesaw.min.js?v=930.1"></script>
+    <script src="../plugins/javascript/datatables/media/js/jquery.dataTables.js"></script>
+ 	<script src="../plugins/javascript/datatables/media/js/dataTables.tribal.js"></script>  
+ 
+
+	  <script>
+		  function uSubmit(){} //include dummy function to prevent errors when submitting
+	  </script>
+
+
+<!--[if lt IE 7]><script>
+var root = document.documentElement;
+root.className += " lt-ie10";
+root.className += " lt-ie9";
+root.className += " lt-ie8";
+root.className += " lt-ie7";
+</script><![endif]-->
+<!--[if IE 7]><script>
+var root = document.documentElement;
+root.className += " lt-ie10";
+root.className += " lt-ie9";
+root.className += " lt-ie8";
+root.className += " ie7";
+</script><![endif]-->
+<!--[if IE 8]><script>
+var root = document.documentElement;
+root.className += " lt-ie10";
+root.className += " lt-ie9";
+root.className += " ie8";
+</script><![endif]-->
+<!--[if IE 9]><script>
+var root = document.documentElement;
+root.className += " lt-ie10";
+root.className += " ie9";
+</script><![endif]-->
+<!--[if IE 10]><script>
+var root = document.documentElement;
+root.className += " ie10";
+</script><![endif]-->
+
+
+	<!-- The Head Scripts: MODERNIZR ONLY!-->
+	<script src="../css/uoa_files/index_files/modernizr.min.js"></script>
+	<script>(!window.Modernizr)||document.write('<script src="../css/uoa_files/index_files/modernizr.js"><\/script>');</script>
+
+
+<!-- System Wide Error Messaging -->
+<link media="all" href="../css/siw_ymes.css" rel="stylesheet" type="text/css" />
+
+<!-- Alberta Foundation StyleSheet -->
+<link rel="stylesheet" href="../css/uoa_files/css/framework.css" media="screen">
+<link rel="stylesheet" href="../css/uoa_files/css/framework-ie.css" media="screen">
+
+<!-- Aberta System Override StyleSheet -->
+<link rel="stylesheet" href="../css/uoa-sits.css" media="screen">
+
+<!-- The Print Sheets -->
+<link rel="stylesheet" href="../css/uoa_files/css/print.css" media="print">
+
+<!-- any required page header html should go here, in place of this default SITS header HTML.
+     It is good practice to use 'class="sitsscreenonly" on any header images
+     which would not be required in a printed version of the page.
+ -->
+<!-- overall page DIV -->
+
+<header>           
+	<div class="blade-container" style="height: 4em;">
+    <div class="blade-inner">
+        <a class="brand" href="http://uofa.ualberta.ca/">
+            <img src="../css/uoa_files/img/logo2.svg" alt="University of Alberta">
+		</a>
+        <nav class="blade-navigation">
+            <ul class="quick-links-container">
+                <li id="ql" class="dropdown">
+                    <a href="https://training.sitecore.ualberta.ca/departments/another-department#" id="ql-toggle" class="btn btn-grey btn-small hidden-desktop" data-toggle="dropdown">
+                        <span class="quick-links-text">Quick Links <b class="caret"></b>                        </span>
+                        <span class="icon-bar quick-links-button"></span>
+                        <span class="icon-bar quick-links-button"></span>
+                        <span class="icon-bar quick-links-button"></span>
+                    </a>
+                    <ul class="quick-links" role="menu" aria-labelledby="ql-toggle">
+                    	<li role="menuitem"><a href="http://webapps.srv.ualberta.ca/search/" target="">Find a Person</a></li>
+                       <li role="menuitem"><a href="http://onecard.ualberta.ca/" target="">ONEcard</a></li>
+                       <li role="menuitem"><a href="https://www.beartracks.ualberta.ca/" target="">Bear Tracks</a></li>
+                       <li role="menuitem"><a href="http://www.campusmap.ualberta.ca/" target="">Maps</a></li>
+                       <li role="menuitem"><a href="http://apps.ualberta.ca/" target="">Email &amp; Apps</a></li>
+                       <li role="menuitem"><a href="https://eclass.srv.ualberta.ca/portal/" target="">eClass</a></li>
+                       <li role="menuitem"><a href="http://www.library.ualberta.ca/" target="">Libraries</a></li>
+                    </ul>
+                   </li>            
+			</ul>        
+		</nav>        
+		<div class="blade-search">
+            <i class="icon-search"></i>
+            <input type="search" class="search-query" placeholder="search">
+            <button type="button" class="btn btn-grey btn-small global-search-btn">Search</button>
+        </div>
+    </div>
+	</div>
+	<div class="banner-container">
+		<div class="banner-inner">
+			<a href="http://uofa.ualberta.ca/" class="site-title">Faculty of Graduate Studies and Research</a>
+			<p style="width: 100%; color: red; font-size: 24px; font-weight: bold; background-color: white;">User / Acceptance Testing environment - not Production</p>
+			<div class="banner-logo">
+				<span class="site-logo"></span>				
+			</div>
+		</div>
+		<div class="oval oval1"></div>
+		<div class="oval oval2"></div>
+		<div class="oval oval3"></div>
+		<div class="oval oval4"></div>
+	</div>
+	<div class="navigation-container">
+		<nav id="main-nav" class="navigation-inner">
+			<ul>
+				<li>
+					<a class="navigation-toggle collapsed"><span>Show Navigation</span><i class="icon-toggle-nav"></i>
+					</a>
+					<ul id="nav-list" class="main-navigation hidden-phone collapse" style="height: 0px;">
+						<!-- The Tab list field contains each page tab as a li item, child page tabs will create a new ul within the outer ul -->
+						<li class="normaltab" >
+<a href="siw_portal.url?7EC021AB22B44AB3XjaMKuu4AjmZkZVcDZi9nvKq6RvD20284iBjqVw_bMMRU80R0meEupq62pKloCsSUWrhAnH4Zm-kjED_F3dufYXuhpQVETjG3uwn3aXbkTE" id="GSWFL01" title="Manage Applications"><span>Admissions</span></a>
+
+</li>
+<li class="normaltab" >
+<a href="siw_portal.url?C87093484CA647361cx8QR9iA6ONSEkNGXTFK6OpIMnl8RkTYvK8cjjjaHJ-PdcCI_5MV51c43JT3nk1B-2C4Vsu42Dmmgd0MsSfUEmGN2r9WbVpy55TnfZ-tEE" id="GSAWD_AWD_01" ><span>Awards Portal</span></a>
+
+</li>
+<li class="activetab" >
+<a href="siw_portal.url?C28176A3F2F140AEvhwMtoGH-5xu7rHRht4PK1w7Fp5g8Fl9vAMjxj0iVqBKRUxM8Q_xWL1U8PUcZ_4DRpwJCUCruyDCjmS7u9l32wAMky0mF36YbmExX82SzQs" id="GSAWD_NOM_01" ><span>Awards</span></a>
+
+</li>
+<li class="normaltab" >
+<a href="siw_portal.url?534636BAFB7E4A81LOHSXGivR-1RF_uGjUFnI6hZuGNfrtjtPhW8BFSiB7c6kBnb-JcVl361TYnoVs-in3xvnd1-d3VDoyKkUjZuZmUe8WOG5IdDb9agPvFY1cY" id="GSMSG01" ><span>Admissions Messages</span></a>
+
+</li>
+
+						<li class="normaltab">
+							
+						</li>
+						<!--
+						<li class="normaltab">
+							<a href="../run/SIW_PORTAL_PCO.start_url?47AAB7F28DF44119I1_RMB7yHgQXv9o1FFowSLYBSDIxm5qz0zLeHDcaDmCG41qE_fWltu9jb299iCtO-OPw3Nc24fM6mUG7wJuqRCpEhS6ZorQnST58CljPLxBRK29uMPHuLEsBJ8V7yykt" target="_self">Content</a> 
+						</li>
+						-->
+						<li class="normaltab">
+							<a href="../run/SIW_LGN_LOGOUT.start_url?C03253ABE6B84828RJ1F5IJlUpfgRkObp3xwEottjYnWyWUOV-UI3OSy1AxXVzkl9sHJxEC78671M4UEHfP9wUnNC9CjiCEL11uc1wEx2ceRav8FyU1Mb_0fB44" target="_self">Logout</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+	</div>
+<div class="nav-mobile">
+<div class="nav-wrapper">
+    
+            <ul class="level-0">
+                <!-- The Tab list field contains each page tab as a li item, child page tabs will create a new ul within the outer ul -->
+						<li class="normaltab" >
+<a href="siw_portal.url?7EC021AB22B44AB3XjaMKuu4AjmZkZVcDZi9nvKq6RvD20284iBjqVw_bMMRU80R0meEupq62pKloCsSUWrhAnH4Zm-kjED_F3dufYXuhpQVETjG3uwn3aXbkTE" id="GSWFL01" title="Manage Applications"><span>Admissions</span></a>
+
+</li>
+<li class="normaltab" >
+<a href="siw_portal.url?C87093484CA647361cx8QR9iA6ONSEkNGXTFK6OpIMnl8RkTYvK8cjjjaHJ-PdcCI_5MV51c43JT3nk1B-2C4Vsu42Dmmgd0MsSfUEmGN2r9WbVpy55TnfZ-tEE" id="GSAWD_AWD_01" ><span>Awards Portal</span></a>
+
+</li>
+<li class="activetab" >
+<a href="siw_portal.url?C28176A3F2F140AEvhwMtoGH-5xu7rHRht4PK1w7Fp5g8Fl9vAMjxj0iVqBKRUxM8Q_xWL1U8PUcZ_4DRpwJCUCruyDCjmS7u9l32wAMky0mF36YbmExX82SzQs" id="GSAWD_NOM_01" ><span>Awards</span></a>
+
+</li>
+<li class="normaltab" >
+<a href="siw_portal.url?534636BAFB7E4A81LOHSXGivR-1RF_uGjUFnI6hZuGNfrtjtPhW8BFSiB7c6kBnb-JcVl361TYnoVs-in3xvnd1-d3VDoyKkUjZuZmUe8WOG5IdDb9agPvFY1cY" id="GSMSG01" ><span>Admissions Messages</span></a>
+
+</li>
+
+						<li class="normaltab">
+							
+						</li>
+						<!--
+						<li class="normaltab">
+							<a href="../run/SIW_PORTAL_PCO.start_url?47AAB7F28DF44119I1_RMB7yHgQXv9o1FFowSLYBSDIxm5qz0zLeHDcaDmCG41qE_fWltu9jb299iCtO-OPw3Nc24fM6mUG7wJuqRCpEhS6ZorQnST58CljPLxBRK29uMPHuLEsBJ8V7yykt" target="_self">Content</a> 
+						</li>
+						-->
+						<li class="normaltab">
+							<a href="../run/SIW_LGN_LOGOUT.start_url?C03253ABE6B84828RJ1F5IJlUpfgRkObp3xwEottjYnWyWUOV-UI3OSy1AxXVzkl9sHJxEC78671M4UEHfP9wUnNC9CjiCEL11uc1wEx2ceRav8FyU1Mb_0fB44" target="_self">Logout</a>
+						</li>
+           
+            </ul>
+        
+</div>
+
+</div>
+</header>
+
+      <!-- DIV sitspagecontent (see sits.css) encloses main page content.
+          It is opened in body-start, body-start-tabs, body-start-ipp and
+          closed in body-end, body-end-ipp
+       -->
+      <div id="sitspagecontent" class="container row-fluid">
+
+<!-- end of HTML from body-start.hts  -->
+<script type="text/javascript">sits_widget_bp = {"dt":{"emptyTable":"No information available","info":"Showing _START_ to _END_ of _TOTAL_ entries","infoEmpty":"No entries to show","infoFiltered":" (filtered from _MAX_ total entries)","lengthMenu":"Show _MENU_ entries","loadingRecords":"Loading...","processing":"Processing...","search":"Filter:","zeroRecords":"No matching entries found","paginate":{"first":"First","last":"Last","next":"Next","previous":"Previous"},"aria":{"sortAscending":": use to sort column ascending","sortDescending":": use to sort column descending"},"tribal":{"detailsLabelOpen":"Activate to show additional details for this row","detailsLabelClose":"Activate to hide additional details for this row","detailsLabelDataOpen":"Activate to show additional details for _DATA_","detailsLabelDataClose":"Activate to hide additional details for _DATA_"}},"ts":{"modes":["Stack","Swipe","Toggle"],"columns":"Col<span class=\"a11y-sm\">umn<\/span>s","columnBtnText":"Columns","columnsDialogError":"No eligible columns.","sort":"Sort","prevBtnText":"Show previous column on the following table","nextBtnText":"Show next column on the following table","prevBtnDisabledText":"Show previous column on the following table (not currently available)","nextBtnDisabledText":"Show next column on the following table (not currently available)","sortAscText":": use to sort column ascending","sortDescText":": use to sort column descending"},"pg":{"infoText":"Showing page {0} of {1}","infoWithRecsText":"Showing page {0} of {1} with {2} records per page","firstBtnText":"First","prevBtnText":"Previous","nextBtnText":"Next","lastBtnText":"Last","firstBtnAriaText":"Show first page","prevBtnAriaText":"Show previous page","nextBtnAriaText":"Show next page","lastBtnAriaText":"Show last page","pageBtnAriaText":"Show page {0}"},"tp":{"currentText":"Now","closeText":"Done","timeOnlyTitle":"Choose Time","timeText":"Time","hourText":"Hour","minuteText":"Minute","secondText":"Second","millisecText":"Millisecond","microsecText":"Microsecond","timezoneText":"Time Zone"},"ui":{"dialogOk":"Ok","dialogCancel":"Cancel","tabsClose":"Close","dialogClose":"Close","moreDetails":"More Details","datePickerDate":"Select a date","datePickerTime":"Select a time","datePickerDateTime":"Select a date\/time","loading":"Loading...","selectAllTitle":"Select All","selectAll":"Select All","selectNone":"Select None","invertAll":"Invert All","errorText":"Error","datePickerMonth":"Select a month","datePickerYear":"Select a year","tabsScrollLeft":"Scroll left","tabsScrollRight":"Scroll right"},"ld":{"loadTitle":"Loading","loadContent":"Loading, please wait...","processTitle":"Processing","processContent":"Processing, please wait...","saveTitle":"Saving","saveContent":"Saving, please wait..."},"to":{"sessionTitle":"Session Expiry","sessionContent":"Your session is due to expire in approximately {0} minute(s). If you would like to continue using this session, please click \"Continue\".","pageTitle":"Page Expiry","pageContent":"This page is due to expire in approximately {0} minute(s). If you would like to continue using this page, please click \"Continue\".","buttonContinue":"Continue"}};</script>
+<script>sits_user_timeout = "A753254DDD644EA8OWoNuLOQO0H355G43PYAQdZQM3zZdrAw5VR_pBz7cJ9UdUMk9vIoQx-FztyEv3N2PqTv1pw4ACkoxvciGANZKIOrlhQVYqc2";</script>
+<!-- body-start.hts page header include ends here -->
+
+<!-- adding head.dum1 -->
+
+    
+<input type="hidden" name="%.DUM1.MENSYS" value="RBFceU7pzE9Qh+DBIOWK5Yl5xy4UhTQJpdXt1s0DQLQ=;new;;" />
+<!-- end of head.dum1 -->
+
+<!-- Start Of Extra Javascripts -->
+<script>
+  var sits_in_portal = true; //used by sits_ajax.js to determine whether the current screen is the portal
+  
+  function sits_popup(mypage, myname, w, h, scroll, resize, directories,location, menubar, status, toolbar) {
+    var winl = (screen.width - w) / 2;
+    var wint = (screen.height - h) / 2;
+    var winprops = 'height='+h+',width='+w+',top='+wint+',left='+winl+',scrollbars='+scroll+',resizable='+resize+',location='+location+',menubar='+menubar+',status='+status+',toolbar='+toolbar+'';
+    win = window.open(mypage, myname, winprops)
+    if ( parseInt(navigator.appVersion) >= 4 ) { win.window.focus(); }
+  }
+
+  function SITSShowHelp(code){
+    var helptitle = $( "#" + code + "_TITLE" ).html();
+    var helptext  = $( "#" + code + "_TEXT" ).html();;
+    
+    var btn = {};
+    btn['Close'] = function() {     //cancel button
+      sits_dialog_close(true,"siw_portal_help_dialog");
+      return false;
+    }
+    sits_dialog(helptitle,helptext,btn,true,true,true,0,"siw_portal_help_dialog",true,0.5);
+  }
+  
+  function SITSToggleIt(ThisSecID) {
+    var sectionId = document.getElementById(ThisSecID);
+    if (sectionId == null) return;
+    if (sectionId.style.display == '') {
+      sectionId.style.display = 'none';
+    }
+    else {
+      sectionId.style.display = '';
+    }
+  }
+  function Hide(obj) {
+    var oDiv = document.getElementById(obj);
+    if(oDiv != null) oDiv.style.display = "none";
+  }
+</script>
+<!-- End Of Extra Scripts -->
+
+<!-- main content of Portal starts here -->
+
+
+<!-- all portal containers html starts here -->
+
+  
+<!-- Portal Page Heading section  -->
+<div id="sitsportalpagetitlesection" class="sitsportalpagetitlesection">
+  <h1 id="sitsportalpagetitle" class="sitsportalpagetitle">
+  Awards
+  </h1>
+  <p id="sitsportalpagedesc" class="sitsportalpagedesc">
+    
+  </p>
+</div>
+<!-- end of portal page heading section  -->
+ 
+  <div id="sitsportalcontainersection">  
+ <!-- 1st Column -->
+<div id="sitscolumn1notabs" class="sitscolumn1notabs" style="width:90%;">
+
+<!-- Start of Container GSAWD_NOM_01_001-->
+<div class="sitscontainernotabs">
+<!-- Display Container title GSAWD_NOM_01_001 -->
+  <div class="DBLUECONTITLE" >     <p class="sitscontitleiconnotabs">
+       
+      
+    </p>
+    <p class="sitsconrightimagenotabs">&nbsp;</p>
+    <span class="sitscontitlenotabs">Open Awards
+    <span class="sitsnewcontextnotabs">&nbsp;</span></span>  </div>
+<!-- end of container title for GSAWD_NOM_01_001 -->
+   <div class="sitsconbordernotabs" >
+    <p class="sitscontrolsnotabs" style="width:100%;">
+        
+        
+        <a href='../run/SIW_PORTAL.MIN?6ADC38EA968B4313LjOxtGAc36Xnd4Rg0FqpsQPQpXWKXV4onQbnsKENWdOhOalMNdqGTE82fF67W7rk67onkXnhozBKygrmK7yEKSJO4-VWgXBPYwy9MEXEcBBIWaeI_Vcn46T-OpAszwi-YIVWZu7hAVL0ATL4JHwmzQ'><img src="../images/siw_portal_min.png" style="border:0px;width:24px;height:24px" title="Minimise Open Awards." alt="Minimise Open Awards."></a>
+        <a href='../run/SIW_PORTAL.CLOSE?6ADC38EA968B4313LjOxtGAc36Xnd4Rg0FqpsQPQpXWKXV4onQbnsKENWdOhOalMNdqGTE82fF67W7rk67onkXnhozBKygrmK7yEKSJO4-VWgXBPYwy9MEXEcBBIWaeI_Vcn46T-OpAszwi-YIVWZu7hAVL0ATL4JHwmzQ'><img src="../images/siw_portal_close.png" style="border:0px;width:24px;height:24px" title="Close Open Awards." alt="Close Open Awards."></a>
+      </p>
+      <!-- Hidden section html is here -->
+       <div id="GSAWD_NOM_01_001_CON_UHLP.CON" class="sitsconhelp"> 
+        <script type="text/javascript">
+          Hide('GSAWD_NOM_01_001_CON_UHLP.CON');
+        </script>
+        
+      </div>
+<!-- start of copsection for GSAWD_NOM_01_001 -->
+<div class="sitscopsectionnotabs">
+
+
+<style>
+	/* prevent datatables wrapper extending the table rows beyond the panel but allow the actions drop down to be visible on top by making overflow visible */
+	div.dataTables_wrapper {
+		width: auto;
+		overflow: visible;
+	}
+	/* override default styling for drop down list to fit in table */
+	div.sv-dropdown .sv-btn-default {
+		margin: 0px;
+		padding: 0.3em 0.8em;
+	}
+</style>
+
+<div class='sv-table-container sv-table-responsive'>
+	<table class='sv-table sv-table-striped sv-table-hover sv-datatable' data-sv-dt='Y'>
+		<thead>
+			<tr>
+				<th scope='col' role='columnheader'>Nomination Deadline</th>
+				<th scope='col' role='columnheader'>Name</th>
+				<th scope='col' role='columnheader'>Department</th>
+				<th scope='col' role='columnheader'>No. Awards Available</th>
+				<th scope='col' role='columnheader'>$ Amt. (default award value)</th>
+				<th scope='col' role='columnheader'>App. Deadline</th>
+				<th scope='col' role='columnheader'>No. Apps</th>
+				<th scope='col' role='columnheader'>No. Nominations</th>
+				<th scope='col' role='columnheader'>Status</th>
+				<th scope='col' role='columnheader'>Workflow</th>
+				<th class='all' scope='col' role='columnheader'>Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr><td>15 Apr 2019</td><td>University of Alberta Centenary Graduate Award 2019/20</td><td>Chemistry</td><td>1</td><td>6600.00</td><td></td><td data-order="001001">1 / 1</td><td>0</td><td>In Progress</td><td>Application/Nomination</td><td><div role="group" class="sv-dropdown"><button id="divid" aria-haspopup="true" aria-expanded="false" type="button" class="sv-btn sv-btn-default sv-dropdown-toggle" data-sv-toggle="sv-dropdown"><span class="sv-caret"></button><ul class="sv-dropdown-menu" aria-labelledby="divid"><li><a href='../run/SIW_YMHD.start_url?A41C2746B7E64E86K1HtRt58YsXhhMnmwErMxfsEoYkN-GD_Wnh3e6JfKXWEStKY9fgw8wzF2ZAjBzSiCImWwndJDDovZcVDck-w2GA_EW0Qsc1xDao9tnWG80LsRCFktt1o_G0-TYlEDDWCLYsYpP_Zt0SvXMS4ZV5iG-TH5oWcf_byOlKo31eVofqSUQtZq8NAhZaC0ekMsHrWjAE_9sdVwa_jtBQE3AbqAw' target='_blank'>View</a></li><li><a href='../run/SIW_YMHD.start_url?5D8D93D1DA034C38a6eRn5Ok3bD7LjmEohERwV2kKyxsfTMOzm38QY-Rv5GjC8G-L6IOSnqZa2JnDF_5IRUVl0BxWBAbHfEtsg3TYj9kwnJgEp6s0kW8iOGAv-5ciIgBmkBr2R5zNKvXdnPm_DetLqlwF53_Z18Sk2iigTFEQi1wxOlNQImmGikbO80wfeNUkoJf3KQCRCsDh1EqjA6lY2nrycgJyOtlHhR5OA' target='_blank'>Add deadline</a></li>
+<tr><td>22 Jan 2019</td><td>Len Bolger Memorial Scholarship in Energy Research Excellence 2019/20</td><td>Chemistry</td><td></td><td>13000.00</td><td></td><td data-order="011011">11 / 11</td><td>0</td><td>In Progress</td><td>Application/Nomination</td><td><div role="group" class="sv-dropdown"><button id="divid" aria-haspopup="true" aria-expanded="false" type="button" class="sv-btn sv-btn-default sv-dropdown-toggle" data-sv-toggle="sv-dropdown"><span class="sv-caret"></button><ul class="sv-dropdown-menu" aria-labelledby="divid"><li><a href='../run/SIW_YMHD.start_url?FC413CAEE1F348803A1-MmM5oGBaaxIrIMwcdnw4WYCwEetzpOgB4Epj3qesHZ2UMw1GBp_uHfuuP-ipIOJN6zSZAo_r2A3XKw4sJJWAvVPFtpvfUx2N7cG4H9Xa87Y-ptzn6sBbFbmOc4HNnjq9mt9XpJvT2BZQ8VmHssmG67IgzMiK_TPb0CUF8H1peQuhQ2LawxamPMWaBIp99qpiD43l3ZldCHHjXdidHA' target='_blank'>View</a></li><li><a href='../run/SIW_YMHD.start_url?745A876D0B404ACBtdcMMQegmjhFBTIfZZ0KVW1xNun1GdYdHP1Tmx8G1kZZcXBnMTx0oErBaKNJ-jVJfeibuJRrK7lxgzniL638czcIwcN5biWyErBbr-q_45pPIWqF6ssJSKaReO1Q4dEcvb57TFAVsI4_6Mmp4_HbZdTSLV3nXyr3d2EEEh8qzgfFFsuaI6JQtguLq6MLXeiA3y1FGary6la0u9zDa1-TEg' target='_blank'>Add deadline</a></li>
+<tr><td>01 Mar 2019</td><td>Stephen and Lynn Mandel Graduate Scholarship in Sexual and Gender Minority Studies 2019/20</td><td>Chemistry</td><td>1</td><td>1200.00</td><td></td><td data-order="012012">12 / 12</td><td>0</td><td>In Progress</td><td>Application/Nomination</td><td><div role="group" class="sv-dropdown"><button id="divid" aria-haspopup="true" aria-expanded="false" type="button" class="sv-btn sv-btn-default sv-dropdown-toggle" data-sv-toggle="sv-dropdown"><span class="sv-caret"></button><ul class="sv-dropdown-menu" aria-labelledby="divid"><li><a href='../run/SIW_YMHD.start_url?1ADBDEE9B7334F9Be6cgA-ZyW3Vl-uVP0fDWg-1O-stsWNrfapV1cWSrZivZzKGGbKz9cNybAyeLM6kOwABoiTyftfjU2Y6xVzOjHL8JHdczJZWgChCscPVWw7Y0arxLZnkjUVGE5bkx4afXla8HHQRUMKLCNkvvvzW5zlbVSBL5Q5mDgEqWAoy2CgzDAVoD04TYL5DLk-KJYJcsoVOFI4SIdQKG7BWsWOfUaA' target='_blank'>View</a></li><li><a href='../run/SIW_YMHD.start_url?20C7091737B848D9eh9wP__cgXFlCp9daoTl7eo3XngNMyZlRJkqV_COQz1NiM7_Y0OpM5c8z2F__AY5eqoRfAjHAzPM-89exR_hfyL8MBRyPInxpDn4nPjnxB5tg0EtfmD2uHALcKbKCrrwWBkSW6-0YDa3p_NyO8AHQO_XeHHskHqrOfvcXnmTnQGqd2_Aan6xM8m3zv94jJMaNxqlU1VPkUxXewstXspyCw' target='_blank'>Add deadline</a></li>
+<tr><td>10 Apr 2019</td><td>Friends of the University of Alberta Society Graduate Award 2019/20</td><td>Chemistry</td><td>2</td><td>5000.00</td><td></td><td data-order="012012">12 / 12</td><td>0</td><td>In Progress</td><td>Application/Nomination</td><td><div role="group" class="sv-dropdown"><button id="divid" aria-haspopup="true" aria-expanded="false" type="button" class="sv-btn sv-btn-default sv-dropdown-toggle" data-sv-toggle="sv-dropdown"><span class="sv-caret"></button><ul class="sv-dropdown-menu" aria-labelledby="divid"><li><a href='../run/SIW_YMHD.start_url?8A3D3434D56E4D2Bg_mRn2Ko4fxF9Z-JjbulzMpvKOVQb-jX4npTHCl2fPVCWQ4leamFfiBg8D3IowG0CwRGB9sD6yPYsWKZTETZ-_w3GxMLBjPry6iAYioxw12XzprS3HvoF7lY6hPpLNwTG0oIl-sV029Y53Itt7rOPcn3KtYgInyVvTtP0-Wb74BluNIazSCnQFjOsywtsigFHMoqTdFYf7OD2ga5Xiqc_A' target='_blank'>View</a></li><li><a href='../run/SIW_YMHD.start_url?DB7EBC05810B4DFESSDmHdO0OvWsemgdgZb7yEFkTni5jwdlS3l-DoN9Ob9JBZ6N3N5OKJsGPdmrqmnok2P1OD7nSq1R1tHvQobpM20rv2pS4YKraiNhbC9er3zv95NXKOfHxc4UoUg6VmxtqJquYbAAfsobHaxbI5jcYX5GmATVw4VL04k8hG49_e4Y48di2kgHXgk7u8VxU4rzLWhBHVQbfjDyoWkoXJ8ETw' target='_blank'>Add deadline</a></li>
+<tr><td>21 Feb 2019</td><td>DR App/Nom testing Nom Doc upload</td><td>Chemistry</td><td>18</td><td>1000.00</td><td></td><td data-order="000002">0 / 2</td><td>0</td><td>In Progress</td><td>Application/Nomination</td><td><div role="group" class="sv-dropdown"><button id="divid" aria-haspopup="true" aria-expanded="false" type="button" class="sv-btn sv-btn-default sv-dropdown-toggle" data-sv-toggle="sv-dropdown"><span class="sv-caret"></button><ul class="sv-dropdown-menu" aria-labelledby="divid"><li><a href='../run/SIW_YMHD.start_url?A8F1029C64EC4117vFvb5sZZCvy1b4qGt9TPb0bxNAWXF2dXsng6e00rB8uf7d2lgBiF31XpXtj-FxlHwdRQBwV2Py_V5Qp9e5suuSGSJNWOaQyyVfNuHht2JtaPkuqcEMIEmpMHTAQNQGPZQPzZtSv9JaBU2sMUcYnOzE-oeLYBkiTG0r_CYhGswhByyirZgs1ibMvIMOFrw8U3xjkkzBvftye3M_3txqVdGQ' target='_blank'>View</a></li><li><a href='../run/SIW_YMHD.start_url?F2B3D60021D845D9BwPvZsCJuqgz8p-TfV7nnwwzk0yk1znzNJNLqAdw6At-Xj1bc-gkq_Y2AO0LWAHq01gLl9ApDcbztNdvh-mxxyEa-gNM_uGq2UH0O-ODhbG7gyuiBxKw7XiKu3muCT6l6FDNE58V5e3SHaHQIhbyg0Aqa6Std8D2rgcrWiW55DEYc_kXJ1EGBIVpfJzr4kH4827oZHZaOgtVjgj7SNTBBg' target='_blank'>Add deadline</a></li>
+<tr><td>22 Jan 2019</td><td>DR app nom  pdf testing</td><td>Chemistry</td><td>1</td><td>1000.00</td><td></td><td data-order="013014">13 / 14</td><td>0</td><td>In Progress</td><td>Application/Nomination</td><td><div role="group" class="sv-dropdown"><button id="divid" aria-haspopup="true" aria-expanded="false" type="button" class="sv-btn sv-btn-default sv-dropdown-toggle" data-sv-toggle="sv-dropdown"><span class="sv-caret"></button><ul class="sv-dropdown-menu" aria-labelledby="divid"><li><a href='../run/SIW_YMHD.start_url?A8CD7CF4F627410A2pZjVlIebXcO6UBfAxs8oGpqzj55W33AqAAB3ViteUKeiwc2o-ENXxCMypGNxVpLi_eVey1gD60-3BRC_veKpcmv1PmY9FcrI80yOqEa1bmn5USheWigce81cdM0VkE4KSue1Uurun60eeK9wND7SbzjadBRCqJHBkeL7QvqRZj6rZBqS_T_LQLUukbOCnvFqydoKxQGdrC96kzOwe2Qyg' target='_blank'>View</a></li><li><a href='../run/SIW_YMHD.start_url?712D920CDD4E45FFY67u7HHrxe0MCBntT4DxaWgHZByHenQ2T4I5GBcvWcrqwm1yBQtJQ0Jy2nCMfMbVCEW6VM_Y_gchSao3lkFGA_MXqYyex3mHdLTzBaxi95i9DN-dUUZwYZOGs3KmiAy7JLm_mbhQD76i5agtXl91A6MoyYSkf0Wq9n1LEWeiHL6zoNQs63k39NkW_l2AsMcSKIc5ICK6QS2bHJS0mrWewA' target='_blank'>Add deadline</a></li>
+
+		</tbody>
+	</table>
+</div>
+
+</div>
+<!-- end of copsection-->
+</div>
+<!-- end of bordersection-->
+</div>
+<!-- end of container GSAWD_NOM_01_001 -->
+
+
+<!-- Start of Container GSAWD_NOM_01_003-->
+<div class="sitscontainernotabs">
+   <div class="sitsconbordernotabs" >
+      <!-- Hidden section html is here -->
+       <div id="GSAWD_NOM_01_003_CON_UHLP.CON" class="sitsconhelp"> 
+        <script type="text/javascript">
+          Hide('GSAWD_NOM_01_003_CON_UHLP.CON');
+        </script>
+        
+      </div>
+<!-- start of copsection for GSAWD_NOM_01_003 -->
+<div class="sitscopsectionnotabs">
+  
+<!-- This HTS only used for display Advanced Intray in Content mode -->
+<!-- Start Of Extra Javascripts -->
+<script type="text/javascript" src="../javascript/siw_intray_con_rsp.js"></script>
+<!-- End Of Extra Javascripts -->
+
+  
+    
+      
+    
+  
+  
+    
+      <div id="div1B896E71-10BB-4B4A-A4F9-F7D3048C367F"></div><script>sits_attach_event(window,"load",function(){sv_load_intray({"DIVID":"div1B896E71-10BB-4B4A-A4F9-F7D3048C367F","REFRESH":120000,"ISSC":"531E4866-52E4-45C2-9A0A-2D804126B821","PAGE":"","IMG2":"<img src=\"..\/images\/cross.gif\" style=\"border:0px;width:13px;height:18px\" alt=\"Red cross to show error has occurred.\">","IMG1":"<img src=\"..\/images\/working.gif\" style=\"border:0px;width:13px;height:13px\" alt=\"Spinning image to show page is loading.\">","ORDR":"","MHVC":"GSAWD_004","NKEY":"88F350DB4C19486AYjH9ng3ygmiNGI_g6fNeGn6b9DZmNECSlE5s6KQXM8FHM6Cw20XPYbbn3cGlNMAYKL1rhJ9i_ZErdandgihgL4eXBytDi9YwC8YQ1DjLtYu_xlASDx61rrCRYaw4-jg71MwBVcrqJaEPrEkxQJocSyRfplt91PGjYl0FX8EWBz7a6WJObfaYXpgZSYwCw1ZQckfmreUZ8BvWQVKxasmDZIBAvibHewsmabvbob6VIwc_nr80Rem5mp6aQ0d6X6J9"})})</script>   
+    
+  <input type="hidden" name="%.DUMMY.MENSYS.1" value="FBYHC8QoCloevnM9St2pcr8mtuTxSudOQEXKFeo4na8=;new;;" />   
+<!-- End of Advanced Intray -->
+
+</div>
+<!-- end of copsection-->
+</div>
+<!-- end of bordersection-->
+</div>
+<!-- end of container GSAWD_NOM_01_003 -->
+
+
+<!-- Start of Container GSAWD_NOM_01_002-->
+<div class="sitscontainernotabs">
+<!-- Display Container title GSAWD_NOM_01_002 -->
+  <div class="DBLUECONTITLE" >     <p class="sitscontitleiconnotabs">
+       
+      
+    </p>
+    <p class="sitsconrightimagenotabs">&nbsp;</p>
+    <span class="sitscontitlenotabs">Reports
+    <span class="sitsnewcontextnotabs">&nbsp;</span></span>  </div>
+<!-- end of container title for GSAWD_NOM_01_002 -->
+   <div class="sitsconbordernotabs" >
+    <p class="sitscontrolsnotabs" style="width:100%;">
+        
+        
+        <a href='../run/SIW_PORTAL.MIN?CB2DA315BC024986gYXtc6eTnilFT8Qj3rDetwANcYzJ-7AIA0jgvUCUK5qaXJl9D6uins_Rd5iRPdF8XbZ892xNk4oawYphoNIfLyb70VtzZVpO6-H25i9CvVRIqDkfAZ6yhJZAs9Y0oSdnLJOsGeOULVtBXNfF_XlqyQ'><img src="../images/siw_portal_min.png" style="border:0px;width:24px;height:24px" title="Minimise Reports." alt="Minimise Reports."></a>
+        <a href='../run/SIW_PORTAL.CLOSE?CB2DA315BC024986gYXtc6eTnilFT8Qj3rDetwANcYzJ-7AIA0jgvUCUK5qaXJl9D6uins_Rd5iRPdF8XbZ892xNk4oawYphoNIfLyb70VtzZVpO6-H25i9CvVRIqDkfAZ6yhJZAs9Y0oSdnLJOsGeOULVtBXNfF_XlqyQ'><img src="../images/siw_portal_close.png" style="border:0px;width:24px;height:24px" title="Close Reports." alt="Close Reports."></a>
+      </p>
+      <!-- Hidden section html is here -->
+       <div id="GSAWD_NOM_01_002_CON_UHLP.CON" class="sitsconhelp"> 
+        <script type="text/javascript">
+          Hide('GSAWD_NOM_01_002_CON_UHLP.CON');
+        </script>
+        
+      </div>
+<!-- start of copsection for GSAWD_NOM_01_002 -->
+<div class="sitscopsectionnotabs">
+<p class="sitscop"><a href="SIW_YMHD.start_url?F1D927FB8A33493FPuWA3ihOROfPBRydRIFBqCG6aJoTFV1Sh4GNsACioNAFsSGQEyfUNEcLpyu0BxiVTMRRBE9sI5g9VDbJBN_kQBdTExOyHN6Pf15yDGirCHPHLvy366LkJm3Yt_a29sR9mNSBKwHFsz6yO2rp3_h5g5QfCKYG6j1UGbZ4EcEA9LQC9HQM2vnqwXxzaMsNTg7GSi3NAyQnGOkv7CSEaFS2VVnG9ZZlYd3AG04M-MXJChk" target="_blank"  >Applicant Search</a><span class="sitsnewcoptext"></span></p>
+<p class="sitscop"><a href="SIW_YMHD.start_url?7F2A2C694D474CA5rLROXWbI5P9GcUiuiIkaBrNPtxHVdtFnszyt5Ss3n-ONgpWkJ3Aq-KABNWKn4z3k51TwxIWUcWrNucChjOCHQePrzxi_57TpzdxgoI4y1qZMQ6Z2nRz3ETzl1OeMaZxRcegjj92cO_771QvP1uDSAU9dNLO4PL5nDHIqx0AK3Kv-uYa8yRnn9yBEYLqu6AR7rq9ZFfr-YnrM65WqREs3Q-iwCQo_WnOPZcBf2v8-t1keNzJ5M4VaF_CFW83JI1Gr" target="_blank"  >Award Tenure Report</a><span class="sitsnewcoptext"></span></p>
+<p class="sitscop"><a href="SIW_YMHD.start_url?CB7573641205498CBPMVz7Di2BtnUm9byp7FmE-BG2a_GODsRZzo3S-mBqjKVlesF5shya_EKWLDTjWPqcBF3G_JfKUP6cGfaCmkM6oV1yHqKuDWdlfFIrIGG78okFwI_LcoBWxQIGZdSJEDxuIbQz7baOyCCnEo5ygA-8S22ikHr1UFrrr10XjtbMq8CGUOuhWbQdDRTa9CZYl6gn_hRJ3u_Az4ZxQAGMbCPdsNMmyQHmyCLXsoTh96B7U" target="_self"  >Award Search</a><span class="sitsnewcoptext"></span></p>
+
+</div>
+<!-- end of copsection-->
+</div>
+<!-- end of bordersection-->
+</div>
+<!-- end of container GSAWD_NOM_01_002 -->
+
+</div>
+<!-- end of last column -->
+</div>
+<!-- end of container section -->
+ 
+<input type="hidden" name="%.PORTAL.MENSYS.1" value="fogmngVc04AdhJiDRNlXCtrGOW9XexYN6oUsP0i/U74=;new;;" /> 
+<!-- all portal containers html ends here -->
+
+
+<!-- body-end.hts page header include starts here -->
+  
+    <!-- start of HTML from body-end.hts  -->
+
+        </div>
+        <!-- end of sitspagecontent -->
+</div>
+<footer>
+<div class="bottom-footer-row">
+    <div class="footer-container container">
+        <div class="footer-inner row-fluid">
+            <div class="span12 footer-copyright">
+                <ul class="footer-quick-links">
+                    
+                            
+                            <li><a href="https://www.ualberta.ca/about/contact" target="">Contact Us</a></li>
+                        
+                            <li><a href="https://www.surveymonkey.com/s/ualberta-web-feedback" target="">Feedback</a></li>
+                        
+                            <li><a href="http://www.registrar.ualberta.ca/calendar/" target="">University Calendar</a></li>
+                        
+                            <li><a href="http://www.careers.ualberta.ca/" target="">Careers</a></li>
+                        
+                            <li><a href="http://www.rms.ualberta.ca/en/EmergNumbers.aspx" target="">Emergency</a></li>
+                        
+                            <li><a href="https://policiesonline.ualberta.ca/" target="_blank">Policies</a></li>
+                        
+                            <li><a href="http://www.weatheroffice.gc.ca/city/pages/ab-50_metric_e.html" target="">Weather</a></li>
+                        
+                            <li><a href="http://www.edmonton.ca/" target="">Edmonton</a></li>
+                        
+                            <li><a href="https://www.ualberta.ca/privacy" target="">Privacy</a></li>
+                        
+                            <li><a href="https://www.ualberta.ca/keepintouch" target="">Keep in Touch</a></li>
+                        
+                        
+                    <li><a href="https://training.sitecore.ualberta.ca/departments/another-department#">Back to Top</a></li>
+                </ul>
+                <p>
+                    © 2015
+                    <span id="phfooter_0_ualberta_address">University of Alberta 116 St. and 85 Ave., <br class="visible-phone">Edmonton, AB, Canada T6G 2R3</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+                
+            </footer>
+
+
+<!-- overall background div (opened in header files) -->
+
+<script>
+if(typeof(sits_ajax_version)=="string") {
+	sits_attach_event(window, "load", function(){	
+		sits_include_file("../css/uoa_files/index_files/all.js");
+	})
+}
+</script>
+<!--[if IE]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<!-- end of HTML from body-end.hts  -->
+  </body>
+</html>
+  

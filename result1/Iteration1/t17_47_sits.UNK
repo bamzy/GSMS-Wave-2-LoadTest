@@ -1,0 +1,2186 @@
+var sits_plup_version = "920.2";
+var plup_bp_array = [];
+var uploader = {};
+var deletedontask = false; // dont ask about deleting files when cancelling send
+var deleter;
+var expander = "";
+var cropper = "";
+var plup_tmp = new Image;
+plup_tmp.src = "../images/arrow-closed.png";
+plup_tmp.src = "../images/arrow-open.png";
+var plupmousedown = false
+var plupdisabledclass = ""
+
+// variables for cropping 
+var cropperimg = new Image;
+cropperimg.src = "../images/image-crop.png";
+var vplup_canvas, plup_ctx, vplup_canvas2, plup_ctx2, vplup_canvas3, plup_ctx3;
+var plup_image;
+var iMouseX, iMouseY = 1;
+var theSelection;
+var plup_bckupdata = {};
+var pluprotangle = 0
+
+$('body').on("mouseup" ,plupmouseup); 
+$('body').on("touchend" ,plupmouseup); 
+function plupmouseup() { // binding mouseup event
+  var needtodraw = false;
+  if ( typeof(theSelection) == "object" ){
+    plupmousedown = false;
+    theSelection.bDragAll = false;
+    for (i = 0; i < 4; i++) {
+      theSelection.bDrag[i] = false;
+      if ( theSelection.iCSize[i] != theSelection.csize ){
+       needtodraw = true;
+      }  
+      theSelection.iCSize[i] = theSelection.csize;
+    }
+    theSelection.px = 0;
+    theSelection.py = 0;
+    if (needtodraw){
+      drawScene(); 
+    }  
+  }  
+};  
+// check browser compatibility for HTML cropping 
+function plupload_compat_check(plup_iss,reportError){
+  var ua = navigator.userAgent;
+  var checker = {
+   // iphone: ua.match(/(iPhone|iPod|iPad)/),
+    blackberry: ua.match(/BlackBerry/)
+   // android: ua.match(/Android/)
+  };
+  if ((window.File && window.FileReader && window.FileList && window.Blob) && !checker.android && !checker.blackberry && !checker.iphone) {
+    // Great success! All the File APIs are supported.
+    return true;
+  }else{
+    if ( reportError == "Y" ){
+      plup_error_box("{\"BUTTON\":\""+plupload_bp(plup_iss,1)+"\",\"TITLE\":\""+plupload_bp(plup_iss,2)+"\",\"TEXT\":\""+plupload_bp(plup_iss,55)+"\"}","NO","sits_plup_prev_error",plup_iss);
+    }  
+    return false;
+  }  
+}  
+// called to set stat and header stat of each file
+function plupload_set_stat(plup_iss,thefileobj,mode,message){
+  var fileid = thefileobj.id  
+  switch (mode){
+  case 1:    // error
+    $("#"+fileid).find("h2").prepend("<span class=\"sv-has-warning\" id=\"panelheaderror"+fileid+"\"><span class=\"sv-inline-error-text glyphicon glyphicon-warning-sign\" aria-hidden=\"true\"> </span></span> ");
+    $("#"+fileid).find(".plupupstat").addClass("sv-text-danger").html(message).closest("div.sv-form-group").addClass("sv-has-error").addClass("sv-has-feedback");
+    $("#"+fileid).find(".plupheaderstat").html("");
+    sits_tooltip("#panelheaderror"+fileid,message);
+    sits_announce(message+" "+thefileobj.name);
+    break ;
+  case 2:   // awaiting upload
+    $("#"+fileid).find("h2").find(".sv-has-warning").remove();
+    $("#"+fileid).find(".plupupstat").removeClass("sv-text-danger").html(message).removeClass("sv-has-error sv-has-feedback");;
+    $("#"+fileid).find(".plupheaderstat").html(" - "+message);
+    break ;
+  default :
+    return;
+    break;
+  }   
+}     
+// function called when file panel collapsed
+function pluploadpanelcollapse(thepanel,expanded){
+  if ( expanded ){
+    sits_hide($(thepanel).find(".plupheaderstat"));
+  }else{
+    sits_show($(thepanel).find(".plupheaderstat"));
+  }  
+  sits_dialog_resize(false,"sits_dialog");
+}  
+//check if image needs validating
+function plup_validate_image(thefileobj,plup_iss,mode,theimage){
+  if ( plupresponsivemode != "Y" ){
+    return;
+  } 
+  if ( !plupload_compat_check(plup_iss,"N") ){
+    plupload_set_stat(plup_iss,thefileobj,2,plupload_bp(plup_iss,73)) ;
+    return; 
+  }  
+  var options = $("#PLUP_uploader"+plup_iss).data("options");
+  var maxw = options.MAXW || 0;
+  var maxh = options.MAXH || 0;
+  maxw=maxw*1;
+  maxh=maxh*1;
+  if ( maxw > 0 && maxh  > 0  && mode == "CHECKVALIDATION"){
+    // we need to validate so get the image and call this proc again
+    uploader[plup_iss].validatingimages++;
+    plup_create_image(thefileobj,plup_iss,"CHECKVALIDATION");    
+    plupshowuploadbutton(plup_iss);
+    return;
+  }    
+  
+  var fileid = thefileobj.id  
+  if (  mode == "CHECKVALIDATION" ){   
+    plupload_set_stat(plup_iss,thefileobj,2,plupload_bp(plup_iss,73)) ;
+  }  
+
+  
+  if ( maxw > 0 && maxh  > 0  && mode == "VALIDATE"){
+    // we are validating
+    if( maxw != theimage.width || maxh != theimage.height ){
+      //$("#"+fileid).find("h2").prepend("<span class=\"sv-has-warning\" id=\"panelheaderror"+fileid+"\"><span class=\"sv-inline-error-text glyphicon glyphicon-warning-sign\" aria-hidden=\"true\"> </span></span> ");
+      //$("#"+fileid).find(".plupupstat").addClass("sv-text-danger").html(plupload_bp(plup_iss,78)).closest("div.sv-form-group").addClass("sv-has-error").addClass("sv-has-feedback");
+      //$("#"+fileid).find(".plupheaderstat").html("");
+      //sits_tooltip("#panelheaderror"+fileid,plupload_bp(plup_iss,78));
+      plupload_set_stat(plup_iss,thefileobj,1,plupload_bp(plup_iss,78));
+      
+      
+      sits_announce(plupload_bp(plup_iss,78)+" "+thefileobj.name);
+      uploader[plup_iss].invalidimages[fileid] = fileid;
+    }else{
+      //$("#"+fileid).find("h2").find(".sv-has-warning").remove();
+      //$("#"+fileid).find(".plupupstat").removeClass("sv-text-danger").html(plupload_bp(plup_iss,73)).removeClass("sv-has-error sv-has-feedback");;
+      //$("#"+fileid).find(".plupheaderstat").html(" - "+plupload_bp(plup_iss,73));
+      plupload_set_stat(plup_iss,thefileobj,2,plupload_bp(plup_iss,73))      
+      
+      delete uploader[plup_iss].invalidimages[fileid];
+    }
+    uploader[plup_iss].validatingimages--;
+    plupshowuploadbutton(plup_iss);
+  }           
+}  
+// creates image object from selected file
+function plup_create_image(thefileobj,plup_iss,mode){  // read image in and create IMG element  
+   if ( !plupload_compat_check(plup_iss,"Y") ){
+    return false; 
+  }  
+  
+  plup_image  = document.createElement("img");
+  var plup_image_local = document.createElement("img");    
+  var therawfile;    
+  var rawdata = $("#sits_dialog_crop_file_div").data("CROPPEDDATA");  // use tempdata// clear out on accept and cancel
+  if ( rawdata == "" || typeof(rawdata) == "undefined" ){  // use stored data
+    rawdata = $("tr#"+thefileobj.id).data("rawdata");
+    if ( plupresponsivemode == "Y"){    
+      rawdata = $("div#"+thefileobj.id).data("rawdata");
+    } 
+  }    
+  if ( rawdata == ""  || typeof(rawdata) == "undefined") {
+    therawfile = thefileobj.getNative();// turn plupload instance into original file 
+    var reader = new FileReader(); 
+    reader.readAsDataURL(therawfile);      
+    reader.onload = function(e) {
+      plup_image.src = e.target.result ;
+      plup_image_local.src = e.target.result ;
+      if ( mode == "CHECKVALIDATION" ){
+        plup_image_local.onload=function(){
+          setTimeout(function(){plup_validate_image(thefileobj,plup_iss,"VALIDATE",plup_image_local);},0);
+        }          
+      }              
+    };      
+  }else{
+    plup_image.src = rawdata ;            
+    plup_image_local.src = rawdata ; //            
+    if ( mode == "CHECKVALIDATION" ){
+      plup_image_local.onload=function(){
+        setTimeout(function(){plup_validate_image(thefileobj,plup_iss,"VALIDATE",plup_image_local);},0);
+      }  
+    }      
+  }
+  return true;  
+}  
+// gets rid of global objects after closing crop popup
+function plupload_crop_cleanup(plup_iss){
+  pluprotangle = 0;
+  sits_events[plup_iss+"event"] = false;
+  sits_events[plup_iss+"restore"] = false;
+  theSelection = "" ;
+  vplup_canvas = "";
+  plup_ctx = ""; 
+  vplup_canvas2 = "";
+  plup_ctx2 = ""; 
+  vplup_canvas3 = "";
+  plup_ctx3 = "";
+  plup_image = "";    
+  sits_dialog_close(true,"sits_dialog_crop_file"); //add "close" button  
+}
+// create image object and open dialog
+function plup_crop_box(thefileobj,plup_iss,restore){  
+  if (!plup_create_image(thefileobj,plup_iss,"")){
+     return false; 
+  }  ;
+  var btn = {};
+  btn[plupload_bp(plup_iss,49)] = function() { 
+    plupload_crop_cleanup(plup_iss)
+  }  
+  plup_image.onload = function() {        
+   sits_events[plup_iss+"restore"] = false;
+    if ( plup_image.width < 20  ||  plup_image.height < 20  ){
+      plup_error_box("{\"BUTTON\":\""+plupload_bp(plup_iss,1)+"\",\"TITLE\":\""+plupload_bp(plup_iss,2)+"\",\"TEXT\":\""+plupload_bp(plup_iss,54)+"\"}","NO","sits_plup_prev_error",plup_iss);
+      return true;
+    }else{
+      btn[plupload_bp(plup_iss,52)] = function(e) {       //RESTORE
+        if( $("#sits_dialog_crop_file_div").data("amended") != "Y" ){
+          return 
+        }  
+        if ( !sits_events[plup_iss+"restore"] ){  // prevent restore being pressed multiple times
+          $("#sits_dialog_crop_file_div").data("amended","N")
+          sits_events[plup_iss+"restore"] = true;
+          pluprotangle = 0;
+          $("#sits_dialog_crop_file_div").data("CROPPEDDATA","");
+          restore_crop(thefileobj,plup_iss,"Y")          
+        }
+      }
+      btn[plupload_bp(plup_iss,48)] = function() {  //ACCEPT
+        if ( applyCrop(plup_iss,thefileobj) ){
+          plupload_crop_cleanup(plup_iss);
+        }
+      }        
+    }  
+    if ( restore != "Y" ){
+      var crophtml = "<div class=\sv-container-fluid\><div class=\"sv-row\"><div class=\"sv-col-sm-12\"><div class=\"sv-form-container\"><div class=\"sv-form-horizontal\"><div class=\"sv-row\">";      
+      crophtml += "<div class=\"sv-col-sm-12\"><div class=\"sv-btn-container sv-btn-container-inline plupimagebuttons\"><button class=\"sv-btn sv-btn-default sv-col-sm-2 pluprotater\">"+plupload_bp(plup_iss,66)+"</button><button class=\"sv-btn sv-btn-default sv-col-sm-2 plupStartCrop\">"+plupload_bp(plup_iss,68)+"</button><button class=\"sv-btn sv-btn-default sv-col-sm-2 plupCancelCrop\">"+plupload_bp(plup_iss,70)+"</button><button class=\"sv-btn sv-btn-primary sv-col-sm-2 plupPerformCrop\">"+plupload_bp(plup_iss,69)+"</button></div></div>";
+      var croperror = ""
+      crophtml += "<div class=\"sv-col-sm-12\"><p class=\"sv-form-control-static plupcroperror sv-text-center sv-text-danger\">"+croperror+"</p></div>";
+      crophtml += "</div><div id='sits_dialog_crop_file_div' class=\"sv-text-center\"><canvas id='panel'></canvas></div></div></div></div></div></div>";      
+      sits_dialog(plupload_bp(plup_iss,50)+thefileobj.name,crophtml,btn,true,true,true,999,"sits_dialog_crop_file",true); //show dialog message
+    }else{
+      sits_show(".plupresizer,.pluprotater,.plupStartCrop");
+      sits_hide(".plupCancelCrop,.plupPerformCrop");
+      sits_dialog_update(false,btn,"sits_dialog_crop_file") ;      
+    }    
+    $("#sits_dialog_crop_file").data("plup_iss",plup_iss)
+    plup_canvas(plup_image,plup_iss);
+
+    //recentre dialog
+    sits_dialog_resize(75,"sits_dialog_crop_file");
+    if ( !sits_events[plup_iss+"event"]){ 
+      // will this work with multiple on screen
+      $(".plupimagebuttons").on("click",".pluprotater", function() {  //rotate
+        $(this).addClass("sv-disabled").prop("disabled",true);
+        $("#sits_dialog_crop_file_div").data("amended","Y");
+        pluprotangle = pluprotangle + 90
+        if ( pluprotangle > 270 ){
+          pluprotangle = 0
+        }  
+        restore_crop(thefileobj,plup_iss,"Y")  ;        
+      })
+      $(".plupimagebuttons").on("click",".plupresizer", function() {  //resize
+        //plupcanvas needs to set to auto size???
+        restore_crop(thefileobj,plup_iss,"Y")  ;        
+      })            
+      $(".plupimagebuttons").on("click",".plupStartCrop", function() {  //start crop
+        $(plup_image).data("crop","Y")
+        //$(".plupresizer,.pluprotater,.plupStartCrop").addClass("sv-disabled").prop("disabled","disabled");
+        sits_hide(".plupresizer,.pluprotater,.plupStartCrop");
+        sits_show(".plupCancelCrop,.plupPerformCrop");
+        $(".plupPerformCrop").removeClass("sv-disabled").prop("disabled",false);
+        drawScene("Y") ;        
+      })
+      $(".plupimagebuttons").on("click",".plupCancelCrop", function() {  //Cancel
+        $(plup_image).data("crop","N")
+        restore_crop(thefileobj,plup_iss,"Y")  ; 
+        sits_hide(".plupCancelCrop,.plupPerformCrop");
+        sits_show(".plupresizer,.pluprotater,.plupStartCrop");
+      })
+      $(".plupimagebuttons").on("click",".plupPerformCrop", function() {  //perform crop
+        $(this).addClass("sv-disabled").prop("disabled",true);
+        if( performCrop(thefileobj,plup_iss) ){
+          $(plup_image).data("crop","N");
+        }  
+      })              
+      sits_events[plup_iss+"event"] = true;
+    }
+    sits_hide(".plupPerformCrop,.plupCancelCrop");
+    $(".pluprotater").removeClass("sv-disabled").prop("disabled",false);
+
+  }    
+}
+// return image to original image when edit was opened
+function restore_crop(thefileobj,plup_iss,restore){ 
+  if ( restore != "Y" ){
+    //sits_events[plup_iss+"event"] = false;
+    //sits_dialog_close(true,"sits_dialog_crop_file")
+    plupload_crop_cleanup(plup_iss);
+    
+  }  
+  plup_crop_box(thefileobj,plup_iss,restore)
+}
+// update image object with edited image
+function applyCrop(plup_iss,thefileobj){
+  if (   $(plup_image).data("crop") == "Y" ){ 
+    plup_error_box("{\"BUTTON\":\""+plupload_bp(plup_iss,1)+"\",\"TITLE\":\""+plupload_bp(plup_iss,2)+"\",\"TEXT\":\""+plupload_bp(plup_iss,77)+"\"}","NO","",plup_iss);
+    return false;
+  }
+  if ( $("#sits_dialog_crop_file_div").data("amended") != "Y" ){
+    return  true ;
+  }
+  //sits_putmess("type="+thefileobj.type)
+  if( $(plup_image).data("crop") != "Y" ){
+    var rawdata = vplup_canvas3.toDataURL(thefileobj.type,0.95);
+    $("#sits_dialog_crop_file_div").data("CROPPEDDATA",rawdata);
+  }  
+  var id = thefileobj.id;
+  plup_bckupdata = {}
+  plup_bckupdata["upname"] = $("#upname"+id).val();
+  plup_bckupdata["upkeyw"] = $("#upkeyw"+id).val();
+  plup_bckupdata["updesc"] = $("#updesc"+id).val();
+  plup_bckupdata["upnotes"] = $("#upnotes"+id).val();
+  plup_bckupdata["rawdata"] = $("#sits_dialog_crop_file_div").data("CROPPEDDATA")
+  $("#PLUP_uploader"+plup_iss).data("AFTER",id);  
+  if (plupresponsivemode == "Y" ){
+    if ($("#"+id).find(".sv-panel").hasClass("sv-panel-collapsed")){
+      $("#PLUP_uploader"+plup_iss).data("EXPANDED","N");      
+    }else{
+      $("#PLUP_uploader"+plup_iss).data("EXPANDED","Y");            
+    }  
+  }  
+  var t = uploader[plup_iss].addFile(new o.File(null, {   //add as new image
+    name: thefileobj.name, 
+    data: $("#sits_dialog_crop_file_div").data("CROPPEDDATA")
+  }))
+  var ele = $("#"+id).find("td:first");
+  if ( plupresponsivemode == "Y" ){
+    ele = $("#"+id).find("div:first");
+  }
+  plup_del_file(ele,plup_iss,"","N"); // remove line for old image
+  // setTimeout(function(){$("#PLUP_filelist"+plup_iss).find("a.imagecrop:last").focus()},0);
+  return true;
+
+}
+// define crop Selection constructor
+function Selection(x, y, w, h){
+	this.x = x; // initial positions
+	this.y = y;
+	this.w = w; // and size
+	this.h = h;
+  this.px = x; // extra variables to dragging calculations
+  this.py = y;
+  var ua = navigator.userAgent;
+  var checker = {
+     iphone: ua.match(/(iPhone|iPod|iPad)/),
+     android: ua.match(/Android/)
+  };
+  if( checker.iphone || checker.android){
+    this.csize = 10; // resize cubes size
+	  this.csizeh = 20; // resize cubes size (on hover)	
+  }
+  else {
+    this.csize = 5; // resize cubes size
+	  this.csizeh = 10; // resize cubes size (on hover)	
+  }  
+  this.bHow = [false, false, false, false]; // hover statuses
+  this.iCSize = [this.csize, this.csize, this.csize, this.csize]; // resize cubes sizes
+	this.bDrag = [false, false, false, false]; // drag statuses
+	this.bDragAll = false; // drag whole selection
+}	  
+
+// define Selection draw method
+	Selection.prototype.draw = function() {
+      
+   
+   this.h = plup_aspect(this.aspect,this.w,"x",this.h)    
+   if (this.y < 0 ) {
+      this.y = 1;
+    }
+    if (this.h > vplup_canvas.height ) {
+      this.h = vplup_canvas.height -5;
+      this.w = plup_aspect(this.aspect,this.h,"y",this.w)    
+    } 
+    if (this.y > vplup_canvas.height ) {
+      this.y = vplup_canvas.height;
+    }   
+    
+    // if grab top and there is an asepct ratio, need to force bottom to be fixed
+    if ( this.aspect > 0 ){
+      if (this.bDrag[0]){ // top left, so fix bottom right
+        this.x = this.brx - this.w  //          
+        this.y = this.bry - this.h  //        
+      }
+      if (this.bDrag[1]){ // top right, so fix bottom left
+         this.y = this.bly - this.h          
+      }
+    }
+    
+    if (this.x < 0 ) {
+      this.x = 1;
+    }
+    if (this.x + this.w > vplup_canvas.width ) {
+      this.x = vplup_canvas.width - this.w ;
+    }
+    if (this.y + this.h > vplup_canvas.height ) {
+      this.y = vplup_canvas.height - this.h ;
+    }
+    if ( this.x <= 0 ){this.x=5}
+    if ( this.y <= 0 ){this.y=5}
+    if(this.w > 0 && this.h > 0 && this.x > 0 && this.y > 0){
+    }
+    else {
+      //need to set the coordinates at the edge:  or is there anydrag and drop property?
+      return;
+    }     
+    
+    
+    plup_ctx.strokeStyle = '#000';
+	  plup_ctx.lineWidth = 2;          
+	  plup_ctx.strokeRect(this.x, this.y, this.w, this.h);
+	  // draw part of original image      
+	  if (this.w > 0 && this.h > 0 && this.x > 0 && this.y > 0) {
+      plup_ctx.drawImage(vplup_canvas2, this.x, this.y, this.w, this.h, this.x, this.y, this.w, this.h);
+    }else{
+      return;
+    }    
+	   // draw resize cubes
+    //plup_ctx.fillStyle = '#e6e6e6';
+    //plup_ctx.fillRect(this.x - this.iCSize[0], this.y - this.iCSize[0], this.iCSize[0] * 2, this.iCSize[0] * 2); //topleft
+	  //plup_ctx.fillRect(this.x + this.w - this.iCSize[1], this.y - this.iCSize[1], this.iCSize[1] * 2, this.iCSize[1] * 2);//topright
+	  //plup_ctx.fillRect(this.x + this.w - this.iCSize[2], this.y + this.h - this.iCSize[2], this.iCSize[2] * 2, this.iCSize[2] * 2); //bottom right
+	  //plup_ctx.fillRect(this.x - this.iCSize[3], this.y + this.h - this.iCSize[3], this.iCSize[3] * 2, this.iCSize[3] * 2);//bottom left
+      plup_ctx.beginPath();
+      plup_ctx.rect(this.x - this.iCSize[0], this.y - this.iCSize[0], this.iCSize[0] * 2, this.iCSize[0] * 2);
+	    plup_ctx.rect(this.x + this.w - this.iCSize[1], this.y - this.iCSize[1], this.iCSize[1] * 2, this.iCSize[1] * 2);//topright
+	    plup_ctx.rect(this.x + this.w - this.iCSize[2], this.y + this.h - this.iCSize[2], this.iCSize[2] * 2, this.iCSize[2] * 2); //bottom right
+	    plup_ctx.rect(this.x - this.iCSize[3], this.y + this.h - this.iCSize[3], this.iCSize[3] * 2, this.iCSize[3] * 2);//bottom left
+      plup_ctx.fillStyle = '#fff';
+      plup_ctx.fill();
+      plup_ctx.lineWidth = 2;
+      plup_ctx.strokeStyle = 'black';
+      plup_ctx.stroke();
+    
+	}	 
+ 
+// main drawScene function that paints canvas on screen
+function drawScene(drawit) { 
+    if( $(plup_image).data("crop") != "Y" && drawit != "Y")return;
+    if(  $(plup_image).data("crop") == "Y"  && drawit != "Y"){
+      if( !theSelection.bDragAll && !theSelection.bHow[0] && !theSelection.bHow[1] && !theSelection.bHow[2] && !theSelection.bHow[3] ){      
+        if ( theSelection.iCSize[0]  == theSelection.csizeh || theSelection.iCSize[1]  == theSelection.csizeh  || theSelection.iCSize[2]  ==  theSelection.csizeh || theSelection.iCSize[3]  == theSelection.csizeh ){
+        }else{  
+          return     
+        }  
+     }   
+    } 
+	  plup_ctx.clearRect(0, 0, plup_ctx.canvas.width, plup_ctx.canvas.height); // clear canvas
+	  plup_ctx2.clearRect(0, 0, plup_ctx2.canvas.width, plup_ctx2.canvas.height); // clear canvas	 
+	  plup_ctx3.clearRect(0, 0, plup_ctx3.canvas.width, plup_ctx3.canvas.height); // clear canvas	 
+
+    // draw source image
+    if ( pluprotangle > 0 ){      
+      var pluprotangleradians = pluprotangle*Math.PI/180  ;        
+      plup_ctx.save();
+      plup_ctx.translate(plup_ctx.canvas.width/2,plup_ctx.canvas.height/2);
+      plup_ctx.rotate(pluprotangleradians)  ;         
+      if (  pluprotangle == 90 || pluprotangle == 270 ){
+        plup_ctx.translate(-plup_ctx.canvas.height/2,-plup_ctx.canvas.width/2);           
+        plup_ctx.drawImage(plup_image, 0, 0, plup_ctx.canvas.height, plup_ctx.canvas.width);
+      }else{
+        plup_ctx.translate(-plup_ctx.canvas.width/2,-plup_ctx.canvas.height/2);           
+        plup_ctx.drawImage(plup_image, 0, 0, plup_ctx.canvas.width, plup_ctx.canvas.height);
+      }      
+      plup_ctx.restore()    ;
+             
+      
+      plup_ctx2.save();
+      plup_ctx2.translate(plup_ctx.canvas.width/2,plup_ctx.canvas.height/2);
+      plup_ctx2.rotate(pluprotangleradians);
+      if (  pluprotangle == 90 || pluprotangle == 270 ){
+        plup_ctx2.translate(-plup_ctx2.canvas.height/2,-plup_ctx2.canvas.width/2);           
+        plup_ctx2.drawImage(plup_image, 0, 0, plup_ctx2.canvas.height, plup_ctx2.canvas.width);
+      }else{
+        plup_ctx2.translate(-plup_ctx2.canvas.width/2,-plup_ctx2.canvas.height/2);           
+        plup_ctx2.drawImage(plup_image, 0, 0, plup_ctx2.canvas.width, plup_ctx2.canvas.height);
+      }      
+      plup_ctx2.restore() ;
+
+
+      plup_ctx3.save();
+      plup_ctx3.translate(plup_ctx3.canvas.width/2,plup_ctx3.canvas.height/2);
+      plup_ctx3.rotate(pluprotangleradians);
+      if (  pluprotangle == 90 || pluprotangle == 270 ){
+        plup_ctx3.translate(-plup_ctx3.canvas.height/2,-plup_ctx3.canvas.width/2);           
+        plup_ctx3.drawImage(plup_image3, 0, 0, plup_ctx3.canvas.height, plup_ctx3.canvas.width);              
+      }else{
+        plup_ctx3.translate(-plup_ctx3.canvas.width/2,-plup_ctx3.canvas.height/2);           
+        plup_ctx3.drawImage(plup_image3, 0, 0, plup_ctx3.canvas.width, plup_ctx3.canvas.height);      
+      }    
+
+      plup_ctx3.restore() ;       
+
+    }else{
+	    plup_ctx.drawImage(plup_image, 0, 0, plup_ctx.canvas.width, plup_ctx.canvas.height);           
+      plup_ctx2.drawImage(plup_image, 0, 0, plup_ctx2.canvas.width, plup_ctx2.canvas.height);
+      plup_ctx3.drawImage(plup_image3, 0, 0, plup_ctx3.canvas.width, plup_ctx3.canvas.height);
+    }  
+    // and make it darker
+    if ( $(plup_image).data("crop") == "Y" ){
+      plup_ctx.fillStyle = 'rgba(0, 0, 0, 0.5)';
+      plup_ctx.fillRect(0, 0, plup_ctx.canvas.width, plup_ctx.canvas.height);
+      // draw selection
+	    theSelection.draw();
+    }
+  }
+  
+//creates a new canvas draws an image based on selection from plup canvas2, captures data
+// writes data to new image after canvas, hide canvas update cropped data objects
+function performCrop(thefileobj,plup_iss) { 
+
+
+    if ( theSelection.w < 25   ||  theSelection.h < 25  ){
+      $(".plupPerformCrop").removeClass("sv-disabled").prop("disabled",false);
+      plup_error_box("{\"BUTTON\":\""+plupload_bp(plup_iss,1)+"\",\"TITLE\":\""+plupload_bp(plup_iss,2)+"\",\"TEXT\":\""+plupload_bp(plup_iss,53)+"\"}","NO","",plup_iss);
+      return false;
+    }  
+
+    $("#sits_dialog_crop_file_div").data("amended","Y")
+    $("div#panelerror").remove();
+    
+	  var temp_ctx, temp_canvas;
+    var temp_image = new Image
+	  temp_canvas = document.createElement('canvas');
+	  temp_ctx = temp_canvas.getContext('2d');
+    var scale = vplup_canvas.scale
+
+    //take crop from original image
+    if ( pluprotangle == 90 || pluprotangle == 270) {
+      //scale = vplup_canvas3.height / vplup_canvas.height ; // actual width vs screen width
+      //  scale = 1/scale;
+    }  
+    //scale = 1  
+    //alert("scale="+scale);
+	  temp_canvas.width = theSelection.w*scale;
+	  temp_canvas.height = theSelection.h*scale;
+
+    //resize image
+    var newimageh = theSelection.h*scale
+    var newimagew = theSelection.w*scale
+
+    var options = $("#PLUP_uploader"+plup_iss).data("options")
+    var maxw = options.MAXW || 0;
+    var maxh = options.MAXH || 0;
+    if ( maxw > 0 && maxh > 0 ) {
+      newimageh = maxh;
+      newimagew = maxw    ;
+      temp_canvas.height = maxh ;      
+      temp_canvas.width = maxw ;      
+    }else{
+      maxw = theSelection.w*scale;
+      maxh = theSelection.h*scale;
+    }
+    temp_ctx.drawImage(vplup_canvas3, (theSelection.x*scale*1), (theSelection.y*scale*1), (theSelection.w*scale*1), (theSelection.h*scale*1), 0, 0, maxw, maxh);
+    $(".plupcroperror").html("");
+	  // temp_ctx.drawImage(vplup_canvas3, (theSelection.x*scale), (theSelection.y*scale), (theSelection.w*scale), (theSelection.h*scale), 0, 0, (theSelection.w*scale), (theSelection.h*scale));
+
+    //take crop from resized image  
+    // temp_canvas.width = theSelection.w;
+  	// temp_canvas.height = theSelection.h;         
+	  // temp_ctx.drawImage(vplup_canvas2, theSelection.x, theSelection.y, theSelection.w, theSelection.h, 0, 0, theSelection.w, theSelection.h);
+
+    var vData = temp_canvas.toDataURL(thefileobj.type,0.95);
+    $("#sits_dialog_crop_file_div").data("CROPPEDDATA",vData);    //back up the crop data    
+    pluprotangle = 0;
+    plup_crop_box(thefileobj,plup_iss,"Y");
+    sits_hide(".plupCancelCrop,.plupPerformCrop");
+    sits_show(".plupresizer,.pluprotater,.plupStartCrop");
+    return true;
+
+}  
+
+//sets up canvases and events 
+function plup_canvas(plup_image,plup_iss){
+  // loading source image
+  // creating canvas and context objects
+  vplup_canvas = document.getElementById('panel');
+  plup_ctx = vplup_canvas.getContext('2d');    
+  vplup_canvas2 = document.createElement('canvas');
+  plup_ctx2 = vplup_canvas2.getContext('2d');        
+    
+  // canvas that holds actual image - not resized
+  vplup_canvas3 = document.createElement('canvas');
+  plup_ctx3 = vplup_canvas3.getContext('2d'); 
+    
+  if( pluprotangle == 90 || pluprotangle == 270 ){
+    vplup_canvas3.width = plup_image.height;
+    vplup_canvas3.height = plup_image.width;   
+  }else{  
+    vplup_canvas3.width = plup_image.width;
+    vplup_canvas3.height = plup_image.height;
+    plup_image3 = plup_image
+  }  
+   
+  var options = $("#PLUP_uploader"+plup_iss).data("options");       
+  var MAX_WIDTH = 800;
+  var MAX_HEIGHT = 800;
+  var width = plup_image.width;
+  var height = plup_image.height;
+  if (width > height) {
+    if (width > MAX_WIDTH) {
+      height *= MAX_WIDTH / width;
+      width = MAX_WIDTH;
+    }
+  }
+  if (height > MAX_HEIGHT) {
+    width *= MAX_HEIGHT / height;
+    height = MAX_HEIGHT;
+  }   
+  plup_image.height = height;
+  plup_image.width = width;
+  
+  if( pluprotangle == 90 || pluprotangle == 270 ){
+    vplup_canvas.width = height;
+    vplup_canvas.height = width;
+    vplup_canvas2.width = height;
+    vplup_canvas2.height = width
+  }else{    
+    vplup_canvas.width = width;
+    vplup_canvas.height = height;
+    vplup_canvas2.width = width;
+    vplup_canvas2.height = height
+  }  
+  var canvasscale = vplup_canvas3.width / vplup_canvas.width ; // actual width vs screen width
+  vplup_canvas.scale = canvasscale;
+  var maxw = options.MAXW || 0;
+  var maxh = options.MAXH || 0;
+  maxw=maxw*1;
+  maxh=maxh*1;
+  if (maxw > 0 && maxh > 0 ) {
+    if (maxw != vplup_canvas3.width || maxh != vplup_canvas3.height ){
+     sits_announce(plupload_bp(plup_iss,79))
+      $(".plupcroperror").removeClass("sv-text-success").addClass("sv-text-danger").html(plupload_bp(plup_iss,79));        
+    }else{
+      sits_announce(plupload_bp(plup_iss,80))
+      $(".plupcroperror").addClass("sv-text-success").removeClass("sv-text-danger").html(plupload_bp(plup_iss,80));        
+    }    
+  }  
+    
+  var aspect = options["ASPECT"] || "0";  //4:3  = 0.75 width
+  var sw = 200
+  var sh = 200
+  sh = plup_aspect(aspect,sw,"x",sh)     
+  if ( vplup_canvas.width  <= sw ){
+    sw = vplup_canvas.width  -20
+    sh = plup_aspect(aspect,sw,"x",sh)    
+  }
+  if ( vplup_canvas.height  <= sh ){
+    sh = vplup_canvas.height-20
+    sw = plup_aspect(aspect,sh,"y",sw)    
+  }  
+  
+  if ( vplup_canvas.width <= 30 ){
+    sw = vplup_canvas.width -5
+    sh = plup_aspect(aspect,sw,"x",sh)    
+  }
+  if ( vplup_canvas.height <= 20 ){
+    sh = vplup_canvas.height-5
+    sw = plup_aspect(aspect,sh,"y",sw)    
+  }  
+
+  if ( vplup_canvas.width < 20  ||  plup_canvas.height < 20 ){
+    return;
+  } 
+    
+  // create initial selection
+  theSelection = new Selection(1, 1, sw, sh);
+  theSelection.aspect = aspect;
+ 
+  $('#panel').mousemove(function(e) { // binding mouse move event
+
+      var canvasOffset = $(vplup_canvas).offset();
+      iMouseX = Math.floor(e.pageX - canvasOffset.left);
+      iMouseY = Math.floor(e.pageY - canvasOffset.top);
+      // in case of drag of whole selector
+      if (theSelection.bDragAll) {
+        theSelection.x = iMouseX - theSelection.px;
+        theSelection.y = iMouseY - theSelection.py;
+      }
+      var drawit = ""
+      for (i = 0; i < 4; i++) {
+        if (!theSelection.bDrag[i]) {
+          theSelection.bHow[i] = false;
+          if ( theSelection.iCSize[i] == theSelection.csizeh ){
+            drawit = "Y";
+          }  
+          theSelection.iCSize[i] = theSelection.csize;
+        }  
+      }
+      // hovering over resize cubes
+      $("#sits_dialog_crop_file_div").css("cursor","");      
+      if ( iMouseX > theSelection.x - theSelection.csizeh && iMouseX < theSelection.x + theSelection.csizeh &&
+        iMouseY > theSelection.y - theSelection.csizeh && iMouseY < theSelection.y + theSelection.csizeh) {
+        theSelection.bHow[0] = true;
+        theSelection.iCSize[0] = theSelection.csizeh;
+        $("#sits_dialog_crop_file_div").css("cursor","nw-resize");
+      }
+      if ( iMouseX > theSelection.x + theSelection.w-theSelection.csizeh && iMouseX < theSelection.x + theSelection.w + theSelection.csizeh &&
+        iMouseY > theSelection.y - theSelection.csizeh && iMouseY < theSelection.y + theSelection.csizeh) {
+        theSelection.bHow[1] = true;
+        theSelection.iCSize[1] = theSelection.csizeh;
+        $("#sits_dialog_crop_file_div").css("cursor","ne-resize");
+      }
+      if (iMouseX > theSelection.x + theSelection.w-theSelection.csizeh && iMouseX < theSelection.x + theSelection.w + theSelection.csizeh &&
+        iMouseY > theSelection.y + theSelection.h-theSelection.csizeh && iMouseY < theSelection.y + theSelection.h + theSelection.csizeh) {
+        theSelection.bHow[2] = true;
+        theSelection.iCSize[2] = theSelection.csizeh;//bottom right
+        $("#sits_dialog_crop_file_div").css("cursor","se-resize");
+      }
+      if (iMouseX > theSelection.x - theSelection.csizeh && iMouseX < theSelection.x + theSelection.csizeh &&
+        iMouseY > theSelection.y + theSelection.h-theSelection.csizeh && iMouseY < theSelection.y + theSelection.h + theSelection.csizeh) {
+        theSelection.bHow[3] = true;
+        theSelection.iCSize[3] = theSelection.csizeh; //bottom left
+        $("#sits_dialog_crop_file_div").css("cursor","sw-resize");
+      }
+      // in case of dragging of resize cubes
+      var iFW, iFH, iFX, iFY;
+
+      if (theSelection.bDrag[0]) { //top left                    
+        iFX = iMouseX - theSelection.px;        
+        iFY = iMouseY - theSelection.py;
+        iFW = theSelection.w + theSelection.x - iFX;
+        iFH = theSelection.h + theSelection.y - iFY;       
+        if ( iFW >= vplup_canvas.width || iFH >= vplup_canvas.heigth ){
+          return;
+        }
+      }
+      if (theSelection.bDrag[1]) { //top right
+        iFX = theSelection.x;
+        iFY = iMouseY - theSelection.py;
+        iFW = iMouseX - theSelection.px - iFX;
+        iFH = theSelection.h + theSelection.y - iFY;
+        if ( iFW >= vplup_canvas.width || iFH >= vplup_canvas.heigth ){
+          return;
+        } 
+      }
+      if (theSelection.bDrag[2]) { //bottom right
+        iFX = theSelection.x;
+        iFY = theSelection.y;
+        iFW = iMouseX - theSelection.px - iFX;
+        iFH = iMouseY - theSelection.py - iFY;
+        if ( iFW >= vplup_canvas.width || iFH >= vplup_canvas.heigth ){
+          return;
+        }
+      }
+      if (theSelection.bDrag[3]) { //bottom left
+        iFX = iMouseX - theSelection.px;
+        iFY = theSelection.y;
+        iFW = theSelection.w + theSelection.x - iFX;
+        iFH = iMouseY - theSelection.py - iFY;
+        if ( iFW >= vplup_canvas.width || iFH >= vplup_canvas.heigth ){
+          return;
+        }        
+      }
+      if ( iFW >= vplup_canvas.width || iFH >= vplup_canvas.heigth ){
+        return;
+      }     
+      if (iFW > theSelection.csizeh * 2 && iFH > theSelection.csizeh * 2) {
+        theSelection.w = iFW;
+        theSelection.h = iFH;
+        theSelection.x = iFX;
+        theSelection.y = iFY;
+      }  
+      if (  theSelection.bDragAll == true ){
+        $("#sits_dialog_crop_file_div").css("cursor","move");    
+      }    
+
+
+      drawScene(drawit);
+    });
+
+  $('#panel').mousedown(function(e) { // binding mousedown event
+      plupmousedown = true
+      var canvasOffset = $(vplup_canvas).offset();
+      iMouseX = Math.floor(e.pageX - canvasOffset.left);
+      iMouseY = Math.floor(e.pageY - canvasOffset.top);  
+      theSelection.px = iMouseX - theSelection.x;
+      theSelection.py = iMouseY - theSelection.y;
+
+     
+      // work out current bottom left and bottom right. so shape can be locked if moving top left or right
+      theSelection.brx = theSelection.x + theSelection.w;
+      theSelection.bry = theSelection.y + theSelection.h ;
+      theSelection.blx = theSelection.x ;
+      theSelection.bly = theSelection.y + theSelection.h; 
+      
+      if (theSelection.bHow[0]) {                
+          theSelection.px = iMouseX - theSelection.x;
+          theSelection.py = iMouseY - theSelection.y;         
+      }
+      if (theSelection.bHow[1]) {
+          theSelection.px = iMouseX - theSelection.x - theSelection.w;
+          theSelection.py = iMouseY - theSelection.y;          
+      }                  
+      if (theSelection.bHow[2]) {
+          theSelection.px = iMouseX - theSelection.x - theSelection.w;
+          theSelection.py = iMouseY - theSelection.y - theSelection.h;                   
+      }
+      if (theSelection.bHow[3]) {
+          theSelection.px = iMouseX - theSelection.x;
+          theSelection.py = iMouseY - theSelection.y - theSelection.h;         
+      }
+
+      if (iMouseX > theSelection.x + theSelection.csizeh && iMouseX < theSelection.x+theSelection.w - theSelection.csizeh &&
+          iMouseY > theSelection.y + theSelection.csizeh && iMouseY < theSelection.y+theSelection.h - theSelection.csizeh) {
+          theSelection.bDragAll = true;
+          $("#sits_dialog_crop_file_div").css("cursor","move");          
+      }
+      for (i = 0; i < 4; i++) {
+        if (theSelection.bHow[i]) {
+          theSelection.bDrag[i] = true;
+        }
+      }
+    });
+    
+  $('#panel').mouseup(plupmouseup)  // binding mouseup event
+  
+
+  //////////////////////////TOUCH EVENTS/////////////////////////////////////////
+  $('#panel').bind("touchstart",function(e){ // binding mousedown event
+      e.preventDefault();      
+      var canvasOffset = $(vplup_canvas).offset();
+      iMouseX = Math.floor(e.originalEvent.targetTouches[0].pageX - canvasOffset.left);
+      iMouseY = Math.floor(e.originalEvent.targetTouches[0].pageY - canvasOffset.top);
+      theSelection.px = iMouseX - theSelection.x;
+      theSelection.py = iMouseY - theSelection.y;
+
+      // work out current bottom left and bottom right. so shape can be locked if moving top left or right
+      theSelection.brx = theSelection.x + theSelection.w;
+      theSelection.bry = theSelection.y + theSelection.h ;
+      theSelection.blx = theSelection.x ;
+      theSelection.bly = theSelection.y + theSelection.h; 
+      
+
+      //reset all resize cubes
+      for (i = 0; i < 4; i++) {
+          theSelection.bHow[i] = false;
+          theSelection.iCSize[i] = theSelection.csize;
+      }
+      // hovering over resize cubes work out which cube and set the size
+      if (iMouseX > theSelection.x - theSelection.csizeh && iMouseX < theSelection.x + theSelection.csizeh &&
+          iMouseY > theSelection.y - theSelection.csizeh && iMouseY < theSelection.y + theSelection.csizeh) {
+          theSelection.bHow[0] = true;
+          theSelection.iCSize[0] = theSelection.csizeh;
+      }
+      if (iMouseX > theSelection.x + theSelection.w-theSelection.csizeh && iMouseX < theSelection.x + theSelection.w + theSelection.csizeh &&
+          iMouseY > theSelection.y - theSelection.csizeh && iMouseY < theSelection.y + theSelection.csizeh) {
+
+          theSelection.bHow[1] = true;
+          theSelection.iCSize[1] = theSelection.csizeh;
+      }
+      if (iMouseX > theSelection.x + theSelection.w-theSelection.csizeh && iMouseX < theSelection.x + theSelection.w + theSelection.csizeh &&
+          iMouseY > theSelection.y + theSelection.h-theSelection.csizeh && iMouseY < theSelection.y + theSelection.h + theSelection.csizeh) {
+          theSelection.bHow[2] = true;
+          theSelection.iCSize[2] = theSelection.csizeh;
+      }
+      if (iMouseX > theSelection.x - theSelection.csizeh && iMouseX < theSelection.x + theSelection.csizeh &&
+          iMouseY > theSelection.y + theSelection.h-theSelection.csizeh && iMouseY < theSelection.y + theSelection.h + theSelection.csizeh) {
+          theSelection.bHow[3] = true;
+          theSelection.iCSize[3] = theSelection.csizeh;
+      }      
+      for (i = 0; i < 4; i++) {
+        if (theSelection.bHow[i]) {
+          theSelection.bDrag[i] = true;
+        }
+      } 
+      if (theSelection.bHow[0]) {
+          theSelection.px = iMouseX - theSelection.x;
+          theSelection.py = iMouseY - theSelection.y;
+      }
+      if (theSelection.bHow[1]) {
+          theSelection.px = iMouseX - theSelection.x - theSelection.w;
+          theSelection.py = iMouseY - theSelection.y;
+      }
+      if (theSelection.bHow[2]) {
+          theSelection.px = iMouseX - theSelection.x - theSelection.w;
+          theSelection.py = iMouseY - theSelection.y - theSelection.h;
+      }
+      if (theSelection.bHow[3]) {
+          theSelection.px = iMouseX - theSelection.x;
+          theSelection.py = iMouseY - theSelection.y - theSelection.h;
+      }
+
+      if (iMouseX > theSelection.x + theSelection.csizeh && iMouseX < theSelection.x+theSelection.w - theSelection.csizeh &&
+          iMouseY > theSelection.y + theSelection.csizeh && iMouseY < theSelection.y+theSelection.h - theSelection.csizeh) {
+          theSelection.bDragAll = true;
+      }
+      for (i = 0; i < 4; i++) {
+          if (theSelection.bHow[i]) {
+              theSelection.bDrag[i] = true;
+          }
+      }     
+    });
+    
+  $('#panel').bind("touchmove",function(e) { // binding touch move event        
+      e.preventDefault();            
+      var canvasOffset = $(vplup_canvas).offset();    
+      iMouseX = Math.floor(e.originalEvent.changedTouches[0].pageX - canvasOffset.left);
+      iMouseY = Math.floor(e.originalEvent.changedTouches[0].pageY - canvasOffset.top);
+
+      
+      var drawit = ""
+      for (i = 0; i < 4; i++) {
+        if (!theSelection.bDrag[i]) {
+          theSelection.bHow[i] = false;
+          if ( theSelection.iCSize[i] == theSelection.csizeh ){
+            drawit = "Y";
+          }  
+          theSelection.iCSize[i] = theSelection.csize;
+        }  
+      }
+      
+      // in case of drag of whole selector
+      if (theSelection.bDragAll) {
+        theSelection.x = iMouseX - theSelection.px;
+        theSelection.y = iMouseY - theSelection.py;
+      }     
+      // in case of dragging of resize cubes
+      var iFW, iFH, iFX, iFY;
+      if (theSelection.bDrag[0]) {
+        iFX = iMouseX - theSelection.px;
+        iFY = iMouseY - theSelection.py;
+        iFW = theSelection.w + theSelection.x - iFX;
+        iFH = theSelection.h + theSelection.y - iFY;
+        if ( iFW >= vplup_canvas.width || iFH >= vplup_canvas.heigth ){
+          return;
+        }           
+      }
+      if (theSelection.bDrag[1]) {
+        iFX = theSelection.x;
+        iFY = iMouseY - theSelection.py;
+        iFW = iMouseX - theSelection.px - iFX;
+        iFH = theSelection.h + theSelection.y - iFY;
+        if ( iFW >= vplup_canvas.width || iFH >= vplup_canvas.heigth ){
+          return;
+        } 
+      }
+      if (theSelection.bDrag[2]) {
+        iFX = theSelection.x;
+        iFY = theSelection.y;
+        iFW = iMouseX - theSelection.px - iFX;
+        iFH = iMouseY - theSelection.py - iFY;
+        if ( iFW >= vplup_canvas.width || iFH >= vplup_canvas.heigth ){
+          return;
+        }           
+      }
+      if (theSelection.bDrag[3]) {
+        iFX = iMouseX - theSelection.px;
+        iFY = theSelection.y;
+        iFW = theSelection.w + theSelection.x - iFX;
+        iFH = iMouseY - theSelection.py - iFY;
+        if ( iFW >= vplup_canvas.width || iFH >= vplup_canvas.heigth ){
+          return;
+        }           
+      }
+
+      if (iFW > theSelection.csizeh * 2 && iFH > theSelection.csizeh * 2) {
+          theSelection.w = iFW;
+          theSelection.h = iFH;
+          theSelection.x = iFX;
+          theSelection.y = iFY;
+      }
+      drawScene(drawit);  
+    });
+  $('#panel').bind("touchend",function(e) { // binding mouseup event  
+      e.preventDefault();            
+      plupmouseup();
+      
+    });      
+    // end touch events // 
+  drawScene("Y");
+};  
+
+//resize a dimension based on aspect ratio
+function plup_aspect(aspectratio,d,mode,val){
+  if ( aspectratio <=0 ){
+    return val 
+  }  
+  if ( mode == "x" ){  //calculate y
+    return d / aspectratio
+  }                         
+  if ( mode == "y" ){ //calculate x
+     return aspectratio * d ;
+  }                         
+}  
+/////////////////////////////////////////////////////////////////////////////////////
+// build file upload widget 
+function sits_attach_plupload(pluploadnkey,plup_iss,options,filejson){   
+  var obj = {} ;
+  if ( typeof options == "object" ){
+     obj = options;
+  }else{  
+    obj = sits_parse_json(options);
+  }      
+  if (typeof(obj.ALLOWCLOUD ) == "object" ){
+    if( obj.ALLOWCLOUD.DB ){
+        if ( typeof(Dropbox) == "undefined" ){
+          setTimeout(function(){sits_attach_plupload(pluploadnkey,plup_iss,options,filejson)}, 500); 
+          return
+        }  
+    }
+     
+  }
+  if( plupresponsivemode == "Y" ) {
+    plupdisabledclass = "sv-disabled";
+    //deleter = "<a class=\"sv-btn sv-btn-default sv-btn-block rspdeleter\"  href=\"javascript://" ></a>";
+    //cropper = '<a class="sv-btn sv-btn-default sv-btn-block imagecrop"  href=\"javascript://\" >'+plupload_bp(plup_iss,47)+'</a>'   ;
+    deleter = "<a class=\"rspdeleter sv-btn sv-btn-default \"  href=\"javascript://\"></a>";
+    cropper = "<a class=\"imagecrop sv-btn sv-btn-default\"  href=\"javascript://\" >"+plupload_bp(plup_iss,47)+"</a>"   ;
+    expanderclose = '<a href=\"\" aria-expanded=\"false\" class=\"expander sv-btn sv-btn-block sv-btn-default\">'+plupload_bp(plup_iss,56)+'</a>'; 
+  }else{
+    plupdisabledclass = "plupload_disabled";
+    deleter = '<a class="deleter" style="position: relative; z-index: 0;" href="javascript://" title="'+plupload_bp(plup_iss,25)+'">'+plupload_bp(plup_iss,25)+'</a>'; // delete img src
+    cropper = '<button type="button" class="imagecrop"><img alt="'+plupload_bp(plup_iss,47)+'" src="'+cropperimg.src+'"></button>'   
+    expander = '<img class="expander" style="position: relative; z-index: 0;" src ="../images/arrow-open.png" alt="open">'; 
+    expanderclose = '<img class="expander" style="position: relative; z-index: 0;" src ="../images/arrow-closed.png" alt="closed">'; 
+  }
+
+  $("#PLUP_uploader"+plup_iss).data("options",obj); //store options
+  var con = "";
+  var extraclass = "" ;
+  if ( obj.EMBED == "P" ) {
+    extraclass = " plupnested";
+  }
+  //rsp code
+  if ( plupresponsivemode == "Y" ){
+    con+= "<div class=\"sv-row\"><div class=\"sv-col-md-12\">";
+    if ( obj.EMBED != "P" ){ 
+      con+= "<div class=\"sv-panel sv-panel-"+((obj.USE_PANEL_DEFAULT=="Y")?"default":"primary")+"\"> <div class=\"sv-panel-heading\"><h2 class=\"sv-panel-title\">"+plupload_bp(plup_iss,21)+"</h2></div>";
+      con+= "<div class=\"sv-panel-body\">";
+    }
+    con+= "<div class=\"sv-form-container\"><div class=\"sv-form-horizontal\">"
+    if ( obj.SHOW_DESC == "Y" ){
+      con+= "<div class=\"sv-row\"><div class=\"sv-col-md-12\"><p>"+plupload_bp(plup_iss,22)+"</p></div></div>";   //desc
+    } 
+    con += "<div class=\"sv-row\">";
+    if(!obj.ALLOWUPLOAD || obj.ALLOWUPLOAD!="N") {
+      con += "<div class=\"sv-col-md-12\"><div class=\"sv-btn-container\"><div class=\"sv-col-sm-4\"><a id=\"PLUP_pickfiles"+plup_iss+"\" class=\"sv-btn sv-btn-block sv-btn-default\" href=\"\">"+plupload_bp(plup_iss,24)+"</a></div>";
+      if (typeof(obj.ALLOWCLOUD ) == "object" ){
+        var thelist = ""       
+        if( obj.ALLOWCLOUD.DB && Dropbox.isBrowserSupported()){
+          thelist += "<li><a class=\"ttqDropBox\" href=\"javascript:\"  onclick=\"javascript:plupDB('"+plup_iss+"');\"><img src=\"../images/icons/dbx-icon-small.png\" alt=\"dropbox\"> "+plupload_bp(plup_iss,61)+"</a></li>";         
+        }  
+        if( obj.ALLOWCLOUD.GD  && sits_ie_supported() != "IE_8" ){
+          thelist += "<li><a class=\"ttqGoogleDrive\"  href=\"javascript:\" onclick=\"javascript:plupGD('"+plup_iss+"');\"><img src=\"../images/icons/googledrivesmall.png\" alt=\"google drive\"> "+plupload_bp(plup_iss,62)+"</a></li>";
+        }  
+        if ( thelist != "" ){
+          con +=  "<div class=\"sv-col-sm-4\"><div role=\"group\" class=\"sv-dropdown\">";
+          con += "<button id=\"PLUP_cloudfiles"+plup_iss+"\"  aria-haspopup=\"true\" aria-expanded=\"false\" type=\"button\" class=\"sv-cloudfiles sv-btn sv-btn-block sv-btn-default sv-dropdown-toggle\" data-sv-toggle=\"sv-dropdown\">"+plupload_bp(plup_iss,60)+" <span class=\"sv-caret\"></button>";
+          con += "<ul class=\"sv-dropdown-menu\" aria-labelledby=\"PLUP_cloudfiles"+plup_iss+"\">"+thelist;
+          con += "</ul></div></div>";      
+        }  
+      }                 
+      con+= "<div class=\"sv-col-sm-4\"><a role=\"button\" aria-disabled=\"true\" id=\"PLUP_uploadfiles"+plup_iss+"\" class=\"sv-btn sv-btn-block sv-btn-primary sv-disabled\" href=\"javascript://plupload\">"+plupload_bp(plup_iss,26)+"</a></div>";
+      con+= "</div></div>";
+    }   
+    if(obj.SHOW_DESC=="Y" || !obj.ALLOWUPLOAD || obj.ALLOWUPLOAD!="N") {
+      con+= "<hr>";
+    }
+    con+= "</div>"; //close row
+    if ( obj.SHOW_SUB == "Y" ){  
+      con+= "<div class=\"sv-row\"><div class=\"sv-col-md-12\"><p>"+plupload_bp(plup_iss,23)+"</p></div></div>";   //sub desc
+    }
+    con+= "<div id=\"PLUP_filelist"+plup_iss+"\"></div>";
+    if ( obj.EMBED != "P" ){ 
+      con+= "</div></div>"; //close panelbody and panel
+    } 
+    con+= "</div></div></div></div>" ;   
+    if ( obj.EMBED == "P" ){ 
+      con = "<div class=\"sv-container-fluid\">"+con+"</div>";
+    }    
+  }   
+  //old code 
+  if ( plupresponsivemode == "N" ){
+    con += '<table class="sitstableoutline'+extraclass+'" id="PLUP_filelist'+plup_iss+'" title="'+sits_escape_attr(plupload_bp(plup_iss,21))+'">';
+    if ( obj.SHOW_TITLE == "Y" ){
+      con += '<caption>'+plupload_bp(plup_iss,21)+'</caption>';
+    }
+    con += '<thead></thead><tbody>';
+    con += '<tr class="sizerrow"><td style="width:5%"></td><td style="width:10%"></td><td style="width:35%"></td><td style="width:30%"></td><td style="width:5%"></td><td style="width:5%"></td></tr>';  
+    if ( obj.SHOW_DESC == "Y" ){
+      con += '<tr><th colspan="6">'+plupload_bp(plup_iss,22)+' </th></tr>';
+    }	
+    if(!obj.ALLOWUPLOAD || obj.ALLOWUPLOAD!="N") {
+      con += '<tr><td colspan="6">';
+      con += '<a id="PLUP_pickfiles'+plup_iss+'"  href="javascript://" class="plupload_button plupload_add" title="'+plupload_bp(plup_iss,24)+'">'+plupload_bp(plup_iss,24)+'</a>';
+      con += '<a id="PLUP_uploadfiles'+plup_iss+'" class="plupload_button plupload_start plupload_disabled" href="javascript://" title="'+plupload_bp(plup_iss,26)+'">'+plupload_bp(plup_iss,26)+'</a></td></tr>';
+    }
+    if ( obj.SHOW_SUB == "Y" ){
+      con += '<tr><th colspan="6">'+plupload_bp(plup_iss,23)+'</th></tr>';
+    }
+    //if ( obj.SHOW_FILELIST == "Y" ){
+      con += '<tr><td colspan="4">'+plupload_bp(plup_iss,27)+'</td>';
+      con += '<td colspan="2">'+plupload_bp(plup_iss,29)+'</td></tr>';  
+    //}	
+    con += '</tbody></table>';  
+    if ( obj.EMBED == "P" ) {
+      extraclass = " plupnested";
+    }
+  }  
+  $("#PLUP_uploader"+plup_iss).html(con); 
+  if ( obj.EMBED == "P" ){  //popup widget
+    var popupbutton = "";
+    if ( plupresponsivemode == "N" ){  
+      popupbutton = "<input class='pluploadpopper"+plup_iss+"' type='button' value = '"+plupload_bp(plup_iss,31)+"'>";
+    }else{
+      popupbutton = "<input class='pluploadpopper"+plup_iss+" sv-btn sv-btn-primary' type='button' value = '"+plupload_bp(plup_iss,31)+"'>";
+    }    
+    $("#PLUP_uploader"+plup_iss).addClass("popup").hide().after(popupbutton)  ;
+    $(".pluploadpopper"+plup_iss).bind("click",function() {
+	    $("#PLUP_uploader"+plup_iss).show();
+	    var btn = {};
+      btn[plupload_bp(plup_iss,1)] = function() {
+  	    // on close move the html for the widget back to the button and hide
+	      $(".pluploadpopper"+plup_iss).before($("#PLUP_uploader"+plup_iss));
+		    $("#PLUP_uploader"+plup_iss).hide();
+  	    sits_dialog_close( "",$("#PLUP_uploader_popup"+plup_iss));
+	    }  
+      sits_dialog(plupload_bp(plup_iss,30),$("#PLUP_uploader"+plup_iss),btn,true,true,false,50,"",true,0.6,400); //show dialog message	
+	    uploader[plup_iss].refresh();
+	  })	   
+  }  
+  var loc = sits_minified_path("../plugins/javascript/plupload/js/","plupload.full.js","plupload.full.min.js");    
+  if(sits_files_array[loc]=="Y") { ;//already loaded...
+    sits_attach_plupload_init(pluploadnkey,plup_iss,filejson);//...so call straight away     
+  }
+  else { //not loaded yet
+    var par = {}; //create an object of parameters
+    par.url = loc;
+    par.fnc = sits_attach_plupload_init;
+    par.p01 = pluploadnkey;
+    par.p02 = plup_iss;
+    par.p03 = filejson;
+    var len = sits_param_array.push(par); //save for later
+    sits_include_file(loc);
+  }
+  return true;    
+}
+// loads files into file attached table
+function plupload_files_into_widget(filejson,plup_iss){ 
+  if ( filejson == "") {return};
+  var options = $("#PLUP_uploader"+plup_iss).data("options");//  store options
+  var obj = {};
+  if ( typeof filejson == "object" ){
+    obj = filejson;
+  }else{  
+    obj = sits_parse_json(filejson); 
+  }
+  //PPL322824 - added options for an extra button
+  var showextrabuttoncol = options.SHOW_EXTRA_BUTTON_COL || "";
+  var showextrabutton = options.SHOW_EXTRA_BUTTON || "";		
+  var extrabuttonname = options.EXTRA_BUTTON_NAME || "";
+  var extrabuttonfn = options.EXTRA_BUTTON_FN || "";      
+  $.each(obj,function(x,i){   
+    var thesize = plupload.formatSize(obj[x]["SIZE"]);
+    var ldeleter = deleter;
+    if (options.SHOW_DELETE !="Y" ){
+      ldeleter = "";
+    } 
+    var thehtml = "";
+    if ( plupresponsivemode == "Y" ){
+        ldeleter = ldeleter.replace("</a>",plupload_bp(plup_iss,25)+"<span class=\"sv-sr-only\"> "+obj[x]["FNAM"]+"</span></a>"); 
+        thehtml = "<div class=\"sv-row sv-plupfile\" id=\""+obj[x]["UID"]+"\">";
+        thehtml += "<div class=\"sv-col-sm-12\">";
+        thehtml += "<div class=\"sv-panel sv-panel-default\">";
+        thehtml += "<div class=\"sv-panel-heading sv-panel-heading-action\">";
+        thehtml += "<h2 class=\"sv-panel-title\">"
+        thehtml += "<span><a target=\"blank\" href=\""+obj[x]["FULL_LINK"]+"\">"+obj[x]["FNAM"]+ "</a></span> (" +thesize+ ")";      
+        //      thehtml += "<div class=\"sv-col-sm-1\"><p class=\"sv-form-control-static\"> <span class=\"sv-sr-only\">"+plupload_bp(plup_iss,29)+"</span></p></div>";
+        thehtml += "<span class=\"sv-panel-action-container\">"+ldeleter;
+        if (showextrabuttoncol=="Y") {
+        	if (showextrabutton=="Y") thehtml += "<button type=\"button\" class=\"sv-btn sv-btn-default sv-btn-block\" id=\"extra_button_"+obj[x]["UID"]+"\">"+extrabuttonname+"</button>";
+        }      
+        thehtml += "</span></h2></div></div></div></div>";            
+    }else{
+      thehtml = '<tr id="'+obj[x]["UID"]+'"><td colspan="4"><span><a target="blank" href="'+obj[x]["FULL_LINK"]+'">'+obj[x]["FNAM"]+ '</a></span> (' +thesize+ ') </td><td class="PLUP_status"><span class = "plup_perc">100%</span><td class="PLUP_status">'+ldeleter+'</td></tr>';
+    }
+    $("#PLUP_filelist"+plup_iss).append(thehtml);    
+    $("#"+obj[x]["UID"]).data("UFCUID",obj[x]["UFCUID"]);  // attach the UFC_CODE as data to the row   
+    //PPL322824 run extrabuttonfn on extra button click
+    if (showextrabuttoncol=="Y" && showextrabutton == "Y" && typeof extrabuttonfn != "undefined" && extrabuttonfn != "") {
+      $("#extra_button_"+obj[x]["UID"]).on("click", function(e){
+      	sits_execute_function(extrabuttonfn,"", e);
+      });
+    }    
+  })
+}
+
+// intialises plupload and its events
+function sits_attach_plupload_init(pluploadnkey,plup_iss,filejson){  
+   var options = $("#PLUP_uploader"+plup_iss).data("options");//  store options
+   var chunksiz = options.CHUNK_SIZE+"mb";
+   if ( chunksiz =="mb" ){chunksiz = "1mb"};   
+   var issc = sits_escape_url(plup_iss);  // the iss record to attach the UFC to
+   var nkey = sits_escape_url(pluploadnkey);  // the nkey for siw_plupload
+   var myruntimes = 'html5,silverlight,html4';
+   uploader[plup_iss] = new plupload.Uploader({
+    canOpenDialog: true,
+    runtimes: myruntimes,
+    browse_button: 'PLUP_pickfiles'+plup_iss,
+    container: 'PLUP_uploader'+plup_iss,
+    url : sits_build_url('siw_plupload.plup_in'),
+    //max_file_size : maxsiz,  //handled in files added event
+    chunk_size : chunksiz,      // should come from options default to 1mb
+    unique_names : true,
+    //resize : { quality : 20},       
+    // Silverlight settings  // may need changing for plupload 2:
+    silverlight_xap_url : '../plugins/javascript/plupload/js/plupload.silverlight.zip',
+    filters: {},
+    preinit : {
+      Init: function(up, info) {
+      },
+      UploadFile: function(up, file) {
+	      // You can override settings before the file is uploaded
+	      // up.settings.url = 'upload.php?id=' + file.id;
+		    var name = $("."+file.id).find(".upname").val()  || "" ;
+		    var note = $("."+file.id).find(".upnotes").val() || "" ;
+        var desc = $("."+file.id).find(".updesc").val()  || "" ;
+		    var keyw = $("."+file.id).find(".upkeyw").val()  || "" ;
+	      up.settings.multipart_params = {"UPNAME":name, "UPNOTE":note , "UPDESC":desc , "UPKEYW":keyw, "links":"YES", "size": file.size, "issc" : issc ,"NKEY.DUMMY.MENSYS.1" : nkey ,"%.DUMMY.MENSYS.1" : "","thefile" : file.name };  //try and grab filename as HTML5 passes  "blob" in
+	    }
+    },
+	  //events  see http://www.plupload.com/example_events.php
+    init : {
+      FileUploaded: function(up, file, info) { 
+        //sits_putmess("FileUploaded");
+        // Called when a file has finished uploading
+		    //info contains response from SIW program ( webinfo("output"))
+        $( "#"+file.id ).find("span.plup_perc").html("100%");
+        setTimeout(function(){$("#Progress_"+file.id).remove()}, 500);
+		    var sub = info["response"].substr(0,2);
+        if ( sub == "OK") {
+          var obj = sits_parse_json(info["response"].substr(2));
+          //remove extra info and image
+          plupuploaddone(file["id"],obj.LINK,obj.UID,file["name"],"",plup_iss);                  
+     	  }else{
+          plupuperror(file,plup_iss,info,sub);
+		      //error has occurred
+		      //$("#"+file["id"]).find("span[class=plup_perc]").html(plupload_bp(plup_iss,57));
+		      //uploader[plup_iss].stop();
+          //remove_file_from_queue(file["id"],plup_iss);
+          //plup_error_box(info["response"].substr(2),sub,"",plup_iss);
+  	    }
+	    },
+      PostInit: function() { //fix accessibility issues
+        var inp = $("#PLUP_uploader"+plup_iss+" :file").removeAttr("accept");
+        inp.attr("title",plupload_bp(plup_iss,59)).attr("tabIndex","-1");         
+        $("[id^=silverlight_]").attr("tabIndex","-1");
+        //href="javascript://" 
+        $("#PLUP_pickfiles"+plup_iss).attr("href","javascript://");
+      }
+	  }
+  });
+  uploader[plup_iss].invalidimages = {};
+  uploader[plup_iss].validatingimages = 0;
+  uploader[plup_iss].cloudfiles = {};       
+  uploader[plup_iss].cloudfiles.total = 0       
+  uploader[plup_iss].nkey = nkey;     
+  uploader[plup_iss].cloudstate = 0 ; //0 = idle, 1 = uploading
+  uploader[plup_iss].cloudopen == 0;
+  // initialise pluploader
+  uploader[plup_iss].init();
+  uploader[plup_iss].bind('ChunkUploaded',function(up, file, info) {
+    // Called when a file chunk has finished uploading
+    var sub = info["response"].substr(0,2);
+    if ( sub == "OK") {
+	    var obj = sits_parse_json(info["response"].substr(2));
+	    $("#"+file["id"]).data("UFCUID",obj.UID);
+    }else{
+      plupuperror(file,plup_iss,info,sub);
+    }
+  })
+  
+  uploader[plup_iss].bind('BeforeUpload', function(up, file) {  	 
+    //PPL322824 add an optional check before files are added
+    var options = $("#PLUP_uploader"+plup_iss).data("options");  //  store options
+    var beforeuploadfn = options.BEFORE_UPLOAD_FN;
+    if (typeof beforeuploadfn != "undefined" && beforeuploadfn != "") {
+      if (!sits_execute_function(beforeuploadfn,"","")) {
+      	up.stop();
+        return false;	
+      }
+    }
+     
+    
+    plupshowuploadbutton(plup_iss)
+    $( "#Progress_"+file.id).progressbar({value:1}).css({"display":""},{"float":"right"});
+  });
+
+  uploader[plup_iss].bind('FilesAdded', function(up, files) { 
+    plupfileadded(plup_iss,files,"plup");
+  });
+  
+  uploader[plup_iss].bind('UploadProgress', function(up, file) {
+   // make indeterminate here by setting value to false  
+    var thefileobj = uploader[plup_iss].getFile(file.id);  // only files added on this screen will be in the queue array, ones manually loaded in wont be.
+    if ( thefileobj == undefined ){
+      return;
+    } 	 
+    plupupdateprogressbar(file.id,file.percent,plup_iss)       
+  });
+  uploader[plup_iss].bind('UploadComplete', function(up, file) {
+    plupprocesscloudqueues(plup_iss,nkey)   
+  });
+
+  uploader[plup_iss].bind('Error', function(up, args) {
+    alert(args.code + ': ' + args.message);
+  });
+    
+  //event for upload link
+  var ele = sits_get_object('PLUP_uploadfiles'+plup_iss);
+  if(ele) {
+    ele.onclick = function() {
+      uploader[plup_iss].start();
+    };
+  }
+  
+  //code for deleting files from the file table
+  $("#PLUP_filelist"+plup_iss).on("click",".deleter,.rspdeleter",[plup_iss,pluploadnkey],function(e){ 
+    sits_cancel_event(e);
+	  plup_del_box(this,e.data);
+  });
+  
+  $("#PLUP_filelist"+plup_iss).on("click",".pluploadlink a", function(e){
+    sits_cancel_event(e);
+	  sits_navigate($(this).attr("href"));
+    
+    
+  })
+  
+  //code for cropping image file table
+  $("#PLUP_filelist"+plup_iss).on("click",".imagecrop",[plup_iss,pluploadnkey],function(e){ 
+    sits_cancel_event(e);
+    if(uploader[plup_iss].state != 1   ||  uploader[plup_iss].cloudstate != 0 ) {
+      var plup_msg = "{\"BUTTON\":\""+plupload_bp(plup_iss,1)+"\",\"TITLE\":\""+plupload_bp(plup_iss,57)+"\",\"TEXT\":\""+plupload_bp(plup_iss,81)+"\"}";
+      plup_error_box(plup_msg,"NO","sits_plup_in_prog",plup_iss);
+      return true;
+    }
+    
+    var id = $(this).closest("tr").attr("data-id");     // getfileid
+    if ( plupresponsivemode == "Y" ){
+      id = $(this).closest("div.sv-plupfile").attr("id")
+    }
+ 
+    var thefileobj = uploader[e.data[0]].getFile(id);   // getfile
+    plup_crop_box(thefileobj,plup_iss);
+  });  
+  
+  $("#PLUP_filelist"+plup_iss).on("click",".expander","",function(e){ 
+    sits_cancel_event(e);
+    var id = ""
+    var parent = ""
+    if ( plupresponsivemode == "Y" ){
+      parent =  $(this).closest("div.sv-plupfile");
+    }else{
+      parent = $(this).closest("tr");
+    }
+    id = parent.attr("id");   
+	  $("."+id).slideToggle(sits_anim_speed,function(){sits_dialog_resize(false,"sits_dialog")});
+    if ( parent.data("status") == "CLOSED"){
+	    parent.data("status","");
+      if ( plupresponsivemode != "Y" ){
+       $(this).replaceWith(expander);
+      }
+       $(this).attr("aria-expanded","true")
+	  }else {
+	    parent.data("status","CLOSED");
+      if ( plupresponsivemode != "Y" ){
+       $(this).replaceWith(expanderclose);
+       } 
+       $(this).attr("aria-expanded","false");
+     }
+     sits_dialog_resize(false,"sits_dialog");
+  }); 
+  plupload_files_into_widget(filejson,plup_iss);  
+}
+// called when server returns an error on upload
+function plupuperror(file,plup_iss,info,sub){      
+  $("#"+file["id"]).find("span[class=plup_perc]").html(plupload_bp(plup_iss,57));
+  uploader[plup_iss].stop();
+  remove_file_from_queue(file["id"],plup_iss);
+  plup_error_box(info["response"].substr(2),sub,"",plup_iss);
+  
+  
+  //$("#"+file["id"]).find(".plupupstat").addClass("sv-text-danger").html(plupload_bp(plup_iss,75)).closest("div.sv-form-group").addClass("sv-has-error").addClass("sv-has-feedback");;
+  //$("#"+file["id"]).find(".plupheaderstat").html("");// - "+plupload_bp(plup_iss,75));  
+  //$("#"+file["id"]).find("h2").prepend("<span class=\"sv-has-warning\" id=\"panelheaderror"+file["id"]+"\"><span class=\"sv-inline-error-text glyphicon glyphicon-warning-sign\" aria-hidden=\"true\"> </span></span> ").find(".imagecrop").remove();;
+  //sits_tooltip("#panelheaderror"+file["id"],plupload_bp(plup_iss,75));
+  
+  plupload_set_stat(plup_iss,file,1,plupload_bp(plup_iss,75))
+  
+}  
+// add file to screen after chosen
+function plupfileadded(plup_iss, files, cloudmode){ // mode = plup, GD, DB
+  var options = $("#PLUP_uploader"+plup_iss).data("options");  //  store options
+  // loop through the files array
+	var invalidfiles = "";
+	var currentfilenumber = 0;
+  var maxf = options.MAXFILES;
+  if ( maxf == "" ){
+	    maxf = 999999999999999;
+  }
+  var extension_error = false;
+  for (var i=0; i<files.length; i++) {  //var i in files
+	  var thisonevalid = true;
+    if ( plupresponsivemode == "Y" ){
+  	  currentfilenumber = $("#PLUP_uploader"+plup_iss).find("div.sv-plupfile").length;
+    }else{
+      currentfilenumber = $("#PLUP_uploader"+plup_iss).find("tr[id]").length;
+    }  
+    if ( currentfilenumber >= maxf ){
+      thisonevalid = false;	
+	    invalidfiles += ",  <br>"+ files[i].name+" "+plupload_bp(plup_iss,39);
+    }
+    //check file is not blank
+    if (files[i].size == "0" && files[i].isgoogledoc != true ){	
+      // if file size is zero remove
+      thisonevalid = false;
+      invalidfiles += ",  <br>"+ files[i].name+" "+plupload_bp(plup_iss,33);
+	  }
+      //check file is not too large
+    if ( options.FSIZ > 0  && options.FSIZ != "" ) {
+      var thesiz = files[i].size/1024;
+	    if ( thesiz > options.FSIZ ){
+        thisonevalid = false;		
+        invalidfiles += ", <br> "+ files[i].name+" "+plupload_bp(plup_iss,34);
+		  }		
+	  }	  
+    //check extension is valid
+	  var extensionarray = files[i].name.split(".");
+	  var extension = extensionarray.pop();
+	  var extensionlist = options.EXTENSIONLIST.split(",");
+	  if ( extension == files[i].name ){
+  	  extension = "";  //no extension not allowed
+	  }
+    if ( extension == "" && cloudmode == "GD" ){
+      if ( files[i].mime.indexOf("pdf") > 0  ){
+        files[i].name = files[i].name+".pdf";
+        extension = "pdf"
+      }  
+    }          
+	  extension = extension.toUpperCase();
+    if ( files[i].isgoogledoc != true ){ // cant do extension control on google files
+      if ( options.EXTENSIONCONTROL == "I" ) {
+        if ( $.inArray(extension,extensionlist) == -1 || extension == "" ){
+          extension_error = true;
+          thisonevalid = false;	
+  	      invalidfiles += ", <br> "+ files[i].name+" "+plupload_bp(plup_iss,35);
+		    }
+	    }	
+      if ( options.EXTENSIONCONTROL == "E" ) {
+        if ( $.inArray(extension,extensionlist) != -1 || extension == "" ){
+          extension_error = true;
+          thisonevalid = false;		
+  	      invalidfiles += ", <br> "+ files[i].name+" "+plupload_bp(plup_iss,35);		  
+		    }
+	    }	 	              
+    }   
+	  if ( thisonevalid == false ){  //get file and remove from array
+      remove_file_from_queue(files[i].id,plup_iss);	  
+	  }
+	  if ( thisonevalid == true ){      
+      if ( cloudmode == "DB" ||cloudmode == "GD" ){
+        //add file to queue 
+         uploader[plup_iss].cloudfiles[files[i].id] = files;
+         uploader[plup_iss].cloudfiles.total = uploader[plup_iss].cloudfiles.total + 1  
+      }  
+     
+      
+		  var  lexpander = ""
+		  if ( options.UPNAME != "N" || options.UPDESC != "N" || options.UPKEYW != "N" || options.UPNOTE != "N" ){//|| ( options.UPCROP == "Y" && files[i].type.indexOf("image")==0)) {
+        lexpander = expander;
+      }	   
+  	  var ldeleter = deleter;
+      var lcropper = cropper;
+	  	if (options.SHOW_DELETE !="Y" ){
+        ldeleter = "";
+      }		
+      
+      //rsp html
+      if ( plupresponsivemode == "Y" ){
+        //PPL322824 - added options for an extra button
+        ldeleter = ldeleter.replace("</a>",plupload_bp(plup_iss,25)+"<span class=\"sv-sr-only\"> "+files[i].name+"</span></a>"); 
+        var showextrabuttoncol = options.SHOW_EXTRA_BUTTON_COL || "";	 
+        var showextrabutton = options.SHOW_EXTRA_BUTTON || "";		
+        var extrabuttonname = options.EXTRA_BUTTON_NAME || "";
+        var extrabuttonfn = options.EXTRA_BUTTON_FN || "";
+        var newrow = "<div class=\"sv-row sv-plupfile\"  id=\""+ files[i].id +"\">";
+        newrow += "<div class=\"sv-col-sm-12\">";
+        newrow += "<div class=\"sv-panel sv-panel-default\" id=\"panel"+ files[i].id +"\">";
+        newrow += "<div class=\"sv-panel-heading sv-panel-heading-action\"><h2 class=\"sv-panel-title\">";
+        newrow += "<span class=\"pluploadlink\">"+ files[i].name +"</span>";
+        if ( files[i].isgoogledoc != true ){         
+          newrow += " ("+ plupload.formatSize(files[i].size) + ")";
+        }  
+
+        /*
+        newrow += "</p></div>";
+        newrow += "<div class=\"sv-col-sm-"+((showextrabuttoncol=="Y")?"1":"2")+"\"><div class= \"progbar\" id=\"Progress_"+files[i].id+"\"></div> </div>";
+        newrow += "<div class=\"sv-col-sm-1\"><p class=\"sv-form-control-static\"> <span class=\"sv-sr-only\">"+plupload_bp(plup_iss,29)+"</span><span class=\"plup_perc\">0%</span></p></div>";
+        */
+
+         // details
+        var details = ""                            ;  
+        details += "<div class=\"sv-form-group\"><p class =\"sv-col-sm-3 sv-static-text sv-control-label\">"+plupload_bp(plup_iss,72)+"</p>"
+        details += "<div class=\"sv-col-sm-4\"><p class =\"sv-form-control-static plupupstat\">"+plupload_bp(plup_iss,73)+"</p></div><div class=\"sv-col-sm-3\"><div class= \"progbar\" id=\"Progress_"+files[i].id+"\"></div></div>"
+        details += "<div class=\"sv-col-sm-2\"><span class= \"plup_perc\"></span></div></div>"
+
+         if (options.UPNAME != "N") {   
+          var val = plup_bckupdata["upname"] || "";
+          details += '<div class="sv-form-group '+files[i].id+'"><label class ="sv-col-sm-3 sv-control-label" for="upname' + files[i].id + '">'+plupload_bp(plup_iss,40)+'</label><div class="sv-col-sm-4"><input id = "upname' + files[i].id + '" type="text" class="upname sv-form-control" title="'+plupload_bp(plup_iss,40)+'" value="'+val+'" ></div></div>'        
+		    }  
+		    if (options.UPKEYW != "N") {
+          var val = plup_bckupdata["upkeyw"] || "";
+          details += '<div class="sv-form-group '+files[i].id+'"><label class ="sv-col-sm-3 sv-control-label" for="upkeyw' + files[i].id + '">'+plupload_bp(plup_iss,43)+'</label><div class="sv-col-sm-4"><input id = "upkeyw' + files[i].id + '" type="text" class="upkeyw sv-form-control" title="'+plupload_bp(plup_iss,43)+'" value="'+val+'"></div></div>'        
+        }  
+		    if (options.UPDESC != "N") {
+          var val = plup_bckupdata["updesc"] || "";
+          details += '<div class="sv-form-group '+files[i].id+'"><label class ="sv-col-sm-3 sv-control-label" for="updesc' + files[i].id + '">'+plupload_bp(plup_iss,41)+'</label><div class="sv-col-sm-4"><textarea  id = "updesc' + files[i].id + '" rows="2"  class="updesc sv-form-control" title="'+plupload_bp(plup_iss,41)+'">'+val+'</textarea></div></div>'        
+        }  
+  	    if (options.UPNOTE != "N") {
+          var val = plup_bckupdata["upnotes"] || "";
+          details += '<div class="sv-form-group '+files[i].id+'"><label class ="sv-col-sm-3 sv-control-label" for="upnotes' + files[i].id + '">'+plupload_bp(plup_iss,42)+'</label><div class="sv-col-sm-4"><textarea  id = "upnotes' + files[i].id + '" rows="2" class="upnotes sv-form-control" title="'+plupload_bp(plup_iss,42)+'">'+val+'</textarea></div></div>'        
+        }  
+		    if (options.UPCROP == "Y" && files[i].type.indexOf("image")==0){
+           //plup_validate_image(files[i],plup_iss,"CHECKVALIDATION"); //validate the image size
+          //details += ' ';//<div class="sv-form-group '+files[i].id+'"><div class="sv-col-sm-3"></div><div class="sv-col-sm-2">'+cropper+'</div></div>'  ;      
+        }else{
+
+          lcropper = "";
+        }         
+
+        newrow += "<span class=\"plupheaderstat sv-text-info\"></span>";      
+        newrow += "<span class=\"sv-panel-action-container\">"+lcropper+ldeleter;
+                
+        if (showextrabuttoncol=="Y") {
+      	   if (showextrabutton=="Y") newrow += "<button type=\"button\" class=\"sv-btn sv-btn-default\" id=\"extra_button_"+files[i].id+"\">"+extrabuttonname+"</button>";
+      	   //if (showextrabutton=="Y") newrow += "<button type=\"button\" class=\"sv-btn sv-btn-default\" id=\"extra_button_"+files[i].id+"\">"+extrabuttonname+"</button>";
+        }
+        newrow += "</span>";       
+        newrow += "</h2>";
+        newrow += "</div>";//panel header
+        
+        if ( details != "" ) {
+          //extra details button row 
+          //newrow += "<div class=\"sv-btn-container\"><div class=\"sv-col-sm-3\"></div><div class=\"sv-col-sm-3\">"+lexpander+"</div><div class=\"sv-col-sm-2\">"+lcropper+"</div></div>";
+          //newrow += "<div class=\"sv-btn-container\"><div class=\"sv-col-sm-3\"></div><div class=\"sv-col-sm-2\">"+lcropper+"</div></div>";
+          newrow += "<div class=\"sv-panel-body sv-plupload-panel-body\">";
+          details = "<div class=\"sv-row\" id=\"detailssection"+files[i].id+"\"><div class=\"sv-col-md-12\">"+details+"</div></div>";
+          newrow += details
+          newrow += "</div>";//panel body
+        } 
+
+        newrow += "</div></div></div>";//panel col and row
+
+        var afterid = $("#PLUP_uploader"+plup_iss).data("AFTER");
+        $("#PLUP_uploader"+plup_iss).data("AFTER","");
+        if ( typeof(afterid) == "string" && afterid != "" &&  $("#"+afterid).length > 0){
+          $("#"+afterid).after(newrow);  
+          $("#"+afterid).remove();          
+        }else{  
+          $("#PLUP_filelist"+plup_iss).append(newrow);  
+        }  
+        var expanded = $("#PLUP_uploader"+plup_iss).data("EXPANDED");
+        
+        $("#PLUP_uploader"+plup_iss).data("EXPANDED","");
+        if ( expanded == "N"){
+           expanded = false 
+        }else{
+           expanded = true 
+        }        
+        if ( details != "" ) {
+          sits_collapsible_panel("#panel"+ files[i].id,expanded,pluploadpanelcollapse) 
+        }
+        
+        var val = plup_bckupdata["rawdata"] || "";
+        $("div#"+files[i].id).data("rawdata",val);
+        if (options.UPCROP == "Y" && files[i].type.indexOf("image")==0){
+           plup_validate_image(files[i],plup_iss,"CHECKVALIDATION"); //validate the image size
+        }   
+        if ( files[i].type.indexOf("image")!=0 ){
+          $("#"+files[i].id).find(".plupheaderstat").html(" - "+plupload_bp(plup_iss,73));        
+        }  
+        if (showextrabuttoncol=="Y" && showextrabutton == "Y" && typeof extrabuttonfn != "undefined" && extrabuttonfn != "") { //PPL322824 run extrabuttonfn on extra button click
+          $("#extra_button_"+files[i].id).on("click", function(e){
+          	sits_execute_function(extrabuttonfn, "", e);
+          });
+        }
+        sits_announce(plupload_bp(plup_iss,64)+" "+files[i].name)
+
+      }     
+      //old html 
+      if ( plupresponsivemode == "N" ){
+        var newrow = '<tr id="' + files[i].id + '"><td colspan="3">'+lexpander+'<span class="pluploadlink">' + files[i].name + ' </span> ('+ plupload.formatSize(files[i].size) + ')</td><td><div class= "progbar" id="Progress_'+files[i].id+'"></div></td><td class="PLUP_status"><span class="plup_perc">0%</span></td><td class="PLUP_status">'+ldeleter+'</td></tr>'        
+        if (options.UPNAME != "N") {   
+          var val = plup_bckupdata["upname"] || "";
+          newrow += '<tr class="' + files[i].id + '"><td></td><td>'+plupload_bp(plup_iss,40)+'</td><td colspan="4"><input id = "upname' + files[i].id + '" type="text" class="upname" title="'+plupload_bp(plup_iss,40)+'" value="'+val+'" size="68"></td>'        
+        }  
+		    if (options.UPKEYW != "N") {
+          var val = plup_bckupdata["upkeyw"] || "";
+ 		      newrow += '<tr class="' + files[i].id + '"><td></td><td>'+plupload_bp(plup_iss,43)+'</td><td colspan="4"><input id = "upkeyw' + files[i].id + '" type="text" class="upkeyw" size="68" title="'+plupload_bp(plup_iss,43)+'" value="'+val+'"></td>'
+        }  
+		    if (options.UPDESC != "N") {
+          var val = plup_bckupdata["updesc"] || "";
+  		    newrow += '<tr class="' + files[i].id + '"><td></td><td>'+plupload_bp(plup_iss,41)+'</td><td colspan="4"><textarea  id = "updesc' + files[i].id + '" rows="2" cols="50" class="updesc" title="'+plupload_bp(plup_iss,41)+'">'+val+'</textarea></td>'       
+        }  
+		    if (options.UPNOTE != "N") {
+          var val = plup_bckupdata["upnotes"] || "";
+  		    newrow += '<tr class="' + files[i].id + '"><td></td><td>'+plupload_bp(plup_iss,42)+'</td><td colspan="4"><textarea  id = "upnotes' + files[i].id + '" rows="2" cols="50" class="upnotes" title="'+plupload_bp(plup_iss,42)+'">'+val+'</textarea></td>'
+        }  
+		    if (options.UPCROP == "Y" && files[i].type.indexOf("image")==0){
+      	  newrow += '<tr class="' + files[i].id + '" data-id="' + files[i].id + '"><td></td><td>'+plupload_bp(plup_iss,47)+'</td><td colspan="4">'+cropper+'</td>'
+        }             
+		    $("#PLUP_filelist"+plup_iss).append(newrow);
+        sits_dialog_resize(false,"sits_dialog")
+        var val = plup_bckupdata["rawdata"] || "";
+        $("tr#"+files[i].id).data("rawdata",val);
+      }           
+		  $( "#Progress_"+files[i].id).progressbar({value: 0}).css("display","none");
+	  }
+  }    
+  // if there is at least one valid file show upload
+  plupshowuploadbutton(plup_iss)
+	if ( invalidfiles != "" ){  
+	  // show a dialog explaining that 0b files have not been added      
+    if (  extension_error == true ){
+      if ( options.EXTENSIONCONTROL == "E" ){
+        invalidfiles += plupload_bp(plup_iss,45)+" ";
+      }
+      else {
+        invalidfiles += plupload_bp(plup_iss,46)+" ";
+      }
+      invalidfiles += extensionlist;     
+    }
+	  var btn = {};
+    btn[plupload_bp(plup_iss,1)] = function() {  //close
+	    sits_dialog_close(true,"sits_dialog_error"); //add "close" button  may want to call from end of other functions
+      $("#PLUP_pickfiles"+plup_iss).focus();
+    }
+    sits_dialog(plupload_bp(plup_iss,8),"<img src=\"../images/cross.gif\" alt=\""+plupload_bp(plup_iss,57)+"\"> "+plupload_bp(plup_iss,32)+invalidfiles.substr(2),btn,true,true,false,8000,"sits_dialog_error");      
+    sits_dialog_resize(35,"sits_dialog_error")  ;
+    $("#sits_dialog_error").closest("div.ui-dialog").find("div.ui-dialog-buttonset button").focus();
+    plup_bckupdata = {};    
+    return;   
+  };//end for
+  plup_bckupdata = {};    
+  $("#PLUP_pickfiles"+plup_iss).focus();  
+  var dialogid =  $("#PLUP_pickfiles"+plup_iss).closest("div.ui-dialog-content").attr("id")
+  if ( typeof(dialogid) == "string" ){
+     sits_dialog_resize(false,dialogid);   
+  }   
+}    
+
+//PPL322824 return function from deletefile call
+function adm_ret_func_delete(response){  //used for poup
+  var sub = response.substr(0,2);
+  var responsedel = response.substr(2);
+  var obj = {};
+  if ( sub == "OK") {  	
+   obj = sits_parse_json(responsedel);   
+   if (obj.removeall == "Y") { //PPL322824 option to remove all files
+   	 $("#PLUP_uploader" + obj.iss).find("div.sv-plupfile").each(function(){
+   	   remove_file_from_queue(this.id,obj.iss);
+       $("#"+this.id).remove() ; //delete row
+     });
+   } else {
+     $("#"+obj.fileid).remove() ; //delete row
+     sits_announce(plupload_bp(obj.iss,65))    
+   }
+   
+   $("#PLUP_pickfiles"+obj.iss).focus()
+   
+  }else{
+	  //PPL322824 option to remove all files - clean upfiles - note relies on function returning is and remove all
+    obj = sits_parse_json(responsedel);
+    if ( uploader[obj.iss].removeall == "Y") {
+ 	    $("#PLUP_uploader" + obj.iss).find("div.sv-plupfile").each(function(){
+ 	     remove_file_from_queue(this.id,obj.iss);
+       $("#"+this.id).remove() ; //delete row
+       sits_announce(plupload_bp(obj.iss,65))
+      });
+    } 	
+	  if ( !deletedontask ){
+       plup_error_box(responsedel,sub,"",obj.iss);
+    }
+  }
+  plupshowuploadbutton(obj.iss);
+}
+// delete confirmation
+function plup_del_box(ele,pluparray) {
+  var plup_iss = pluparray[0];
+  var plupnkey = pluparray[1];
+  
+  if ( deletedontask ){
+    plup_del_file(ele);
+    return true;
+  }
+  if(uploader[plup_iss].state != 1   ||  uploader[plup_iss].cloudstate != 0 ) {
+    var plup_msg = "{\"BUTTON\":\""+plupload_bp(plup_iss,1)+"\",\"TITLE\":\""+plupload_bp(plup_iss,57)+"\",\"TEXT\":\""+plupload_bp(plup_iss,58)+"\"}";
+    plup_error_box(plup_msg,"NO","sits_plup_in_prog",plup_iss);
+    return true;
+  }
+  var btn = {};
+  btn[plupload_bp(plup_iss,49)] = function() {
+     sits_dialog_close(true,"sits_dialog_del_file"); //add "close" button 
+  }
+  btn[plupload_bp(plup_iss,48)] = function() {
+	  sits_dialog_close(true,"sits_dialog_del_file"); //add "close" button  
+	  plup_del_file(ele,plup_iss,plupnkey);	 
+  }
+  sits_dialog(plupload_bp(plup_iss,36),plupload_bp(plup_iss,37),btn,true,true,false,999,"sits_dialog_del_file",true); //show dialog message
+}
+// delete file from widget
+function plup_del_file(ele,plup_iss,plupnkey,remove) {
+  var theid = "" ;
+  var fileid =  "" ;
+  //var filename =  "" ;
+  var parent = "" ;
+  if ( plupresponsivemode == "Y" ){
+    parent = $(ele).closest("div.sv-plupfile");
+  }else{
+    parent = $(ele).closest("tr");
+  }  
+  theid = parent.data("UFCUID");
+  fileid = parent.attr("id");
+ //  filename = $("#" + fileid).children("td").children("a").html();    
+  var database = "Y";
+  if (theid == undefined ){
+    database = "N";  // file not in database yet
+  }  
+  remove_file_from_queue(fileid,plup_iss);
+  if ( database == "Y" ) { // remove file from database
+    // need to remove file using ajax
+    $(ele).parent("td,div").html(plupload_bp(plup_iss,44)+" "+plupload_bp(plup_iss,38));
+    var query = "returniss=Y&fileid="+fileid+"&NKEY="+sits_escape_url(plupnkey)+"&ISSC="+sits_escape_url(plup_iss)+"&UFCC="+sits_escape_url(theid);
+    sits_send_query("POST","SIW_PLUPLOAD.deletefile",query,false,"adm_ret_func_delete") ; // 5th parameter to specify Javascript function to run on return.
+    return;
+  }
+  if ( remove == "N" ){
+    parent.empty(); // dont delete so we can add the edited file after this rather than at the bottom
+  }else{
+    parent.remove();
+  }  
+  $("."+fileid).remove();	 // remove detail rows
+  sits_announce(plupload_bp(plup_iss,65));
+  $("#PLUP_pickfiles"+plup_iss).focus();
+  plupshowuploadbutton(plup_iss);
+  var dialogid =  $("#PLUP_pickfiles"+plup_iss).closest("div.ui-dialog-content").attr("id")
+  if ( typeof(dialogid) == "string" ){
+     sits_dialog_resize(false,dialogid);   
+  }   
+  //sits_dialog_resize(false,"sits_dialog");   
+}
+//called when removing a non uploaded file to remove it from internal queue
+function remove_file_from_queue(id,plup_iss){
+  if( typeof(uploader[plup_iss].invalidimages[id]) == "string" ){
+    delete uploader[plup_iss].invalidimages[id];
+  }
+  var thefileobj = uploader[plup_iss].getFile(id);  // only files added on this screen will be in the queue array, ones manually loaded in wont be.
+  if ( thefileobj != undefined ){
+    uploader[plup_iss].removeFile(thefileobj); //remove file from queue array
+  }else{  // is file in google / DB queue ?
+    thefileobj = uploader[plup_iss].cloudfiles[id];
+    if ( thefileobj != undefined ){
+      delete uploader[plup_iss].cloudfiles[id];
+      uploader[plup_iss].cloudfiles.total--;
+    }else{
+      //sits_putmess("not found file in queue at all")        
+    }          
+  }  
+  setTimeout(function(){$("#Progress_"+id).remove()}, 500);
+  // if there is at least one valid file show upload
+  plupshowuploadbutton(plup_iss);
+}
+
+//PPL322824 Function to update the options object
+// string  plup_iss  : in ;name of plupload instance ISS
+// object  optionstoset  : in ;object with options to set e.g. {SHOW_DELETE:"Y", SHOW_EXTRA_BUTTON:"N"}
+function plup_set_options(plup_iss,optionstoset) {	
+	if (typeof optionstoset != "object") return false;
+	var options = $("#PLUP_uploader"+plup_iss).data("options");
+	if (typeof options == "undefined" || options == "") return false; 
+	var validoptions = ["SHOW_DELETE","SHOW_EXTRA_BUTTON", "DTYC", "FSIZ", "EXTENSIONCONTROL", "EXTENSIONLIST"]; //keep a set list of options that are allowed to be updated
+	var updateoptions = false;
+	
+  //loop options to set and update if it's a valid option, and has changed
+	for (key in optionstoset) {
+	  key.toUpperCase();
+		if ($.inArray(key,validoptions) != -1 && options[key] != optionstoset[key]) {
+			options[key] = optionstoset[key];
+			updateoptions = true;
+		}
+	}
+	
+	if (updateoptions) $("#PLUP_uploader"+plup_iss).data("options", options);	
+	return true;
+}
+
+//PPL322824 Function to return the Plupload file array // wont include cloud documents
+// string  plup_iss  : in ;name of plupload instance ISS
+function plup_get_files(plup_iss) {
+	if (typeof plup_iss == "undefined" || plup_iss == "") return false;	
+	var files = uploader[plup_iss].files;
+	if (typeof files == "object") return files;	
+	return false;
+} 
+
+//PPL322824 Function to return the Plupload status // wont include cloud documents
+function plup_get_state(plup_iss) {
+	if (typeof plup_iss == "undefined" || plup_iss == "") return false;	
+	var state = uploader[plup_iss].state;
+	if (typeof state == "number") return state;	
+	return false;
+}
+
+//PPL322824 Function check to see if this file has been added manually (e.g. via plupload_files_into_widget) or via Plupload
+// string  plup_iss  : in ;name of plupload instance ISS
+// string  id  : file id to check
+function plup_is_plup_file(plup_iss,id) {	
+  var thefileobj = uploader[plup_iss].getFile(id);  // only files added on this screen will be in the queue array, ones manually loaded in wont be.
+  if (typeof thefileobj == "undefined" ) return false;
+  return true;
+}
+
+//PPL322824 function to remove all files
+function plup_del_all_files(plup_iss,plupnkey){
+  //remove files using ajax
+  $("#PLUP_uploader" + plup_iss).find(".plup_perc").parent("td,div").html(plupload_bp(plup_iss,44)+" "+plupload_bp(plup_iss,38));
+  uploader[plup_iss].removeall = "Y" ;
+  var query = "returniss=Y&removeall=Y&NKEY="+sits_escape_url(plupnkey)+"&ISSC="+sits_escape_url(plup_iss);
+  sits_send_query("POST","SIW_PLUPLOAD.deletefile",query,false,"adm_ret_func_delete") ; // 5th parameter to specify Javascript function to run on return. 
+  return; 
+}
+
+//##########################cloud code#################################
+//opens dropbox (db) picker and adds file to queue
+function plupDB(plup_iss){ 
+  if ( uploader[plup_iss].cloudopen == 1){
+   return 
+  }
+  var button = $(this)
+
+  showcloudfilesbutton(false,plup_iss);
+  var  options = {linkType:"direct",success:function(files){
+    var filedata = {}
+    filedata.name = files[0].name;
+    filedata.link = files[0].link;
+    filedata.size = files[0].bytes;
+    filedata.id = sits_uuid();
+    filedata.type = "";
+    filedata.cloudmode = "DB"
+    filedata.gid  = "";
+    filedata.mime = "";
+    filedata.gdtoken = ""  ;
+    filedata.isgoogledoc = false;    
+    var files = [filedata];
+    showcloudfilesbutton(true,plup_iss);
+    plupfileadded(plup_iss, files, "DB") // mode = plup, GD, DB           
+    },cancel:function(){
+      showcloudfilesbutton(true,plup_iss);
+    } 
+  };
+  Dropbox.choose(options);   
+}
+// add cloud files button
+function showcloudfilesbutton(show,plup_iss){
+  if(show){
+    uploader[plup_iss].cloudopen = 0
+    $("#PLUP_cloudfiles"+plup_iss).removeClass(plupdisabledclass).removeAttr("aria-disabled","true").prop("disabled",false);       
+  }else{
+    uploader[plup_iss].cloudopen = 1
+    $("#PLUP_cloudfiles"+plup_iss).addClass(plupdisabledclass).attr("aria-disabled","true").prop("disabled",true);   
+  }    
+}  
+// authorise GD ( google drive )
+function plupGD(plup_iss){ 
+  if ( sits_gapi_auth_loaded && sits_gapi_picker_loaded ){
+    if ( uploader[plup_iss].cloudopen == 1){
+      return 
+    }
+   // showcloudfilesbutton(false,plup_iss);
+    pluponAuthApiLoad(plup_iss);
+  }         
+}
+// authorise GD part2
+function pluponAuthApiLoad(plup_iss){     
+  //sits_putmess("plupAPI")
+  var clientID = $("#googledrivejs").attr("data-app-key");
+  window.gapi.auth.authorize({
+    'client_id': clientID,
+    'scope' : ['https://www.googleapis.com/auth/drive.readonly.metadata'],
+    immediate: false
+  },function(authResult){pluphandleAuthResult(authResult,plup_iss)});
+ //  },pluphandleAuthResult);
+
+ } 
+ // authorise GD part3
+function pluphandleAuthResult(authResult,plup_iss){  
+  //sits_putmess("pluphandleAuthResult")
+  if ( authResult && !authResult.error){
+    gdoauthToken = authResult.access_token;
+    //createpicker
+    plupcreatePicker(plup_iss);
+
+  }else{
+     showcloudfilesbutton(true,plup_iss);
+  }
+}
+// run GD picker
+function plupcreatePicker(plup_iss){  
+  var picker = new google.picker.PickerBuilder()
+    .addView(new google.picker.DocsView())
+    .setOAuthToken(gdoauthToken)
+    .setCallback(function(data) {
+      var test = "bob";
+      pluppickerCallback(data,plup_iss);
+    })
+    .build();
+  picker.setVisible(true);   
+}  
+// handle GD picker response, update file queue
+function pluppickerCallback(data,plup_iss){ 
+  //sits_putmess("ppcb");
+  var url = 'nothing';
+  if (data[google.picker.Response.ACTION] == google.picker.Action.PICKED) { 
+  
+    var doc = data[google.picker.Response.DOCUMENTS][0];
+    var filedata = {};    
+    filedata.name = doc[google.picker.Document.NAME];
+    filedata.link = doc[google.picker.Document.URL];
+    filedata.size = doc.sizeBytes;
+    filedata.gid  = doc[google.picker.Document.ID];    
+    filedata.mime = doc[google.picker.Document.MIME_TYPE];
+    filedata.isgoogledoc = false;   
+    if ( filedata.mime.indexOf("google-apps") > 0 ){
+      filedata.isgoogledoc = true; 
+    }
+    filedata.gdtoken = gdoauthToken;
+
+    filedata.id = sits_uuid();    
+    filedata.cloudmode = "GD"
+    filedata.type = "";    
+   
+    var files = [filedata];
+    showcloudfilesbutton(true,plup_iss);
+    plupfileadded(plup_iss, files, "GD") // mode = plup, GD, DB              
+  }else{
+    if (data[google.picker.Response.ACTION] == google.picker.Action.CANCEL){
+      showcloudfilesbutton(true,plup_iss);
+    }  
+  }
+}
+// loops through the queue of cloud files and uploads
+function plupprocesscloudqueues(plup_iss){
+  $("#PLUP_uploadfiles"+plup_iss).addClass(plupdisabledclass).attr("aria-disabled","true");
+  $.each(uploader[plup_iss].cloudfiles,function(i,n){
+    if ( i != "total") {
+      plupprocesscloudfile(plup_iss,n,1);
+      return false     
+    }    
+  });
+  plupshowuploadbutton(plup_iss)    
+  return
+}
+// upload the cloud file in chunks
+function plupprocesscloudfile(plup_iss,fileobj,chunk){  
+  uploader[plup_iss].cloudstate = 1;//
+  var nkey = uploader[plup_iss].nkey;
+  var chunksize = uploader[plup_iss].settings.chunk_size;   
+  var fileid = fileobj[0].id;
+  $("#detailssection"+fileid).find(".plupupstat").html(plupload_bp(plup_iss,76))//
+  $("#"+fileid).find(".plupheaderstat").html(" "+plupload_bp(plup_iss,76)+" <img src=\"../images/working.gif\">")//
+
+  var cloudmode = fileobj[0].cloudmode;
+  // could be part of the object so dont have to do it every time
+  var numberofchunks = fileobj[0].size / chunksize
+  if ( numberofchunks < 1 ) {
+    numberofchunks = 1    
+  }else{
+    numberofchunks = Math.ceil(numberofchunks)    
+  }   
+  if ( fileobj[0].isgoogledoc == true ){
+    numberofchunks = 1;
+    chunk = 1;
+  }
+  
+  var name="", note="", desc="", keyw = "";
+  if ( chunk == numberofchunks ){
+    name = $("."+fileid).find(".upname").val()  || "" ;
+    note = $("."+fileid).find(".upnotes").val() || "" ;
+    desc = $("."+fileid).find(".updesc").val()  || "" ;
+    keyw = $("."+fileid).find(".upkeyw").val()  || "" ;
+    plupupdateprogressbar(fileid,100,plup_iss)
+ }else{
+   var myvar = ( (chunk ) / numberofchunks ) * 100;
+   myvar = Math.round(myvar);
+   plupupdateprogressbar(fileid,myvar,plup_iss);   
+ }    
+   
+  var query = "NKEY="+nkey+"&ISSC="+sits_escape_url(plup_iss)+"&CLOUDMODE="+cloudmode+"&chunk="+chunk+"&chunks="+numberofchunks+"&chunksize="+chunksize;
+  query += "&FILEID="+fileid+"&cloudfnam="+sits_escape_url(fileobj[0].name)+"&cloudfilelink="+sits_escape_url(fileobj[0].link);
+  query += "&LINKS=YES&size="+fileobj[0].size;
+  query += "&UPNAME="+sits_escape_url(name)+"&UPNOTE="+sits_escape_url(note)+"&UPDESC="+sits_escape_url(desc)+"&UPKEYW="+sits_escape_url(keyw);
+  if ( cloudmode == "GD" ){
+    query += "&MIME="+sits_escape_url(fileobj[0].mime)+"&GID="+sits_escape_url(fileobj[0].gid)+"&GDTOKEN="+sits_escape_url(fileobj[0].gdtoken);
+  }
+  sits_send_query("POST","SIW_PLUPLOAD.plup_in",query,false,"plupprocesscloudfilereturn") ; // 5th parameter to specify Javascript function to run on return. 
+  return;   
+}
+// function to update upload progress bar
+function plupupdateprogressbar(fileid,perc,plup_iss){  
+  var myvar = perc;
+  var myhtml = perc * 1 +"%";
+  if ( perc == 100 ){
+    myvar = false  ; 
+    myhtml = plupload_bp(plup_iss,44);
+  }
+  $("#detailssection"+fileid).find(".plupupstat").html(plupload_bp(plup_iss,76));//
+  $("#"+fileid).find(".plupheaderstat").html(" "+plupload_bp(plup_iss,76)+" <img src=\"../images/working.gif\">")//
+
+
+  $( "#Progress_"+fileid ).progressbar({value: myvar}).css({"display":""},{"float":"right"});
+  $( "#"+fileid ).find("span.plup_perc").html(myhtml);
+  
+  
+}
+// called when cloud chunk has been uploaded
+function plupprocesscloudfilereturn(response){    
+  var sub = response.substr(0,2);
+  if ( sub == "MO") { 
+    // get more
+    var obj = sits_parse_json(response.substr(2))
+    var plup_iss = obj.iss ;
+    var fileid = obj.FILEID;
+    var fileobj = uploader[plup_iss].cloudfiles[fileid];
+    var chunk = obj.chunk
+    chunk++
+    plupprocesscloudfile(plup_iss,fileobj,chunk);   
+    return;
+  }   
+  var obj = sits_parse_json(response.substr(2));
+  setTimeout(function(){$("#Progress_"+obj.FILEID).remove()}, 500);      
+  if ( sub == "OK") {
+    $("#"+obj.FILEID).data("UFCUID",obj.UID);// just the last chunk ufc?
+    $( "#Progress_"+obj.FILEID ).progressbar({value:100}).css({"display":""},{"float":"right"});
+    $( "#"+obj.FILEID).find("span.plup_perc").html("100%")
+   // plupuploaddone(obj.FILEID,obj.LINK,obj.UID,"")
+    var plup_iss = obj.iss
+    var filename = "";
+    var thesize = ""
+    if ( typeof obj.SIZE == "string"){
+      thesize = plupload.formatSize(Math.round(obj.SIZE));
+      filename = obj.FILENAME
+    }
+    plupuploaddone(obj.FILEID,obj.LINK,obj.UID,filename,thesize,plup_iss)
+
+   //remove file from queue and reprocess queue
+    delete uploader[obj.iss].cloudfiles[obj.FILEID];
+    uploader[obj.iss].cloudfiles.total--;
+    uploader[obj.iss].cloudstate = 0;// idle
+    plupprocesscloudqueues(obj.iss)  
+    //add links  
+  }else{
+    if (sub == "NO"){
+      var plup_iss = obj.iss
+      delete uploader[plup_iss].cloudfiles[obj.FILEID];
+      uploader[plup_iss].cloudfiles.total--;      
+      uploader[plup_iss].cloudstate = 0;// idle
+      $("#"+obj.FILEID).find("span[class=plup_perc]").html(plupload_bp(plup_iss,57));   
+      $( "#Progress_"+obj.FILEID ).progressbar({value:100}).css({"display":""},{"float":"right"});
+      setTimeout(function(){$("#Progress_"+fileid).remove()}, 500);      
+	    plup_error_box(response.substr(2),sub,"",plup_iss);   
+      plupshowuploadbutton(plup_iss);
+    }else {
+      //unknownerror
+    }  
+  }
+       
+}
+
+// function called when file successfully uploaded
+function plupuploaddone(fileid,link,uid,fname,fsiz,plup_iss){    
+  $("#"+fileid).data("UFCUID",uid).find(".imagecrop").remove();          
+  if ( typeof link == "string" && link != "" ){
+    if ( fname == "" ){
+      fname =  $("#"+fileid).find(".pluploadlink").html();
+    }
+    $("#"+fileid).find(".pluploadlink").html("<a target='_blank' href='SIW_FILE_LOAD.start_url?"+link+"'>"+fname+"</a>");
+    if ( typeof fsiz == "string" && fsiz != "" ){
+      $("#"+fileid).find(".pluploadlink").after(" ("+fsiz+")");
+    }  
+  }
+  //delete details section
+  //remove extra info and image
+  if ( plupresponsivemode == "Y" ){
+   // $("."+fileid).closest("div.sv-plupload-panel-body").empty();
+    $("#detailssection"+fileid).find(".plupupstat").html(plupload_bp(plup_iss,74));
+    $("#"+fileid).find(".plupheaderstat").html(" "+plupload_bp(plup_iss,74));
+
+    //$("."+fileid).closest("div.sv-row").remove();
+  }   
+  $("."+fileid).remove(); // remove all details fields
+  if ( plupresponsivemode == "Y" ){         
+
+  }  
+  $("#"+fileid).find(".expander").remove();	
+  
+}
+
+// functin to determine wether upload is clickable or not
+function plupshowuploadbutton(plup_iss){  
+ //  show upload button if cloudstate = 0 a  
+  //  dim upload if cloudstate = 1 or pluploadstate != 1
+  var flag = "N";
+  $.each(uploader[plup_iss].invalidimages,function(i,n){
+    flag = "Y";
+  })  
+  
+  if ( flag == "Y" || uploader[plup_iss].validatingimages > 0 ){
+    $("#PLUP_uploadfiles"+plup_iss).addClass(plupdisabledclass).attr("aria-disabled","true").prop('disabled', true);
+    return;
+  }    
+  if ( uploader[plup_iss].state > 1 || uploader[plup_iss].cloudstate == 1 ){ //uploading dont show upload or details
+    $("#PLUP_uploadfiles"+plup_iss).addClass(plupdisabledclass).attr("aria-disabled","true").prop('disabled', true);
+    $("#PLUP_filelist"+plup_iss).find("a.expander,button.imagecrop,input,textarea").addClass(plupdisabledclass).attr("aria-disabled","true").prop('disabled', true);       ;   
+  }else{
+    if ( uploader[plup_iss].total.queued > 0 ||  uploader[plup_iss].cloudfiles.total > 0 ){ // any queued files so show upload
+      $("#PLUP_uploadfiles"+plup_iss).removeClass(plupdisabledclass).removeAttr("aria-disabled","true").prop('disabled', false);
+      $("#PLUP_filelist"+plup_iss).find("a.expander,button.imagecrop,input,textarea").removeClass(plupdisabledclass).removeAttr("aria-disabled","true").prop('disabled', false);       ;        
+    }else{
+      $("#PLUP_uploadfiles"+plup_iss).addClass(plupdisabledclass).attr("aria-disabled","true").prop('disabled', true);
+     
+    }  
+  }
+  sits_dialog_resize(false,"sits_dialog")  
+}
+
+// load boilerplates
+function plupload_bp(issc,num) {
+  var bparray = plup_bp_array[issc];
+  return sits_get_bptext(bparray,num);
+}    
+  
+// functino for showing errors
+function plup_error_box(response,sub,tid,plup_iss) {  
+  if(typeof(tid)=="undefined" || tid=="") {
+    tid = "sits_dialog_plup";
+  }
+  if(typeof(plup_iss)=="undefined" || plup_iss =="") {
+    var bp57 = "Error";
+  }else{    
+    var bp57 = plupload_bp(plup_iss,57);    
+  }
+
+  sits_dialog("","","",true,true,false,999,tid,true,0.3); //show dialog message
+  var obj = null;
+  var btn = {};
+  if(sub=="NO") {
+    obj = sits_parse_json(response);
+    btn[obj.BUTTON] = function() {
+      sits_dialog_close(true,tid); //add "close" button  may want to call from end of other functions
+      if( tid =="sits_plup_prev_error" ){
+         $("div#sits_dialog_crop_file").next(".ui-dialog-buttonpane").find("button:nth(2)").click();
+      }
+    }
+    sits_dialog_update("<img src=\"../images/cross.gif\" alt=\""+bp57+"\"> "+obj.TEXT,btn,tid) ;
+    $("#"+tid).dialog("option","title",obj.TITLE);
+  }else{
+    btn["Exit"] = function() {
+      sits_dialog_close(true,tid); //add "close" button  may want to call from end of other functions
+    }
+    sits_dialog_update("<img src=\"../images/cross.gif\" alt=\""+bp57+"\"> ",btn,tid);
+    $("#"+tid).dialog("option","title","Unknown error");
+  }
+  sits_dialog_resize(30,tid)
+  // if there are still files in the queue reenable the upload button - remove class plupload_disabled
+  
+}

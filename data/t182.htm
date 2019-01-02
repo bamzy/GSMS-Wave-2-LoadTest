@@ -1,0 +1,780 @@
+<!-- start of HTML from body-start-tabs.hts  -->
+<!DOCTYPE html>
+<html lang="en-gb">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+
+	<link rel="shortcut icon" href="../css/uoa_files/ico/favicon.ico">
+
+    <title>Nomination Dashboard</title>
+
+    <link rel="stylesheet" href="../css/sits.css">
+    <link rel="stylesheet" href="../css/sv.css">
+    <link rel="stylesheet" href="../plugins/css/ui/sits-ui.css">
+    <!-- Additional style for Admissions buttons - temporary until full responsive review project -->
+    <style>
+        .sv-btn-adm {
+            text-transform: uppercase;
+            font-weight: 600 !important;
+        }
+    </style>	
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="../plugins/javascript/html5shiv.min.js"></script>
+      <script src="../plugins/javascript/respond.min.js"></script>
+    <![endif]-->
+
+
+    <script src="../plugins/javascript/jquery.js?v=910.1"></script>
+    <script src="../plugins/javascript/jquery-ui.js?v=910.1"></script>
+
+    <script src="../plugins/javascript/sv.min.js?v=910.1"></script>
+
+    <script src="../javascript/settings.js?v=881.2"></script>
+	<script src="../javascript/sits_ajax.js?v=881.2"></script>
+  
+    <script src="../plugins/javascript/tablesaw/tablesaw.min.js?v=930.1"></script>
+    <script src="../plugins/javascript/datatables/media/js/jquery.dataTables.js"></script>
+ 	<script src="../plugins/javascript/datatables/media/js/dataTables.tribal.js"></script>  
+ 
+
+	  <script>
+		  function uSubmit(){} //include dummy function to prevent errors when submitting
+	  </script>
+
+
+<!--[if lt IE 7]><script>
+var root = document.documentElement;
+root.className += " lt-ie10";
+root.className += " lt-ie9";
+root.className += " lt-ie8";
+root.className += " lt-ie7";
+</script><![endif]-->
+<!--[if IE 7]><script>
+var root = document.documentElement;
+root.className += " lt-ie10";
+root.className += " lt-ie9";
+root.className += " lt-ie8";
+root.className += " ie7";
+</script><![endif]-->
+<!--[if IE 8]><script>
+var root = document.documentElement;
+root.className += " lt-ie10";
+root.className += " lt-ie9";
+root.className += " ie8";
+</script><![endif]-->
+<!--[if IE 9]><script>
+var root = document.documentElement;
+root.className += " lt-ie10";
+root.className += " ie9";
+</script><![endif]-->
+<!--[if IE 10]><script>
+var root = document.documentElement;
+root.className += " ie10";
+</script><![endif]-->
+
+
+	<!-- The Head Scripts: MODERNIZR ONLY!-->
+	<script src="../css/uoa_files/index_files/modernizr.min.js"></script>
+	<script>(!window.Modernizr)||document.write('<script src="../css/uoa_files/index_files/modernizr.js"><\/script>');</script>
+
+
+<!-- System Wide Error Messaging -->
+<link media="all" href="../css/siw_ymes.css" rel="stylesheet" type="text/css" />
+
+<!-- Alberta Foundation StyleSheet -->
+<link rel="stylesheet" href="../css/uoa_files/css/framework.css" media="screen">
+<link rel="stylesheet" href="../css/uoa_files/css/framework-ie.css" media="screen">
+
+<!-- Aberta System Override StyleSheet -->
+<link rel="stylesheet" href="../css/uoa-sits.css" media="screen">
+
+<!-- The Print Sheets -->
+<link rel="stylesheet" href="../css/uoa_files/css/print.css" media="print">
+
+<!-- any required page header html should go here, in place of this default SITS header HTML.
+     It is good practice to use 'class="sitsscreenonly" on any header images
+     which would not be required in a printed version of the page.
+ -->
+<!-- overall page DIV -->
+
+<header>           
+	<div class="blade-container" style="height: 4em;">
+    <div class="blade-inner">
+        <a class="brand" href="http://uofa.ualberta.ca/">
+            <img src="../css/uoa_files/img/logo2.svg" alt="University of Alberta">
+		</a>
+        <nav class="blade-navigation">
+            <ul class="quick-links-container">
+                <li id="ql" class="dropdown">
+                    <a href="https://training.sitecore.ualberta.ca/departments/another-department#" id="ql-toggle" class="btn btn-grey btn-small hidden-desktop" data-toggle="dropdown">
+                        <span class="quick-links-text">Quick Links <b class="caret"></b>                        </span>
+                        <span class="icon-bar quick-links-button"></span>
+                        <span class="icon-bar quick-links-button"></span>
+                        <span class="icon-bar quick-links-button"></span>
+                    </a>
+                    <ul class="quick-links" role="menu" aria-labelledby="ql-toggle">
+                    	<li role="menuitem"><a href="http://webapps.srv.ualberta.ca/search/" target="">Find a Person</a></li>
+                       <li role="menuitem"><a href="http://onecard.ualberta.ca/" target="">ONEcard</a></li>
+                       <li role="menuitem"><a href="https://www.beartracks.ualberta.ca/" target="">Bear Tracks</a></li>
+                       <li role="menuitem"><a href="http://www.campusmap.ualberta.ca/" target="">Maps</a></li>
+                       <li role="menuitem"><a href="http://apps.ualberta.ca/" target="">Email &amp; Apps</a></li>
+                       <li role="menuitem"><a href="https://eclass.srv.ualberta.ca/portal/" target="">eClass</a></li>
+                       <li role="menuitem"><a href="http://www.library.ualberta.ca/" target="">Libraries</a></li>
+                    </ul>
+                   </li>            
+			</ul>        
+		</nav>        
+		<div class="blade-search">
+            <i class="icon-search"></i>
+            <input type="search" class="search-query" placeholder="search">
+            <button type="button" class="btn btn-grey btn-small global-search-btn">Search</button>
+        </div>
+    </div>
+	</div>
+	<div class="banner-container">
+		<div class="banner-inner">
+			<a href="http://uofa.ualberta.ca/" class="site-title">Faculty of Graduate Studies and Research</a>
+			<p style="width: 100%; color: red; font-size: 24px; font-weight: bold; background-color: white;">User / Acceptance Testing environment - not Production</p>
+			<div class="banner-logo">
+				<span class="site-logo"></span>				
+			</div>
+		</div>
+		<div class="oval oval1"></div>
+		<div class="oval oval2"></div>
+		<div class="oval oval3"></div>
+		<div class="oval oval4"></div>
+	</div>
+	<div class="navigation-container">
+		<nav id="main-nav" class="navigation-inner">
+			<ul>
+				<li>
+					<a class="navigation-toggle collapsed"><span>Show Navigation</span><i class="icon-toggle-nav"></i>
+					</a>
+					<ul id="nav-list" class="main-navigation hidden-phone collapse" style="height: 0px;">
+						<!-- The Tab list field contains each page tab as a li item, child page tabs will create a new ul within the outer ul -->
+						<li class="normaltab" >
+<a href="siw_portal.url?ADFE482E38BE4C18hGxCnvf5INyY8a-3aCxI35_sDnDdZc_VqlqjZRTaisad1oRQMXgQxPj3u3DGT0kqcKVbN6XkrqUBuJV3EGldKi7o-4MCpSaxtBXUlf34TMU" id="GSWFL01" title="Manage Applications"><span>Admissions</span></a>
+
+</li>
+<li class="normaltab" >
+<a href="siw_portal.url?9B46A4AABE9B4C7D3j9PfgAkbZYkoOTX9q6Rlex64ijdiadD3Ta8zrwKPYu5v5B2JXdTxwqNhCtUH4gywKjerw1Kb-Z5unVmZx5mSqhFfT8Ozr1Q_xXdmi3s6ZA" id="GSAWD_AWD_01" ><span>Awards Portal</span></a>
+
+</li>
+<li class="normaltab" >
+<a href="siw_portal.url?3BB95DD74221412Di5RieceYphzyT3q3PPDI6lMaQyUqRZmcapNGiBiEiE_meQj8T8kAZTR3pOr_JgDH_0cxwkVigKIb-G620XTPV19v43U1geVr8xU00K2D70U" id="GSAWD_NOM_01" ><span>Awards</span></a>
+
+</li>
+<li class="normaltab" >
+<a href="siw_portal.url?DAFF4FBAEEF142A230wImflhBg2MRFGRUn-lew0XFxxq1EOKQjVeGuLaB9NwZcdcpHhR8B23vskuctN06eoa724xBShuNlpSFW_HaNaOBfzXsvcPZZN4MUDyR2s" id="GSMSG01" ><span>Admissions Messages</span></a>
+
+</li>
+
+						<li class="normaltab">
+							
+						</li>
+						<!--
+						<li class="normaltab">
+							 
+						</li>
+						-->
+						<li class="normaltab">
+							<a href="../run/SIW_LGN_LOGOUT.start_url?6C398C2FBF464983gbs0k0JDxjP3JQ_SXhFbc4Ja2rCvMNBNGMm1Du7qDu6ReJCBkbnz-whVZf0sQsPpyMxPN4R4rxwyshLL1mR90oMin0Nzrjr2YqIxMemUsJg" target="_self">Logout</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+	</div>
+<div class="nav-mobile">
+<div class="nav-wrapper">
+    
+            <ul class="level-0">
+                <!-- The Tab list field contains each page tab as a li item, child page tabs will create a new ul within the outer ul -->
+						<li class="normaltab" >
+<a href="siw_portal.url?ADFE482E38BE4C18hGxCnvf5INyY8a-3aCxI35_sDnDdZc_VqlqjZRTaisad1oRQMXgQxPj3u3DGT0kqcKVbN6XkrqUBuJV3EGldKi7o-4MCpSaxtBXUlf34TMU" id="GSWFL01" title="Manage Applications"><span>Admissions</span></a>
+
+</li>
+<li class="normaltab" >
+<a href="siw_portal.url?9B46A4AABE9B4C7D3j9PfgAkbZYkoOTX9q6Rlex64ijdiadD3Ta8zrwKPYu5v5B2JXdTxwqNhCtUH4gywKjerw1Kb-Z5unVmZx5mSqhFfT8Ozr1Q_xXdmi3s6ZA" id="GSAWD_AWD_01" ><span>Awards Portal</span></a>
+
+</li>
+<li class="normaltab" >
+<a href="siw_portal.url?3BB95DD74221412Di5RieceYphzyT3q3PPDI6lMaQyUqRZmcapNGiBiEiE_meQj8T8kAZTR3pOr_JgDH_0cxwkVigKIb-G620XTPV19v43U1geVr8xU00K2D70U" id="GSAWD_NOM_01" ><span>Awards</span></a>
+
+</li>
+<li class="normaltab" >
+<a href="siw_portal.url?DAFF4FBAEEF142A230wImflhBg2MRFGRUn-lew0XFxxq1EOKQjVeGuLaB9NwZcdcpHhR8B23vskuctN06eoa724xBShuNlpSFW_HaNaOBfzXsvcPZZN4MUDyR2s" id="GSMSG01" ><span>Admissions Messages</span></a>
+
+</li>
+
+						<li class="normaltab">
+							
+						</li>
+						<!--
+						<li class="normaltab">
+							 
+						</li>
+						-->
+						<li class="normaltab">
+							<a href="../run/SIW_LGN_LOGOUT.start_url?6C398C2FBF464983gbs0k0JDxjP3JQ_SXhFbc4Ja2rCvMNBNGMm1Du7qDu6ReJCBkbnz-whVZf0sQsPpyMxPN4R4rxwyshLL1mR90oMin0Nzrjr2YqIxMemUsJg" target="_self">Logout</a>
+						</li>
+           
+            </ul>
+        
+</div>
+
+</div>
+</header>
+
+      <!-- DIV sitspagecontent (see sits.css) encloses main page content.
+          It is opened in body-start, body-start-tabs, body-start-ipp and
+          closed in body-end, body-end-ipp
+       -->
+      <div id="sitspagecontent" class="container row-fluid">
+
+<!-- end of HTML from body-start.hts  --> </form>
+<script type="text/javascript">sits_widget_bp = {"dt":{"emptyTable":"No information available","info":"Showing _START_ to _END_ of _TOTAL_ entries","infoEmpty":"No entries to show","infoFiltered":" (filtered from _MAX_ total entries)","lengthMenu":"Show _MENU_ entries","loadingRecords":"Loading...","processing":"Processing...","search":"Filter:","zeroRecords":"No matching entries found","paginate":{"first":"First","last":"Last","next":"Next","previous":"Previous"},"aria":{"sortAscending":": use to sort column ascending","sortDescending":": use to sort column descending"},"tribal":{"detailsLabelOpen":"Activate to show additional details for this row","detailsLabelClose":"Activate to hide additional details for this row","detailsLabelDataOpen":"Activate to show additional details for _DATA_","detailsLabelDataClose":"Activate to hide additional details for _DATA_"}},"ts":{"modes":["Stack","Swipe","Toggle"],"columns":"Col<span class=\"a11y-sm\">umn<\/span>s","columnBtnText":"Columns","columnsDialogError":"No eligible columns.","sort":"Sort","prevBtnText":"Show previous column on the following table","nextBtnText":"Show next column on the following table","prevBtnDisabledText":"Show previous column on the following table (not currently available)","nextBtnDisabledText":"Show next column on the following table (not currently available)","sortAscText":": use to sort column ascending","sortDescText":": use to sort column descending"},"pg":{"infoText":"Showing page {0} of {1}","infoWithRecsText":"Showing page {0} of {1} with {2} records per page","firstBtnText":"First","prevBtnText":"Previous","nextBtnText":"Next","lastBtnText":"Last","firstBtnAriaText":"Show first page","prevBtnAriaText":"Show previous page","nextBtnAriaText":"Show next page","lastBtnAriaText":"Show last page","pageBtnAriaText":"Show page {0}"},"tp":{"currentText":"Now","closeText":"Done","timeOnlyTitle":"Choose Time","timeText":"Time","hourText":"Hour","minuteText":"Minute","secondText":"Second","millisecText":"Millisecond","microsecText":"Microsecond","timezoneText":"Time Zone"},"ui":{"dialogOk":"Ok","dialogCancel":"Cancel","tabsClose":"Close","dialogClose":"Close","moreDetails":"More Details","datePickerDate":"Select a date","datePickerTime":"Select a time","datePickerDateTime":"Select a date\/time","loading":"Loading...","selectAllTitle":"Select All","selectAll":"Select All","selectNone":"Select None","invertAll":"Invert All","errorText":"Error","datePickerMonth":"Select a month","datePickerYear":"Select a year","tabsScrollLeft":"Scroll left","tabsScrollRight":"Scroll right"},"ld":{"loadTitle":"Loading","loadContent":"Loading, please wait...","processTitle":"Processing","processContent":"Processing, please wait...","saveTitle":"Saving","saveContent":"Saving, please wait..."},"to":{"sessionTitle":"Session Expiry","sessionContent":"Your session is due to expire in approximately {0} minute(s). If you would like to continue using this session, please click \"Continue\".","pageTitle":"Page Expiry","pageContent":"This page is due to expire in approximately {0} minute(s). If you would like to continue using this page, please click \"Continue\".","buttonContinue":"Continue"}};</script>
+<script>sits_user_timeout = "869FEA7C51BE4637lqNwfOkUfSrPWrH4Ekm6wKi_wezPUd3e3CeV1RcQYMB0J2Z5Q0-P61d85qen_t0zoJz53I2w0wcfAKQ82Yv5rrSxCquhgyMf";</script>
+<!-- body-start.hts page header include ends here -->
+
+<!-- Start Of Extra Javascripts -->
+<script type="text/javascript" src="../javascript/dmx_calendar.js"></script>
+<script type="text/javascript" src="../javascript/dmx_panel.js"></script>
+<script type="text/javascript" src="../javascript/dmx_tooltip.js"></script>
+<script type="text/javascript" src="../javascript/dmx_other.js"></script>
+<script type="text/javascript" src="../javascript/dmu.js"></script>
+<script type="text/javascript" src="../javascript/siw_sel.js"></script>
+<!-- End Of Extra Javascripts -->
+
+<!-- Start Of Extra Stylesheets -->
+<script type="text/javascript">
+sits_include_file("../css/siw_dmx_lite.css");
+</script>
+<!-- End Of Extra Stylesheets -->
+
+	<form method="POST" action="SIW_DMX_LITE" onSubmit="return uSubmit(this)" name="f" autocomplete="off">
+		
+			
+				<input type="hidden" name="NKEY.DUMMY.MENSYS.1" value="86010D68D0774F83z6niH76q410ka_AS22aBHF_TPxbUcoIyP-74xaIxSVW8G_Za4kUTCL215Xgp3ovXV8bieosShKBX7knpt5nRCAnbRJ56ox-K00iuiy8tSeU" />
+				<input type="hidden" name="RUN_MODE.DUMMY.MENSYS.1" value="ACT" />
+				
+
+
+
+
+
+
+
+
+
+
+
+
+<h2>Nomination Dashboard for Len Bolger Memorial Scholarship in Energy Research Excellence</h2>
+
+<div class="sv-panel sv-panel-primary">
+	<div class="sv-panel-body">
+
+<div class='sv-table-container sv-table-responsive'>
+	<table class='sv-table'>
+		<tr>
+			<th scope='col' role='columnheader'>Name</th>
+			<td scope='col' role='columnheader'>Len Bolger Memorial Scholarship in Energy Research Excellence 2019/20</td>
+			<th scope='col' role='columnheader'>Application Deadline</th>
+			<td scope='col' role='columnheader'>N/A</td>
+			<th scope='col' role='columnheader'>Nomination Deadline</th>
+			<td scope='col' role='columnheader'>22/Jan/2019</td>
+		</tr>
+		<tr>
+			<th scope='col' role='columnheader'>Eligibility Criteria</th>
+			<td scope='col' role='columnheader'><ul><li>Must be a citizen of Canada</li><li>Must NOT be a citizen or permanent resident of Canada</li><li>Must be engaged in Full Time study</li><li>Must be a Masters level student</li><li>Must be a PhD (Doctoral) level student</li><li>Must be a Permanent Resident of Canada</li><li>Must be engaged in Part-time Study</li><li>Must be a Canadian Citizen or a Permanent Resident of Canada</li><li>Must be engaged in Full Time or Part Time study</li><li>Must be a Post-baccalaureate student</li><li>Must be a Masters or Post-baccalaureate student</li><li>Must be a Doctoral or Post-baccalaureate student</li><li>Selection Criterion::  Awarded annually to one exceptional Graduate Student Scholarship recipient conducting energy–themed innovation research at each of the University of Alberta, University of Calgary, and University of Lethbridge</li></ul></td>
+			<th scope='col' role='columnheader'>Number of Awards</th>
+			<td scope='col' role='columnheader' id='num_of_awards'>   0</td>
+			<th scope='col' role='columnheader'>Awards Value</th>
+			<td scope='col' role='columnheader' id='awards_val'>   13000.00</td>
+		</tr>
+
+	</table>
+
+</div> 
+
+
+<!-- START OF APPLICANT GUIDANCE -->
+
+
+<!-- END  OF APPLICANT GUIDANCE -->
+
+
+
+
+
+<!-- START OF NOMINATIONS GUIDANCE -->
+
+
+<!-- END  OF NOMINATIONS GUIDANCE -->
+<br>
+
+<a href='../run/SIW_YMHD.start_url?2A611E046627454EpK0gnktAWaTFedVRdGwk4gfmQgt6X8Y4us3ex4KwYWzhYldVDL5U5pck7IL4Y3PT9ieDzcgjkYybvIJnzl4SGxwNuq4_yTZF4tzSLm2cANcEwuyE4vRLXxmmMJ9N6k2CkmGFEsigUCWu4LQT3a4mCWn3leN-Ix89LgZElQLu3A-bWCBBYl5K3NMX1HnV8SJBVLEBGJu0W4smuzhrrRmHZA' class='sv-btn sv-btn-primary sv-col-xs-12 sv-col-sm-6 sv-col-md-4 sv-col-lg-2'>Refresh</a>
+
+<br><br><br>
+<!-- data section  -->
+<div class="sv-row">
+<div class="sv-col-md-12">
+<div class="sv-panel sv-panel-primary">
+<div class="sv-panel-heading">
+<h2 class="sv-panel-title"></h2>
+</div>
+<div class="sv-panel-body"><div class="sv-form-container"><div class="sv-form-horizontal"><fieldset><legend></legend><div class="sv-form-group"><div class="sv-col-sm-2 "></div><div class="sv-col-sm-3 sv-form-additional-info sv-help-block sv-small "></div><label class="sv-col-sm-2 sv-control-label" for="SORT_FILTER.DUMMY_PAGER.MENSYS.1.">Sort By</label><div class="sv-col-sm-3"><select name="SORT_FILTER.DUMMY_PAGER.MENSYS.1" id="SORT_FILTER.DUMMY_PAGER.MENSYS.1." title="Sort By" class="sv-form-control"><option value=""></option><option value="FNB_SRTN">Sort name</option><option value="FNB_TYP7">Most Recent GPA</option><option value="FNB_TYP8">Previous GPA</option><option value="FNB_TYP3">Rank</option><option value="FNB_STAC">Status</option><option value="FNB_UDFC">Sign off & Send to FGSR?</option></select></div><div class="sv-col-sm-2"><input type="submit" name="SORT.DUMMY_PAGER.MENSYS.1" class="sv-btn sv-btn-default sv-btn-block" id="SORT.DUMMY_PAGER.MENSYS.1." title="Sort" value="Sort"></div></div></fieldset></div></div></div><div class="sv-table-container sv-table-responsive">
+<table class="sv-table tablesaw-sortable sv-table-striped" data-tablesaw-mode="swipe" data-tablesaw-maintain-widths="N" data-tablesaw-check-widths="Y" data-tablesaw-minimap data-tablesaw-allow-stack="Y">
+<caption>
+
+</caption>
+
+
+<thead>
+<tr>
+<th scope='col' role='columnheader'>Last</th>
+<th scope='col' role='columnheader'>First</th>
+<th scope='col' role='columnheader'>Sort Name</th>
+<th scope='col' role='columnheader'>EMPLID</th>
+<th scope='col' role='columnheader'>Comments</th>
+<th scope='col' role='columnheader'>Most Recent GPA</th>
+<th scope='col' role='columnheader'>Previous GPA</th>
+<th scope='col' role='columnheader'>Rank</th>
+<th scope='col' role='columnheader'>Status</th>
+<th scope='col' role='columnheader'>Sign off & Send to FGSR?</th>
+<th scope='col' role='columnheader'>Action</th>
+</tr>
+</thead><tbody>
+
+
+<tr><td role="gridcell" scope="row"><input type="hidden" name="DMX.DUMMY_OCCURRENCES.MENSYS.1"><p class="sv-form-control-static">CHF</p>
+</td><td role="gridcell" scope="row"><p class="sv-form-control-static">TAOFHS</p>
+</td><td role="gridcell" scope="row"><p class="sv-form-control-static">CHF         T</p>
+</td><td role="gridcell" scope="row"><p class="sv-form-control-static">1406042</p>
+</td><td role="gridcell" scope="row"><p class="sv-form-control-static"></p>
+</td><td role="gridcell" scope="row"><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.6-1" id="VALUE.DUMMY_FIELDS.MENSYS.6-1" value="" maxlength="5" size="4" data-ttip="Please enter a numeric value" class="sv-form-control sv-form-control-xs" title="Most Recent GPA" data-dmfocc="1" data-dmfseqn="0006" data-webvalidation="on" max="&quot;99999.99999&quot;"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.6-1" value="FNB_TYP7">
+
+</td><td role="gridcell" scope="row"><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.7-1" id="VALUE.DUMMY_FIELDS.MENSYS.7-1" value="" maxlength="5" size="4" data-ttip="Please enter a numeric value" class="sv-form-control sv-form-control-xs" title="Previous GPA" data-dmfocc="1" data-dmfseqn="0007" data-webvalidation="on" max="&quot;99999.99999&quot;"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.7-1" value="FNB_TYP8">
+
+</td><td role="gridcell" scope="row"><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.8-1" id="VALUE.DUMMY_FIELDS.MENSYS.8-1" value="" maxlength="15" size="4" class="sv-form-control sv-form-control-xs" title="Rank" data-dmfocc="1" data-dmfseqn="0005" data-webvalidation="on"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.8-1" value="FNB_TYP3">
+
+</td><td role="gridcell" scope="row"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.9-1" value="FNB_STAC">
+<select name="VALUE.DUMMY_FIELDS.MENSYS.9-1" id="VALUE.DUMMY_FIELDS.MENSYS.9-1" title="Status" size="1" class="sv-form-control sv-form-control-sm">
+<option value=""></option>
+<option value="G" selected="selected">Departmental Review</option>
+<option value="H">Department Alternate</option>
+<option value="J">Department Rejected</option>
+<option value="N">Nominated</option>
+
+</select>
+</td><td role="gridcell" scope="row"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.10-1" value="FNB_UDFC">
+<select name="VALUE.DUMMY_FIELDS.MENSYS.10-1" id="VALUE.DUMMY_FIELDS.MENSYS.10-1" title="Sign off & Send to FGSR?" data-ttip="Please enter a numeric value" size="1" class="sv-form-control sv-form-control-xs" max="max=&quot;99999.99999&quot;">
+<option value="" selected="selected"></option>
+<option value="Y">Yes</option>
+<option value="N">No</option>
+
+</select>
+</td><td role="gridcell" scope="row"><a href="../run/SIW_YMHD.start_url?38C3D48515D94FBEGdeeCDD_3XVZHhFFQdklw1lWnqjqE7I0ndgVMT2DXJJaT4ePkzvVkCu8phVDRMoE7wQxR98SV6LDhcGdTA65jbZI6vPYKDTK8uRZ4Lh97-sq2p0rPBZiYMKwTnMb6fQdtJ-juvLmKxevqWOFWIKGoIdyvqUJ1UVMImdVZNJ4N2fAzW4uLLxxusYg4EbOQKn9OygdD0ZWxwKLpkOJxvjnbCh9b45KjXWEmbOx09Cmfi0-iJ7S9FcTvOurfcmv4LMm" target="_blank">View</a>
+<input type="hidden" name="%.DUMMY_FIELDS.MENSYS.1-1"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.2-1"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.3-1"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.4-1"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.5-1"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.6-1"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.7-1"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.8-1"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.9-1"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.10-1"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.11-1"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.12-1"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.13-1"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.14-1"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.15-1"></td></tr><tr><td role="gridcell" scope="row"><input type="hidden" name="DMX.DUMMY_OCCURRENCES.MENSYS.2"><p class="sv-form-control-static">FOTEQO</p>
+</td><td role="gridcell" scope="row"><p class="sv-form-control-static">QKINE</p>
+</td><td role="gridcell" scope="row"><p class="sv-form-control-static">FOTEQO      QU</p>
+</td><td role="gridcell" scope="row"><p class="sv-form-control-static">1478670</p>
+</td><td role="gridcell" scope="row"><p class="sv-form-control-static"></p>
+</td><td role="gridcell" scope="row"><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.6-2" id="VALUE.DUMMY_FIELDS.MENSYS.6-2" value="" maxlength="5" size="4" data-ttip="Please enter a numeric value" class="sv-form-control sv-form-control-xs" title="Most Recent GPA" data-dmfocc="2" data-dmfseqn="0006" data-webvalidation="on" max="&quot;99999.99999&quot;"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.6-2" value="FNB_TYP7">
+
+</td><td role="gridcell" scope="row"><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.7-2" id="VALUE.DUMMY_FIELDS.MENSYS.7-2" value="" maxlength="5" size="4" data-ttip="Please enter a numeric value" class="sv-form-control sv-form-control-xs" title="Previous GPA" data-dmfocc="2" data-dmfseqn="0007" data-webvalidation="on" max="&quot;99999.99999&quot;"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.7-2" value="FNB_TYP8">
+
+</td><td role="gridcell" scope="row"><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.8-2" id="VALUE.DUMMY_FIELDS.MENSYS.8-2" value="" maxlength="15" size="4" class="sv-form-control sv-form-control-xs" title="Rank" data-dmfocc="2" data-dmfseqn="0005" data-webvalidation="on"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.8-2" value="FNB_TYP3">
+
+</td><td role="gridcell" scope="row"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.9-2" value="FNB_STAC">
+<select name="VALUE.DUMMY_FIELDS.MENSYS.9-2" id="VALUE.DUMMY_FIELDS.MENSYS.9-2" title="Status" size="1" class="sv-form-control sv-form-control-sm">
+<option value=""></option>
+<option value="G" selected="selected">Departmental Review</option>
+<option value="H">Department Alternate</option>
+<option value="J">Department Rejected</option>
+<option value="N">Nominated</option>
+
+</select>
+</td><td role="gridcell" scope="row"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.10-2" value="FNB_UDFC">
+<select name="VALUE.DUMMY_FIELDS.MENSYS.10-2" id="VALUE.DUMMY_FIELDS.MENSYS.10-2" title="Sign off & Send to FGSR?" data-ttip="Please enter a numeric value" size="1" class="sv-form-control sv-form-control-xs" max="max=&quot;99999.99999&quot;">
+<option value="" selected="selected"></option>
+<option value="Y">Yes</option>
+<option value="N">No</option>
+
+</select>
+</td><td role="gridcell" scope="row"><a href="../run/SIW_YMHD.start_url?D058AC2C4618429AmnitlkEaS8yKANFQw03_nWl5SNGKv1Cc2i7qr30ycHjZmu7lWBt32pCuZzX4r7E6Lr1RQCVSgHrNJ6jER9DaNHZ4P5MXoYUyK-nNSHB4EatkFC1fzclhNeO3YRzLm-X2AyEVnf8i1Dq1vrumQdtdf7HxY2FYq0puNd3_lH3fyJQ3yYfEKPqYAv87yCCdp-P6Jtsl8FBwUqUnnXvEGpHR9KMo1WRKysAiLPWuVbHBz4S4suqIiNkRtW3lTOpBaTjd" target="_blank">View</a>
+<input type="hidden" name="%.DUMMY_FIELDS.MENSYS.1-2"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.2-2"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.3-2"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.4-2"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.5-2"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.6-2"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.7-2"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.8-2"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.9-2"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.10-2"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.11-2"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.12-2"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.13-2"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.14-2"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.15-2"></td></tr><tr><td role="gridcell" scope="row"><input type="hidden" name="DMX.DUMMY_OCCURRENCES.MENSYS.3"><p class="sv-form-control-static">FULLHLY</p>
+</td><td role="gridcell" scope="row"><p class="sv-form-control-static">HLLISOP</p>
+</td><td role="gridcell" scope="row"><p class="sv-form-control-static">FULLHLY     HC</p>
+</td><td role="gridcell" scope="row"><p class="sv-form-control-static">1144552</p>
+</td><td role="gridcell" scope="row"><p class="sv-form-control-static"></p>
+</td><td role="gridcell" scope="row"><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.6-3" id="VALUE.DUMMY_FIELDS.MENSYS.6-3" value="" maxlength="5" size="4" data-ttip="Please enter a numeric value" class="sv-form-control sv-form-control-xs" title="Most Recent GPA" data-dmfocc="3" data-dmfseqn="0006" data-webvalidation="on" max="&quot;99999.99999&quot;"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.6-3" value="FNB_TYP7">
+
+</td><td role="gridcell" scope="row"><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.7-3" id="VALUE.DUMMY_FIELDS.MENSYS.7-3" value="" maxlength="5" size="4" data-ttip="Please enter a numeric value" class="sv-form-control sv-form-control-xs" title="Previous GPA" data-dmfocc="3" data-dmfseqn="0007" data-webvalidation="on" max="&quot;99999.99999&quot;"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.7-3" value="FNB_TYP8">
+
+</td><td role="gridcell" scope="row"><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.8-3" id="VALUE.DUMMY_FIELDS.MENSYS.8-3" value="" maxlength="15" size="4" class="sv-form-control sv-form-control-xs" title="Rank" data-dmfocc="3" data-dmfseqn="0005" data-webvalidation="on"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.8-3" value="FNB_TYP3">
+
+</td><td role="gridcell" scope="row"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.9-3" value="FNB_STAC">
+<select name="VALUE.DUMMY_FIELDS.MENSYS.9-3" id="VALUE.DUMMY_FIELDS.MENSYS.9-3" title="Status" size="1" class="sv-form-control sv-form-control-sm">
+<option value=""></option>
+<option value="G" selected="selected">Departmental Review</option>
+<option value="H">Department Alternate</option>
+<option value="J">Department Rejected</option>
+<option value="N">Nominated</option>
+
+</select>
+</td><td role="gridcell" scope="row"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.10-3" value="FNB_UDFC">
+<select name="VALUE.DUMMY_FIELDS.MENSYS.10-3" id="VALUE.DUMMY_FIELDS.MENSYS.10-3" title="Sign off & Send to FGSR?" data-ttip="Please enter a numeric value" size="1" class="sv-form-control sv-form-control-xs" max="max=&quot;99999.99999&quot;">
+<option value="" selected="selected"></option>
+<option value="Y">Yes</option>
+<option value="N">No</option>
+
+</select>
+</td><td role="gridcell" scope="row"><a href="../run/SIW_YMHD.start_url?9B52A8E0C36444512uz6v923zHv5GFU3v5kcHej8yGzuiKjWiDWHL-G7Lgk8JKFMfLAgRNBLn372szSqb7Hm1LYEP9KkR5Q99AaGR4QWjPLu6F6-WeA6PnhiGPF16TkQ4x-cZtdv5Uu5EgEq3Zm_7roqi-FUn4wNdoWJeI3T6P13O5f_BuI8u0zfMqHKvcIXNKKndwIHN7cun32pg-FgXL-BFVW6k0OIAYFyv7Vy1KhJ2Z5kO0Y-QLcYd_A9NMouH1ssJcIrbeRBrPew" target="_blank">View</a>
+<input type="hidden" name="%.DUMMY_FIELDS.MENSYS.1-3"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.2-3"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.3-3"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.4-3"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.5-3"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.6-3"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.7-3"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.8-3"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.9-3"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.10-3"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.11-3"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.12-3"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.13-3"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.14-3"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.15-3"></td></tr><tr><td role="gridcell" scope="row"><input type="hidden" name="DMX.DUMMY_OCCURRENCES.MENSYS.4"><p class="sv-form-control-static">GJLVHP</p>
+</td><td role="gridcell" scope="row"><p class="sv-form-control-static">ZJLISHRIUS</p>
+</td><td role="gridcell" scope="row"><p class="sv-form-control-static">GJLVHP      Z</p>
+</td><td role="gridcell" scope="row"><p class="sv-form-control-static">1246765</p>
+</td><td role="gridcell" scope="row"><p class="sv-form-control-static"></p>
+</td><td role="gridcell" scope="row"><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.6-4" id="VALUE.DUMMY_FIELDS.MENSYS.6-4" value="" maxlength="5" size="4" data-ttip="Please enter a numeric value" class="sv-form-control sv-form-control-xs" title="Most Recent GPA" data-dmfocc="4" data-dmfseqn="0006" data-webvalidation="on" max="&quot;99999.99999&quot;"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.6-4" value="FNB_TYP7">
+
+</td><td role="gridcell" scope="row"><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.7-4" id="VALUE.DUMMY_FIELDS.MENSYS.7-4" value="" maxlength="5" size="4" data-ttip="Please enter a numeric value" class="sv-form-control sv-form-control-xs" title="Previous GPA" data-dmfocc="4" data-dmfseqn="0007" data-webvalidation="on" max="&quot;99999.99999&quot;"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.7-4" value="FNB_TYP8">
+
+</td><td role="gridcell" scope="row"><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.8-4" id="VALUE.DUMMY_FIELDS.MENSYS.8-4" value="" maxlength="15" size="4" class="sv-form-control sv-form-control-xs" title="Rank" data-dmfocc="4" data-dmfseqn="0005" data-webvalidation="on"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.8-4" value="FNB_TYP3">
+
+</td><td role="gridcell" scope="row"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.9-4" value="FNB_STAC">
+<select name="VALUE.DUMMY_FIELDS.MENSYS.9-4" id="VALUE.DUMMY_FIELDS.MENSYS.9-4" title="Status" size="1" class="sv-form-control sv-form-control-sm">
+<option value=""></option>
+<option value="G" selected="selected">Departmental Review</option>
+<option value="H">Department Alternate</option>
+<option value="J">Department Rejected</option>
+<option value="N">Nominated</option>
+
+</select>
+</td><td role="gridcell" scope="row"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.10-4" value="FNB_UDFC">
+<select name="VALUE.DUMMY_FIELDS.MENSYS.10-4" id="VALUE.DUMMY_FIELDS.MENSYS.10-4" title="Sign off & Send to FGSR?" data-ttip="Please enter a numeric value" size="1" class="sv-form-control sv-form-control-xs" max="max=&quot;99999.99999&quot;">
+<option value="" selected="selected"></option>
+<option value="Y">Yes</option>
+<option value="N">No</option>
+
+</select>
+</td><td role="gridcell" scope="row"><a href="../run/SIW_YMHD.start_url?DEFB2EC7CD084153O6gH_IKrWJ0W_pCBV1XvrnKfLz4N3dxXvc7X4hdqiRliXvyB-tlPbX-Ec6C9iJOBoGF7D7sr0XOccXe4JlnVsYN2fH15keS7KV1Yb4hG7fyKxMBMY5sAO7-czufB09WdCr3yOiGiqaT5YZGUXZy6WG2acG0eYKwu-JdcIFMYKXe-6_H9VyNsDeL2gm1zvMYBFxe123rv1ZQwDlIkDpDiNuv4C345OozbrWA0hRyds1mh2-bm1Ip9dE5ZAddm7vzg" target="_blank">View</a>
+<input type="hidden" name="%.DUMMY_FIELDS.MENSYS.1-4"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.2-4"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.3-4"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.4-4"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.5-4"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.6-4"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.7-4"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.8-4"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.9-4"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.10-4"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.11-4"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.12-4"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.13-4"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.14-4"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.15-4"></td></tr><tr><td role="gridcell" scope="row"><input type="hidden" name="DMX.DUMMY_OCCURRENCES.MENSYS.5"><p class="sv-form-control-static">MVYETEBO</p>
+</td><td role="gridcell" scope="row"><p class="sv-form-control-static">CINOFOWEV</p>
+</td><td role="gridcell" scope="row"><p class="sv-form-control-static">MVYETEBO    C</p>
+</td><td role="gridcell" scope="row"><p class="sv-form-control-static">1464441</p>
+</td><td role="gridcell" scope="row"><p class="sv-form-control-static"></p>
+</td><td role="gridcell" scope="row"><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.6-5" id="VALUE.DUMMY_FIELDS.MENSYS.6-5" value="" maxlength="5" size="4" data-ttip="Please enter a numeric value" class="sv-form-control sv-form-control-xs" title="Most Recent GPA" data-dmfocc="5" data-dmfseqn="0006" data-webvalidation="on" max="&quot;99999.99999&quot;"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.6-5" value="FNB_TYP7">
+
+</td><td role="gridcell" scope="row"><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.7-5" id="VALUE.DUMMY_FIELDS.MENSYS.7-5" value="" maxlength="5" size="4" data-ttip="Please enter a numeric value" class="sv-form-control sv-form-control-xs" title="Previous GPA" data-dmfocc="5" data-dmfseqn="0007" data-webvalidation="on" max="&quot;99999.99999&quot;"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.7-5" value="FNB_TYP8">
+
+</td><td role="gridcell" scope="row"><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.8-5" id="VALUE.DUMMY_FIELDS.MENSYS.8-5" value="" maxlength="15" size="4" class="sv-form-control sv-form-control-xs" title="Rank" data-dmfocc="5" data-dmfseqn="0005" data-webvalidation="on"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.8-5" value="FNB_TYP3">
+
+</td><td role="gridcell" scope="row"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.9-5" value="FNB_STAC">
+<select name="VALUE.DUMMY_FIELDS.MENSYS.9-5" id="VALUE.DUMMY_FIELDS.MENSYS.9-5" title="Status" size="1" class="sv-form-control sv-form-control-sm">
+<option value=""></option>
+<option value="G" selected="selected">Departmental Review</option>
+<option value="H">Department Alternate</option>
+<option value="J">Department Rejected</option>
+<option value="N">Nominated</option>
+
+</select>
+</td><td role="gridcell" scope="row"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.10-5" value="FNB_UDFC">
+<select name="VALUE.DUMMY_FIELDS.MENSYS.10-5" id="VALUE.DUMMY_FIELDS.MENSYS.10-5" title="Sign off & Send to FGSR?" data-ttip="Please enter a numeric value" size="1" class="sv-form-control sv-form-control-xs" max="max=&quot;99999.99999&quot;">
+<option value="" selected="selected"></option>
+<option value="Y">Yes</option>
+<option value="N">No</option>
+
+</select>
+</td><td role="gridcell" scope="row"><a href="../run/SIW_YMHD.start_url?49C17C0B8CDB43500qFMMs7cRJj5d9uBrHkiSnNbygSr6s5Y0dI9tHZUEaRH5e2J0Y_-FWCtofbrdihVNBKpD1QyOg5c1ky9Un52qiHH2kXK_J6lt7cbwk1qgGicD3jSQYkQo-_oqeho9NnSIzsa5cPbUUxYkCEQcF9azlB3sav0MBYrSlcAKPAl2lBB1omz-IJ2n6-uYqUjsxTMgEw7WIwrjYFdyyrTkSZKp-AAQQ_fS4SKtkwWWHDTckcJMPHXV0NHxCmPm4LclP0H" target="_blank">View</a>
+<input type="hidden" name="%.DUMMY_FIELDS.MENSYS.1-5"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.2-5"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.3-5"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.4-5"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.5-5"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.6-5"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.7-5"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.8-5"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.9-5"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.10-5"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.11-5"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.12-5"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.13-5"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.14-5"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.15-5"></td></tr><tr><td role="gridcell" scope="row"><input type="hidden" name="DMX.DUMMY_OCCURRENCES.MENSYS.6"><p class="sv-form-control-static">NAOQWEQONKE</p>
+</td><td role="gridcell" scope="row"><p class="sv-form-control-static">KEOTE</p>
+</td><td role="gridcell" scope="row"><p class="sv-form-control-static">NAOQWEQONKE KE</p>
+</td><td role="gridcell" scope="row"><p class="sv-form-control-static">1245614</p>
+</td><td role="gridcell" scope="row"><p class="sv-form-control-static"></p>
+</td><td role="gridcell" scope="row"><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.6-6" id="VALUE.DUMMY_FIELDS.MENSYS.6-6" value="" maxlength="5" size="4" data-ttip="Please enter a numeric value" class="sv-form-control sv-form-control-xs" title="Most Recent GPA" data-dmfocc="6" data-dmfseqn="0006" data-webvalidation="on" max="&quot;99999.99999&quot;"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.6-6" value="FNB_TYP7">
+
+</td><td role="gridcell" scope="row"><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.7-6" id="VALUE.DUMMY_FIELDS.MENSYS.7-6" value="" maxlength="5" size="4" data-ttip="Please enter a numeric value" class="sv-form-control sv-form-control-xs" title="Previous GPA" data-dmfocc="6" data-dmfseqn="0007" data-webvalidation="on" max="&quot;99999.99999&quot;"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.7-6" value="FNB_TYP8">
+
+</td><td role="gridcell" scope="row"><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.8-6" id="VALUE.DUMMY_FIELDS.MENSYS.8-6" value="" maxlength="15" size="4" class="sv-form-control sv-form-control-xs" title="Rank" data-dmfocc="6" data-dmfseqn="0005" data-webvalidation="on"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.8-6" value="FNB_TYP3">
+
+</td><td role="gridcell" scope="row"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.9-6" value="FNB_STAC">
+<select name="VALUE.DUMMY_FIELDS.MENSYS.9-6" id="VALUE.DUMMY_FIELDS.MENSYS.9-6" title="Status" size="1" class="sv-form-control sv-form-control-sm">
+<option value=""></option>
+<option value="G" selected="selected">Departmental Review</option>
+<option value="H">Department Alternate</option>
+<option value="J">Department Rejected</option>
+<option value="N">Nominated</option>
+
+</select>
+</td><td role="gridcell" scope="row"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.10-6" value="FNB_UDFC">
+<select name="VALUE.DUMMY_FIELDS.MENSYS.10-6" id="VALUE.DUMMY_FIELDS.MENSYS.10-6" title="Sign off & Send to FGSR?" data-ttip="Please enter a numeric value" size="1" class="sv-form-control sv-form-control-xs" max="max=&quot;99999.99999&quot;">
+<option value="" selected="selected"></option>
+<option value="Y">Yes</option>
+<option value="N">No</option>
+
+</select>
+</td><td role="gridcell" scope="row"><a href="../run/SIW_YMHD.start_url?513A85A95E4240C8Ka740_y7tB8S30oAU7Xz7VvOrU1XRO7bsVTbRAGd50mXI2XAHWHG0NgRCWvPFRvwkW_I47kyoRxQ2mKsHbmjRv_liKPmNPYn7emd9S1fMXFW42t5S0Q5xiwU7Gf2vo0HgwC-160wPZz9WhHV_A2ks6wInWWju2kY9jaWOEqWlxCTsHZQWnb695c9rRNUhmjrSs_m_hvoBStw3W_wZxY6edj7uI5RZi_4xry3g9p2JdQix_DHmPtnUfv9x5R5GIYW" target="_blank">View</a>
+<input type="hidden" name="%.DUMMY_FIELDS.MENSYS.1-6"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.2-6"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.3-6"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.4-6"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.5-6"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.6-6"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.7-6"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.8-6"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.9-6"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.10-6"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.11-6"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.12-6"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.13-6"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.14-6"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.15-6"></td></tr><tr><td role="gridcell" scope="row"><input type="hidden" name="DMX.DUMMY_OCCURRENCES.MENSYS.7"><p class="sv-form-control-static">RKUPVUQ</p>
+</td><td role="gridcell" scope="row"><p class="sv-form-control-static">ZNEOTI</p>
+</td><td role="gridcell" scope="row"><p class="sv-form-control-static">RKUPVUQ     ZK</p>
+</td><td role="gridcell" scope="row"><p class="sv-form-control-static">1367060</p>
+</td><td role="gridcell" scope="row"><p class="sv-form-control-static"></p>
+</td><td role="gridcell" scope="row"><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.6-7" id="VALUE.DUMMY_FIELDS.MENSYS.6-7" value="" maxlength="5" size="4" data-ttip="Please enter a numeric value" class="sv-form-control sv-form-control-xs" title="Most Recent GPA" data-dmfocc="7" data-dmfseqn="0006" data-webvalidation="on" max="&quot;99999.99999&quot;"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.6-7" value="FNB_TYP7">
+
+</td><td role="gridcell" scope="row"><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.7-7" id="VALUE.DUMMY_FIELDS.MENSYS.7-7" value="" maxlength="5" size="4" data-ttip="Please enter a numeric value" class="sv-form-control sv-form-control-xs" title="Previous GPA" data-dmfocc="7" data-dmfseqn="0007" data-webvalidation="on" max="&quot;99999.99999&quot;"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.7-7" value="FNB_TYP8">
+
+</td><td role="gridcell" scope="row"><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.8-7" id="VALUE.DUMMY_FIELDS.MENSYS.8-7" value="" maxlength="15" size="4" class="sv-form-control sv-form-control-xs" title="Rank" data-dmfocc="7" data-dmfseqn="0005" data-webvalidation="on"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.8-7" value="FNB_TYP3">
+
+</td><td role="gridcell" scope="row"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.9-7" value="FNB_STAC">
+<select name="VALUE.DUMMY_FIELDS.MENSYS.9-7" id="VALUE.DUMMY_FIELDS.MENSYS.9-7" title="Status" size="1" class="sv-form-control sv-form-control-sm">
+<option value=""></option>
+<option value="G" selected="selected">Departmental Review</option>
+<option value="H">Department Alternate</option>
+<option value="J">Department Rejected</option>
+<option value="N">Nominated</option>
+
+</select>
+</td><td role="gridcell" scope="row"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.10-7" value="FNB_UDFC">
+<select name="VALUE.DUMMY_FIELDS.MENSYS.10-7" id="VALUE.DUMMY_FIELDS.MENSYS.10-7" title="Sign off & Send to FGSR?" data-ttip="Please enter a numeric value" size="1" class="sv-form-control sv-form-control-xs" max="max=&quot;99999.99999&quot;">
+<option value="" selected="selected"></option>
+<option value="Y">Yes</option>
+<option value="N">No</option>
+
+</select>
+</td><td role="gridcell" scope="row"><a href="../run/SIW_YMHD.start_url?B51B09221177426Ff3uZHi1Js3UTdF23vgWa9YUWs4Oue7VpAZzoVhehesEo564nrxb5gAqTM9sdEvw8W0WVdcXAzb0fOt6qgsIEXLpW4W9ddSqfM4RTgDjT1E_zwzZdKotRv-YkohQbQuHEjLvt8U2ZMK2Yli60Pui4NVLIdQNjoCm0IZpH642oVxaf-7QvFEf4P1f5de1VZoAjz2jLTPi1H9W9kg1Y0CNqidKZQrjZAXJL8p842I_cdShukbohfjxxlK6EipeVKFIW" target="_blank">View</a>
+<input type="hidden" name="%.DUMMY_FIELDS.MENSYS.1-7"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.2-7"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.3-7"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.4-7"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.5-7"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.6-7"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.7-7"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.8-7"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.9-7"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.10-7"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.11-7"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.12-7"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.13-7"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.14-7"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.15-7"></td></tr><tr><td role="gridcell" scope="row"><input type="hidden" name="DMX.DUMMY_OCCURRENCES.MENSYS.8"><p class="sv-form-control-static">TIQJFHPP</p>
+</td><td role="gridcell" scope="row"><p class="sv-form-control-static">ZRJHPPJ</p>
+</td><td role="gridcell" scope="row"><p class="sv-form-control-static">TIQJFHPP    ZQ</p>
+</td><td role="gridcell" scope="row"><p class="sv-form-control-static">1183288</p>
+</td><td role="gridcell" scope="row"><p class="sv-form-control-static"></p>
+</td><td role="gridcell" scope="row"><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.6-8" id="VALUE.DUMMY_FIELDS.MENSYS.6-8" value="" maxlength="5" size="4" data-ttip="Please enter a numeric value" class="sv-form-control sv-form-control-xs" title="Most Recent GPA" data-dmfocc="8" data-dmfseqn="0006" data-webvalidation="on" max="&quot;99999.99999&quot;"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.6-8" value="FNB_TYP7">
+
+</td><td role="gridcell" scope="row"><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.7-8" id="VALUE.DUMMY_FIELDS.MENSYS.7-8" value="" maxlength="5" size="4" data-ttip="Please enter a numeric value" class="sv-form-control sv-form-control-xs" title="Previous GPA" data-dmfocc="8" data-dmfseqn="0007" data-webvalidation="on" max="&quot;99999.99999&quot;"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.7-8" value="FNB_TYP8">
+
+</td><td role="gridcell" scope="row"><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.8-8" id="VALUE.DUMMY_FIELDS.MENSYS.8-8" value="" maxlength="15" size="4" class="sv-form-control sv-form-control-xs" title="Rank" data-dmfocc="8" data-dmfseqn="0005" data-webvalidation="on"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.8-8" value="FNB_TYP3">
+
+</td><td role="gridcell" scope="row"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.9-8" value="FNB_STAC">
+<select name="VALUE.DUMMY_FIELDS.MENSYS.9-8" id="VALUE.DUMMY_FIELDS.MENSYS.9-8" title="Status" size="1" class="sv-form-control sv-form-control-sm">
+<option value=""></option>
+<option value="G" selected="selected">Departmental Review</option>
+<option value="H">Department Alternate</option>
+<option value="J">Department Rejected</option>
+<option value="N">Nominated</option>
+
+</select>
+</td><td role="gridcell" scope="row"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.10-8" value="FNB_UDFC">
+<select name="VALUE.DUMMY_FIELDS.MENSYS.10-8" id="VALUE.DUMMY_FIELDS.MENSYS.10-8" title="Sign off & Send to FGSR?" data-ttip="Please enter a numeric value" size="1" class="sv-form-control sv-form-control-xs" max="max=&quot;99999.99999&quot;">
+<option value="" selected="selected"></option>
+<option value="Y">Yes</option>
+<option value="N">No</option>
+
+</select>
+</td><td role="gridcell" scope="row"><a href="../run/SIW_YMHD.start_url?D4AADBB35C3046C2NjeYQDLgrmT2vuEVjdYbJt2fnbxtA4m47bp8ja381Ichohit1CX2S8BWXmzwlY9hLbqPDS0DX8R8PsmEKdxl4TPxByAbncrMGFf3urSQ4CKmFLQcesIl53-0I0p7vQPF-dqND-SnkB1f8NrzUgQfs3rom1Y_1oT7K0u6E-lxOKDFyxZbeUXuGrEYMteRDeZ7QlUHsM9EFw5AL1oS8PZDM8rrby48OSUkFeqtB6QDoEoE2T1r4cd7LyNLFeBWzXPs" target="_blank">View</a>
+<input type="hidden" name="%.DUMMY_FIELDS.MENSYS.1-8"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.2-8"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.3-8"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.4-8"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.5-8"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.6-8"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.7-8"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.8-8"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.9-8"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.10-8"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.11-8"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.12-8"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.13-8"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.14-8"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.15-8"></td></tr><tr><td role="gridcell" scope="row"><input type="hidden" name="DMX.DUMMY_OCCURRENCES.MENSYS.9"><p class="sv-form-control-static">UDGANMEGOT</p>
+</td><td role="gridcell" scope="row"><p class="sv-form-control-static">UDADEMET</p>
+</td><td role="gridcell" scope="row"><p class="sv-form-control-static">UDGANMEGOT  UQ</p>
+</td><td role="gridcell" scope="row"><p class="sv-form-control-static">1476002</p>
+</td><td role="gridcell" scope="row"><p class="sv-form-control-static"></p>
+</td><td role="gridcell" scope="row"><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.6-9" id="VALUE.DUMMY_FIELDS.MENSYS.6-9" value="" maxlength="5" size="4" data-ttip="Please enter a numeric value" class="sv-form-control sv-form-control-xs" title="Most Recent GPA" data-dmfocc="9" data-dmfseqn="0006" data-webvalidation="on" max="&quot;99999.99999&quot;"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.6-9" value="FNB_TYP7">
+
+</td><td role="gridcell" scope="row"><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.7-9" id="VALUE.DUMMY_FIELDS.MENSYS.7-9" value="" maxlength="5" size="4" data-ttip="Please enter a numeric value" class="sv-form-control sv-form-control-xs" title="Previous GPA" data-dmfocc="9" data-dmfseqn="0007" data-webvalidation="on" max="&quot;99999.99999&quot;"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.7-9" value="FNB_TYP8">
+
+</td><td role="gridcell" scope="row"><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.8-9" id="VALUE.DUMMY_FIELDS.MENSYS.8-9" value="" maxlength="15" size="4" class="sv-form-control sv-form-control-xs" title="Rank" data-dmfocc="9" data-dmfseqn="0005" data-webvalidation="on"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.8-9" value="FNB_TYP3">
+
+</td><td role="gridcell" scope="row"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.9-9" value="FNB_STAC">
+<select name="VALUE.DUMMY_FIELDS.MENSYS.9-9" id="VALUE.DUMMY_FIELDS.MENSYS.9-9" title="Status" size="1" class="sv-form-control sv-form-control-sm">
+<option value=""></option>
+<option value="G" selected="selected">Departmental Review</option>
+<option value="H">Department Alternate</option>
+<option value="J">Department Rejected</option>
+<option value="N">Nominated</option>
+
+</select>
+</td><td role="gridcell" scope="row"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.10-9" value="FNB_UDFC">
+<select name="VALUE.DUMMY_FIELDS.MENSYS.10-9" id="VALUE.DUMMY_FIELDS.MENSYS.10-9" title="Sign off & Send to FGSR?" data-ttip="Please enter a numeric value" size="1" class="sv-form-control sv-form-control-xs" max="max=&quot;99999.99999&quot;">
+<option value="" selected="selected"></option>
+<option value="Y">Yes</option>
+<option value="N">No</option>
+
+</select>
+</td><td role="gridcell" scope="row"><a href="../run/SIW_YMHD.start_url?7458E5E326254D40taVd3NuXjxvR1j-uyX4UA52St5WoTk5KwqUnEHNit8li5m7thT4hCDmuZkbNPkRdSjjxVcrMkDwdlPK1GwB--dgy2QtmAtThnj3iUugecW2YL5PXVJehYIMv8aVhLQiHlPZfyjb45SGiSumJ3J50M4EGJMDdhysNGVTRZDSSLIs8J_9ILNzx4zKhVF27S0u4L1bSCtxc_cFf0_lKNgxD33fijjgO-8icKhdnZGF65TK-iyiKCCjX6RjZh4niesCh" target="_blank">View</a>
+<input type="hidden" name="%.DUMMY_FIELDS.MENSYS.1-9"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.2-9"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.3-9"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.4-9"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.5-9"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.6-9"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.7-9"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.8-9"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.9-9"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.10-9"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.11-9"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.12-9"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.13-9"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.14-9"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.15-9"></td></tr><tr><td role="gridcell" scope="row"><input type="hidden" name="DMX.DUMMY_OCCURRENCES.MENSYS.10"><p class="sv-form-control-static">WAEQ</p>
+</td><td role="gridcell" scope="row"><p class="sv-form-control-static">XKO ZKIQJ</p>
+</td><td role="gridcell" scope="row"><p class="sv-form-control-static">WAEQ        XG</p>
+</td><td role="gridcell" scope="row"><p class="sv-form-control-static">1267291</p>
+</td><td role="gridcell" scope="row"><p class="sv-form-control-static"></p>
+</td><td role="gridcell" scope="row"><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.6-10" id="VALUE.DUMMY_FIELDS.MENSYS.6-10" value="" maxlength="5" size="4" data-ttip="Please enter a numeric value" class="sv-form-control sv-form-control-xs" title="Most Recent GPA" data-dmfocc="10" data-dmfseqn="0006" data-webvalidation="on" max="&quot;99999.99999&quot;"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.6-10" value="FNB_TYP7">
+
+</td><td role="gridcell" scope="row"><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.7-10" id="VALUE.DUMMY_FIELDS.MENSYS.7-10" value="" maxlength="5" size="4" data-ttip="Please enter a numeric value" class="sv-form-control sv-form-control-xs" title="Previous GPA" data-dmfocc="10" data-dmfseqn="0007" data-webvalidation="on" max="&quot;99999.99999&quot;"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.7-10" value="FNB_TYP8">
+
+</td><td role="gridcell" scope="row"><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.8-10" id="VALUE.DUMMY_FIELDS.MENSYS.8-10" value="" maxlength="15" size="4" class="sv-form-control sv-form-control-xs" title="Rank" data-dmfocc="10" data-dmfseqn="0005" data-webvalidation="on"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.8-10" value="FNB_TYP3">
+
+</td><td role="gridcell" scope="row"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.9-10" value="FNB_STAC">
+<select name="VALUE.DUMMY_FIELDS.MENSYS.9-10" id="VALUE.DUMMY_FIELDS.MENSYS.9-10" title="Status" size="1" class="sv-form-control sv-form-control-sm">
+<option value=""></option>
+<option value="G" selected="selected">Departmental Review</option>
+<option value="H">Department Alternate</option>
+<option value="J">Department Rejected</option>
+<option value="N">Nominated</option>
+
+</select>
+</td><td role="gridcell" scope="row"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.10-10" value="FNB_UDFC">
+<select name="VALUE.DUMMY_FIELDS.MENSYS.10-10" id="VALUE.DUMMY_FIELDS.MENSYS.10-10" title="Sign off & Send to FGSR?" data-ttip="Please enter a numeric value" size="1" class="sv-form-control sv-form-control-xs" max="max=&quot;99999.99999&quot;">
+<option value="" selected="selected"></option>
+<option value="Y">Yes</option>
+<option value="N">No</option>
+
+</select>
+</td><td role="gridcell" scope="row"><a href="../run/SIW_YMHD.start_url?74161CD982494C6089FEDRui7LB9cJLBDZljjXaBmwo9QYD0bWUMnfxW0O19RDzEUVAnaCi0H3UdClM02wIwvg9pSA2onqML4Nmwqzw0NkPb_cugqRkvUU7OLvIbJPiPEy4aSzgSuwyl2livtkHC_ZPIugKs82bdeYQsoPftrhXt0DruRD2Ns3sqAUgzlWQvjBCnycl-ymVYYcSszbGYO9kx-EaiZ0L7jx9QRsehWAMox36AggDFgqUte0-_ThuoEPgAJYg_lFKtbIdi" target="_blank">View</a>
+<input type="hidden" name="%.DUMMY_FIELDS.MENSYS.1-10"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.2-10"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.3-10"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.4-10"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.5-10"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.6-10"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.7-10"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.8-10"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.9-10"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.10-10"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.11-10"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.12-10"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.13-10"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.14-10"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.15-10"><input type="hidden" name="%.DUMMY_OCCURRENCES.MENSYS.1"><input type="hidden" name="%.DUMMY_OCCURRENCES.MENSYS.2"><input type="hidden" name="%.DUMMY_OCCURRENCES.MENSYS.3"><input type="hidden" name="%.DUMMY_OCCURRENCES.MENSYS.4"><input type="hidden" name="%.DUMMY_OCCURRENCES.MENSYS.5"><input type="hidden" name="%.DUMMY_OCCURRENCES.MENSYS.6"><input type="hidden" name="%.DUMMY_OCCURRENCES.MENSYS.7"><input type="hidden" name="%.DUMMY_OCCURRENCES.MENSYS.8"><input type="hidden" name="%.DUMMY_OCCURRENCES.MENSYS.9"><input type="hidden" name="%.DUMMY_OCCURRENCES.MENSYS.10"></td></tr>
+
+</tbody>
+</table>
+</div>
+<!-- ***************************************** Start of paging section *********************************** -->
+<div class="sv-form-group">
+  <nav class="sv-form-pagination">
+    <p class="sv-form-pagination-rec-count">
+      Showing page 1 of 2 with 10 records per page
+    </p>
+    <ul class="sv-pagination">
+      <li class="sv-disabled"><input type="submit" name="FIRST.DUMMY_PAGER.MENSYS.1" title="Goto Start" value="First" aria-label="First page" disabled="disabled">
+      <input type="hidden" name="FIRST_VALUE.DUMMY_PAGER.MENSYS.1" value="1"></li>
+      <li class="sv-disabled"><input type="submit" name="PREVIOUS.DUMMY_PAGER.MENSYS.1" title="Previous 10 Pages" value="Previous" aria-label="Previous page" disabled="disabled">
+      <input type="hidden" name="PREVIOUS_VALUE.DUMMY_PAGER.MENSYS.1" value="-9"></li>
+      
+        <li class="sv-pagination-page sv-active"><input type="submit" name="RANGE.DUMMY_PAGER_RANGE.MENSYS.1-1" value="1">
+        <input type="hidden" name="RANGE_VALUE.DUMMY_PAGER_RANGE.MENSYS.1-1" value="1"></li>
+        <li class="sv-pagination-page"><input type="submit" name="RANGE.DUMMY_PAGER_RANGE.MENSYS.2-1" value="2">
+        <input type="hidden" name="RANGE_VALUE.DUMMY_PAGER_RANGE.MENSYS.2-1" value="11"></li>
+      <li><input type="submit" name="NEXT.DUMMY_PAGER.MENSYS.1" title="Next 10 Pages" value="Next" aria-label="Next page">
+      <input type="hidden" name="NEXT_VALUE.DUMMY_PAGER.MENSYS.1" value="11"></li>
+      <li><input type="submit" name="LAST.DUMMY_PAGER.MENSYS.1" title="Goto End" value="Last" aria-label="Last page">
+      <input type="hidden" name="LAST_VALUE.DUMMY_PAGER.MENSYS.1" value="11"></li>
+    </ul>
+  </nav>
+</div>
+<!-- ***************************************** End of paging section *********************************** -->
+</div>
+</div>
+</div>
+<!-- end data section  -->
+
+<!-- list of GC MSTs for the Notify Chair messaging Task -->
+
+	
+	
+
+
+	<div class="sv-btn-container sv-btn-container-inline">
+		<input name="store.DUMMY_OPTIONS.MENSYS.1" class="sv-btn sv-btn-primary sv-col-xs-12 sv-col-sm-6 sv-col-md-4 sv-col-lg-2" type="submit" value="Update">
+		<a href="../run/SIW_YMHD.start_url?C4507A2A79FA493FOUAsvRGY5P6jpQgDfwBWvqGdZqzahVj28A0dw-xDfaVgPYxx1d6Eztd2D6NETaM3iTKwuBNmAbn4n3EEtFSZOhNnJVZBLPjRN224Jqu63yH5xUHY_x2j_RHvHlvE0vXzb9O0seGTyH_I4rqFFiXZwOucDaR-R5f2dYyyKQzMs6QzGGdvalvNbz2bbSfNx8--3_Z7-qnQvZtdzuTA_d9D4g" class="sv-btn sv-btn-primary sv-col-xs-12 sv-col-sm-6 sv-col-md-4 sv-col-lg-2" target="_blank">Applicant Search</a>
+	
+		<a href="#gonowhere" class="sv-btn sv-btn-primary sv-col-xs-12 sv-col-sm-6 sv-col-md-4 sv-col-lg-2" title="No Graduate Chair (GCAWD) found for the current deparment" disabled data-ttip>Notify Chair</a>
+	
+		<input name="next.DUMMY_OPTIONS.MENSYS.1" class="sv-btn sv-btn-primary sv-col-xs-12 sv-col-sm-6 sv-col-md-4 sv-col-lg-2" type="submit" value="Bulk Reject">
+		<input type='button' class='sv-btn sv-btn-primary sv-col-xs-12 sv-col-sm-6 sv-col-md-4 sv-col-lg-2' onClick='window.open("../run/SIW_YGSL.start_url?6C8702358C8A45A4wS5Cvb91z8OOf-N4p-pjTOxZwjhmiA0JQdg1bOdHFRhqwKPJtYWuYom1ybM3las8V-94rH-WiUtmiZKT3G1nSkFuZM_R0v1LhNV70tt8iEMHdY3kOYGQfBZiXyFisxnSu77yIgTIQrIiQD6KXmIdFxOuzgAD3KxGlRm5VNTjb3FJnGsROCQlp3B1BNll2FBA47QrBdqI0aQLK5JgfvafhsrHDf1G9esuINqCLvfsY5M")' value='Export'>
+		<input type="button" class="sv-btn sv-btn-primary sv-col-xs-12 sv-col-sm-6 sv-col-md-4 sv-col-lg-2" onclick="window.close();" value="Close Tab" />
+	</div>
+
+
+
+	&nbsp;<div class="sv-alert sv-alert-info">
+		<strong><span class="glyphicon glyphicon-exclamation-sign"></span> &nbsp;Notify Chair</strong> button is disabled as no Graduate Chair (GCAWD) found for the current deparment
+	</div>
+
+
+<strong>Please note that it is your responsibility to properly store and dispose of any data downloaded, in accordance with the FOIP Act and any relevant University of Alberta policies and procedures. </strong>	</div> 
+</div> 
+<script>var dmxbparray = ["Generating letters","Generating letters, please wait...","Error generating letters","Cancel","OK","Enter selection criteria","Click OK to view generated content (opens in new tab).","Approximate time remaining is"]
+</script>
+<input type="hidden" class="dmx_instance_id" value="1C1E78F8-FC9E-4DE9-86BB-2F99C348428E">
+				<input type="hidden" name="DCTC.DUMMY.MENSYS.1" value="" />
+				<input type="hidden" name="ENTC.DUMMY.MENSYS.1" value="" />
+				<input type="hidden" name="DMVC.DUMMY.MENSYS.1" value="" />
+				<input type="hidden" name="ACCESS.DUMMY.MENSYS.1" value="" />
+				<input type="hidden" name="HITS_LIST.DUMMY.MENSYS.1" value="" />
+				<input type="hidden" name="HITS.DUMMY.MENSYS.1" value="" />
+				<input type="hidden" name="DB.DUMMY.MENSYS.1" value="" />
+				<input type="hidden" name="CURRENT_HIT.DUMMY.MENSYS.1" value="" />
+				<input type="hidden" name="VISTA_MODE.DUMMY.MENSYS.1" value="2" />
+				<input type="hidden" name="TRANSACTION_ID.DUMMY.MENSYS.1" value="386F9017-67A9-4039-978A-A99A2A66E3BD" />
+                <script> $.extend(sits_page_errors,{"DUMMYITEM":"dummyitem"});</script>
+			
+		<input type="hidden" name="%.DUMMY.MENSYS.1" value="FBYHC8QoCloevnM9St2pcr8mtuTxSudOQEXKFeo4na8=;new;;" />
+	</form>
+
+<!-- body-end.hts page header include starts here -->
+
+	<!-- start of HTML from body-end.hts  -->
+
+        </div>
+        <!-- end of sitspagecontent -->
+</div>
+<footer>
+<div class="bottom-footer-row">
+    <div class="footer-container container">
+        <div class="footer-inner row-fluid">
+            <div class="span12 footer-copyright">
+                <ul class="footer-quick-links">
+                    
+                            
+                            <li><a href="https://www.ualberta.ca/about/contact" target="">Contact Us</a></li>
+                        
+                            <li><a href="https://www.surveymonkey.com/s/ualberta-web-feedback" target="">Feedback</a></li>
+                        
+                            <li><a href="http://www.registrar.ualberta.ca/calendar/" target="">University Calendar</a></li>
+                        
+                            <li><a href="http://www.careers.ualberta.ca/" target="">Careers</a></li>
+                        
+                            <li><a href="http://www.rms.ualberta.ca/en/EmergNumbers.aspx" target="">Emergency</a></li>
+                        
+                            <li><a href="https://policiesonline.ualberta.ca/" target="_blank">Policies</a></li>
+                        
+                            <li><a href="http://www.weatheroffice.gc.ca/city/pages/ab-50_metric_e.html" target="">Weather</a></li>
+                        
+                            <li><a href="http://www.edmonton.ca/" target="">Edmonton</a></li>
+                        
+                            <li><a href="https://www.ualberta.ca/privacy" target="">Privacy</a></li>
+                        
+                            <li><a href="https://www.ualberta.ca/keepintouch" target="">Keep in Touch</a></li>
+                        
+                        
+                    <li><a href="https://training.sitecore.ualberta.ca/departments/another-department#">Back to Top</a></li>
+                </ul>
+                <p>
+                    © 2015
+                    <span id="phfooter_0_ualberta_address">University of Alberta 116 St. and 85 Ave., <br class="visible-phone">Edmonton, AB, Canada T6G 2R3</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+                
+            </footer>
+
+
+<!-- overall background div (opened in header files) -->
+
+<script>
+if(typeof(sits_ajax_version)=="string") {
+	sits_attach_event(window, "load", function(){	
+		sits_include_file("../css/uoa_files/index_files/all.js");
+	})
+}
+</script>
+<!--[if IE]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<!-- end of HTML from body-end.hts  -->
+  </body>
+</html>
+

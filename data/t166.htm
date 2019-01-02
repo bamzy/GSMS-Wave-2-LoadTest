@@ -1,0 +1,738 @@
+<!-- start of HTML from body-start-tabs.hts  -->
+<!DOCTYPE html>
+<html lang="en-gb">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+
+	<link rel="shortcut icon" href="../css/uoa_files/ico/favicon.ico">
+
+    <title>GSMS Awards: Interruptions Report</title>
+
+    <link rel="stylesheet" href="../css/sits.css">
+    <link rel="stylesheet" href="../css/sv.css">
+    <link rel="stylesheet" href="../plugins/css/ui/sits-ui.css">
+    <!-- Additional style for Admissions buttons - temporary until full responsive review project -->
+    <style>
+        .sv-btn-adm {
+            text-transform: uppercase;
+            font-weight: 600 !important;
+        }
+    </style>	
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="../plugins/javascript/html5shiv.min.js"></script>
+      <script src="../plugins/javascript/respond.min.js"></script>
+    <![endif]-->
+
+
+    <script src="../plugins/javascript/jquery.js?v=910.1"></script>
+    <script src="../plugins/javascript/jquery-ui.js?v=910.1"></script>
+
+    <script src="../plugins/javascript/sv.min.js?v=910.1"></script>
+
+    <script src="../javascript/settings.js?v=881.2"></script>
+	<script src="../javascript/sits_ajax.js?v=881.2"></script>
+  
+    <script src="../plugins/javascript/tablesaw/tablesaw.min.js?v=930.1"></script>
+    <script src="../plugins/javascript/datatables/media/js/jquery.dataTables.js"></script>
+ 	<script src="../plugins/javascript/datatables/media/js/dataTables.tribal.js"></script>  
+ 
+
+	  <script>
+		  function uSubmit(){} //include dummy function to prevent errors when submitting
+	  </script>
+
+
+<!--[if lt IE 7]><script>
+var root = document.documentElement;
+root.className += " lt-ie10";
+root.className += " lt-ie9";
+root.className += " lt-ie8";
+root.className += " lt-ie7";
+</script><![endif]-->
+<!--[if IE 7]><script>
+var root = document.documentElement;
+root.className += " lt-ie10";
+root.className += " lt-ie9";
+root.className += " lt-ie8";
+root.className += " ie7";
+</script><![endif]-->
+<!--[if IE 8]><script>
+var root = document.documentElement;
+root.className += " lt-ie10";
+root.className += " lt-ie9";
+root.className += " ie8";
+</script><![endif]-->
+<!--[if IE 9]><script>
+var root = document.documentElement;
+root.className += " lt-ie10";
+root.className += " ie9";
+</script><![endif]-->
+<!--[if IE 10]><script>
+var root = document.documentElement;
+root.className += " ie10";
+</script><![endif]-->
+
+
+	<!-- The Head Scripts: MODERNIZR ONLY!-->
+	<script src="../css/uoa_files/index_files/modernizr.min.js"></script>
+	<script>(!window.Modernizr)||document.write('<script src="../css/uoa_files/index_files/modernizr.js"><\/script>');</script>
+
+
+<!-- System Wide Error Messaging -->
+<link media="all" href="../css/siw_ymes.css" rel="stylesheet" type="text/css" />
+
+<!-- Alberta Foundation StyleSheet -->
+<link rel="stylesheet" href="../css/uoa_files/css/framework.css" media="screen">
+<link rel="stylesheet" href="../css/uoa_files/css/framework-ie.css" media="screen">
+
+<!-- Aberta System Override StyleSheet -->
+<link rel="stylesheet" href="../css/uoa-sits.css" media="screen">
+
+<!-- The Print Sheets -->
+<link rel="stylesheet" href="../css/uoa_files/css/print.css" media="print">
+
+<!-- any required page header html should go here, in place of this default SITS header HTML.
+     It is good practice to use 'class="sitsscreenonly" on any header images
+     which would not be required in a printed version of the page.
+ -->
+<!-- overall page DIV -->
+
+<header>           
+	<div class="blade-container" style="height: 4em;">
+    <div class="blade-inner">
+        <a class="brand" href="http://uofa.ualberta.ca/">
+            <img src="../css/uoa_files/img/logo2.svg" alt="University of Alberta">
+		</a>
+        <nav class="blade-navigation">
+            <ul class="quick-links-container">
+                <li id="ql" class="dropdown">
+                    <a href="https://training.sitecore.ualberta.ca/departments/another-department#" id="ql-toggle" class="btn btn-grey btn-small hidden-desktop" data-toggle="dropdown">
+                        <span class="quick-links-text">Quick Links <b class="caret"></b>                        </span>
+                        <span class="icon-bar quick-links-button"></span>
+                        <span class="icon-bar quick-links-button"></span>
+                        <span class="icon-bar quick-links-button"></span>
+                    </a>
+                    <ul class="quick-links" role="menu" aria-labelledby="ql-toggle">
+                    	<li role="menuitem"><a href="http://webapps.srv.ualberta.ca/search/" target="">Find a Person</a></li>
+                       <li role="menuitem"><a href="http://onecard.ualberta.ca/" target="">ONEcard</a></li>
+                       <li role="menuitem"><a href="https://www.beartracks.ualberta.ca/" target="">Bear Tracks</a></li>
+                       <li role="menuitem"><a href="http://www.campusmap.ualberta.ca/" target="">Maps</a></li>
+                       <li role="menuitem"><a href="http://apps.ualberta.ca/" target="">Email &amp; Apps</a></li>
+                       <li role="menuitem"><a href="https://eclass.srv.ualberta.ca/portal/" target="">eClass</a></li>
+                       <li role="menuitem"><a href="http://www.library.ualberta.ca/" target="">Libraries</a></li>
+                    </ul>
+                   </li>            
+			</ul>        
+		</nav>        
+		<div class="blade-search">
+            <i class="icon-search"></i>
+            <input type="search" class="search-query" placeholder="search">
+            <button type="button" class="btn btn-grey btn-small global-search-btn">Search</button>
+        </div>
+    </div>
+	</div>
+	<div class="banner-container">
+		<div class="banner-inner">
+			<a href="http://uofa.ualberta.ca/" class="site-title">Faculty of Graduate Studies and Research</a>
+			<p style="width: 100%; color: red; font-size: 24px; font-weight: bold; background-color: white;">User / Acceptance Testing environment - not Production</p>
+			<div class="banner-logo">
+				<span class="site-logo"></span>				
+			</div>
+		</div>
+		<div class="oval oval1"></div>
+		<div class="oval oval2"></div>
+		<div class="oval oval3"></div>
+		<div class="oval oval4"></div>
+	</div>
+	<div class="navigation-container">
+		<nav id="main-nav" class="navigation-inner">
+			<ul>
+				<li>
+					<a class="navigation-toggle collapsed"><span>Show Navigation</span><i class="icon-toggle-nav"></i>
+					</a>
+					<ul id="nav-list" class="main-navigation hidden-phone collapse" style="height: 0px;">
+						<!-- The Tab list field contains each page tab as a li item, child page tabs will create a new ul within the outer ul -->
+						<li class="normaltab" >
+<a href="siw_portal.url?E57E606F135748892c-tkixooIIIW0YRdqja97PebIiFrSJTXf8nfPFi89mx0K5Pug0BOCPEleZ_PJSRgLd96VBY-bbMzy4YLtGQfRJY821PHo3vyiWTBJ-2Zs8" id="GSWFL01" title="Manage Applications"><span>Admissions</span></a>
+
+</li>
+<li class="normaltab" >
+<a href="siw_portal.url?A5D3E41AFB4649401g1UvqVKOE058eLI2FSHsNzwnCiQn16hYreoQNdSNJKE9f733kCormCuhSw0v3ORVDdA8cnxBz9NvV8fuW0W3QGJVkbHKWRsr-8Ay4I42Bo" id="GSAWD_AWD_01" ><span>Awards Portal</span></a>
+
+</li>
+<li class="normaltab" >
+<a href="siw_portal.url?71640D1237884A273_1PvZO7EB2rj983HgQ5pb7T8cEjez9caLPbQzNVgnpNWVneal6sM2Vl2vYLkvDxhmjrt6VDUigKT2t037JMh7iSme-aGG12FkBg1O3INMw" id="GSAWD_NOM_01" ><span>Awards</span></a>
+
+</li>
+<li class="normaltab" >
+<a href="siw_portal.url?3A7330968BDD4D31Gf_VRzZtODD6hLRntJKJUuD3XuY6VVvr5g1aPwam-yCpMoibQoITU_0YNOYCM2ZJ6qeUYn_QIibJuGYloGylprOBgnSPmxGtDOZk0dBmZrg" id="GSMSG01" ><span>Admissions Messages</span></a>
+
+</li>
+
+						<li class="normaltab">
+							
+						</li>
+						<!--
+						<li class="normaltab">
+							 
+						</li>
+						-->
+						<li class="normaltab">
+							<a href="../run/SIW_LGN_LOGOUT.start_url?F3361ACD8FF94C55bLL5BaK_dyDBAvktAfP1tAnb-YTrHgMDR0IK-87OvQ7YH1pEWzpfnkBgHqs9RappDk7COJUPi5Z9hrY2VYJT5yhq2-5_uIdJsZjTrC-lyPM" target="_self">Logout</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+	</div>
+<div class="nav-mobile">
+<div class="nav-wrapper">
+    
+            <ul class="level-0">
+                <!-- The Tab list field contains each page tab as a li item, child page tabs will create a new ul within the outer ul -->
+						<li class="normaltab" >
+<a href="siw_portal.url?E57E606F135748892c-tkixooIIIW0YRdqja97PebIiFrSJTXf8nfPFi89mx0K5Pug0BOCPEleZ_PJSRgLd96VBY-bbMzy4YLtGQfRJY821PHo3vyiWTBJ-2Zs8" id="GSWFL01" title="Manage Applications"><span>Admissions</span></a>
+
+</li>
+<li class="normaltab" >
+<a href="siw_portal.url?A5D3E41AFB4649401g1UvqVKOE058eLI2FSHsNzwnCiQn16hYreoQNdSNJKE9f733kCormCuhSw0v3ORVDdA8cnxBz9NvV8fuW0W3QGJVkbHKWRsr-8Ay4I42Bo" id="GSAWD_AWD_01" ><span>Awards Portal</span></a>
+
+</li>
+<li class="normaltab" >
+<a href="siw_portal.url?71640D1237884A273_1PvZO7EB2rj983HgQ5pb7T8cEjez9caLPbQzNVgnpNWVneal6sM2Vl2vYLkvDxhmjrt6VDUigKT2t037JMh7iSme-aGG12FkBg1O3INMw" id="GSAWD_NOM_01" ><span>Awards</span></a>
+
+</li>
+<li class="normaltab" >
+<a href="siw_portal.url?3A7330968BDD4D31Gf_VRzZtODD6hLRntJKJUuD3XuY6VVvr5g1aPwam-yCpMoibQoITU_0YNOYCM2ZJ6qeUYn_QIibJuGYloGylprOBgnSPmxGtDOZk0dBmZrg" id="GSMSG01" ><span>Admissions Messages</span></a>
+
+</li>
+
+						<li class="normaltab">
+							
+						</li>
+						<!--
+						<li class="normaltab">
+							 
+						</li>
+						-->
+						<li class="normaltab">
+							<a href="../run/SIW_LGN_LOGOUT.start_url?F3361ACD8FF94C55bLL5BaK_dyDBAvktAfP1tAnb-YTrHgMDR0IK-87OvQ7YH1pEWzpfnkBgHqs9RappDk7COJUPi5Z9hrY2VYJT5yhq2-5_uIdJsZjTrC-lyPM" target="_self">Logout</a>
+						</li>
+           
+            </ul>
+        
+</div>
+
+</div>
+</header>
+
+      <!-- DIV sitspagecontent (see sits.css) encloses main page content.
+          It is opened in body-start, body-start-tabs, body-start-ipp and
+          closed in body-end, body-end-ipp
+       -->
+      <div id="sitspagecontent" class="container row-fluid">
+
+<!-- end of HTML from body-start.hts  -->
+<script type="text/javascript">sits_widget_bp = {"dt":{"emptyTable":"No information available","info":"Showing _START_ to _END_ of _TOTAL_ entries","infoEmpty":"No entries to show","infoFiltered":" (filtered from _MAX_ total entries)","lengthMenu":"Show _MENU_ entries","loadingRecords":"Loading...","processing":"Processing...","search":"Filter:","zeroRecords":"No matching entries found","paginate":{"first":"First","last":"Last","next":"Next","previous":"Previous"},"aria":{"sortAscending":": use to sort column ascending","sortDescending":": use to sort column descending"},"tribal":{"detailsLabelOpen":"Activate to show additional details for this row","detailsLabelClose":"Activate to hide additional details for this row","detailsLabelDataOpen":"Activate to show additional details for _DATA_","detailsLabelDataClose":"Activate to hide additional details for _DATA_"}},"ts":{"modes":["Stack","Swipe","Toggle"],"columns":"Col<span class=\"a11y-sm\">umn<\/span>s","columnBtnText":"Columns","columnsDialogError":"No eligible columns.","sort":"Sort","prevBtnText":"Show previous column on the following table","nextBtnText":"Show next column on the following table","prevBtnDisabledText":"Show previous column on the following table (not currently available)","nextBtnDisabledText":"Show next column on the following table (not currently available)","sortAscText":": use to sort column ascending","sortDescText":": use to sort column descending"},"pg":{"infoText":"Showing page {0} of {1}","infoWithRecsText":"Showing page {0} of {1} with {2} records per page","firstBtnText":"First","prevBtnText":"Previous","nextBtnText":"Next","lastBtnText":"Last","firstBtnAriaText":"Show first page","prevBtnAriaText":"Show previous page","nextBtnAriaText":"Show next page","lastBtnAriaText":"Show last page","pageBtnAriaText":"Show page {0}"},"tp":{"currentText":"Now","closeText":"Done","timeOnlyTitle":"Choose Time","timeText":"Time","hourText":"Hour","minuteText":"Minute","secondText":"Second","millisecText":"Millisecond","microsecText":"Microsecond","timezoneText":"Time Zone"},"ui":{"dialogOk":"Ok","dialogCancel":"Cancel","tabsClose":"Close","dialogClose":"Close","moreDetails":"More Details","datePickerDate":"Select a date","datePickerTime":"Select a time","datePickerDateTime":"Select a date\/time","loading":"Loading...","selectAllTitle":"Select All","selectAll":"Select All","selectNone":"Select None","invertAll":"Invert All","errorText":"Error","datePickerMonth":"Select a month","datePickerYear":"Select a year","tabsScrollLeft":"Scroll left","tabsScrollRight":"Scroll right"},"ld":{"loadTitle":"Loading","loadContent":"Loading, please wait...","processTitle":"Processing","processContent":"Processing, please wait...","saveTitle":"Saving","saveContent":"Saving, please wait..."},"to":{"sessionTitle":"Session Expiry","sessionContent":"Your session is due to expire in approximately {0} minute(s). If you would like to continue using this session, please click \"Continue\".","pageTitle":"Page Expiry","pageContent":"This page is due to expire in approximately {0} minute(s). If you would like to continue using this page, please click \"Continue\".","buttonContinue":"Continue"}};</script>
+<script>sits_user_timeout = "682B8F3066A04130kkwkfE8CspWCycRJHBDAPIz5E9DuuHLPY7agnPNnL32ZKPCWYBPw4KQ9YApZDbvXoCCRC3YwCu4KZ5HXmSG9uuaabfJAPJW9";</script>
+<!-- body-start.hts page header include ends here -->
+
+<!-- Start Of Extra Javascripts -->
+<script type="text/javascript" src="../javascript/siw_ygsl.js"></script>
+<!-- End Of Extra Javascripts -->
+
+<div id = "sitspagecontent">
+  
+    
+      
+      <input type="hidden" name="NKEY.DUMMY.MENSYS.1" value="FD1B7BB318154937PDeqI4c254zPuwLShJc6UNpHNqyrmuK-lwn-Hcd1oGkTEpH_5i-4AAGPnGNlOx6lTnYve6YDYGcTmfUZB2hYWw" disabled="disabled" id="YGSLNKEY" />
+      <input type="hidden" name="RUN_MODE.DUMMY.MENSYS.1" value="" />
+      
+      
+      <style>
+	/* prevent datatables wrapper extending the table rows beyond the panel but allow the actions drop down to be visible on top by making overflow visible */
+	div.dataTables_wrapper {
+		width: auto;
+		overflow: visible;
+	}
+	/* override default styling for drop down list to fit in table */
+	div.sv-dropdown .sv-btn-default {
+		margin: 0px;
+		padding: 0.3em 0.8em;
+	}
+</style>  
+      <h1>Interruptions Report</h1>
+
+<div class='sv-alert sv-alert-info role='alert'>
+Any students holding awards that are disbursed by FGSR and on an approved interruption should appear here
+<br>
+Please click on the link for Training Material
+</div>
+
+<div class='sv-table-container'>
+	<table class='sv-table sv-table-striped sv-table-hover sv-table-responsive' sv-datatable' data-sv-dt='Y' data-sv-dt-searching='Y' data-sv-dt-info='Y'>
+		<thead>
+			<tr>
+				<th scope='col' role='columnheader'>EMPLID</th>
+				<th scope='col' role='columnheader'>SITS ID</th>
+				<th scope='col' role='columnheader'>Last</th>
+				<th scope='col' role='columnheader'>First</th>
+				<th scope='col' role='columnheader'>Status</th>
+				<th scope='col' role='columnheader'>Department</th>
+				<th scope='col' role='columnheader'>Award ID</th>
+				<th scope='col' role='columnheader'>Name</th>
+				<th scope='col' role='columnheader'>Amount $</th>
+				<th scope='col' role='columnheader'>Reason</th>
+				<th scope='col' role='columnheader'>Start Date</th>
+				<th scope='col' role='columnheader'>Expected Return</th>
+				<th scope='col' role='columnheader'>Action</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+	
+		
+		
+		
+	
+
+	
+	
+	
+	
+
+
+<tr>
+	<td scope='row' role='gridcell'>1367060</td>
+	<td scope='row' role='gridcell'>16007382</td>
+	<td scope='row' role='gridcell'>RKUPVUQ</td>
+	<td scope='row' role='gridcell'>ZNEOTI</td>
+	<td scope='row' role='gridcell'>Interruption Pending</td>
+	<td scope='row' role='gridcell'>History and Classics</td>
+	<td scope='row' role='gridcell'>000005</td>
+	<td scope='row' role='gridcell'>Andrew Stewart Memorial Graduate Prize 2018/19</td>
+	<td scope='row' role='gridcell'></td>
+	<td scope='row' role='gridcell'></td>
+	<td scope='row' role='gridcell'></td>
+	<td scope='row' role='gridcell'></td>
+	<td scope='row' role='gridcell'>
+		<div role='group' class='sv-dropdown'>
+			<button id="divid" aria-haspopup="true" aria-expanded="false" type="button" class="sv-btn sv-btn-default sv-dropdown-toggle" data-sv-toggle="sv-dropdown">
+				<span class="sv-caret"></span>
+			</button>
+			<ul class="sv-dropdown-menu" aria-labelledby="divid">
+			<!--HIDDEN FOR WAVE 2 GO LIVE	<li><a href="../run/SIW_YMHD.start_url?6812A8D674B34A26B83LTK9AZRRU22ZFbExD_4y2G4kraNFxh5lsErPrrU8PHaFKsLozyEheKfDolnAVmQWhXstpztEQghg1t0N-XDeXuF3LEWrHDsSdrdn1-BaQjdxxOajxzg2bT215cpBijN8YU3qOmrG2_JlIv47_DwBgwxw5_i0AaiCVb0Ae2jZqYZjYBPj_kEYAVLxON3Cu1K6KJzFRhQddiTkLtctga-3S_4dPywZiGo6p7Z0CFs6vNdFQ8rkM6_SRGU4YJCEC" target="_blank">Open</a></li>-->
+			</ul>
+		</div>
+	</td>
+</tr>
+	
+		
+		
+		
+	
+
+	
+	
+	
+	
+
+
+<tr>
+	<td scope='row' role='gridcell'>1237328</td>
+	<td scope='row' role='gridcell'>16005112</td>
+	<td scope='row' role='gridcell'>BEYI</td>
+	<td scope='row' role='gridcell'>BIQBVI</td>
+	<td scope='row' role='gridcell'>Unpaid Interruption</td>
+	<td scope='row' role='gridcell'>Renewable Resources</td>
+	<td scope='row' role='gridcell'>002062</td>
+	<td scope='row' role='gridcell'>Alexander Graham Bell Canada Graduate Scholarship - Master's (NSERC) 2017/18</td>
+	<td scope='row' role='gridcell'>  17500.00</td>
+	<td scope='row' role='gridcell'>Work/Internship (Unpaid)</td>
+	<td scope='row' role='gridcell'>01/May/2018</td>
+	<td scope='row' role='gridcell'>01/Sep/2018</td>
+	<td scope='row' role='gridcell'>
+		<div role='group' class='sv-dropdown'>
+			<button id="divid" aria-haspopup="true" aria-expanded="false" type="button" class="sv-btn sv-btn-default sv-dropdown-toggle" data-sv-toggle="sv-dropdown">
+				<span class="sv-caret"></span>
+			</button>
+			<ul class="sv-dropdown-menu" aria-labelledby="divid">
+			<!--HIDDEN FOR WAVE 2 GO LIVE	<li><a href="../run/SIW_YMHD.start_url?9CA02AD8F7154F74UFWZAYeYipPTafHgS-BfzciEQvCfIpvpxJ3YqrvwYWX14va3zKNo-QQoCmoc5XB_kx5k9eFBAoeREvcW48CXHjTVSiCHKfrbCJHrnZNpFhogKr0XmW14CxJH7nvoFpEsWMhtfgyXn5Q9dnMuoAw71rZF2f9UmuqdHt992WCEXeJFE_wII5KzIUX_HX3CVrs6zK1FsPqbPuKNVvc8LSGvRF7q_3gTBGctdImWk2qPVjQ" target="_blank">Open</a></li>-->
+			</ul>
+		</div>
+	</td>
+</tr>
+	
+		
+		
+		
+	
+
+	
+	
+	
+	
+
+
+<tr>
+	<td scope='row' role='gridcell'>1544426</td>
+	<td scope='row' role='gridcell'>16022957</td>
+	<td scope='row' role='gridcell'>QPOWK</td>
+	<td scope='row' role='gridcell'>HOITE</td>
+	<td scope='row' role='gridcell'>Unpaid Interruption</td>
+	<td scope='row' role='gridcell'>Renewable Resources</td>
+	<td scope='row' role='gridcell'>002062</td>
+	<td scope='row' role='gridcell'>Alexander Graham Bell Canada Graduate Scholarship - Master's (NSERC) 2017/18</td>
+	<td scope='row' role='gridcell'>  17500.00</td>
+	<td scope='row' role='gridcell'>Work/Internship (Unpaid)</td>
+	<td scope='row' role='gridcell'>01/May/2018</td>
+	<td scope='row' role='gridcell'>01/Sep/2018</td>
+	<td scope='row' role='gridcell'>
+		<div role='group' class='sv-dropdown'>
+			<button id="divid" aria-haspopup="true" aria-expanded="false" type="button" class="sv-btn sv-btn-default sv-dropdown-toggle" data-sv-toggle="sv-dropdown">
+				<span class="sv-caret"></span>
+			</button>
+			<ul class="sv-dropdown-menu" aria-labelledby="divid">
+			<!--HIDDEN FOR WAVE 2 GO LIVE	<li><a href="../run/SIW_YMHD.start_url?BB218BEC765743D7YjTc0E4CydFiE43LTreeDxVxYW3Et7wyzZJF3pkWKQrO-xTeOQSCOCW_Y2v96Pt6VAgRp8GC6DLI3mGhB0VE4bNFcz9aFShybSjO9YzuggVrwzsWem_sjSuJ8QbEtEoFjYWX-eePWd6axSIp3gwAWQtn2NfjW-iB0TdRbbwQ4Bz72o3T1Ke9XCXAPRIt1P-5rL0FwFaljk2SRk0FVysFzeW9rntAdDD3B1CTMoa-VYc" target="_blank">Open</a></li>-->
+			</ul>
+		</div>
+	</td>
+</tr>
+	
+		
+		
+		
+	
+
+	
+	
+	
+	
+
+
+<tr>
+	<td scope='row' role='gridcell'>1197106</td>
+	<td scope='row' role='gridcell'>16004485</td>
+	<td scope='row' role='gridcell'>CTUIVI</td>
+	<td scope='row' role='gridcell'>DOQE</td>
+	<td scope='row' role='gridcell'>Unpaid Interruption</td>
+	<td scope='row' role='gridcell'>Religious Studies</td>
+	<td scope='row' role='gridcell'>002064</td>
+	<td scope='row' role='gridcell'>Joseph-Armand Bombardier Canada Graduate Scholarship - Doctoral (SSHRC) 2017/18</td>
+	<td scope='row' role='gridcell'>  35000.00</td>
+	<td scope='row' role='gridcell'>Medical Leave (Unpaid)</td>
+	<td scope='row' role='gridcell'>01/Jan/2018</td>
+	<td scope='row' role='gridcell'>01/Jan/2019</td>
+	<td scope='row' role='gridcell'>
+		<div role='group' class='sv-dropdown'>
+			<button id="divid" aria-haspopup="true" aria-expanded="false" type="button" class="sv-btn sv-btn-default sv-dropdown-toggle" data-sv-toggle="sv-dropdown">
+				<span class="sv-caret"></span>
+			</button>
+			<ul class="sv-dropdown-menu" aria-labelledby="divid">
+			<!--HIDDEN FOR WAVE 2 GO LIVE	<li><a href="../run/SIW_YMHD.start_url?664CD0BF6C17416APqh6QQuqNtQ2cSsxlVu7D6-79n1acOCcWnsvYzVg88Z-wqtg2zYUP-SyWuVw1RlWLmYFshYJT8HMBPIfxqoyGT_G89he8qiC0TsG_aCt5dJl2ayYPM_SZe2mpyuAKy6p7e7JOW3WH4sv6bdRw7KbqFPxvYuBLLzAJE_j-Fk3os4BN0AAj1MfMWmnVi0qnIcXTJFmkppSCaG7rFX0SU2OBzYQ67gkbTh8rhE6iynA5hc" target="_blank">Open</a></li>-->
+			</ul>
+		</div>
+	</td>
+</tr>
+	
+		
+		
+		
+	
+
+	
+	
+	
+	
+
+
+<tr>
+	<td scope='row' role='gridcell'>1233668</td>
+	<td scope='row' role='gridcell'>16005031</td>
+	<td scope='row' role='gridcell'>CAQVWUQ</td>
+	<td scope='row' role='gridcell'>DTIJUTB</td>
+	<td scope='row' role='gridcell'>Unpaid Interruption</td>
+	<td scope='row' role='gridcell'>Biological Sciences</td>
+	<td scope='row' role='gridcell'>003229</td>
+	<td scope='row' role='gridcell'>NSERC Vanier Canada Graduate Scholarship 2018/19</td>
+	<td scope='row' role='gridcell'>  50000.00</td>
+	<td scope='row' role='gridcell'>Medical Leave (Unpaid)</td>
+	<td scope='row' role='gridcell'>01/Nov/2018</td>
+	<td scope='row' role='gridcell'>01/Mar/2019</td>
+	<td scope='row' role='gridcell'>
+		<div role='group' class='sv-dropdown'>
+			<button id="divid" aria-haspopup="true" aria-expanded="false" type="button" class="sv-btn sv-btn-default sv-dropdown-toggle" data-sv-toggle="sv-dropdown">
+				<span class="sv-caret"></span>
+			</button>
+			<ul class="sv-dropdown-menu" aria-labelledby="divid">
+			<!--HIDDEN FOR WAVE 2 GO LIVE	<li><a href="../run/SIW_YMHD.start_url?302D8FF16D9149B97uZgnH95aS4wpzqReXW2dSCyI6ZStT8dRVIDYmG-odeOYwWepC4X8gpswK-tjaxvtg37h0j_IrEKH1AGPsMyDC98kYWu1itvsh_oS43vKygTwofFaRB39X1XTluClHiAL8WpHiKbb8XqRzLRmsBjCzJQEvr--PmhP1MQf8NB4o4Zw2hzacHZcgYm33X1oQCqiJiMa60Ii-TYwUZ1qP4kCFlhCKgHj4TJg3twtLKG_rrCXNisfg_5OhCjqf55YkqR" target="_blank">Open</a></li>-->
+			</ul>
+		</div>
+	</td>
+</tr>
+	
+		
+		
+		
+	
+
+	
+	
+	
+	
+
+
+<tr>
+	<td scope='row' role='gridcell'>1564394</td>
+	<td scope='row' role='gridcell'>16039123</td>
+	<td scope='row' role='gridcell'>YOUSJMI</td>
+	<td scope='row' role='gridcell'>FOAHFFHQ</td>
+	<td scope='row' role='gridcell'>Paid Interruption</td>
+	<td scope='row' role='gridcell'>Civil and Environmental Engineering</td>
+	<td scope='row' role='gridcell'>003230</td>
+	<td scope='row' role='gridcell'>SSHRC Vanier Canada Graduate Scholarship 2018/19</td>
+	<td scope='row' role='gridcell'></td>
+	<td scope='row' role='gridcell'>Parental Leave (Paid)</td>
+	<td scope='row' role='gridcell'>01/Jan/2019</td>
+	<td scope='row' role='gridcell'>01/May/2019</td>
+	<td scope='row' role='gridcell'>
+		<div role='group' class='sv-dropdown'>
+			<button id="divid" aria-haspopup="true" aria-expanded="false" type="button" class="sv-btn sv-btn-default sv-dropdown-toggle" data-sv-toggle="sv-dropdown">
+				<span class="sv-caret"></span>
+			</button>
+			<ul class="sv-dropdown-menu" aria-labelledby="divid">
+			<!--HIDDEN FOR WAVE 2 GO LIVE	<li><a href="../run/SIW_YMHD.start_url?2D0A0F8FB4DD44774sT8ph97Pft-t82KYJXe-16EX3g_anp9_lANksJUzuxSyvyxq-jeHNghyRhkl5z04BfOY34H6j3_UGJ3lSMRh3j1pAAmVxhlBw_oflgrUzQwaU8cgJp93-Q2_df1clAtBokA7mPBpvlmk8Cz22vc4Wq2NO7UiUC0ziVUSg7YXtvlgjqYquOFin_5Tzv2IMgNRFVljHadp_sNgPLeU0QkyFgDWuHT65WalNQNSaLqrZldqXNa0Rk1uceERmW5ZhcF" target="_blank">Open</a></li>-->
+			</ul>
+		</div>
+	</td>
+</tr>
+	
+		
+		
+		
+	
+
+	
+	
+	
+	
+
+
+<tr>
+	<td scope='row' role='gridcell'>1245614</td>
+	<td scope='row' role='gridcell'>16005283</td>
+	<td scope='row' role='gridcell'>NAOQWEQONKE</td>
+	<td scope='row' role='gridcell'>KEOTE</td>
+	<td scope='row' role='gridcell'>Paid Interruption</td>
+	<td scope='row' role='gridcell'>Agricultural, Food & Nutritional Science</td>
+	<td scope='row' role='gridcell'>003231</td>
+	<td scope='row' role='gridcell'>CIHR Vanier Canada Graduate Scholarship 2017/18</td>
+	<td scope='row' role='gridcell'>  83333.33</td>
+	<td scope='row' role='gridcell'>Parental Leave (Paid)</td>
+	<td scope='row' role='gridcell'>01/May/2018</td>
+	<td scope='row' role='gridcell'>01/Jan/2019</td>
+	<td scope='row' role='gridcell'>
+		<div role='group' class='sv-dropdown'>
+			<button id="divid" aria-haspopup="true" aria-expanded="false" type="button" class="sv-btn sv-btn-default sv-dropdown-toggle" data-sv-toggle="sv-dropdown">
+				<span class="sv-caret"></span>
+			</button>
+			<ul class="sv-dropdown-menu" aria-labelledby="divid">
+			<!--HIDDEN FOR WAVE 2 GO LIVE	<li><a href="../run/SIW_YMHD.start_url?72F00A7313194688UEGeeQPQUWuqQTP8VuHeZR-IneVvIv822VTXGjiT9d9kXT4QCurH2mRqfonSQKC9BbRYxSYCWNkktPgR3fD6bubS4ONp9sdg979M-aXEqQvRnbGYWkqm7N7rdoXwyN9Jh_9r7sjkL2XkcSo08dCBkGvgxrMcvpX4Y7bZaheuseiDM28InLoRoA-ZgY4tjr8BZnAdVKLHlqtxpfrgBgoeGZKJ3k8Awp0gjeBLwS1eiMY" target="_blank">Open</a></li>-->
+			</ul>
+		</div>
+	</td>
+</tr>
+	
+		
+		
+		
+	
+
+	
+	
+	
+	
+
+
+<tr>
+	<td scope='row' role='gridcell'>1153258</td>
+	<td scope='row' role='gridcell'>16004063</td>
+	<td scope='row' role='gridcell'>FUJDITJ</td>
+	<td scope='row' role='gridcell'>GIHHTIB</td>
+	<td scope='row' role='gridcell'>Unpaid Interruption</td>
+	<td scope='row' role='gridcell'>Agricultural, Food & Nutritional Science</td>
+	<td scope='row' role='gridcell'>003703</td>
+	<td scope='row' role='gridcell'>University of Alberta Doctoral Recruitment Scholarship 2017/18</td>
+	<td scope='row' role='gridcell'>  25000.00</td>
+	<td scope='row' role='gridcell'>Medical Leave (Unpaid)</td>
+	<td scope='row' role='gridcell'>01/May/2018</td>
+	<td scope='row' role='gridcell'>01/Sep/2018</td>
+	<td scope='row' role='gridcell'>
+		<div role='group' class='sv-dropdown'>
+			<button id="divid" aria-haspopup="true" aria-expanded="false" type="button" class="sv-btn sv-btn-default sv-dropdown-toggle" data-sv-toggle="sv-dropdown">
+				<span class="sv-caret"></span>
+			</button>
+			<ul class="sv-dropdown-menu" aria-labelledby="divid">
+			<!--HIDDEN FOR WAVE 2 GO LIVE	<li><a href="../run/SIW_YMHD.start_url?4BD6E2F1A91944C20G7v0s_9jziiTA_zSKhk87b7cOxCp2XpdYm7QrG-XrHywA3OB3U4BmogSPtwDN3djMBFuLd3FESmGGhgs8YFXvgCPt5QalCJH9IkI1ED_y5QcE34x2TJxmGh06E0m8Ysql3yYHR-pzrnOKGU2r38qjDjPHiQZK4KbnpvPsmJdtp4g1g8ashZKAuL6WDFFjGhEG4ZMJmi0Kj258P1jaRSMa_jdAOM5oP1Z1lHgLaJMKc" target="_blank">Open</a></li>-->
+			</ul>
+		</div>
+	</td>
+</tr>
+	
+		
+		
+		
+	
+
+	
+	
+	
+	
+
+
+<tr>
+	<td scope='row' role='gridcell'>1461961</td>
+	<td scope='row' role='gridcell'>16010062</td>
+	<td scope='row' role='gridcell'>QOEP</td>
+	<td scope='row' role='gridcell'>KIQQEWANNEK</td>
+	<td scope='row' role='gridcell'>Unpaid Interruption</td>
+	<td scope='row' role='gridcell'>Computing Science</td>
+	<td scope='row' role='gridcell'>003791</td>
+	<td scope='row' role='gridcell'>Alberta Innovates Graduate Student Scholarship (ICT) 2017/18</td>
+	<td scope='row' role='gridcell'>  31500.00</td>
+	<td scope='row' role='gridcell'>Work/Internship (Unpaid)</td>
+	<td scope='row' role='gridcell'>25/Jun/2018</td>
+	<td scope='row' role='gridcell'>18/Sep/2018</td>
+	<td scope='row' role='gridcell'>
+		<div role='group' class='sv-dropdown'>
+			<button id="divid" aria-haspopup="true" aria-expanded="false" type="button" class="sv-btn sv-btn-default sv-dropdown-toggle" data-sv-toggle="sv-dropdown">
+				<span class="sv-caret"></span>
+			</button>
+			<ul class="sv-dropdown-menu" aria-labelledby="divid">
+			<!--HIDDEN FOR WAVE 2 GO LIVE	<li><a href="../run/SIW_YMHD.start_url?9D028FF8A8D14D90893lHZMmi1a5F7QSjrYJCTDztSWpLA1eBN8biSUKUSxaJGC294Z21Hwajxb7vz3CByQPoteXBdXKTKXfyBMAo4BCRWAthBNoWZbqHusSvzwo1CGo3fqpYs_iV1zCfnxWlSSo1fLaALbKUG1Twvhx27eXc7CJzHdVbPcdpaGayICTBNtsVk1GRrOaWzhKKzIjUym5ey-au3W8wBbj2GeYaoF4ehXkd6sGj7s3XEb-Pt4" target="_blank">Open</a></li>-->
+			</ul>
+		</div>
+	</td>
+</tr>
+	
+		
+		
+		
+	
+
+	
+	
+	
+	
+
+
+<tr>
+	<td scope='row' role='gridcell'>1421285</td>
+	<td scope='row' role='gridcell'>16008723</td>
+	<td scope='row' role='gridcell'>ZAULLHR</td>
+	<td scope='row' role='gridcell'>HFRITNHL</td>
+	<td scope='row' role='gridcell'>Paid Interruption</td>
+	<td scope='row' role='gridcell'>Agricultural, Food & Nutritional Science</td>
+	<td scope='row' role='gridcell'>003793</td>
+	<td scope='row' role='gridcell'>Alberta Innovates Graduate Student Scholarship (OMICS) 2017/18</td>
+	<td scope='row' role='gridcell'>  42000.00</td>
+	<td scope='row' role='gridcell'></td>
+	<td scope='row' role='gridcell'></td>
+	<td scope='row' role='gridcell'></td>
+	<td scope='row' role='gridcell'>
+		<div role='group' class='sv-dropdown'>
+			<button id="divid" aria-haspopup="true" aria-expanded="false" type="button" class="sv-btn sv-btn-default sv-dropdown-toggle" data-sv-toggle="sv-dropdown">
+				<span class="sv-caret"></span>
+			</button>
+			<ul class="sv-dropdown-menu" aria-labelledby="divid">
+			<!--HIDDEN FOR WAVE 2 GO LIVE	<li><a href="../run/SIW_YMHD.start_url?67D02D5ABAA54575VhYBChfjtF9gy6RJ51xJVcYECthBNUyR7fNfyFAEkrOgvPvB6Nb7hkJcwBNAu58oxYBkehy1ojanuHm5zuEGX48KtbvLq0LreeKC1Ux_doYL_6cwmYnrIwK1wF6VYRmrgAbAH9Mzcg_QIofShKcMV2wxJscN7zXWlVczbBajD-ipxVjPD9jiarLLOceHDSg5kjGJRDz4PDEcyytC43ojm5lpQ9e9omquioI9XdfI7ZI" target="_blank">Open</a></li>-->
+			</ul>
+		</div>
+	</td>
+</tr>
+		</tbody>
+	</table>
+</div>
+
+<div class='sv-hidden-print sv-btn-container sv-btn-container-inline'>
+	<input type='button' class='sv-btn sv-btn-primary sv-col-xs-12 sv-col-sm-6 sv-col-md-4 sv-col-lg-2' onClick='window.open("../run/SIW_YGSL.start_url?836C54D7508B4255cA2FTqSYN9hnyeBc7JNK9FI10wBg4UEa9fnKbhSwp1wYMG_Cw_yWHKrSFK2P91wFcKZ3csbCIpm9J_iUHeiQwQvXKzk4MncEU8B131W4xmLoh6BLutx8cwWZ2RCbuGjtYZWS2HcC5PPFd60GjMcwLA7yBO73Mnoc9oipyW7Pj9g")' value='Export'>
+	<input type='button' class='sv-btn sv-btn-default sv-col-xs-12 sv-col-sm-6 sv-col-md-4 sv-col-lg-2' onclick='window.close();' value='Close' />
+</div>
+
+      
+    
+  <input type="hidden" name="%.DUMMY.MENSYS.1" value="FBYHC8QoCloevnM9St2pcr8mtuTxSudOQEXKFeo4na8=;new;;" />
+</div>  
+
+<!-- body-end.hts page header include starts here -->
+  
+    <!-- start of HTML from body-end.hts  -->
+
+        </div>
+        <!-- end of sitspagecontent -->
+</div>
+<footer>
+<div class="bottom-footer-row">
+    <div class="footer-container container">
+        <div class="footer-inner row-fluid">
+            <div class="span12 footer-copyright">
+                <ul class="footer-quick-links">
+                    
+                            
+                            <li><a href="https://www.ualberta.ca/about/contact" target="">Contact Us</a></li>
+                        
+                            <li><a href="https://www.surveymonkey.com/s/ualberta-web-feedback" target="">Feedback</a></li>
+                        
+                            <li><a href="http://www.registrar.ualberta.ca/calendar/" target="">University Calendar</a></li>
+                        
+                            <li><a href="http://www.careers.ualberta.ca/" target="">Careers</a></li>
+                        
+                            <li><a href="http://www.rms.ualberta.ca/en/EmergNumbers.aspx" target="">Emergency</a></li>
+                        
+                            <li><a href="https://policiesonline.ualberta.ca/" target="_blank">Policies</a></li>
+                        
+                            <li><a href="http://www.weatheroffice.gc.ca/city/pages/ab-50_metric_e.html" target="">Weather</a></li>
+                        
+                            <li><a href="http://www.edmonton.ca/" target="">Edmonton</a></li>
+                        
+                            <li><a href="https://www.ualberta.ca/privacy" target="">Privacy</a></li>
+                        
+                            <li><a href="https://www.ualberta.ca/keepintouch" target="">Keep in Touch</a></li>
+                        
+                        
+                    <li><a href="https://training.sitecore.ualberta.ca/departments/another-department#">Back to Top</a></li>
+                </ul>
+                <p>
+                    © 2015
+                    <span id="phfooter_0_ualberta_address">University of Alberta 116 St. and 85 Ave., <br class="visible-phone">Edmonton, AB, Canada T6G 2R3</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+                
+            </footer>
+
+
+<!-- overall background div (opened in header files) -->
+
+<script>
+if(typeof(sits_ajax_version)=="string") {
+	sits_attach_event(window, "load", function(){	
+		sits_include_file("../css/uoa_files/index_files/all.js");
+	})
+}
+</script>
+<!--[if IE]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<!-- end of HTML from body-end.hts  -->
+  </body>
+</html>
+  

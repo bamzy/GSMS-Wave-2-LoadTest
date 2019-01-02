@@ -1,0 +1,11 @@
+[t172]
+FileName1=t172.htm
+URL1=https://graduate-studies-apply-uat.ualberta.ca/urd/sits.urd/run/siw_dmu.timeout
+Total=1
+RequestHeaderFile=t172_RequestHeader.txt
+RequestBodyFile=t172_RequestBody.txt
+ResponseHeaderFile=t172_ResponseHeader.txt
+ContentType=text/html
+SnapshotXmlFile=snapshot_172.xml
+[ProtocolInfo]
+ProtocolId=QTWeb

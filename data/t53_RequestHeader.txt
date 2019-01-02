@@ -1,0 +1,13 @@
+POST https://graduate-studies-apply-test.ualberta.ca/urd/sits.urd/run/SIW_TTQ HTTP/1.1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:62.0) Gecko/20100101 Firefox/62.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-GB,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: https://graduate-studies-apply-test.ualberta.ca/urd/sits.urd/run/SIW_TTQ
+Content-Type: application/x-www-form-urlencoded
+Cookie: EVISIONLOGINLANG=; EVISIONLOGINHTV=; EVISIONID=53BFE20896D34446A319FDA58B292454; JSESSIONID=417B439FFEBB571A9031B7D3E1FABEBC; BIGipServerSITS-Test.app~SITS-Test_pool=1310857900.36895.0000; BIGipServerSharedIIS-DEV=790764204.20480.0000
+DNT: 1
+Upgrade-Insecure-Requests: 1
+Host: graduate-studies-apply-test.ualberta.ca
+Content-Length: 2450
+

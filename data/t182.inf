@@ -1,0 +1,13 @@
+[t182]
+FileName1=t182.htm
+URL1=https://graduate-studies-apply-uat.ualberta.ca/urd/sits.urd/run/SIW_YMHD.start_url?498C266C81F2478AEZwqezYlCJDWE0oZGKvFxcEAa2tE5ATdbhBshPxMyadJEi840YdXpy9snGT5jfIqIRN6xzAlF5xPIhvNIrWNjJ1ddifXSOOzpPbgnFvf0MUD_Aq3WPSI87HK8nr8vSp4X31ZTf-n90noSHmD2UF3ax3dUCh_09YonnmIHifWQBdTLjCdMz_KWT2GDvLNXBY9bZCJUo1GznD73JTDJ-0cSQ
+Total=2
+RequestHeaderFile=t182_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t182_ResponseHeader.txt
+ContentType=text/html
+SnapshotXmlFile=snapshot_182.xml
+FileName2=t182_success.txt
+URL2=http://detectportal.firefox.com/success.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

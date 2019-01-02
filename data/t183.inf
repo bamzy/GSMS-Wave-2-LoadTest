@@ -1,0 +1,13 @@
+[t183]
+FileName1=t183.htm
+URL1=https://graduate-studies-apply-uat.ualberta.ca/urd/sits.urd/run/SIW_INTRAY.getintray
+Total=2
+RequestHeaderFile=t183_RequestHeader.txt
+RequestBodyFile=t183_RequestBody.txt
+ResponseHeaderFile=t183_ResponseHeader.txt
+ContentType=text/html
+SnapshotXmlFile=snapshot_183.xml
+FileName2=t183_success.txt
+URL2=http://detectportal.firefox.com/success.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

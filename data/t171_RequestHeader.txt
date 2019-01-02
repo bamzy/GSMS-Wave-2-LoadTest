@@ -1,0 +1,13 @@
+POST https://graduate-studies-apply-uat.ualberta.ca/urd/sits.urd/run/siw_ttq.validation HTTP/1.1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:64.0) Gecko/20100101 Firefox/64.0
+Accept: text/html, */*; q=0.01
+Accept-Language: en-GB,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: https://graduate-studies-apply-uat.ualberta.ca/urd/sits.urd/run/SIW_YMHD.start_url?34EBBA6528CF471155aJdPeJh821qwaJ0fePfS7M1xQjL33MS53SM3reBS6xRaiy80Zs3zCgQ4BkBPe3wIpJUYgmSWy1pP5LcLnrHBFvsmshl4t6Z3RLUzNS0ZMkSRs_exYuqM0jzBIRB2AN8Xsq00uIO5Q2d6S6JZVTNv26mjZHW0VZiDjIHezSyKASTKEPRfMjkIa49xdUiPO-WuiJX6P4YOnXGg2klrYc1MQTlrHL-8OuItVDztzakMQ
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+X-Requested-With: XMLHttpRequest
+DNT: 1
+Cookie: EVISIONLOGINLANG=; EVISIONLOGINHTV=; EVISIONID=0F14B06025E54BBFB096C2CC0FA94BEC; JSESSIONID=4D103EF28D3667798CFCCC0ACD6B5DE1; BIGipServerSITSAPP-UAT-HTTP.app~SITSAPP-UAT-HTTP_pool=1092754092.36895.0000; BIGipServerSharedIIS-UAT=757209772.20480.0000
+Host: graduate-studies-apply-uat.ualberta.ca
+Content-Length: 193
+

@@ -1,0 +1,9 @@
+-+
+-DCCI
+-D_IDA_XL
+-DWINNT
+-ID:\workspace\GSMS.LoadTest\GSMSAwardsWaveTwoComprehensive
+-ID:\Program Files (x86)\Canon\Easy-WebPrint EX\include
+-ed:\workspace\gsms.loadtest\gsmsawardswavetwocomprehensive\\logfile.log
+d:\workspace\gsms.loadtest\gsmsawardswavetwocomprehensive\\combined_GSMSAwardsWaveTwoComprehensive.c
+d:\workspace\gsms.loadtest\gsmsawardswavetwocomprehensive\\pre_cci.c

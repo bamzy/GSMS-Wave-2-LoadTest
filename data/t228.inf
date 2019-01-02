@@ -1,0 +1,15 @@
+[t228]
+FileName1=t228.htm
+URL1=https://graduate-studies-apply-uat.ualberta.ca/urd/sits.urd/run/SIW_INTRAY.getintray
+Total=3
+RequestHeaderFile=t228_RequestHeader.txt
+RequestBodyFile=t228_RequestBody.txt
+ResponseHeaderFile=t228_ResponseHeader.txt
+ContentType=text/html
+SnapshotXmlFile=snapshot_228.xml
+FileName2=t228_emailred.jpg
+URL2=https://graduate-studies-apply-uat.ualberta.ca/urd/sits.urd/images/emailred.jpg
+FileName3=t228_emailunr.jpg
+URL3=https://graduate-studies-apply-uat.ualberta.ca/urd/sits.urd/images/emailunr.jpg
+[ProtocolInfo]
+ProtocolId=QTWeb

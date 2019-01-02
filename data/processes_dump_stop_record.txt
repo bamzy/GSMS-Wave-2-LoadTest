@@ -1,0 +1,905 @@
+Failed to get information of process Id: 0
+Failed to get information of process Id: 4
+Failed to get information of process Id: 120
+Failed to get information of process Id: 568
+Failed to get information of process Id: 804
+Failed to get information of process Id: 884
+Failed to get information of process Id: 900
+Failed to get information of process Id: 948
+Failed to get information of process Id: 968
+Failed to get information of process Id: 96
+Failed to get information of process Id: 644
+Failed to get information of process Id: 1032
+Failed to get information of process Id: 1040
+Failed to get information of process Id: 1048
+Failed to get information of process Id: 1116
+Failed to get information of process Id: 1184
+Failed to get information of process Id: 1224
+Failed to get information of process Id: 1320
+Failed to get information of process Id: 1360
+Failed to get information of process Id: 1372
+Failed to get information of process Id: 1380
+Failed to get information of process Id: 1408
+Failed to get information of process Id: 1464
+Failed to get information of process Id: 1520
+Failed to get information of process Id: 1588
+Failed to get information of process Id: 1632
+Failed to get information of process Id: 1780
+Failed to get information of process Id: 1796
+Failed to get information of process Id: 1812
+Failed to get information of process Id: 1828
+Failed to get information of process Id: 1872
+Failed to get information of process Id: 1880
+Failed to get information of process Id: 1940
+Failed to get information of process Id: 1968
+Failed to get information of process Id: 2024
+Failed to get information of process Id: 600
+Failed to get information of process Id: 1196
+Failed to get information of process Id: 1504
+Failed to get information of process Id: 1688
+Failed to get information of process Id: 2080
+Failed to get information of process Id: 2164
+Failed to get information of process Id: 2184
+Failed to get information of process Id: 2192
+Failed to get information of process Id: 2372
+Failed to get information of process Id: 2380
+Failed to get information of process Id: 2464
+Failed to get information of process Id: 2612
+Failed to get information of process Id: 2728
+Failed to get information of process Id: 2820
+Failed to get information of process Id: 2948
+Failed to get information of process Id: 2996
+Failed to get information of process Id: 1668
+Failed to get information of process Id: 2324
+Failed to get information of process Id: 2504
+Failed to get information of process Id: 3012
+Failed to get information of process Id: 3144
+Failed to get information of process Id: 3232
+Failed to get information of process Id: 3256
+Failed to get information of process Id: 3276
+Failed to get information of process Id: 3568
+Failed to get information of process Id: 3640
+Failed to get information of process Id: 3836
+Failed to get information of process Id: 3848
+Failed to get information of process Id: 3856
+Failed to get information of process Id: 3880
+Failed to get information of process Id: 3888
+Failed to get information of process Id: 3900
+Failed to get information of process Id: 3908
+Failed to get information of process Id: 3916
+Failed to get information of process Id: 3932
+Failed to get information of process Id: 3940
+Failed to get information of process Id: 3948
+Failed to get information of process Id: 3956
+Failed to get information of process Id: 3964
+Failed to get information of process Id: 3972
+Failed to get information of process Id: 3980
+Failed to get information of process Id: 3988
+Failed to get information of process Id: 3996
+Failed to get information of process Id: 4008
+Failed to get information of process Id: 4016
+Failed to get information of process Id: 4024
+Failed to get information of process Id: 4040
+Failed to get information of process Id: 4048
+Failed to get information of process Id: 4056
+Failed to get information of process Id: 4072
+Failed to get information of process Id: 4080
+Failed to get information of process Id: 3376
+Failed to get information of process Id: 3024
+Failed to get information of process Id: 4104
+Failed to get information of process Id: 4120
+Failed to get information of process Id: 4260
+Failed to get information of process Id: 4516
+Failed to get information of process Id: 4612
+Failed to get information of process Id: 4636
+Failed to get information of process Id: 4652
+Failed to get information of process Id: 4664
+Failed to get information of process Id: 4772
+Failed to get information of process Id: 4956
+Failed to get information of process Id: 5380
+Failed to get information of process Id: 5640
+Failed to get information of process Id: 6064
+Failed to get information of process Id: 6252
+Failed to get information of process Id: 6260
+Failed to get information of process Id: 6288
+Failed to get information of process Id: 6404
+Failed to get information of process Id: 6584
+Failed to get information of process Id: 6644
+Failed to get information of process Id: 7096
+Failed to get information of process Id: 7400
+Failed to get information of process Id: 7868
+Failed to get information of process Id: 3776
+Failed to get information of process Id: 7324
+Failed to get information of process Id: 5980
+Failed to get information of process Id: 6008
+Failed to get information of process Id: 3808
+Failed to get information of process Id: 1368
+Failed to get information of process Id: 7576
+Failed to get information of process Id: 5456
+Failed to get information of process Id: 8252
+Failed to get information of process Id: 8312
+Failed to get information of process Id: 8428
+Failed to get information of process Id: 8852
+Failed to get information of process Id: 9012
+Failed to get information of process Id: 9048
+PROCESS 0x23b8      dumeter.exe
+Failed to get information of process Id: 8956
+Failed to get information of process Id: 8928
+PROCESS 0x15e4      nvidia web helper.exe
+Failed to get information of process Id: 9172
+Failed to get information of process Id: 2420
+Failed to get information of process Id: 9776
+Failed to get information of process Id: 9460
+Failed to get information of process Id: 9472
+Failed to get information of process Id: 2724
+Failed to get information of process Id: 10852
+Failed to get information of process Id: 11036
+Failed to get information of process Id: 11224
+Failed to get information of process Id: 10248
+Failed to get information of process Id: 9824
+Failed to get information of process Id: 10556
+Failed to get information of process Id: 11308
+Failed to get information of process Id: 11468
+Failed to get information of process Id: 8232
+Failed to get information of process Id: 11988
+Failed to get information of process Id: 7844
+Failed to get information of process Id: 12156
+Failed to get information of process Id: 12368
+Failed to get information of process Id: 12512
+Failed to get information of process Id: 12592
+Failed to get information of process Id: 12908
+Failed to get information of process Id: 12964
+Failed to get information of process Id: 13088
+Failed to get information of process Id: 13152
+PROCESS 0x2ab8      avastui.exe
+Failed to get information of process Id: 7332
+PROCESS 0x3460      idman.exe
+PROCESS 0x34f8      iemonitor.exe
+PROCESS 0x3540      plex media server.exe
+PROCESS 0x37a8      plexscripthost.exe
+Failed to get information of process Id: 14260
+Failed to get information of process Id: 14300
+Failed to get information of process Id: 11884
+Failed to get information of process Id: 14264
+Failed to get information of process Id: 10656
+Failed to get information of process Id: 13580
+PROCESS 0x3850      plex dlna server.exe
+PROCESS 0x38c4      plex tuner service.exe
+Failed to get information of process Id: 14756
+Failed to get information of process Id: 16888
+Failed to get information of process Id: 13484
+Failed to get information of process Id: 11180
+Failed to get information of process Id: 10120
+Failed to get information of process Id: 13696
+Failed to get information of process Id: 14116
+Failed to get information of process Id: 17116
+Failed to get information of process Id: 2160
+Failed to get information of process Id: 17028
+Failed to get information of process Id: 16872
+Failed to get information of process Id: 17896
+Failed to get information of process Id: 10328
+Failed to get information of process Id: 9036
+Failed to get information of process Id: 11724
+Failed to get information of process Id: 9476
+Failed to get information of process Id: 18632
+Failed to get information of process Id: 10072
+Failed to get information of process Id: 11132
+Failed to get information of process Id: 20640
+Failed to get information of process Id: 19256
+Failed to get information of process Id: 22412
+Failed to get information of process Id: 14340
+Failed to get information of process Id: 22392
+Failed to get information of process Id: 8308
+Failed to get information of process Id: 5372
+Failed to get information of process Id: 22236
+Failed to get information of process Id: 21316
+Failed to get information of process Id: 456
+Failed to get information of process Id: 2448
+Failed to get information of process Id: 12704
+Failed to get information of process Id: 16436
+Failed to get information of process Id: 11404
+Failed to get information of process Id: 32
+Failed to get information of process Id: 22220
+Failed to get information of process Id: 13648
+Failed to get information of process Id: 15828
+Failed to get information of process Id: 13128
+Failed to get information of process Id: 17776
+PROCESS 0x325c      anydesk.exe
+Failed to get information of process Id: 3780
+Failed to get information of process Id: 18184
+Failed to get information of process Id: 10900
+Failed to get information of process Id: 18436
+Failed to get information of process Id: 7856
+PROCESS 0x42f4      telegram.exe
+Failed to get information of process Id: 16076
+Failed to get information of process Id: 20496
+Failed to get information of process Id: 13308
+Failed to get information of process Id: 14184
+Failed to get information of process Id: 18568
+Failed to get information of process Id: 19188
+Failed to get information of process Id: 21960
+PROCESS 0x4960      lenovo.modern.imcontroller.pluginhost.device.exe
+Failed to get information of process Id: 18780
+Failed to get information of process Id: 19820
+Failed to get information of process Id: 16256
+Failed to get information of process Id: 10612
+PROCESS 0x16e8      vpnui.exe
+PROCESS 0x36e0      vugen.exe
+PROCESS 0x2df0      vugen.exe
+PROCESS 0x3f4c      rundll32.exe
+PROCESS 0x4d88      rundll32.exe
+PROCESS 0x4144      rundll32.exe
+PROCESS 0x486c      rundll32.exe
+Failed to get information of process Id: 22936
+Failed to get information of process Id: 808
+Failed to get information of process Id: 4256
+PROCESS 0x43dc      hp.lr.proxyrecorder.exe
+		12.60.971.0                   D:\Program Files (x86)\Canon\Easy-WebPrint EX\bin\HP.LR.ProxyRecorder.exe
+		10.0.17134.228 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\ntdll.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\MSCOREE.DLL
+		10.0.17134.376 (WinBuild.160101.0800)C:\WINDOWS\System32\KERNEL32.dll
+		18.8.4.1339                   D:\Program Files\AVAST Software\Avast\aswhookx.dll
+		10.0.17134.376 (WinBuild.160101.0800)C:\WINDOWS\System32\KERNELBASE.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\ADVAPI32.dll
+		7.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\msvcrt.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\sechost.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\RPCRT4.dll
+		10.0.17134.376 (WinBuild.160101.0800)C:\WINDOWS\System32\SspiCli.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\CRYPTBASE.dll
+		10.0.17134.471 (WinBuild.160101.0800)C:\WINDOWS\System32\bcryptPrimitives.dll
+		4.7.3056.0 built by: NET472REL1C:\Windows\Microsoft.NET\Framework\v4.0.30319\mscoreei.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\SHLWAPI.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\combase.dll
+		10.0.17134.319 (WinBuild.160101.0800)C:\WINDOWS\System32\ucrtbase.dll
+		10.0.17134.285 (WinBuild.160101.0800)C:\WINDOWS\System32\GDI32.dll
+		10.0.17134.471 (WinBuild.160101.0800)C:\WINDOWS\System32\gdi32full.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\msvcp_win.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\USER32.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\win32u.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\IMM32.DLL
+		10.0.17134.112 (WinBuild.160101.0800)C:\WINDOWS\System32\kernel.appcore.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\VERSION.dll
+		4.7.3260.0 built by: NET472REL1LAST_CC:\Windows\Microsoft.NET\Framework\v4.0.30319\clr.dll
+		12.00.52519.0 built by: VSWINSERVICINGC:\WINDOWS\SYSTEM32\MSVCR120_CLR0400.dll
+		4.7.3260.0 built by: NET472REL1LAST_CC:\WINDOWS\assembly\NativeImages_v4.0.30319_32\mscorlib\6715dc4d04e35f16d482900c355325e9\mscorlib.ni.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\ole32.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\system32\uxtheme.dll
+		4.7.3260.0 built by: NET472REL1LAST_CC:\Windows\Microsoft.NET\Framework\v4.0.30319\clrjit.dll
+		10.0.17134.48 (WinBuild.160101.0800)C:\WINDOWS\System32\OLEAUT32.dll
+		4.7.3190.0 built by: NET472REL1LAST_CC:\WINDOWS\assembly\NativeImages_v4.0.30319_32\System\58ae81d120290fd6262fa798dc911c12\System.ni.dll
+		4.7.3056.0 built by: NET472REL1C:\WINDOWS\assembly\NativeImages_v4.0.30319_32\System.Drawing\039b4d745cebf25ce0c5dd0318debd04\System.Drawing.ni.dll
+		4.7.3221.0 built by: NET472REL1LAST_CC:\WINDOWS\assembly\NativeImages_v4.0.30319_32\System.Windows.Forms\a212748b5f06b36bc68835ae9acb93d8\System.Windows.Forms.ni.dll
+		4.7.3221.0 built by: NET472REL1LAST_CC:\WINDOWS\assembly\NativeImages_v4.0.30319_32\System.Core\30060bb17fc8622a68c18f3687ebac80\System.Core.ni.dll
+		4.7.3056.0 built by: NET472REL1C:\WINDOWS\assembly\NativeImages_v4.0.30319_32\System.Configuration\48932109b3d17e06eb5d8a3540b6156d\System.Configuration.ni.dll
+		4.7.3056.0 built by: NET472REL1C:\WINDOWS\assembly\NativeImages_v4.0.30319_32\System.Xml\7dd0e8469c07b8366550ef8467bba40d\System.Xml.ni.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\shell32.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\cfgmgr32.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\shcore.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\windows.storage.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\profapi.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\powrprof.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\FLTLIB.DLL
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\bcrypt.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\CRYPTSP.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\system32\rsaenh.dll
+		5.82 (WinBuild.160101.0800)   C:\WINDOWS\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_5.82.17134.472_none_4102c1a8450eed42\comctl32.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\system32\dwmapi.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\MSCTF.dll
+		10.0.17134.472 (WinBuild.160101.0800)C:\WINDOWS\WinSxS\x86_microsoft.windows.gdiplus_6595b64144ccf1df_1.1.17134.472_none_73d7c4b19f76b841\gdiplus.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\DWrite.dll
+		6.10 (WinBuild.160101.0800)   C:\WINDOWS\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.17134.472_none_42ecd1cc44e43e73\comctl32.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\secur32.dll
+		                              C:\Program Files (x86)\Canon\Easy-WebPrint EX\AquaSnap.Hook.dll
+		12.60.971.0                   D:\Program Files (x86)\Canon\Easy-WebPrint EX\bin\ManagedRecordingService.dll
+		14.00.24210.0 built by: VCTOOLSRELC:\WINDOWS\SYSTEM32\VCRUNTIME140.dll
+		12.60.971.0                   D:\Program Files (x86)\Canon\Easy-WebPrint EX\bin\NativeRecordingService.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\WS2_32.dll
+		14.00.24210.0 built by: VCTOOLSRELC:\WINDOWS\SYSTEM32\MSVCP140.dll
+		12.60.971.0                   D:\Program Files (x86)\Canon\Easy-WebPrint EX\bin\api_sock_proxy.dll
+		12.60.610.0                   D:\Program Files (x86)\Canon\Easy-WebPrint EX\bin\ipng_utils.dll
+		1.1.0g                        D:\Program Files (x86)\Canon\Easy-WebPrint EX\bin\libcrypto-lt-1_1.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\CRYPT32.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\MSASN1.dll
+		1.1.0g                        D:\Program Files (x86)\Canon\Easy-WebPrint EX\bin\libssl-lt-1_1.dll
+		12.60.971.0                   D:\Program Files (x86)\Canon\Easy-WebPrint EX\bin\WebGetClientCertificate.dll
+		12.60.971.0                   D:\Program Files (x86)\Canon\Easy-WebPrint EX\bin\WebCertificateCreator.dll
+		                              D:\Program Files (x86)\Canon\Easy-WebPrint EX\bin\pcre-8.42.dll
+		12.60.610.0                   D:\Program Files (x86)\Canon\Easy-WebPrint EX\bin\PathResolver.dll
+		12.60.971.0                   D:\Program Files (x86)\Canon\Easy-WebPrint EX\bin\VnpLog.dll
+		12.60.971.0                   D:\Program Files (x86)\Canon\Easy-WebPrint EX\bin\MicSocket.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL
+		14.0.24210.0 built by: VCTOOLSRELC:\WINDOWS\SYSTEM32\mfc140.dll
+		12.60.610.0                   D:\Program Files (x86)\Canon\Easy-WebPrint EX\bin\thrdutil.dll
+		12.60.971.0                   D:\Program Files (x86)\Canon\Easy-WebPrint EX\bin\VnpUtils.dll
+		12.60.610.0                   D:\Program Files (x86)\Canon\Easy-WebPrint EX\bin\lrun50.dll
+		12.60.610.0                   D:\Program Files (x86)\Canon\Easy-WebPrint EX\bin\mosifs32.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\WSOCK32.dll
+		12.60.610.0                   D:\Program Files (x86)\Canon\Easy-WebPrint EX\bin\trans.dll
+		12.60.610.0                   D:\Program Files (x86)\Canon\Easy-WebPrint EX\bin\msg_handler.dll
+		12.60.610.0                   D:\Program Files (x86)\Canon\Easy-WebPrint EX\bin\merc_uuid.dll
+		12.60.610.0                   D:\Program Files (x86)\Canon\Easy-WebPrint EX\bin\mlib_ds.dll
+		12.60.610.0                   D:\Program Files (x86)\Canon\Easy-WebPrint EX\bin\comm_util.dll
+		12.60.610.0                   D:\Program Files (x86)\Canon\Easy-WebPrint EX\bin\runlogic.dll
+		12.60.610.0                   D:\Program Files (x86)\Canon\Easy-WebPrint EX\bin\parameng.dll
+		12.60.610.0                   D:\Program Files (x86)\Canon\Easy-WebPrint EX\bin\libxdrutil.dll
+		12.60.610.0                   D:\Program Files (x86)\Canon\Easy-WebPrint EX\bin\xdr.dll
+		12.60.610.0                   D:\Program Files (x86)\Canon\Easy-WebPrint EX\bin\faserver.dll
+		12.60.610.0                   D:\Program Files (x86)\Canon\Easy-WebPrint EX\bin\run_time_context.dll
+		12.60.610.0                   D:\Program Files (x86)\Canon\Easy-WebPrint EX\bin\wrapicu.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\USERENV.dll
+		12.60.610.0                   D:\Program Files (x86)\Canon\Easy-WebPrint EX\bin\config.dll
+		12.60.610.0                   D:\Program Files (x86)\Canon\Easy-WebPrint EX\bin\trans_server.dll
+		12.60.610.0                   D:\Program Files (x86)\Canon\Easy-WebPrint EX\bin\libdatatypes.dll
+		12.60.610.0                   D:\Program Files (x86)\Canon\Easy-WebPrint EX\bin\rtc_protocol.dll
+		55, 1, 0, 0                   D:\Program Files (x86)\Canon\Easy-WebPrint EX\bin\icuuc55.dll
+		12.60.610.0                   D:\Program Files (x86)\Canon\Easy-WebPrint EX\bin\timediff_ext.dll
+		12.60.610.0                   D:\Program Files (x86)\Canon\Easy-WebPrint EX\bin\jrequestor_srv.dll
+		12.60.610.0                   D:\Program Files (x86)\Canon\Easy-WebPrint EX\bin\dc_requests.dll
+		12.60.971.0                   D:\Program Files (x86)\Canon\Easy-WebPrint EX\bin\api_trapper.dll
+		12.60.610.0                   D:\Program Files (x86)\Canon\Easy-WebPrint EX\bin\wrapzlib.dll
+		12.60.610.0                   D:\Program Files (x86)\Canon\Easy-WebPrint EX\bin\lr_exp.dll
+		12.60.610.0                   D:\Program Files (x86)\Canon\Easy-WebPrint EX\bin\data_types_ifs.dll
+		55, 1, 0, 0                   D:\Program Files (x86)\Canon\Easy-WebPrint EX\bin\icudt55.dll
+		12.60.610.0                   D:\Program Files (x86)\Canon\Easy-WebPrint EX\bin\runtime_code_injection_lib.dll
+		10.0.16299.91 (WinBuild.160101.0800)D:\Program Files (x86)\Canon\Easy-WebPrint EX\bin\dbghelp.dll
+		10.0.16299.91 (WinBuild.160101.0800)D:\Program Files (x86)\Canon\Easy-WebPrint EX\bin\dbgcore.DLL
+		12.60.971.0                   D:\Program Files (x86)\Canon\Easy-WebPrint EX\bin\type_info_pool.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\sxs.dll
+		2001.12.10941.16384 (WinBuild.160101.0800)C:\WINDOWS\System32\clbcatq.dll
+		12.60.971.0                   D:\Program Files (x86)\Canon\Easy-WebPrint EX\bin\api_http_filter.dll
+		                              D:\Program Files (x86)\Canon\Easy-WebPrint EX\bin\WebHTTP2Util.dll
+		1.31.90.0 (MSVC release)      D:\Program Files (x86)\Canon\Easy-WebPrint EX\bin\nghttp2.dll
+		12.60.971.0                   D:\Program Files (x86)\Canon\Easy-WebPrint EX\bin\WebSocketAnalyzer.dll
+		12.60.971.0                   D:\Program Files (x86)\Canon\Easy-WebPrint EX\bin\api_wplus_pre_post_rec.dll
+		10.0.17134.376 (WinBuild.160101.0800)C:\WINDOWS\System32\TextInputFramework.dll
+		10.0.17134.376                C:\WINDOWS\System32\CoreUIComponents.dll
+		10.0.17134.1                  C:\WINDOWS\System32\CoreMessaging.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\ntmarta.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\wintypes.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\system32\mswsock.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\system32\napinsp.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\system32\pnrpnsp.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\system32\NLAapi.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\DNSAPI.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\NSI.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\winrnr.dll
+		2.0.2.0                       C:\Program Files (x86)\Bonjour\mdnsNSP.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\wshbth.dll
+PROCESS 0x2b80      firefox.exe
+		64.0                          C:\Program Files (x86)\Mozilla Firefox\firefox.exe
+		10.0.17134.228 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\ntdll.dll
+		18.8.4.1339                   D:\Program Files\AVAST Software\Avast\aswhookx.dll
+		10.0.17134.376 (WinBuild.160101.0800)C:\WINDOWS\System32\KERNEL32.dll
+		10.0.17134.376 (WinBuild.160101.0800)C:\WINDOWS\System32\KERNELBASE.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\ADVAPI32.dll
+		7.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\msvcrt.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\sechost.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\RPCRT4.dll
+		10.0.17134.376 (WinBuild.160101.0800)C:\WINDOWS\System32\SspiCli.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\CRYPTBASE.dll
+		10.0.17134.471 (WinBuild.160101.0800)C:\WINDOWS\System32\bcryptPrimitives.dll
+		10.0.17134.319 (WinBuild.160101.0800)C:\WINDOWS\System32\ucrtbase.dll
+		64.0                          C:\Program Files (x86)\Mozilla Firefox\mozglue.dll
+		14.15.26706.0 built by: VCTOOLSRELC:\Program Files (x86)\Mozilla Firefox\MSVCP140.dll
+		14.15.26706.0 built by: VCTOOLSRELC:\Program Files (x86)\Mozilla Firefox\VCRUNTIME140.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\dbghelp.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\VERSION.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\user32.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\win32u.dll
+		10.0.17134.285 (WinBuild.160101.0800)C:\WINDOWS\System32\GDI32.dll
+		10.0.17134.471 (WinBuild.160101.0800)C:\WINDOWS\System32\gdi32full.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\msvcp_win.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\IMM32.DLL
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-runtime-l1-1-0.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-string-l1-1-0.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-heap-l1-1-0.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-stdio-l1-1-0.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-convert-l1-1-0.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-math-l1-1-0.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-filesystem-l1-1-0.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-environment-l1-1-0.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-utility-l1-1-0.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-time-l1-1-0.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-multibyte-l1-1-0.dll
+		64.0                          C:\Program Files (x86)\Mozilla Firefox\nss3.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\WINMM.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\WSOCK32.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\WS2_32.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\WINMMBASE.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\cfgmgr32.dll
+		64.0                          C:\Program Files (x86)\Mozilla Firefox\lgpllibs.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-locale-l1-1-0.dll
+		64.0                          C:\Program Files (x86)\Mozilla Firefox\xul.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\SHELL32.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\shcore.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\combase.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\windows.storage.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\shlwapi.dll
+		10.0.17134.112 (WinBuild.160101.0800)C:\WINDOWS\System32\kernel.appcore.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\profapi.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\powrprof.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\FLTLIB.DLL
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\ole32.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\CRYPT32.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\MSASN1.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\SETUPAPI.dll
+		10.0.17134.81 (WinBuild.160101.0800)C:\WINDOWS\System32\WINTRUST.dll
+		10.0.17134.48 (WinBuild.160101.0800)C:\WINDOWS\System32\OLEAUT32.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\AVRT.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\USP10.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\dwmapi.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\UxTheme.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\WTSAPI32.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\dhcpcsvc.DLL
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\NSI.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\USERENV.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\ntmarta.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\dwrite.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\psapi.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\dbgcore.DLL
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\MSCTF.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\system32\napinsp.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\system32\pnrpnsp.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\system32\NLAapi.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\mswsock.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\DNSAPI.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\winrnr.dll
+		2.0.2.0                       C:\Program Files (x86)\Bonjour\mdnsNSP.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\wshbth.dll
+		2001.12.10941.16384 (WinBuild.160101.0800)C:\WINDOWS\System32\clbcatq.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\system32\wbem\wbemprox.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\wbemcomn.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\bcrypt.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\WINSTA.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\system32\wbem\wbemsvc.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\system32\wbem\fastprox.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\DEVOBJ.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\dcomp.dll
+		10.0.17134.112 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\dxgi.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\mscms.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\ColorAdapterClient.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\icm32.dll
+		                              C:\Program Files (x86)\Canon\Easy-WebPrint EX\AquaSnap.Hook.dll
+		6.10 (WinBuild.160101.0800)   C:\WINDOWS\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.17134.472_none_42ecd1cc44e43e73\COMCTL32.dll
+		10.0.17134.376 (WinBuild.160101.0800)C:\WINDOWS\System32\TextInputFramework.dll
+		10.0.17134.376                C:\WINDOWS\System32\CoreUIComponents.dll
+		10.0.17134.1                  C:\WINDOWS\System32\CoreMessaging.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\wintypes.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\Windows\System32\wscapi.dll
+		11.00.17134.1 (WinBuild.160101.0800)C:\Windows\System32\urlmon.dll
+		11.00.17134.1 (WinBuild.160101.0800)C:\Windows\System32\iertutil.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\MMDevApi.dll
+		7.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\PROPSYS.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\AUDIOSES.DLL
+		10.0.17134.1 (WinBuild.160101.0800)C:\Windows\System32\Windows.UI.dll
+		                              C:\Windows\System32\InputHost.dll
+		6, 19, 9, 1                   C:\Program Files (x86)\Internet Download Manager\idmmkb.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\Windows\System32\twinapi.appcore.dll
+		10.0.17134.471 (WinBuild.160101.0800)C:\Windows\System32\RMCLIENT.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\system32\twinapi.dll
+		64.0                          C:\Program Files (x86)\Mozilla Firefox\softokn3.dll
+		64.0                          C:\Program Files (x86)\Mozilla Firefox\freebl3.dll
+		64.0                          C:\PROGRA~2\MOZILL~1\nssckbi.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\CRYPTSP.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\system32\rsaenh.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\system32\dataexchange.dll
+		10.0.17134.441 (WinBuild.160101.0800)C:\WINDOWS\system32\d3d11.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\system32\explorerframe.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\Windows\System32\OneCoreUAPCommonProxyStub.dll
+PROCESS 0xee4       firefox.exe
+		64.0                          C:\Program Files (x86)\Mozilla Firefox\firefox.exe
+		10.0.17134.228 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\ntdll.dll
+		18.8.4.1339                   D:\Program Files\AVAST Software\Avast\aswhookx.dll
+		10.0.17134.376 (WinBuild.160101.0800)C:\WINDOWS\System32\KERNEL32.dll
+		10.0.17134.376 (WinBuild.160101.0800)C:\WINDOWS\System32\KERNELBASE.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\ADVAPI32.dll
+		7.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\msvcrt.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\sechost.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\RPCRT4.dll
+		10.0.17134.376 (WinBuild.160101.0800)C:\WINDOWS\System32\SspiCli.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\CRYPTBASE.dll
+		10.0.17134.471 (WinBuild.160101.0800)C:\WINDOWS\System32\bcryptPrimitives.dll
+		10.0.17134.319 (WinBuild.160101.0800)C:\WINDOWS\System32\ucrtbase.dll
+		64.0                          C:\Program Files (x86)\Mozilla Firefox\mozglue.dll
+		14.15.26706.0 built by: VCTOOLSRELC:\Program Files (x86)\Mozilla Firefox\MSVCP140.dll
+		14.15.26706.0 built by: VCTOOLSRELC:\Program Files (x86)\Mozilla Firefox\VCRUNTIME140.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\dbghelp.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\VERSION.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\user32.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\win32u.dll
+		10.0.17134.285 (WinBuild.160101.0800)C:\WINDOWS\System32\GDI32.dll
+		10.0.17134.471 (WinBuild.160101.0800)C:\WINDOWS\System32\gdi32full.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\msvcp_win.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\IMM32.DLL
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-runtime-l1-1-0.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-string-l1-1-0.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-heap-l1-1-0.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-stdio-l1-1-0.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-convert-l1-1-0.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-math-l1-1-0.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-filesystem-l1-1-0.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-environment-l1-1-0.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-utility-l1-1-0.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-time-l1-1-0.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-multibyte-l1-1-0.dll
+		64.0                          C:\Program Files (x86)\Mozilla Firefox\nss3.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\WINMM.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\WSOCK32.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\WS2_32.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\WINMMBASE.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\cfgmgr32.dll
+		64.0                          C:\Program Files (x86)\Mozilla Firefox\lgpllibs.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-locale-l1-1-0.dll
+		64.0                          C:\Program Files (x86)\Mozilla Firefox\xul.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\SHELL32.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\shcore.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\combase.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\windows.storage.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\shlwapi.dll
+		10.0.17134.112 (WinBuild.160101.0800)C:\WINDOWS\System32\kernel.appcore.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\profapi.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\powrprof.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\FLTLIB.DLL
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\ole32.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\CRYPT32.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\MSASN1.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\SETUPAPI.dll
+		10.0.17134.81 (WinBuild.160101.0800)C:\WINDOWS\System32\WINTRUST.dll
+		10.0.17134.48 (WinBuild.160101.0800)C:\WINDOWS\System32\OLEAUT32.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\AVRT.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\USP10.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\dwmapi.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\UxTheme.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\WTSAPI32.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\dhcpcsvc.DLL
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\NSI.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\USERENV.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\ntmarta.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\system32\mfplat.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\RTWorkQ.DLL
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\system32\mf.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\system32\dxva2.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\system32\evr.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\bcrypt.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\MSCTF.dll
+		10.0.17134.441 (WinBuild.160101.0800)C:\WINDOWS\system32\d3d11.dll
+		10.0.17134.112 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\dxgi.dll
+		25.21.14.1735                 C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_01c064f3d89f92be\nvldumd.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\imagehlp.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\CRYPTSP.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\system32\rsaenh.dll
+		25.21.14.1735                 C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_01c064f3d89f92be\nvwgf2um.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\DEVOBJ.dll
+PROCESS 0xa9c       firefox.exe
+		64.0                          C:\Program Files (x86)\Mozilla Firefox\firefox.exe
+		10.0.17134.228 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\ntdll.dll
+		18.8.4.1339                   D:\Program Files\AVAST Software\Avast\aswhookx.dll
+		10.0.17134.376 (WinBuild.160101.0800)C:\WINDOWS\System32\KERNEL32.dll
+		10.0.17134.376 (WinBuild.160101.0800)C:\WINDOWS\System32\KERNELBASE.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\ADVAPI32.dll
+		7.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\msvcrt.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\sechost.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\RPCRT4.dll
+		10.0.17134.376 (WinBuild.160101.0800)C:\WINDOWS\System32\SspiCli.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\CRYPTBASE.dll
+		10.0.17134.471 (WinBuild.160101.0800)C:\WINDOWS\System32\bcryptPrimitives.dll
+		10.0.17134.319 (WinBuild.160101.0800)C:\WINDOWS\System32\ucrtbase.dll
+		64.0                          C:\Program Files (x86)\Mozilla Firefox\mozglue.dll
+		14.00.24210.0 built by: VCTOOLSRELC:\WINDOWS\SYSTEM32\MSVCP140.dll
+		14.00.24210.0 built by: VCTOOLSRELC:\WINDOWS\SYSTEM32\VCRUNTIME140.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\dbghelp.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\VERSION.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\user32.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\win32u.dll
+		10.0.17134.285 (WinBuild.160101.0800)C:\WINDOWS\System32\GDI32.dll
+		10.0.17134.471 (WinBuild.160101.0800)C:\WINDOWS\System32\gdi32full.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\msvcp_win.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\IMM32.DLL
+		14.15.26706.0 built by: VCTOOLSRELC:\Program Files (x86)\Mozilla Firefox\MSVCP140.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-runtime-l1-1-0.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-string-l1-1-0.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-heap-l1-1-0.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-stdio-l1-1-0.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-convert-l1-1-0.dll
+		14.15.26706.0 built by: VCTOOLSRELC:\Program Files (x86)\Mozilla Firefox\VCRUNTIME140.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-math-l1-1-0.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-filesystem-l1-1-0.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-environment-l1-1-0.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-utility-l1-1-0.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-time-l1-1-0.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-multibyte-l1-1-0.dll
+		64.0                          C:\Program Files (x86)\Mozilla Firefox\nss3.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\WINMM.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\WSOCK32.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\WS2_32.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\WINMMBASE.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\cfgmgr32.dll
+		64.0                          C:\Program Files (x86)\Mozilla Firefox\lgpllibs.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-locale-l1-1-0.dll
+		64.0                          C:\Program Files (x86)\Mozilla Firefox\xul.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\SHELL32.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\shcore.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\combase.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\windows.storage.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\shlwapi.dll
+		10.0.17134.112 (WinBuild.160101.0800)C:\WINDOWS\System32\kernel.appcore.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\profapi.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\powrprof.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\FLTLIB.DLL
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\ole32.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\CRYPT32.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\MSASN1.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\SETUPAPI.dll
+		10.0.17134.81 (WinBuild.160101.0800)C:\WINDOWS\System32\WINTRUST.dll
+		10.0.17134.48 (WinBuild.160101.0800)C:\WINDOWS\System32\OLEAUT32.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\AVRT.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\USP10.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\dwmapi.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\UxTheme.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\WTSAPI32.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\dhcpcsvc.DLL
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\NSI.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\USERENV.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\ntmarta.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\system32\napinsp.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\system32\pnrpnsp.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\system32\NLAapi.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\mswsock.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\DNSAPI.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\winrnr.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\wshbth.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\DEVOBJ.dll
+		10.0.17134.441 (WinBuild.160101.0800)C:\WINDOWS\system32\d3d11.dll
+		10.0.17134.112 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\dxgi.dll
+		25.21.14.1735                 C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_01c064f3d89f92be\nvldumd.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\imagehlp.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\CRYPTSP.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\system32\rsaenh.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\bcrypt.dll
+		25.21.14.1735                 C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_01c064f3d89f92be\nvwgf2um.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\d2d1.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\XmlLite.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\dwrite.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\mscms.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\ColorAdapterClient.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\icm32.dll
+		2001.12.10941.16384 (WinBuild.160101.0800)C:\WINDOWS\System32\clbcatq.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\MMDevApi.dll
+		7.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\PROPSYS.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\AUDIOSES.DLL
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\wintypes.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\Windows\System32\Windows.UI.dll
+		10.0.17134.376 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\TextInputFramework.dll
+		                              C:\WINDOWS\SYSTEM32\InputHost.dll
+		10.0.17134.376                C:\WINDOWS\SYSTEM32\CoreUIComponents.dll
+		10.0.17134.1                  C:\WINDOWS\SYSTEM32\CoreMessaging.dll
+		64.0                          C:\Program Files (x86)\Mozilla Firefox\softokn3.dll
+		64.0                          C:\Program Files (x86)\Mozilla Firefox\freebl3.dll
+		5.00 (WinBuild.160101.0800)   C:\WINDOWS\SYSTEM32\Cabinet.dll
+		64.0                          C:\Program Files (x86)\Mozilla Firefox\mozavutil.dll
+		64.0                          C:\Program Files (x86)\Mozilla Firefox\mozavcodec.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\system32\mfplat.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\RTWorkQ.DLL
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\system32\mf.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\system32\dxva2.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\system32\evr.dll
+		10.0.17134.471 (WinBuild.160101.0800)C:\Windows\System32\msmpeg2vdec.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\mfperfhelper.dll
+		10.0.17134.471 (WinBuild.160101.0800)C:\Windows\System32\MSVP9DEC.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\Windows\System32\mp3dmod.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\msdmo.dll
+		10.0.17134.471 (WinBuild.160101.0800)C:\Windows\System32\MSAudDecMFT.dll
+PROCESS 0x3434      firefox.exe
+		64.0                          C:\Program Files (x86)\Mozilla Firefox\firefox.exe
+		10.0.17134.228 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\ntdll.dll
+		18.8.4.1339                   D:\Program Files\AVAST Software\Avast\aswhookx.dll
+		10.0.17134.376 (WinBuild.160101.0800)C:\WINDOWS\System32\KERNEL32.dll
+		10.0.17134.376 (WinBuild.160101.0800)C:\WINDOWS\System32\KERNELBASE.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\ADVAPI32.dll
+		7.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\msvcrt.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\sechost.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\RPCRT4.dll
+		10.0.17134.376 (WinBuild.160101.0800)C:\WINDOWS\System32\SspiCli.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\CRYPTBASE.dll
+		10.0.17134.471 (WinBuild.160101.0800)C:\WINDOWS\System32\bcryptPrimitives.dll
+		10.0.17134.319 (WinBuild.160101.0800)C:\WINDOWS\System32\ucrtbase.dll
+		64.0                          C:\Program Files (x86)\Mozilla Firefox\mozglue.dll
+		14.00.24210.0 built by: VCTOOLSRELC:\WINDOWS\SYSTEM32\MSVCP140.dll
+		14.00.24210.0 built by: VCTOOLSRELC:\WINDOWS\SYSTEM32\VCRUNTIME140.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\dbghelp.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\VERSION.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\user32.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\win32u.dll
+		10.0.17134.285 (WinBuild.160101.0800)C:\WINDOWS\System32\GDI32.dll
+		10.0.17134.471 (WinBuild.160101.0800)C:\WINDOWS\System32\gdi32full.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\msvcp_win.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\IMM32.DLL
+		14.15.26706.0 built by: VCTOOLSRELC:\Program Files (x86)\Mozilla Firefox\MSVCP140.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-runtime-l1-1-0.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-string-l1-1-0.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-heap-l1-1-0.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-stdio-l1-1-0.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-convert-l1-1-0.dll
+		14.15.26706.0 built by: VCTOOLSRELC:\Program Files (x86)\Mozilla Firefox\VCRUNTIME140.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-math-l1-1-0.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-filesystem-l1-1-0.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-environment-l1-1-0.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-utility-l1-1-0.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-time-l1-1-0.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-multibyte-l1-1-0.dll
+		64.0                          C:\Program Files (x86)\Mozilla Firefox\nss3.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\WINMM.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\WSOCK32.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\WS2_32.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\WINMMBASE.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\cfgmgr32.dll
+		64.0                          C:\Program Files (x86)\Mozilla Firefox\lgpllibs.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-locale-l1-1-0.dll
+		64.0                          C:\Program Files (x86)\Mozilla Firefox\xul.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\SHELL32.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\shcore.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\combase.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\windows.storage.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\shlwapi.dll
+		10.0.17134.112 (WinBuild.160101.0800)C:\WINDOWS\System32\kernel.appcore.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\profapi.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\powrprof.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\FLTLIB.DLL
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\ole32.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\CRYPT32.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\MSASN1.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\SETUPAPI.dll
+		10.0.17134.81 (WinBuild.160101.0800)C:\WINDOWS\System32\WINTRUST.dll
+		10.0.17134.48 (WinBuild.160101.0800)C:\WINDOWS\System32\OLEAUT32.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\AVRT.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\USP10.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\dwmapi.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\UxTheme.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\WTSAPI32.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\dhcpcsvc.DLL
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\NSI.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\USERENV.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\ntmarta.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\system32\napinsp.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\system32\pnrpnsp.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\system32\NLAapi.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\mswsock.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\DNSAPI.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\winrnr.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\wshbth.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\DEVOBJ.dll
+		10.0.17134.441 (WinBuild.160101.0800)C:\WINDOWS\system32\d3d11.dll
+		10.0.17134.112 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\dxgi.dll
+		25.21.14.1735                 C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_01c064f3d89f92be\nvldumd.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\imagehlp.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\CRYPTSP.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\system32\rsaenh.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\bcrypt.dll
+		25.21.14.1735                 C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_01c064f3d89f92be\nvwgf2um.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\d2d1.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\XmlLite.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\dwrite.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\mscms.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\ColorAdapterClient.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\icm32.dll
+		2001.12.10941.16384 (WinBuild.160101.0800)C:\WINDOWS\System32\clbcatq.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\MMDevApi.dll
+		7.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\PROPSYS.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\AUDIOSES.DLL
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\wintypes.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\Windows\System32\Windows.UI.dll
+		10.0.17134.376 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\TextInputFramework.dll
+		                              C:\WINDOWS\SYSTEM32\InputHost.dll
+		10.0.17134.1                  C:\WINDOWS\SYSTEM32\CoreMessaging.dll
+		10.0.17134.376                C:\WINDOWS\SYSTEM32\CoreUIComponents.dll
+		64.0                          C:\Program Files (x86)\Mozilla Firefox\softokn3.dll
+		64.0                          C:\Program Files (x86)\Mozilla Firefox\freebl3.dll
+PROCESS 0x5aa4      firefox.exe
+		64.0                          C:\Program Files (x86)\Mozilla Firefox\firefox.exe
+		10.0.17134.228 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\ntdll.dll
+		18.8.4.1339                   D:\Program Files\AVAST Software\Avast\aswhookx.dll
+		10.0.17134.376 (WinBuild.160101.0800)C:\WINDOWS\System32\KERNEL32.dll
+		10.0.17134.376 (WinBuild.160101.0800)C:\WINDOWS\System32\KERNELBASE.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\ADVAPI32.dll
+		7.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\msvcrt.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\sechost.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\RPCRT4.dll
+		10.0.17134.376 (WinBuild.160101.0800)C:\WINDOWS\System32\SspiCli.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\CRYPTBASE.dll
+		10.0.17134.471 (WinBuild.160101.0800)C:\WINDOWS\System32\bcryptPrimitives.dll
+		10.0.17134.319 (WinBuild.160101.0800)C:\WINDOWS\System32\ucrtbase.dll
+		64.0                          C:\Program Files (x86)\Mozilla Firefox\mozglue.dll
+		14.00.24210.0 built by: VCTOOLSRELC:\WINDOWS\SYSTEM32\MSVCP140.dll
+		14.00.24210.0 built by: VCTOOLSRELC:\WINDOWS\SYSTEM32\VCRUNTIME140.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\dbghelp.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\VERSION.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\user32.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\win32u.dll
+		10.0.17134.285 (WinBuild.160101.0800)C:\WINDOWS\System32\GDI32.dll
+		10.0.17134.471 (WinBuild.160101.0800)C:\WINDOWS\System32\gdi32full.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\msvcp_win.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\IMM32.DLL
+		14.15.26706.0 built by: VCTOOLSRELC:\Program Files (x86)\Mozilla Firefox\MSVCP140.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-runtime-l1-1-0.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-string-l1-1-0.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-heap-l1-1-0.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-stdio-l1-1-0.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-convert-l1-1-0.dll
+		14.15.26706.0 built by: VCTOOLSRELC:\Program Files (x86)\Mozilla Firefox\VCRUNTIME140.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-math-l1-1-0.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-filesystem-l1-1-0.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-environment-l1-1-0.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-utility-l1-1-0.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-time-l1-1-0.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-multibyte-l1-1-0.dll
+		64.0                          C:\Program Files (x86)\Mozilla Firefox\nss3.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\WINMM.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\WSOCK32.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\WS2_32.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\WINMMBASE.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\cfgmgr32.dll
+		64.0                          C:\Program Files (x86)\Mozilla Firefox\lgpllibs.dll
+		10.0.17134.12 (WinBuild.160101.0800)C:\Program Files (x86)\Mozilla Firefox\api-ms-win-crt-locale-l1-1-0.dll
+		64.0                          C:\Program Files (x86)\Mozilla Firefox\xul.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\SHELL32.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\shcore.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\combase.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\windows.storage.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\shlwapi.dll
+		10.0.17134.112 (WinBuild.160101.0800)C:\WINDOWS\System32\kernel.appcore.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\profapi.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\powrprof.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\FLTLIB.DLL
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\ole32.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\CRYPT32.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\MSASN1.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\SETUPAPI.dll
+		10.0.17134.81 (WinBuild.160101.0800)C:\WINDOWS\System32\WINTRUST.dll
+		10.0.17134.48 (WinBuild.160101.0800)C:\WINDOWS\System32\OLEAUT32.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\AVRT.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\USP10.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\dwmapi.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\UxTheme.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\WTSAPI32.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\dhcpcsvc.DLL
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\NSI.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\USERENV.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\ntmarta.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\system32\napinsp.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\system32\pnrpnsp.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\system32\NLAapi.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\mswsock.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\DNSAPI.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\winrnr.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\wshbth.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\DEVOBJ.dll
+		10.0.17134.441 (WinBuild.160101.0800)C:\WINDOWS\system32\d3d11.dll
+		10.0.17134.112 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\dxgi.dll
+		25.21.14.1735                 C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_01c064f3d89f92be\nvldumd.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\imagehlp.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\CRYPTSP.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\system32\rsaenh.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\bcrypt.dll
+		25.21.14.1735                 C:\WINDOWS\System32\DriverStore\FileRepository\nv_dispi.inf_amd64_01c064f3d89f92be\nvwgf2um.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\d2d1.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\XmlLite.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\dwrite.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\mscms.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\ColorAdapterClient.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\icm32.dll
+		2001.12.10941.16384 (WinBuild.160101.0800)C:\WINDOWS\System32\clbcatq.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\System32\MMDevApi.dll
+		7.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\PROPSYS.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\AUDIOSES.DLL
+		10.0.17134.1 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\wintypes.dll
+		10.0.17134.1 (WinBuild.160101.0800)C:\Windows\System32\Windows.UI.dll
+		10.0.17134.376 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\TextInputFramework.dll
+		                              C:\WINDOWS\SYSTEM32\InputHost.dll
+		10.0.17134.376                C:\WINDOWS\SYSTEM32\CoreUIComponents.dll
+		10.0.17134.1                  C:\WINDOWS\SYSTEM32\CoreMessaging.dll
+Failed to get information of process Id: 19972

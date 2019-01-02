@@ -1,0 +1,21 @@
+HTTP/1.1 200 OK
+Cache-Control: private
+Content-Type: text/html;charset=UTF-8
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Set-Cookie: JSESSIONID=48A11FCA8DB91A46F93292F7E0F6BAF3; Path=/urd; HttpOnly
+Set-Cookie: EVISIONLOGINLANG=; HttpOnly
+Set-Cookie: EVISIONLOGINHTV=; HttpOnly
+Set-Cookie: EVISIONID_TEST=COOKIE_TEST; HttpOnly
+Set-Cookie: BIGipServerSITSAPP-UAT-HTTP.app~SITSAPP-UAT-HTTP_pool=1109531308.36895.0000; path=/
+X-Frame-Options: deny
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+X-Powered-By: ARR/3.0
+X-Powered-By: ASP.NET
+Date: Wed, 02 Jan 2019 18:26:07 GMT
+Content-Length: 5193
+Set-Cookie: BIGipServerSharedIIS-UAT=757209772.20480.0000; path=/
+Vary: Accept-Encoding
+Content-Encoding: gzip
+Connection: Keep-Alive
+

@@ -1,0 +1,13 @@
+HTTP/1.1 200 OK
+Cache-Control: no-store, no-cache, must-revalidate
+Content-Type: text/html;charset=UTF-8
+Content-Encoding: gzip
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Vary: Accept-Encoding
+X-Frame-Options: deny,SAMEORIGIN
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+X-Powered-By: ARR/3.0,ASP.NET
+Date: Thu, 18 Oct 2018 23:19:09 GMT
+Content-Length: 14924
+

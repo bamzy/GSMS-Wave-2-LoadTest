@@ -1,0 +1,138 @@
+/* start of siw_ymes.css */
+
+/*----------------------------------------------------------------------*/
+/*  FILENAME 	:  siw_ymes.css  										*/
+/*  DESC		:  Error Messages StyleSheet							*/
+/*----------------------------------------------------------------------*/
+/*  REVISIONS:															*/
+/*	Date		Name		Reason										*/
+/*	---------	----------	--------------------------------			*/
+/*  29-APR-13   FELP1		Created File, Defined Base Styles		    */
+/*  14-Jul-14   RENM1       Updated to WCAG AA web accessibility        */
+/*----------------------------------------------------------------------*/
+
+/******************************************************/
+/* Message box definitions                            */
+/******************************************************/
+#sitsmessagebox {
+	margin:				20px;
+	border-radius: 		8px;
+    padding: 			5px;
+}
+
+p.sitsmessagetitleicon {
+	float:				left;
+	margin:				0px;
+	padding:			3px;
+}
+
+.msghint{
+	border:				1px solid rgb(85, 136, 255);
+	-webkit-box-shadow: 4px 4px 5px rgba(85, 136, 255, 0.5);
+	-moz-box-shadow:    4px 4px 5px rgba(85, 136, 255, 0.5);
+	box-shadow:         4px 4px 5px rgba(85, 136, 255, 0.5);
+}
+
+.msginfo{
+	border:				1px solid rgb(51, 170, 51);
+	-webkit-box-shadow: 4px 4px 5px rgba(51, 170, 51, 0.5);
+	-moz-box-shadow:    4px 4px 5px rgba(51, 170, 51, 0.5);
+	box-shadow:         4px 4px 5px rgba(51, 170, 51, 0.5);
+}
+
+.msgwarn{
+	border:				1px solid rgb(255, 243, 115);
+	-webkit-box-shadow: 4px 4px 5px rgba(255, 243, 115, 0.5);
+	-moz-box-shadow:    4px 4px 5px rgba(255, 243, 115, 0.5);
+	box-shadow:         4px 4px 5px rgba(255, 243, 115, 0.5);
+}
+
+.msgerror{
+	border:				1px solid #FF4040;
+	-webkit-box-shadow: 4px 4px 5px rgba(255, 64, 64, 0.5);
+	-moz-box-shadow:    4px 4px 5px rgba(255, 64, 64, 0.5);
+	box-shadow:         4px 4px 5px rgba(255, 64, 64, 0.5);
+}
+
+#sitsmessagetitlesection{
+/*  NOTE: For AA accesibility the title must be atleast 14 point bold  */
+/*	font-size:      16px;			*/
+	font-weight: 	bold;
+	color: 			#FFFFFF;
+	height: 		30px; /* Tribal - amended styles to avoid clashes with sv-bs.css styles (for 8.9.0) */
+	border-width: 	0px;
+	width:			100%;
+}
+
+.msghint #sitsmessagetitlesection{
+	border-radius: 	5px;
+	background-color: 	rgb(85, 136, 255);
+}
+
+.msginfo #sitsmessagetitlesection{
+	border-radius: 	5px;
+	background-color: 	rgb(51, 170, 51);
+}
+
+.msgwarn #sitsmessagetitlesection{
+	color: 	rgb(0, 0, 0);
+	border-radius: 	5px;
+	background-color: 	rgb(255, 243, 115);
+}
+
+.msgerror #sitsmessagetitlesection{
+	border-radius: 	5px;
+	background-color: 	#FF4040;
+}
+
+#sitsmessagecode{
+/*  NOTE: For AA accesibility the title must be atleast 14 point bold  */
+	font-size:		14px;
+	font-weight:	bold;
+	padding-top:    3px;
+	float:			right;
+}
+
+#sitsmessagecontentsection {
+	width: 			100%;
+	border:			0px;
+	/*font-weight: 	bold;*/ /* Tribal - amended styles to avoid clashes with sv-bs.css styles (for 8.9.0) */
+}
+
+#sitsmessagecontenticon {
+	float:			left;
+	padding-left:	5px;
+	padding-top:	5px;
+	margin:			0px;
+}
+
+.msghint #sitsmessagecontentsection{
+/*  	color: 	rgb(119, 153, 255);    Use black text for accessibility */
+	color: 	rgb(0, 0, 0);
+}
+
+.msginfo #sitsmessagecontentsection{
+/*  	color: 	rgb(102, 221, 102);    Use black text for accessibility */
+	color: 	rgb(0, 0, 0);
+}
+
+.msgwarn #sitsmessagecontentsection{
+/* NOTE: Standard Yellow to light for text - so use a darker version  */
+/*  color: 	rgb(221, 153, 0);    */
+/*	color: 	rgb(153, 153, 0);          Use black text for accessibility */
+	color: 	rgb(0, 0, 0);
+}
+
+.msgerror #sitsmessagecontentsection{
+/*  	color: 	#FF4040;               Use black text for accessibility */
+	color: 	rgb(0, 0, 0);
+}
+
+#sitsmessagecontent {
+	/*font-family: 	'Trebuchet MS', 'Lucida Grande', Verdana, Arial, Helvetica, sans-serif;
+	font-weight:	bold;*/ /* Tribal - amended styles to avoid clashes with sv-bs.css styles (for 8.9.0) */
+	margin:			3px;
+	padding-left:	15px;
+}
+
+

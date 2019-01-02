@@ -1,0 +1,13 @@
+[t155]
+FileName1=t155.htm
+URL1=https://graduate-studies-apply-uat.ualberta.ca/urd/sits.urd/run/siw_dmu.timeout
+Total=2
+RequestHeaderFile=t155_RequestHeader.txt
+RequestBodyFile=t155_RequestBody.txt
+ResponseHeaderFile=t155_ResponseHeader.txt
+ContentType=text/html
+SnapshotXmlFile=snapshot_155.xml
+FileName2=t155_success.txt
+URL2=http://detectportal.firefox.com/success.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

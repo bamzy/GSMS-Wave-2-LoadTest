@@ -1,0 +1,918 @@
+<!-- start of HTML from body-start-tabs.hts  -->
+<!DOCTYPE html>
+<html lang="en-gb">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+
+	<link rel="shortcut icon" href="../css/uoa_files/ico/favicon.ico">
+
+    <title>Search for Applicant</title>
+
+    <link rel="stylesheet" href="../css/sits.css">
+    <link rel="stylesheet" href="../css/sv.css">
+    <link rel="stylesheet" href="../plugins/css/ui/sits-ui.css">
+    <!-- Additional style for Admissions buttons - temporary until full responsive review project -->
+    <style>
+        .sv-btn-adm {
+            text-transform: uppercase;
+            font-weight: 600 !important;
+        }
+    </style>	
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="../plugins/javascript/html5shiv.min.js"></script>
+      <script src="../plugins/javascript/respond.min.js"></script>
+    <![endif]-->
+
+
+    <script src="../plugins/javascript/jquery.js?v=910.1"></script>
+    <script src="../plugins/javascript/jquery-ui.js?v=910.1"></script>
+
+    <script src="../plugins/javascript/sv.min.js?v=910.1"></script>
+
+    <script src="../javascript/settings.js?v=881.2"></script>
+	<script src="../javascript/sits_ajax.js?v=881.2"></script>
+  
+    <script src="../plugins/javascript/tablesaw/tablesaw.min.js?v=930.1"></script>
+    <script src="../plugins/javascript/datatables/media/js/jquery.dataTables.js"></script>
+ 	<script src="../plugins/javascript/datatables/media/js/dataTables.tribal.js"></script>  
+ 
+
+	  <script>
+		  function uSubmit(){} //include dummy function to prevent errors when submitting
+	  </script>
+
+
+<!--[if lt IE 7]><script>
+var root = document.documentElement;
+root.className += " lt-ie10";
+root.className += " lt-ie9";
+root.className += " lt-ie8";
+root.className += " lt-ie7";
+</script><![endif]-->
+<!--[if IE 7]><script>
+var root = document.documentElement;
+root.className += " lt-ie10";
+root.className += " lt-ie9";
+root.className += " lt-ie8";
+root.className += " ie7";
+</script><![endif]-->
+<!--[if IE 8]><script>
+var root = document.documentElement;
+root.className += " lt-ie10";
+root.className += " lt-ie9";
+root.className += " ie8";
+</script><![endif]-->
+<!--[if IE 9]><script>
+var root = document.documentElement;
+root.className += " lt-ie10";
+root.className += " ie9";
+</script><![endif]-->
+<!--[if IE 10]><script>
+var root = document.documentElement;
+root.className += " ie10";
+</script><![endif]-->
+
+
+	<!-- The Head Scripts: MODERNIZR ONLY!-->
+	<script src="../css/uoa_files/index_files/modernizr.min.js"></script>
+	<script>(!window.Modernizr)||document.write('<script src="../css/uoa_files/index_files/modernizr.js"><\/script>');</script>
+
+
+<!-- System Wide Error Messaging -->
+<link media="all" href="../css/siw_ymes.css" rel="stylesheet" type="text/css" />
+
+<!-- Alberta Foundation StyleSheet -->
+<link rel="stylesheet" href="../css/uoa_files/css/framework.css" media="screen">
+<link rel="stylesheet" href="../css/uoa_files/css/framework-ie.css" media="screen">
+
+<!-- Aberta System Override StyleSheet -->
+<link rel="stylesheet" href="../css/uoa-sits.css" media="screen">
+
+<!-- The Print Sheets -->
+<link rel="stylesheet" href="../css/uoa_files/css/print.css" media="print">
+
+<!-- any required page header html should go here, in place of this default SITS header HTML.
+     It is good practice to use 'class="sitsscreenonly" on any header images
+     which would not be required in a printed version of the page.
+ -->
+<!-- overall page DIV -->
+
+<header>           
+	<div class="blade-container" style="height: 4em;">
+    <div class="blade-inner">
+        <a class="brand" href="http://uofa.ualberta.ca/">
+            <img src="../css/uoa_files/img/logo2.svg" alt="University of Alberta">
+		</a>
+        <nav class="blade-navigation">
+            <ul class="quick-links-container">
+                <li id="ql" class="dropdown">
+                    <a href="https://training.sitecore.ualberta.ca/departments/another-department#" id="ql-toggle" class="btn btn-grey btn-small hidden-desktop" data-toggle="dropdown">
+                        <span class="quick-links-text">Quick Links <b class="caret"></b>                        </span>
+                        <span class="icon-bar quick-links-button"></span>
+                        <span class="icon-bar quick-links-button"></span>
+                        <span class="icon-bar quick-links-button"></span>
+                    </a>
+                    <ul class="quick-links" role="menu" aria-labelledby="ql-toggle">
+                    	<li role="menuitem"><a href="http://webapps.srv.ualberta.ca/search/" target="">Find a Person</a></li>
+                       <li role="menuitem"><a href="http://onecard.ualberta.ca/" target="">ONEcard</a></li>
+                       <li role="menuitem"><a href="https://www.beartracks.ualberta.ca/" target="">Bear Tracks</a></li>
+                       <li role="menuitem"><a href="http://www.campusmap.ualberta.ca/" target="">Maps</a></li>
+                       <li role="menuitem"><a href="http://apps.ualberta.ca/" target="">Email &amp; Apps</a></li>
+                       <li role="menuitem"><a href="https://eclass.srv.ualberta.ca/portal/" target="">eClass</a></li>
+                       <li role="menuitem"><a href="http://www.library.ualberta.ca/" target="">Libraries</a></li>
+                    </ul>
+                   </li>            
+			</ul>        
+		</nav>        
+		<div class="blade-search">
+            <i class="icon-search"></i>
+            <input type="search" class="search-query" placeholder="search">
+            <button type="button" class="btn btn-grey btn-small global-search-btn">Search</button>
+        </div>
+    </div>
+	</div>
+	<div class="banner-container">
+		<div class="banner-inner">
+			<a href="http://uofa.ualberta.ca/" class="site-title">Faculty of Graduate Studies and Research</a>
+			<div class="banner-logo">
+				<span class="site-logo"></span>				
+			</div>
+		</div>
+		<div class="oval oval1"></div>
+		<div class="oval oval2"></div>
+		<div class="oval oval3"></div>
+		<div class="oval oval4"></div>
+	</div>
+	<div class="navigation-container">
+		<nav id="main-nav" class="navigation-inner">
+			<ul>
+				<li>
+					<a class="navigation-toggle collapsed"><span>Show Navigation</span><i class="icon-toggle-nav"></i>
+					</a>
+					<ul id="nav-list" class="main-navigation hidden-phone collapse" style="height: 0px;">
+						<!-- The Tab list field contains each page tab as a li item, child page tabs will create a new ul within the outer ul -->
+						<li class="normaltab" >
+<a href="siw_portal.url?A43DAC004F794435MMNztpqHS8WbeYJg-BUNWCkPKT3NdduzPgksN7_320r49w0EW8z-6gbZ1alrI7tQHur5oMfZZw96jxtgTfC1CbNej2Wp3l68Cibzb0Jgh67M7LDZ-XITrGrV1FiF2Kq-" id="GSAWD_AWD_01" ><span>Awards Portal</span></a>
+
+</li>
+<li class="normaltab" >
+<a href="siw_portal.url?B0D531C855D544B7Q17wabASjlCtU3GVjsMIgjRMuyur_yKWNCbsWYm7zfZ-TkD_Gg4PfFz-jOla-GD_kPriFF0QyUQIxkDxkgQpsl1_roQlZCTWB11N1umLNyAUuA-hhF68FywHRgYX1SAt" id="GSAWD_NOM_01" ><span>Awards</span></a>
+
+</li>
+
+						<li class="normaltab">
+							
+						</li>
+						<!--
+						<li class="normaltab">
+							 
+						</li>
+						-->
+						<li class="normaltab">
+							<a href="../run/SIW_LGN_LOGOUT.start_url?B82AEEDB68464DDAfIW9sqxrsd56ofj4Rv_GROcG9MZ0NVNCr1GvEmSrBCPSDfxA_xwdRzyuaqtvhJJk27F2qGcV0Wdy3ARVrjkpmb4mX-BCbox87W2tHhNdK5Y" target="_self">Logout</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+	</div>
+<div class="nav-mobile">
+<div class="nav-wrapper">
+    
+            <ul class="level-0">
+                <!-- The Tab list field contains each page tab as a li item, child page tabs will create a new ul within the outer ul -->
+						<li class="normaltab" >
+<a href="siw_portal.url?A43DAC004F794435MMNztpqHS8WbeYJg-BUNWCkPKT3NdduzPgksN7_320r49w0EW8z-6gbZ1alrI7tQHur5oMfZZw96jxtgTfC1CbNej2Wp3l68Cibzb0Jgh67M7LDZ-XITrGrV1FiF2Kq-" id="GSAWD_AWD_01" ><span>Awards Portal</span></a>
+
+</li>
+<li class="normaltab" >
+<a href="siw_portal.url?B0D531C855D544B7Q17wabASjlCtU3GVjsMIgjRMuyur_yKWNCbsWYm7zfZ-TkD_Gg4PfFz-jOla-GD_kPriFF0QyUQIxkDxkgQpsl1_roQlZCTWB11N1umLNyAUuA-hhF68FywHRgYX1SAt" id="GSAWD_NOM_01" ><span>Awards</span></a>
+
+</li>
+
+						<li class="normaltab">
+							
+						</li>
+						<!--
+						<li class="normaltab">
+							 
+						</li>
+						-->
+						<li class="normaltab">
+							<a href="../run/SIW_LGN_LOGOUT.start_url?B82AEEDB68464DDAfIW9sqxrsd56ofj4Rv_GROcG9MZ0NVNCr1GvEmSrBCPSDfxA_xwdRzyuaqtvhJJk27F2qGcV0Wdy3ARVrjkpmb4mX-BCbox87W2tHhNdK5Y" target="_self">Logout</a>
+						</li>
+           
+            </ul>
+        
+</div>
+
+</div>
+</header>
+
+      <!-- DIV sitspagecontent (see sits.css) encloses main page content.
+          It is opened in body-start, body-start-tabs, body-start-ipp and
+          closed in body-end, body-end-ipp
+       -->
+      <div id="sitspagecontent" class="container row-fluid">
+
+<!-- end of HTML from body-start.hts  --> </form>
+<script type="text/javascript">sits_widget_bp = {"dt":{"emptyTable":"No information available","info":"Showing _START_ to _END_ of _TOTAL_ entries","infoEmpty":"No entries to show","infoFiltered":" (filtered from _MAX_ total entries)","lengthMenu":"Show _MENU_ entries","loadingRecords":"Loading...","processing":"Processing...","search":"Search:","zeroRecords":"No matching entries found","paginate":{"first":"First","last":"Last","next":"Next","previous":"Previous"},"aria":{"sortAscending":": use to sort column ascending","sortDescending":": use to sort column descending"},"tribal":{"detailsLabelOpen":"Activate to show additional details for this row","detailsLabelClose":"Activate to hide additional details for this row","detailsLabelDataOpen":"Activate to show additional details for _DATA_","detailsLabelDataClose":"Activate to hide additional details for _DATA_"}},"ts":{"modes":["Stack","Swipe","Toggle"],"columns":"Col<span class=\"a11y-sm\">umn<\/span>s","columnBtnText":"Columns","columnsDialogError":"No eligible columns.","sort":"Sort","prevBtnText":"Show previous column on the following table","nextBtnText":"Show next column on the following table","prevBtnDisabledText":"Show previous column on the following table (not currently available)","nextBtnDisabledText":"Show next column on the following table (not currently available)","sortAscText":": use to sort column ascending","sortDescText":": use to sort column descending"},"pg":{"infoText":"Showing page {0} of {1}","infoWithRecsText":"Showing page {0} of {1} with {2} records per page","firstBtnText":"First","prevBtnText":"Previous","nextBtnText":"Next","lastBtnText":"Last","firstBtnAriaText":"Show first page","prevBtnAriaText":"Show previous page","nextBtnAriaText":"Show next page","lastBtnAriaText":"Show last page","pageBtnAriaText":"Show page {0}"},"tp":{"currentText":"Now","closeText":"Done","timeOnlyTitle":"Choose Time","timeText":"Time","hourText":"Hour","minuteText":"Minute","secondText":"Second","millisecText":"Millisecond","microsecText":"Microsecond","timezoneText":"Time Zone"},"ui":{"dialogOk":"Ok","dialogCancel":"Cancel","tabsClose":"Close","dialogClose":"Close","moreDetails":"More Details","datePickerDate":"Select a date","datePickerTime":"Select a time","datePickerDateTime":"Select a date\/time","loading":"Loading...","selectAllTitle":"Select All","selectAll":"Select All","selectNone":"Select None","invertAll":"Invert All","errorText":"Error","datePickerMonth":"Select a month","datePickerYear":"Select a year","tabsScrollLeft":"Scroll left","tabsScrollRight":"Scroll right"},"ld":{"loadTitle":"Loading","loadContent":"Loading, please wait...","processTitle":"Processing","processContent":"Processing, please wait...","saveTitle":"Saving","saveContent":"Saving, please wait..."},"to":{"sessionTitle":"Session Expiry","sessionContent":"Your session is due to expire in approximately {0} minute(s). If you would like to continue using this session, please click \"Continue\".","pageTitle":"Page Expiry","pageContent":"This page is due to expire in approximately {0} minute(s). If you would like to continue using this page, please click \"Continue\".","buttonContinue":"Continue"}};</script>
+<script>sits_user_timeout = "BADFD5AE3F5C45B8VnvOJGYYnuwHL-w1qcR6kcesoMpwixk5h9QU8BhBh-n5Aizw5Bqu2TqWlZrgYe-KB3946Edy52v3zYt_JZJQALCZu5TKsO0G";</script>
+<!-- body-start.hts page header include ends here -->
+
+<!-- adding header_tabs/header_message -->
+
+  
+    <form method="POST" action="SIW_TTQ" onsubmit="return uSubmit(this)" name="f">
+  
+<input type="hidden" name="%.WEB_HEAD.MENSYS.1" value="S8ubErgTUT7KJxHrml4ixRL1rqmrqZuOdyuZo0uLTQ8=;new;;" />
+<!-- end of header_tabs/header_message -->
+
+<!-- Start Of Extra Javascripts -->
+<script type="text/javascript" src="../javascript/siw_ttq.js"></script>
+<script type="text/javascript" src="../javascript/dmx_calendar.js"></script>
+<script type="text/javascript" src="../javascript/dmx_tooltip.js"></script>
+<script type="text/javascript" src="../javascript/siw_sel.js"></script>
+<!-- <script type="text/javascript" src="https://apis.google.com/js/api.js?onload=onApiLoad"></script> -->
+
+<!-- End Of Extra Javascripts -->
+  <style>
+  /*
+    a.sitsdropboxicon{
+      background-image:url("../images/icons/dbx-saver-status.png") !important; 
+      background-repeat:no-repeat;`     
+    }
+    .sitsgoogledriveicon{
+      background-image:url("../images/icons/googledrivesmall.png") !important;        
+    }
+    .sitsonedriveicon{
+      background-image:url("../images/icons/onedrivesmall.png") !important;        
+    }
+  */
+
+   .ttqDropBox::before{
+      content:url("../images/icons/dbx-icon-small.png");
+      margin-right:10px;
+    }
+    .ttqGoogleDrive::before{
+      content:url("../images/icons/googledrivesmall.png");
+      margin-right:10px;
+    }    
+  </style>
+
+   
+  
+    
+      <input type="hidden" name="MHDC.DUMMY.MENSYS.1" value="00100009362935177253" />
+      <input type="hidden" name="SEQN.DUMMY.MENSYS.1" value="1" />
+      <input type="hidden" name="NKEY.DUMMY.MENSYS.1" value="6A50D9684DCF45F4o7cwNE02LY0msvcCS1x-sgHwmljPO9CHQ7OsYRp0-Ai4PbMYrsUmfDTcG1-IF5bRFjSv7X2R7J3L6idiYCe_EQ" />
+      <input type="hidden" name="RUN_MODE.DUMMY.MENSYS.1" value="ACT%1BHASH=432D7F526345004878035DAEE9D5F4D1A45BA618DF8A19387C813D0EF95B7C53DCC404B769FBA304900F494C664E1545B2FBA456FDEE479EE337FF98B9999733" />  
+      <input type="hidden" name="%.DUMMY.MENSYS.1" value="FBYHC8QoCloevnM9St2pcr8mtuTxSudOQEXKFeo4na8=;new;;" />
+        
+          
+
+<style>
+div.dataTables_wrapper {
+        width: 80vw;
+        margin: 0 auto;
+	box-sizing: content-box;
+	-moz-box-sizing: content-box;
+}
+td, th {
+white-space: nowrap; !important
+}
+tbody {
+   width: 80vw;
+}
+ul {
+padding: 0xp;
+}
+table {
+border-collapse: separate; !important
+}
+#downloadMenu ul li:hover {
+    background-image: -moz-linear-gradient(top, #00af5c, #007c41);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#00af5c), to(#007c41));
+    background-image: -webkit-linear-gradient(top, #00af5c, #007c41);
+    background-image: -o-linear-gradient(top, #00af5c, #007c41);
+    background-image: linear-gradient(to bottom, #00af5c, #007c41);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff00af5c', endColorstr='#ff007c41', GradientType=0);
+    color: #ffffff;
+    padding: 0px; margin: 5px;
+}
+#optionsMenu ul li:hover {
+    background-image: -moz-linear-gradient(top, #00af5c, #007c41);
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#00af5c), to(#007c41));
+    background-image: -webkit-linear-gradient(top, #00af5c, #007c41);
+    background-image: -o-linear-gradient(top, #00af5c, #007c41);
+    background-image: linear-gradient(to bottom, #00af5c, #007c41);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff00af5c', endColorstr='#ff007c41', GradientType=0);
+    color: #ffffff;
+    padding: 0px; margin: 5px;
+}
+.dataTables_empty {
+	text-align: left !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    box-sizing: border-box;
+    display: inline-block;
+    min-width: 1.5em;
+    padding: 0em 0em;
+    margin-left: 2px;
+    text-align: center;
+    text-decoration: none !important;
+    cursor: pointer;
+    *cursor: hand;
+    color: #333 !important;
+    border: 1px solid transparent;
+}
+</style>
+<style>
+	/* prevent datatables wrapper extending the table rows beyond the panel but allow the actions drop down to be visible on top by making overflow visible */
+	div.dataTables_wrapper {
+		width: auto;
+		overflow: visible;
+	}
+	/* override default styling for drop down list to fit in table */
+	div.sv-dropdown .sv-btn-default {
+		margin: 0px;
+		padding: 0.3em 0.8em;
+	}
+</style>
+
+<script type="text/javascript">
+	var closeMenu = 0;
+	sits_attach_event(window,"load",pageLoad);
+
+		function pageLoad(){
+
+			//this gives JS knowledge of what time of user is logged in
+			var type = 0; //user that does not have access to options
+			
+			
+			
+
+			$(document).on('click','body, body *',function(){
+				if($('#columnsMenu').is(":visible") || $('#downloadMenu').is(":visible") || $('#optionsMenu').is(":visible")) {
+       					$('#columnsMenu').hide();
+       					$('#downloadMenu').hide();
+					$('#optionsMenu').hide();
+    				} //if
+			});
+
+			$(document).on('click',"input:checkbox:not('#checkAllRows')",function(event) {
+				var oTable = $('#resultsTable').DataTable();
+				var rows = oTable.rows( {search:'applied'} ).nodes();
+				var allChecked = true;
+		
+				//check to see if all checkboxes are checked or not
+				//if so modify the global one
+				try {
+				for (var i = 0; i < rows.length; i++) {
+        					var row = [], cols = rows[i].querySelectorAll("th, td");
+					if(cols[0].firstChild.tagName == 'INPUT') {
+        						if(!cols[0].firstChild.checked) {
+							allChecked = false;
+						} //if
+					} //if
+				} //for
+				} catch(err) {
+				}
+
+				oTable.column( 0 ).header().firstChild.checked = allChecked;
+			});
+
+   			//apply dataTables
+			sits_include_file("../plugins/javascript/datatables/media/css/jquery.dataTables.min.css");
+
+			$('#resultsTable').on( 'init.dt', function (ev, oSettings) {
+				updateColumnList(true, $(this), 'th div');
+				//fix column headers by triggering window resize event
+				var oTable = $('#resultsTable').DataTable();
+				oTable.draw();
+				$(window).trigger('resize');
+			} );
+
+
+			$('#resultsTable').on( 'processing.dt', function (ev, oSettings, processing) {
+	    			if(processing== false) {
+  		    			$('#loadingDiv').hide();     
+		   			$('#tableDiv').show();
+					var oTable = $('#resultsTable').DataTable();
+					oTable.draw();
+					$(window).trigger('resize');
+	    			} //if
+			} );
+
+			$('#resultsTable').DataTable({
+					  "columnDefs": [
+					    { "width": "20px", "targets": 0 }
+  					],
+					"bProcessing": true,
+					responsive: false,
+					"autoWidth": true,
+					"aaSorting": [ [ 2, "asc" ],[3,"asc"] ],
+					"bPaginate": true,
+					"bLengthChange": true,
+					"bFilter": true,
+					"sScrollX":true
+    			});
+
+			$('#resultsTable').on( 'search.dt', function () {
+				var oTable = $('#resultsTable').DataTable();
+				var rows = oTable.rows( {search:'applied'} ).nodes();
+				var allChecked = true;
+
+				//check to see if all checkboxes are checked or not
+				//if so modify the global one
+				for (var i = 0; i < rows.length; i++) {
+        					var row = [], cols = rows[i].querySelectorAll("th, td");
+
+					if(cols[0].firstChild != null) {
+					if(cols[0].firstChild.tagName == 'INPUT') {
+        						if(!cols[0].firstChild.checked) {
+							allChecked = false;
+						} //if
+					} //if
+					} //if
+				} //for
+				try {
+					oTable.column( 0 ).header().firstChild.checked = allChecked;
+				} catch(err) {
+				}
+
+			} );
+
+    		$('#columnsMenu').find("input:checkbox").click(function(){ 
+       			var oTable = $('#resultsTable').DataTable();
+			var checkboxRowExists = true;
+			var selectedCheckBoxId =  $(this).val();
+			var selectedCheckBoxState = $(this).is(':checked');
+			var allSel = true;
+			var showFirstColumn = false;
+
+			//if the select all checkbox is checked select/de-select all checkboxes
+			//else perform the select/de-select for the current checkbox clicked
+			if($(this).val() == -1 ) {
+				var checked = $(this).is(':checked');
+				//do not modify the first checkbox as that is the select all checkbox
+				//if all checkboxes are unchecked show the fist row.
+				//if the first row is a checkbox then show the second row
+				$('#columnsMenu').find("input:checkbox:not(:first)").each(function(i) {
+					if($(this).val() == 0) { checkboxRowExists = false; }
+					$(this).prop('checked', checked );
+					try {
+						oTable.column($(this).val()).visible(checked  ).adjust().responsive.recalc().draw();
+					} catch(err) {
+					}
+				});
+				//are all the checkboxes checked or not
+				//we can get this by checking the select/de-select all button state
+				showFirstColumn = selectedCheckBoxState;
+			} else {
+				try {
+					oTable.column(selectedCheckBoxId ).visible(selectedCheckBoxState ).responsive.recalc().draw();
+				} catch(err) {
+				}
+
+				//do not modify the first checkbox as that is the select all checkbox
+				//if all checkboxes are unchecked show the fist row.
+				//if the first row is a checkbox then show the second row
+				$('#columnsMenu').find("input:checkbox:not(:first)").each(function(i) {
+					if($(this).val() == 0) { checkboxRowExists = false; }
+					//always show the first column if all checkboxes are not selected
+					if(!showFirstColumn ) {
+						if($(this).is(':checked')) { showFirstColumn = true; } //:not
+					} //if
+					if($(this).is(':not(:checked)')) { allSel = false; } 
+				});
+
+				$('#columnsMenu').find("input:checkbox:first").prop('checked', allSel );
+			} //if
+			if(checkboxRowExists ) {
+				try {
+					oTable.column( 0 ).visible(showFirstColumn).adjust().responsive.recalc().draw();
+				} catch(err) {
+				}
+			} //if
+			oTable.draw();
+			$(window).trigger('resize');
+   	 	});
+	} //pageLoad
+
+		function updateColumnList(updateMenu, item, find) {
+    			var count = 0;
+	    		var row = [];
+
+			$('#resultsTable').find(find).each(function(i) {
+				if($(this).html().indexOf("<input") < 0) {
+					if(updateMenu) {
+                					prepString = '<li style="list-style-type: none; padding: 0px; margin: 5px; position: relative;" onclick="event.stopPropagation(); event.cancelBubble = true;">';
+	                				prepString += '<span onclick="event.stopPropagation(); event.cancelBubble = true;">';
+						prepString += '<input onclick="event.stopPropagation(); event.cancelBubble = true;" type="checkbox"';
+						prepString += 'style="position: relative; top: 3px; left: 2px;" value="' + count + '"';
+						if($(this).css('display') != 'none') {
+							prepString += ' checked="checked" ';
+						} //if
+						prepString += '><span style="margin-left: 5px;">' + $(this).html() + '</span></span></li>';
+						$('#columnsMenu').find('ul').append(prepString);
+					} //if
+					row.push($(this).html());
+				} //if
+				count++;
+			});
+    			return row.join(",");
+		} //updateColumnList
+
+	function performAddTableRowMenuClick() {
+		$('#columnsMenu').toggle();
+    		$('#downloadMenu').hide();
+    		$('#optionsMenu').hide();
+	} //performAddTableRowClick
+
+	function performDownloadMenuClick() {
+		$('#downloadMenu').toggle();
+		$('#columnsMenu').hide();
+		$('#optionsMenu').hide();
+	} //performDownloadMenuClick
+
+	function performOptionsMenuClick() {
+		$('#downloadMenu').hide();
+		$('#columnsMenu').hide();
+		$('#optionsMenu').toggle();
+	} //performOptionsMenuClick
+
+	function exportTableToCSV(filename) {
+    		var csv = [];
+		var oTable = $('#resultsTable').DataTable();
+		var rows = oTable.rows( {search:'applied'} ).nodes();
+		var firstNode = $('#resultsTable').find('th div:first').first().html();
+    		//add the table header
+    		csv.push(updateColumnList(false, $(this), 'th div'));
+    		for (var i = 0; i < rows.length; i++) {
+        			var row = [], cols = rows[i].querySelectorAll("th, td");
+        			for (var j = 0; j < cols.length; j++) {
+        				if(firstNode .indexOf("<input") < 0 || j > 0) {
+        					if(cols[j].innerText == '\xa0') {
+                					row.push('');
+        					} else {
+                					var output = cols[j].innerText;
+                					if(output.indexOf(",") >= 0) {
+                    					output = '"' + output + '"';
+                					} //if
+            					row.push(output);
+           				 } //if
+				} //if
+			} //for
+        			csv.push(row.join(","));        
+		} //for
+    		// Download CSV file
+    		downloadCSV(csv.join("\n"), filename);
+	} //exportTableToCSV
+
+	function downloadCSV(csv, filename) {
+		var csvFile;
+		var downloadLink;
+
+		//remove any empty lines
+		csv = csv.replace(/\n\n/g, "\n")
+
+		// CSV file
+		csvFile = new Blob([csv], {type: "text/csv"});
+
+		// Download link
+		downloadLink = document.createElement("a");
+
+		// File name
+		downloadLink.download = filename;
+
+		// Create a link to the file
+		downloadLink.href = window.URL.createObjectURL(csvFile);
+
+		// Hide download link
+		downloadLink.style.display = "none";
+
+		// Add the link to DOM
+		document.body.appendChild(downloadLink);
+
+		// Click download link
+		downloadLink.click();
+	}
+
+	function checkAllRowsClick(item){
+		var oTable = $('#resultsTable').DataTable();
+		var rows = oTable.rows( {search:'applied'} ).nodes();
+
+		//select all checkboxs
+		for (var i = 0; i < rows.length; i++) {
+        			var row = [], cols = rows[i].querySelectorAll("th, td");
+			if(cols[0].firstChild.tagName == 'INPUT') {
+        				cols[0].firstChild.checked = item.checked;
+			} //if
+		} //for
+	};
+
+	function performMassReject() {
+		$('#downloadMenu').hide();
+		$('#columnsMenu').hide();
+		$('#optionsMenu').toggle();
+
+		var oTable = $('#resultsTable').DataTable();
+		var rows = oTable.rows( {search:'applied'} ).nodes();
+		var data = '';
+		var tableHasData = true;
+
+		//select all checkboxs
+		for (var i = 0; i < rows.length; i++) {
+			var row = [], cols = rows[i].querySelectorAll("th, td");
+			if(cols.length > 0) {
+				if(cols[0].firstChild.tagName == 'INPUT') {
+					if(cols[0].firstChild.checked) {
+						data += cols[0].firstChild.value + '|';
+					} //if
+				} //if
+			} else {
+				alert('You have no columns shown in the table. Please add columns using the columns menu to use the mass reject feature.');
+				tableHasData = false;
+				break;
+			} //if
+		} //for
+		if(tableHasData) {
+		if(data == '') {
+			alert('Please select at least one eligible application in order to use mass reject.');
+		} else {
+			if(confirm( "Are you sure you want to reject the selected students?"    )) {
+				var massUpdateForm = $("input[data-altid='hidden_next']");
+				var massUpdateData =  $("[name='ANSWER.TTQ.MENSYS.1']");
+				//loadingDiv
+				var loadingDiv = $("#loadingDiv");
+				//show the loading message
+				loadingDiv.show();
+
+
+				//tableDiv
+				var tableDiv = $("#tableDiv");
+				//hide the table
+				tableDiv.hide();
+
+				massUpdateData .val(data);
+				massUpdateForm.click();
+			} //if
+		} //if
+		} //if
+	} //performMassReject
+
+</script>
+
+
+<script>
+	sits_attach_event(window,"load",function() {
+		// display a processing dialog when the user clicks search button
+		sits_attach_event("input[type=submit][data-btn-search]","click",function() {
+			sits_dialog_loading(true,'PROCESS');
+		});
+	});
+</script>
+
+<div class="sv-panel sv-panel-primary">
+	<div class="sv-panel-heading">
+		<h2 class="sv-panel-title">Applicant Search</h2>
+	</div>
+
+	<div class="sv-panel-body">
+		<div class="sv-form-container">
+			<div class="sv-form-horizontal">
+				<fieldset>
+				<legend>Applicant Search</legend>
+          
+          <input type="hidden" name="#.TTE.MENSYS.1-1" value="j601TZL2wmb3uzB5IptV9X5N7XepGP2V2DluG1B8T2Y=;mod;38EDF69E;DhJDR1NBV0RfTk9NXzAzBCJDMTA=" />
+                            
+              	            
+              
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+<input type="hidden" name="DUM_FIXT.TTQ.MENSYS.1">                           
+              		              
+                            
+              <div class='sv-form-group'><p class='sv-col-sm-3 sv-checkbox-text'>Last Name</p><div class='sv-col-sm-6'>	            
+              <input type="text" name="ANSWER.TTQ.MENSYS.2" id="ANSWER.TTQ.MENSYS.2." value="" data-ttqseqn="1" class="sv-form-control"><input type="hidden" name="DUM_FIXT.TTQ.MENSYS.2">                           
+              </div><span class='sv-col-sm-3 sv-help-block' id='ANSWER.TTQ.MENSYS.2.helpblock'><span class="sv-trans-block" id="ANSWER.TTQ.MENSYS.2.transblock"></span> <span class="sv-error-block" id="ANSWER.TTQ.MENSYS.2.errorblock"></span></span></div>		              
+                            
+              <div class='sv-form-group'><p class='sv-col-sm-3 sv-checkbox-text'>First Name</p><div class='sv-col-sm-6'>	            
+              <input type="text" name="ANSWER.TTQ.MENSYS.3" id="ANSWER.TTQ.MENSYS.3." value="" data-ttqseqn="2" class="sv-form-control"><input type="hidden" name="DUM_FIXT.TTQ.MENSYS.3">                           
+              </div><span class='sv-col-sm-3 sv-help-block' id='ANSWER.TTQ.MENSYS.3.helpblock'><span class="sv-trans-block" id="ANSWER.TTQ.MENSYS.3.transblock"></span> <span class="sv-error-block" id="ANSWER.TTQ.MENSYS.3.errorblock"></span></span></div>		              
+                            
+              <div class='sv-form-group'><p class='sv-col-sm-3 sv-checkbox-text'>EMPLID</p><div class='sv-col-sm-6'>	            
+              <input type="text" name="ANSWER.TTQ.MENSYS.4" id="ANSWER.TTQ.MENSYS.4." value="" data-ttqseqn="3" class="sv-form-control"><input type="hidden" name="DUM_FIXT.TTQ.MENSYS.4">                           
+              </div><span class='sv-col-sm-3 sv-help-block' id='ANSWER.TTQ.MENSYS.4.helpblock'><span class="sv-trans-block" id="ANSWER.TTQ.MENSYS.4.transblock"></span> <span class="sv-error-block" id="ANSWER.TTQ.MENSYS.4.errorblock"></span></span></div>		              
+                            
+              <div class='sv-form-group'><p class='sv-col-sm-3 sv-checkbox-text'>Department</p><div class='sv-col-sm-6'>	            
+              <select name="ANSWER.TTQ.MENSYS.5" id="ANSWER.TTQ.MENSYS.5." multiple="multiple" data-usechosen="Y" data-placeholdera="Choose Department(s)" data-chosennotext="No matching results" data-ttqseqn="4" class="sv-form-control">
+<option value="1096">AB Diabetes Research Institute (Faculty of Medicine and Dentistry)</option>
+<option value="1002">Agricultural, Food & Nutritional Science (Faculty of Agricultural, Life and Environmental Sc)</option>
+<option value="1074">Anaesthesiology and Pain Medicne (Faculty of Medicine and Dentistry)</option>
+<option value="1008">Anthropology (Faculty of Arts)</option>
+<option value="1009">Art and Design (Faculty of Arts)</option>
+<option value="1045">Biochemistry (Faculty of Medicine and Dentistry)</option>
+<option value="1066">Biological Sciences (Faculty of Science)</option>
+<option value="1046">Biomedical Engineering (Faculty of Medicine and Dentistry)</option>
+<option value="1006">Business MBA (Faculty of Business)</option>
+<option value="1007">Business PhD (Faculty of Business)</option>
+<option value="1073">Campus Saint Jean (Faculté Saint-Jean)</option>
+<option value="1094">Canadian Institute of Ukrainian Studies (Faculty of Arts)</option>
+<option value="1043">Cell Biology (Faculty of Medicine and Dentistry)</option>
+<option value="1032">Chemical and Materials Engineering (Faculty of Engineering)</option>
+<option value="1001">Chemistry (Faculty of Science)</option>
+<option value="1033">Civil and Environmental Engineering (Faculty of Engineering)</option>
+<option value="1064">Communication Sciences and Disorders (Faculty of Rehabilitation Medicine)</option>
+<option value="1068">Computing Science (Faculty of Science)</option>
+<option value="1053">Dentistry (Faculty of Medicine and Dentistry)</option>
+<option value="1018">Digital Humanities (Faculty of Arts)</option>
+<option value="1011">Drama (Faculty of Arts)</option>
+<option value="1069">Earth and Atmospheric Sciences (Faculty of Science)</option>
+<option value="1012">East Asian Studies (Faculty of Arts)</option>
+<option value="1013">Economics (Faculty of Arts)</option>
+<option value="1025">Educational Policy Studies (Faculty of Education)</option>
+<option value="1028">Educational Psychology (Faculty of Education)</option>
+<option value="1026">Educational Studies (Faculty of Education)</option>
+<option value="1034">Electrical and Computer Engineering (Faculty of Engineering)</option>
+<option value="1029">Elementary Education (Faculty of Education)</option>
+<option value="1014">English and Film Studies (Faculty of Arts)</option>
+<option value="1031">Extension (Faculty of Extension)</option>
+<option value="1093">Faculty of Graduate Studies and Research (Faculty of Graduate Studies and Research)</option>
+<option value="1099">Health Sciences Education (Faculty of Education)</option>
+<option value="1015">History and Classics (Faculty of Arts)</option>
+<option value="1004">Human Ecology (Faculty of Agricultural, Life and Environmental Sc)</option>
+<option value="1095">Institute for Sexual Minority Studies and Services (Faculty of Education)</option>
+<option value="1077">Inter-disciplinary (Faculty of Arts)</option>
+<option value="1072">Internetworking (Faculty of Science)</option>
+<option value="1061">Kinesiology, Sport, and Recreation (Faculty of Kinesiology, Sport, and Recreation)</option>
+<option value="1041">Laboratory Medicine and Pathology (Faculty of Medicine and Dentistry)</option>
+<option value="1040">Law (Faculty of Law)</option>
+<option value="1027">Library and Information Studies (Faculty of Education)</option>
+<option value="1016">Linguistics (Faculty of Arts)</option>
+<option value="1070">Mathematical and Statistical Sciences (Faculty of Science)</option>
+<option value="1035">Mechanical Engineering (Faculty of Engineering)</option>
+<option value="1047">Medical Genetics (Faculty of Medicine and Dentistry)</option>
+<option value="1044">Medical Microbiology and Immunology (Faculty of Medicine and Dentistry)</option>
+<option value="1048">Medicine (Faculty of Medicine and Dentistry)</option>
+<option value="1019">Modern Languages and Cultural Studies (Faculty of Arts)</option>
+<option value="1017">Music (Faculty of Arts)</option>
+<option value="1039">Native Studies (Faculty of Native Studies)</option>
+<option value="1049">Neuroscience (Faculty of Medicine and Dentistry)</option>
+<option value="1059">Nursing (Faculty of Nursing)</option>
+<option value="1050">Obstetrics and Gynecology (Faculty of Medicine and Dentistry)</option>
+<option value="1062">Occupational Therapy (Faculty of Rehabilitation Medicine)</option>
+<option value="1051">Oncology (Faculty of Medicine and Dentistry)</option>
+<option value="1052">Ophthalmology and Visual Sciences (Faculty of Medicine and Dentistry)</option>
+<option value="1054">Paediatrics (Faculty of Medicine and Dentistry)</option>
+<option value="1055">Pharmacology (Faculty of Medicine and Dentistry)</option>
+<option value="1060">Pharmacy and Pharmaceutical Sciences (Faculty of Pharmacy and Pharmaceutical Sciences)</option>
+<option value="1020">Philosophy (Faculty of Arts)</option>
+<option value="1063">Physical Therapy (Faculty of Rehabilitation Medicine)</option>
+<option value="1071">Physics (Faculty of Science)</option>
+<option value="1056">Physiology (Faculty of Medicine and Dentistry)</option>
+<option value="1021">Political Science (Faculty of Arts)</option>
+<option value="1042">Psychiatry (Faculty of Medicine and Dentistry)</option>
+<option value="1022">Psychology (Faculty of Arts)</option>
+<option value="1057">Radiology and Diagnostic Imaging (Faculty of Medicine and Dentistry)</option>
+<option value="1065">Rehabilitation Medicine (Faculty of Rehabilitation Medicine)</option>
+<option value="1024">Religious Studies (Faculty of Arts)</option>
+<option value="1003">Renewable Resources (Faculty of Agricultural, Life and Environmental Sc)</option>
+<option value="1067">Resource Econ Enviro Sociology (Faculty of Agricultural, Life and Environmental Sc)</option>
+<option value="1075">School of Public Health (School of Public Health)</option>
+<option value="1030">Secondary Education (Faculty of Education)</option>
+<option value="1023">Sociology (Faculty of Arts)</option>
+<option value="1058">Surgery (Faculty of Medicine and Dentistry)</option>
+<option value="1097">University of Alberta-North ()</option>
+<option value="1098">Women's and Gender Studies (Faculty of Arts)</option></select><input type="hidden" name="DUM_FIXT.TTQ.MENSYS.5">                           
+              </div><span class='sv-col-sm-3 sv-help-block' id='ANSWER.TTQ.MENSYS.5.helpblock'><span class="sv-trans-block" id="ANSWER.TTQ.MENSYS.5.transblock"></span> <span class="sv-error-block" id="ANSWER.TTQ.MENSYS.5.errorblock"></span></span></div>		              
+                            
+              <div class='sv-form-group'><p class='sv-col-sm-3 sv-checkbox-text'>Citizenship</p><div class='sv-col-sm-6'>	            
+              <select name="ANSWER.TTQ.MENSYS.6" id="ANSWER.TTQ.MENSYS.6." multiple="multiple" data-usechosen="Y" data-placeholdera="Choose Citizenship(s)" data-chosennotext="No matching results" data-ttqseqn="5" class="sv-form-control">
+<option value="C">Canadian Citizen</option>
+<option value="P">Permanent Resident</option>
+<option value="S">Study Permit</option></select><input type="hidden" name="DUM_FIXT.TTQ.MENSYS.6">                           
+              </div><span class='sv-col-sm-3 sv-help-block' id='ANSWER.TTQ.MENSYS.6.helpblock'><span class="sv-trans-block" id="ANSWER.TTQ.MENSYS.6.transblock"></span> <span class="sv-error-block" id="ANSWER.TTQ.MENSYS.6.errorblock"></span></span></div>		              
+                            
+              <div class='sv-form-group'><p class='sv-col-sm-3 sv-checkbox-text'>Program</p><div class='sv-col-sm-6'>	            
+              <select name="ANSWER.TTQ.MENSYS.7" id="ANSWER.TTQ.MENSYS.7." multiple="multiple" data-usechosen="Y" data-placeholdera="Choose Program(s)" data-chosennotext="No matching results" data-ttqseqn="6" class="sv-form-control">
+<option value="D">Doctoral</option>
+<option value="M">Masters</option>
+<option value="P">Post-baccalaureate</option></select><input type="hidden" name="DUM_FIXT.TTQ.MENSYS.7">                           
+              </div><span class='sv-col-sm-3 sv-help-block' id='ANSWER.TTQ.MENSYS.7.helpblock'><span class="sv-trans-block" id="ANSWER.TTQ.MENSYS.7.transblock"></span> <span class="sv-error-block" id="ANSWER.TTQ.MENSYS.7.errorblock"></span></span></div>		              
+                            
+              <div class='sv-form-group'><p class='sv-col-sm-3 sv-checkbox-text'>Course/Thesis</p><div class='sv-col-sm-6'>	            
+              <select name="ANSWER.TTQ.MENSYS.8" id="ANSWER.TTQ.MENSYS.8." multiple="multiple" data-usechosen="Y" data-placeholdera="Choose Course/Thesis" data-chosennotext="No matching results" data-ttqseqn="7" class="sv-form-control">
+<option value="C">Course-based</option>
+<option value="T">Thesis-based</option></select><input type="hidden" name="DUM_FIXT.TTQ.MENSYS.8">                           
+              </div><span class='sv-col-sm-3 sv-help-block' id='ANSWER.TTQ.MENSYS.8.helpblock'><span class="sv-trans-block" id="ANSWER.TTQ.MENSYS.8.transblock"></span> <span class="sv-error-block" id="ANSWER.TTQ.MENSYS.8.errorblock"></span></span></div>		              
+                            
+              <div class='sv-btn-container sv-btn-container-inline'>	            
+              <input type="submit" name="ANSWER.TTQ.MENSYS.9" id="ANSWER.TTQ.MENSYS.9." value="Search" class="sv-btn sv-btn-primary sv-col-xs-12 sv-col-sm-6 sv-col-md-4 sv-col-lg-2" data-btn-search  data-ttqseqn="50" class="sv-btn sv-btn-primary"><input type="hidden" name="DUM_FIXT.TTQ.MENSYS.9">                           
+              <input type='button' class='sv-btn sv-btn-default sv-col-xs-12 sv-col-sm-6 sv-col-md-4 sv-col-lg-2' onclick='window.close();' value='Close Tab' />
+</div>		              
+            
+          <input type="hidden" name="#.TTQ.MENSYS.1" value="B4SnAC2JFAa2FZPLpcPsIQ7f45bzeujnTJ2J43LwHXg=;mod;4B1614B2;BTJDOTAwDhJDR1NBV0RfTk9NXzAzBCJDMTA=" /><input type="hidden" name="#.TTQ.MENSYS.2" value="6wlgJl/8YoEndP6HHkalF4r2oeC+GcCgsH7UOTj3+yA=;mod;4AA5B2E7;AzJDMQ4SQ0dTQVdEX05PTV8wMwQiQzEw" /><input type="hidden" name="#.TTQ.MENSYS.3" value="4mGGSO4EXR0Cvy0Dwl2EsSxY2DJdTP7wG/f16DHYyhc=;mod;4DBD159D;AzJDMg4SQ0dTQVdEX05PTV8wMwQiQzEw" /><input type="hidden" name="#.TTQ.MENSYS.4" value="hNcErIzL+p26ul/8eVtWv6Te/S0P4V7z0Sj5WDWsLJg=;mod;E84221D3;AzJDMw4SQ0dTQVdEX05PTV8wMwQiQzEw" /><input type="hidden" name="#.TTQ.MENSYS.5" value="c+XKAjB1O6OFHPC/hOrZe5zlXbdOs9+ml4L8cBI+X0o=;mod;E26AC84D;AzJDNA4SQ0dTQVdEX05PTV8wMwQiQzEw" /><input type="hidden" name="#.TTQ.MENSYS.6" value="jQn3VWOCnzDfliKvqplp8Hj1ZiRAI87l0ZDeqqxtMWc=;mod;DE5D8EDF;AzJDNQ4SQ0dTQVdEX05PTV8wMwQiQzEw" /><input type="hidden" name="#.TTQ.MENSYS.7" value="v2jQefglzTmSLn0UB/FCLCLjuttfx2PrNYIkH7de5k0=;mod;88F56DF1;AzJDNg4SQ0dTQVdEX05PTV8wMwQiQzEw" /><input type="hidden" name="#.TTQ.MENSYS.8" value="moVDWSFA3jX+57k/rXEn8J2p4eOB1PgPbpJ5fwLnKMI=;mod;9306E15A;AzJDNw4SQ0dTQVdEX05PTV8wMwQiQzEw" /><input type="hidden" name="#.TTQ.MENSYS.9" value="CbwCzog4KTjUi2x3iXOKvrQn2mNm3PyTLJ6kdZBKhe8=;mod;975C0236;BDJDNTAOEkNHU0FXRF9OT01fMDMEIkMxMA==" />           
+        
+      <input type="hidden" name="#.TTE.MENSYS.1-1" value="j601TZL2wmb3uzB5IptV9X5N7XepGP2V2DluG1B8T2Y=;mod;38EDF69E;DhJDR1NBV0RfTk9NXzAzBCJDMTA=" />
+      				</fieldset>
+			</div>
+		</div>
+	</div> 
+	<div class="sv-panel-footer">
+		<div class="sv-btn-container"></div>
+	</div>
+</div> 
+            <script type="text/javascript">
+        var siw_ttq_object = {};
+      </script>
+
+      <script> $.extend(sits_page_errors,{"DUMMYITEM":"dummyitem"});</script><script> responsivemodeTTQ = "R" </script>
+    
+  <input type="hidden" name="%.DUMMY.MENSYS.1" value="FBYHC8QoCloevnM9St2pcr8mtuTxSudOQEXKFeo4na8=;new;;" />
+</form>  
+<!-- body-end.hts page header include starts here -->
+  
+    <!-- start of HTML from body-end.hts  -->
+
+        </div>
+        <!-- end of sitspagecontent -->
+</div>
+<footer>
+<div class="bottom-footer-row">
+    <div class="footer-container container">
+        <div class="footer-inner row-fluid">
+            <div class="span12 footer-copyright">
+                <ul class="footer-quick-links">
+                    
+                            
+                            <li><a href="https://www.ualberta.ca/about/contact" target="">Contact Us</a></li>
+                        
+                            <li><a href="https://www.surveymonkey.com/s/ualberta-web-feedback" target="">Feedback</a></li>
+                        
+                            <li><a href="http://www.registrar.ualberta.ca/calendar/" target="">University Calendar</a></li>
+                        
+                            <li><a href="http://www.careers.ualberta.ca/" target="">Careers</a></li>
+                        
+                            <li><a href="http://www.rms.ualberta.ca/en/EmergNumbers.aspx" target="">Emergency</a></li>
+                        
+                            <li><a href="https://policiesonline.ualberta.ca/" target="_blank">Policies</a></li>
+                        
+                            <li><a href="http://www.weatheroffice.gc.ca/city/pages/ab-50_metric_e.html" target="">Weather</a></li>
+                        
+                            <li><a href="http://www.edmonton.ca/" target="">Edmonton</a></li>
+                        
+                            <li><a href="https://www.ualberta.ca/privacy" target="">Privacy</a></li>
+                        
+                            <li><a href="https://www.ualberta.ca/keepintouch" target="">Keep in Touch</a></li>
+                        
+                        
+                    <li><a href="https://training.sitecore.ualberta.ca/departments/another-department#">Back to Top</a></li>
+                </ul>
+                <p>
+                    © 2015
+                    <span id="phfooter_0_ualberta_address">University of Alberta 116 St. and 85 Ave., <br class="visible-phone">Edmonton, AB, Canada T6G 2R3</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+                
+            </footer>
+
+
+<!-- overall background div (opened in header files) -->
+
+<script>
+if(typeof(sits_ajax_version)=="string") {
+	sits_attach_event(window, "load", function(){	
+		sits_include_file("../css/uoa_files/index_files/all.js");
+	})
+}
+</script>
+<!--[if IE]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<!-- end of HTML from body-end.hts  -->
+  </body>
+</html>
+   

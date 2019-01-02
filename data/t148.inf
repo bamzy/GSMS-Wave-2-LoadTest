@@ -1,0 +1,15 @@
+[t148]
+FileName1=t148.htm
+URL1=https://graduate-studies-apply-uat.ualberta.ca/urd/sits.urd/run/SIW_INTRAY.getintray
+Total=3
+RequestHeaderFile=t148_RequestHeader.txt
+RequestBodyFile=t148_RequestBody.txt
+ResponseHeaderFile=t148_ResponseHeader.txt
+ContentType=text/html
+SnapshotXmlFile=snapshot_148.xml
+FileName2=t148_emailred.jpg
+URL2=https://graduate-studies-apply-uat.ualberta.ca/urd/sits.urd/images/emailred.jpg
+FileName3=t148_emailunr.jpg
+URL3=https://graduate-studies-apply-uat.ualberta.ca/urd/sits.urd/images/emailunr.jpg
+[ProtocolInfo]
+ProtocolId=QTWeb

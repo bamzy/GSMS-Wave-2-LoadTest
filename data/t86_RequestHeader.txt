@@ -1,0 +1,13 @@
+POST https://graduate-studies-apply-test.ualberta.ca/urd/sits.urd/run/SIW_INTRAY.getintray HTTP/1.1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:62.0) Gecko/20100101 Firefox/62.0
+Accept: text/html, */*; q=0.01
+Accept-Language: en-GB,en;q=0.5
+Accept-Encoding: gzip, deflate
+Referer: https://graduate-studies-apply-test.ualberta.ca/urd/sits.urd/run/siw_portal.url?C06B303C5F624D44BoTZkiU91NfZ1YyMtAundYB8rGDQkGmzVN8c1qDgOzjge98xNTT3gS0gmhQUR6IqEOiZBoQFdhzb14EFJ7I4gmbv_A3VUXevSmfddQucI3k
+Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+X-Requested-With: XMLHttpRequest
+Cookie: EVISIONLOGINLANG=; EVISIONLOGINHTV=; EVISIONID=C23C7729A07045E18831796F6AA0213E; JSESSIONID=CE897FB4CE015AB6EDD5F615B73CE045; BIGipServerSITS-Test.app~SITS-Test_pool=1310857900.36895.0000; BIGipServerSharedIIS-DEV=773986988.20480.0000
+DNT: 1
+Host: graduate-studies-apply-test.ualberta.ca
+Content-Length: 354
+

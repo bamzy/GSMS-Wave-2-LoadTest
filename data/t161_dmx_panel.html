@@ -1,0 +1,89 @@
+var panelHTML;
+var dn;
+  
+document.write('<SPAN ID="buttonPanel1" STYLE="position:absolute; visibility:hidden"></SPAN>');
+
+function getPX() {
+  var x = 1;
+  return x;
+}
+
+function getPY() {
+
+  var tmp = 60;
+  var val = 213;
+  var y;
+  if (document.all["buttonPanel1"].clientWidth >= document.body.scrollWidth) {
+    tmp = tmp + 12
+  }
+
+  var pos = document.body.offsetHeight + document.body.scrollTop - tmp;
+
+  var tmp2 = document.body.scrollHeight - val;
+
+  if ( pos >= tmp2 ) {
+    pos = document.body.scrollHeight - val;
+  }
+
+  y = pos;
+
+  return y;
+}
+
+function movePanel(x, y) {
+  document.all["buttonPanel1"].style.left = document.all["buttonPanel"].style.left;
+  document.all["buttonPanel1"].style.top = y;
+}
+
+  function extract(h,m,s,type) {
+    if (h <= 9) {
+      document.all.diga.innerHTML="&nbsp;";
+      document.all.digb.innerHTML=h;
+    }
+    else {
+      document.all.diga.innerHTML=Math.floor(h/10);
+      document.all.digb.innerHTML=h%10;
+    }
+
+    if (m <= 9) {
+      document.all.digd.innerHTML="0";
+      document.all.dige.innerHTML=m;
+    }
+    else {
+      document.all.digd.innerHTML=Math.floor(m/10);
+      document.all.dige.innerHTML=m%10;
+    }
+
+    if (s <= 9) {
+      document.all.digg.innerHTML="0";
+      document.all.digh.innerHTML=s;
+    }
+    else {
+      document.all.digg.innerHTML=Math.floor(s/10)
+      document.all.digh.innerHTML=s%10
+    }
+
+    if (dn == "AM") {
+      document.all.digi.innerHTML="&nbsp;am";
+    }
+    else {
+      document.all.digi.innerHTML="&nbsp;pm";
+    }
+  }
+
+  function show3() {
+    var Digital = new Date();
+    var hours = Digital.getHours();
+    var minutes = Digital.getMinutes();
+    var seconds = Digital.getSeconds();
+    dn = "AM";
+    if ((hours >= 12) && (minutes >= 1) || (hours >= 13)) {
+      dn = "PM";
+      hours = hours-12;
+    }
+    if (hours == 0) {
+      hours = 12;
+    }
+    extract(hours, minutes, seconds, dn);
+    setTimeout("show3()", 1000);
+  }

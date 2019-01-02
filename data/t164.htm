@@ -1,0 +1,835 @@
+<!-- start of HTML from body-start-tabs.hts  -->
+<!DOCTYPE html>
+<html lang="en-gb">
+  <head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+
+	<link rel="shortcut icon" href="../css/uoa_files/ico/favicon.ico">
+
+    <title>Manage Financial Accounts</title>
+
+    <link rel="stylesheet" href="../css/sits.css">
+    <link rel="stylesheet" href="../css/sv.css">
+    <link rel="stylesheet" href="../plugins/css/ui/sits-ui.css">
+    <!-- Additional style for Admissions buttons - temporary until full responsive review project -->
+    <style>
+        .sv-btn-adm {
+            text-transform: uppercase;
+            font-weight: 600 !important;
+        }
+    </style>	
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="../plugins/javascript/html5shiv.min.js"></script>
+      <script src="../plugins/javascript/respond.min.js"></script>
+    <![endif]-->
+
+
+    <script src="../plugins/javascript/jquery.js?v=910.1"></script>
+    <script src="../plugins/javascript/jquery-ui.js?v=910.1"></script>
+
+    <script src="../plugins/javascript/sv.min.js?v=910.1"></script>
+
+    <script src="../javascript/settings.js?v=881.2"></script>
+	<script src="../javascript/sits_ajax.js?v=881.2"></script>
+  
+    <script src="../plugins/javascript/tablesaw/tablesaw.min.js?v=930.1"></script>
+    <script src="../plugins/javascript/datatables/media/js/jquery.dataTables.js"></script>
+ 	<script src="../plugins/javascript/datatables/media/js/dataTables.tribal.js"></script>  
+ 
+
+	  <script>
+		  function uSubmit(){} //include dummy function to prevent errors when submitting
+	  </script>
+
+
+<!--[if lt IE 7]><script>
+var root = document.documentElement;
+root.className += " lt-ie10";
+root.className += " lt-ie9";
+root.className += " lt-ie8";
+root.className += " lt-ie7";
+</script><![endif]-->
+<!--[if IE 7]><script>
+var root = document.documentElement;
+root.className += " lt-ie10";
+root.className += " lt-ie9";
+root.className += " lt-ie8";
+root.className += " ie7";
+</script><![endif]-->
+<!--[if IE 8]><script>
+var root = document.documentElement;
+root.className += " lt-ie10";
+root.className += " lt-ie9";
+root.className += " ie8";
+</script><![endif]-->
+<!--[if IE 9]><script>
+var root = document.documentElement;
+root.className += " lt-ie10";
+root.className += " ie9";
+</script><![endif]-->
+<!--[if IE 10]><script>
+var root = document.documentElement;
+root.className += " ie10";
+</script><![endif]-->
+
+
+	<!-- The Head Scripts: MODERNIZR ONLY!-->
+	<script src="../css/uoa_files/index_files/modernizr.min.js"></script>
+	<script>(!window.Modernizr)||document.write('<script src="../css/uoa_files/index_files/modernizr.js"><\/script>');</script>
+
+
+<!-- System Wide Error Messaging -->
+<link media="all" href="../css/siw_ymes.css" rel="stylesheet" type="text/css" />
+
+<!-- Alberta Foundation StyleSheet -->
+<link rel="stylesheet" href="../css/uoa_files/css/framework.css" media="screen">
+<link rel="stylesheet" href="../css/uoa_files/css/framework-ie.css" media="screen">
+
+<!-- Aberta System Override StyleSheet -->
+<link rel="stylesheet" href="../css/uoa-sits.css" media="screen">
+
+<!-- The Print Sheets -->
+<link rel="stylesheet" href="../css/uoa_files/css/print.css" media="print">
+
+<!-- any required page header html should go here, in place of this default SITS header HTML.
+     It is good practice to use 'class="sitsscreenonly" on any header images
+     which would not be required in a printed version of the page.
+ -->
+<!-- overall page DIV -->
+
+<header>           
+	<div class="blade-container" style="height: 4em;">
+    <div class="blade-inner">
+        <a class="brand" href="http://uofa.ualberta.ca/">
+            <img src="../css/uoa_files/img/logo2.svg" alt="University of Alberta">
+		</a>
+        <nav class="blade-navigation">
+            <ul class="quick-links-container">
+                <li id="ql" class="dropdown">
+                    <a href="https://training.sitecore.ualberta.ca/departments/another-department#" id="ql-toggle" class="btn btn-grey btn-small hidden-desktop" data-toggle="dropdown">
+                        <span class="quick-links-text">Quick Links <b class="caret"></b>                        </span>
+                        <span class="icon-bar quick-links-button"></span>
+                        <span class="icon-bar quick-links-button"></span>
+                        <span class="icon-bar quick-links-button"></span>
+                    </a>
+                    <ul class="quick-links" role="menu" aria-labelledby="ql-toggle">
+                    	<li role="menuitem"><a href="http://webapps.srv.ualberta.ca/search/" target="">Find a Person</a></li>
+                       <li role="menuitem"><a href="http://onecard.ualberta.ca/" target="">ONEcard</a></li>
+                       <li role="menuitem"><a href="https://www.beartracks.ualberta.ca/" target="">Bear Tracks</a></li>
+                       <li role="menuitem"><a href="http://www.campusmap.ualberta.ca/" target="">Maps</a></li>
+                       <li role="menuitem"><a href="http://apps.ualberta.ca/" target="">Email &amp; Apps</a></li>
+                       <li role="menuitem"><a href="https://eclass.srv.ualberta.ca/portal/" target="">eClass</a></li>
+                       <li role="menuitem"><a href="http://www.library.ualberta.ca/" target="">Libraries</a></li>
+                    </ul>
+                   </li>            
+			</ul>        
+		</nav>        
+		<div class="blade-search">
+            <i class="icon-search"></i>
+            <input type="search" class="search-query" placeholder="search">
+            <button type="button" class="btn btn-grey btn-small global-search-btn">Search</button>
+        </div>
+    </div>
+	</div>
+	<div class="banner-container">
+		<div class="banner-inner">
+			<a href="http://uofa.ualberta.ca/" class="site-title">Faculty of Graduate Studies and Research</a>
+			<p style="width: 100%; color: red; font-size: 24px; font-weight: bold; background-color: white;">User / Acceptance Testing environment - not Production</p>
+			<div class="banner-logo">
+				<span class="site-logo"></span>				
+			</div>
+		</div>
+		<div class="oval oval1"></div>
+		<div class="oval oval2"></div>
+		<div class="oval oval3"></div>
+		<div class="oval oval4"></div>
+	</div>
+	<div class="navigation-container">
+		<nav id="main-nav" class="navigation-inner">
+			<ul>
+				<li>
+					<a class="navigation-toggle collapsed"><span>Show Navigation</span><i class="icon-toggle-nav"></i>
+					</a>
+					<ul id="nav-list" class="main-navigation hidden-phone collapse" style="height: 0px;">
+						<!-- The Tab list field contains each page tab as a li item, child page tabs will create a new ul within the outer ul -->
+						<li class="normaltab" >
+<a href="siw_portal.url?C09FD01B95B0415AE8TSRqgBfDiw3e12PVK-b9RjHo-np4Wq9nc2m-LUNBNMBDD2TQkUN2hsVQfQvTWQ6P7lU4THPikUQ9ZxQsxm17Q-ngz3wpQ_nOGmGowcx6E" id="GSWFL01" title="Manage Applications"><span>Admissions</span></a>
+
+</li>
+<li class="normaltab" >
+<a href="siw_portal.url?F269046BBCAE4F42lQKMR_Oq-Adif9X48pRvK6-iePYMUtYdaEQ7lKxunBupk_LcfNZa6Xotbxfv-K3ygwPb1wM1xzuM4XFmXoGqnIe0LI_Te3NNr52lZCSKfAg" id="GSAWD_AWD_01" ><span>Awards Portal</span></a>
+
+</li>
+<li class="normaltab" >
+<a href="siw_portal.url?EDB514F0CAA14C651DawEVZExyQw8_rE8VsMaHHrlxk16L9nV-AkdO6xQyX00HHNRgnaf9YS6ofFZCzvEJ19pkxx6tDS3GrYmzhiz8uZKApa2Whws-bOzkogvDk" id="GSAWD_NOM_01" ><span>Awards</span></a>
+
+</li>
+<li class="normaltab" >
+<a href="siw_portal.url?B45B97284CD04711YIDDKFDgLJm4Y9ogg2Y3RIZJKct9BIte-Py8xWEximgKJvnTBvq2gdXPm2AppIyULrtnbNWmb2nkhrTxA356gie3rqFVhuPUsVTl8-kacc4" id="GSMSG01" ><span>Admissions Messages</span></a>
+
+</li>
+
+						<li class="normaltab">
+							
+						</li>
+						<!--
+						<li class="normaltab">
+							 
+						</li>
+						-->
+						<li class="normaltab">
+							<a href="../run/SIW_LGN_LOGOUT.start_url?6259360E650F499EKwgP8muawl8TV60t3Gdb1yON78VOxJt-CPMUOT654dEwlkiGd_5Qzxq9zOILo4HO13DKfsk9L7-RPDIrTL9PdwnR5tRrb3t_VLv0ORACwPo" target="_self">Logout</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+	</div>
+<div class="nav-mobile">
+<div class="nav-wrapper">
+    
+            <ul class="level-0">
+                <!-- The Tab list field contains each page tab as a li item, child page tabs will create a new ul within the outer ul -->
+						<li class="normaltab" >
+<a href="siw_portal.url?C09FD01B95B0415AE8TSRqgBfDiw3e12PVK-b9RjHo-np4Wq9nc2m-LUNBNMBDD2TQkUN2hsVQfQvTWQ6P7lU4THPikUQ9ZxQsxm17Q-ngz3wpQ_nOGmGowcx6E" id="GSWFL01" title="Manage Applications"><span>Admissions</span></a>
+
+</li>
+<li class="normaltab" >
+<a href="siw_portal.url?F269046BBCAE4F42lQKMR_Oq-Adif9X48pRvK6-iePYMUtYdaEQ7lKxunBupk_LcfNZa6Xotbxfv-K3ygwPb1wM1xzuM4XFmXoGqnIe0LI_Te3NNr52lZCSKfAg" id="GSAWD_AWD_01" ><span>Awards Portal</span></a>
+
+</li>
+<li class="normaltab" >
+<a href="siw_portal.url?EDB514F0CAA14C651DawEVZExyQw8_rE8VsMaHHrlxk16L9nV-AkdO6xQyX00HHNRgnaf9YS6ofFZCzvEJ19pkxx6tDS3GrYmzhiz8uZKApa2Whws-bOzkogvDk" id="GSAWD_NOM_01" ><span>Awards</span></a>
+
+</li>
+<li class="normaltab" >
+<a href="siw_portal.url?B45B97284CD04711YIDDKFDgLJm4Y9ogg2Y3RIZJKct9BIte-Py8xWEximgKJvnTBvq2gdXPm2AppIyULrtnbNWmb2nkhrTxA356gie3rqFVhuPUsVTl8-kacc4" id="GSMSG01" ><span>Admissions Messages</span></a>
+
+</li>
+
+						<li class="normaltab">
+							
+						</li>
+						<!--
+						<li class="normaltab">
+							 
+						</li>
+						-->
+						<li class="normaltab">
+							<a href="../run/SIW_LGN_LOGOUT.start_url?6259360E650F499EKwgP8muawl8TV60t3Gdb1yON78VOxJt-CPMUOT654dEwlkiGd_5Qzxq9zOILo4HO13DKfsk9L7-RPDIrTL9PdwnR5tRrb3t_VLv0ORACwPo" target="_self">Logout</a>
+						</li>
+           
+            </ul>
+        
+</div>
+
+</div>
+</header>
+
+      <!-- DIV sitspagecontent (see sits.css) encloses main page content.
+          It is opened in body-start, body-start-tabs, body-start-ipp and
+          closed in body-end, body-end-ipp
+       -->
+      <div id="sitspagecontent" class="container row-fluid">
+
+<!-- end of HTML from body-start.hts  -->
+<script type="text/javascript">sits_widget_bp = {"dt":{"emptyTable":"No information available","info":"Showing _START_ to _END_ of _TOTAL_ entries","infoEmpty":"No entries to show","infoFiltered":" (filtered from _MAX_ total entries)","lengthMenu":"Show _MENU_ entries","loadingRecords":"Loading...","processing":"Processing...","search":"Filter:","zeroRecords":"No matching entries found","paginate":{"first":"First","last":"Last","next":"Next","previous":"Previous"},"aria":{"sortAscending":": use to sort column ascending","sortDescending":": use to sort column descending"},"tribal":{"detailsLabelOpen":"Activate to show additional details for this row","detailsLabelClose":"Activate to hide additional details for this row","detailsLabelDataOpen":"Activate to show additional details for _DATA_","detailsLabelDataClose":"Activate to hide additional details for _DATA_"}},"ts":{"modes":["Stack","Swipe","Toggle"],"columns":"Col<span class=\"a11y-sm\">umn<\/span>s","columnBtnText":"Columns","columnsDialogError":"No eligible columns.","sort":"Sort","prevBtnText":"Show previous column on the following table","nextBtnText":"Show next column on the following table","prevBtnDisabledText":"Show previous column on the following table (not currently available)","nextBtnDisabledText":"Show next column on the following table (not currently available)","sortAscText":": use to sort column ascending","sortDescText":": use to sort column descending"},"pg":{"infoText":"Showing page {0} of {1}","infoWithRecsText":"Showing page {0} of {1} with {2} records per page","firstBtnText":"First","prevBtnText":"Previous","nextBtnText":"Next","lastBtnText":"Last","firstBtnAriaText":"Show first page","prevBtnAriaText":"Show previous page","nextBtnAriaText":"Show next page","lastBtnAriaText":"Show last page","pageBtnAriaText":"Show page {0}"},"tp":{"currentText":"Now","closeText":"Done","timeOnlyTitle":"Choose Time","timeText":"Time","hourText":"Hour","minuteText":"Minute","secondText":"Second","millisecText":"Millisecond","microsecText":"Microsecond","timezoneText":"Time Zone"},"ui":{"dialogOk":"Ok","dialogCancel":"Cancel","tabsClose":"Close","dialogClose":"Close","moreDetails":"More Details","datePickerDate":"Select a date","datePickerTime":"Select a time","datePickerDateTime":"Select a date\/time","loading":"Loading...","selectAllTitle":"Select All","selectAll":"Select All","selectNone":"Select None","invertAll":"Invert All","errorText":"Error","datePickerMonth":"Select a month","datePickerYear":"Select a year","tabsScrollLeft":"Scroll left","tabsScrollRight":"Scroll right"},"ld":{"loadTitle":"Loading","loadContent":"Loading, please wait...","processTitle":"Processing","processContent":"Processing, please wait...","saveTitle":"Saving","saveContent":"Saving, please wait..."},"to":{"sessionTitle":"Session Expiry","sessionContent":"Your session is due to expire in approximately {0} minute(s). If you would like to continue using this session, please click \"Continue\".","pageTitle":"Page Expiry","pageContent":"This page is due to expire in approximately {0} minute(s). If you would like to continue using this page, please click \"Continue\".","buttonContinue":"Continue"}};</script>
+<script>sits_user_timeout = "7A846DBC9B2C4DC9Kk_wG4fhNEo5TeknJY9ZStRwl66utaw5vZb4T4D3IhKFhUy-bepKIUDg9KKc0oMvwK97WRcL92drUxCochq7SlFRU6s3MqED";</script>
+<!-- body-start.hts page header include ends here -->
+
+<!-- Start Of Extra Javascripts -->
+<script type="text/javascript" src="../javascript/dmx_calendar.js"></script>
+<script type="text/javascript" src="../javascript/dmx_panel.js"></script>
+<script type="text/javascript" src="../javascript/dmx_tooltip.js"></script>
+<script type="text/javascript" src="../javascript/dmx_other.js"></script>
+<script type="text/javascript" src="../javascript/dmu.js"></script>
+<script type="text/javascript" src="../javascript/siw_sel.js"></script>
+<!-- End Of Extra Javascripts -->
+
+<!-- Start Of Extra Stylesheets -->
+<script type="text/javascript">
+sits_include_file("../css/siw_dmx_lite.css");
+</script>
+<!-- End Of Extra Stylesheets -->
+
+	<form method="POST" action="SIW_DMX_LITE" onSubmit="return uSubmit(this)" name="f" autocomplete="off">
+		
+			
+				<input type="hidden" name="NKEY.DUMMY.MENSYS.1" value="FC25E36497A44FADoWIkX7yepfJD3A27M7r9x1XwEHv7eiftq0oUMKhLMG2107XUgaXOT9fgauCXJOso51UWJkZGSMd6u3gclbAw8E20oK9BapzyBulo5svMSTA" />
+				<input type="hidden" name="RUN_MODE.DUMMY.MENSYS.1" value="ACT" />
+				<!-- message box -->
+        <div class="sv-panel sv-panel-success sv-message-box" role="alert">
+          <div class="sv-panel-heading">
+            <strong>Save successful</strong>
+            <div class="sv-hidden-xs sv-pull-right">SITS_STORE_SUCCESSFUL</div>
+          </div>
+          <div class="sv-panel-body">
+            Your changes have been saved successfully. 
+   
+          </div>
+        </div>
+        <!-- end of message box-->
+
+
+<!-- data section  -->
+<div class="sv-row">
+<div class="sv-col-md-12">
+<div class="sv-panel sv-panel-primary">
+<div class="sv-panel-heading">
+<h2 class="sv-panel-title">Manage Financial Accounts</h2>
+</div>
+<div class="sv-panel-body"><div class="sv-form-container"><div class="sv-form-horizontal"><fieldset><legend>Manage Financial Accounts</legend><div class="sv-form-group"><div class="sv-col-sm-2 sv-select-all dmx-select-all"></div><div class="sv-col-sm-3 sv-form-additional-info sv-help-block sv-small ">Now showing records 1 - 20 of 630</div></div></fieldset></div></div></div><div class="sv-table-container sv-table-responsive">
+<table class="sv-table tablesaw-sortable sv-table-striped" data-tablesaw-mode="swipe" data-tablesaw-maintain-widths="N" data-tablesaw-check-widths="Y" data-tablesaw-minimap data-tablesaw-allow-stack="Y">
+<caption>
+Manage Financial Accounts
+</caption>
+<thead><tr><th scope="col" data-tablesaw-priority="persist">  Select<input style = "display:none" type="checkbox" id="TOGGLE_SELECTED" class="sv-checkbox" title="Toggle Selected Rows" onclick="toggleSelect(this)"></th><th role="columnheader" scope="col" class="sv-table-col">Description</th><th role="columnheader" scope="col" class="sv-table-col">Fund ID</th><th role="columnheader" scope="col" class="sv-table-col">Dept ID</th><th role="columnheader" scope="col" class="sv-table-col">Program</th><th role="columnheader" scope="col" class="sv-table-col">Project</th><th role="columnheader" scope="col" class="sv-table-col">Account</th><th role="columnheader" scope="col" class="sv-table-col">Class</th><th role="columnheader" scope="col" class="sv-table-col">Speedcode</th><th role="columnheader" scope="col" class="sv-table-col">Combo Code</th><th role="columnheader" scope="col" class="sv-table-col">In Use?</th>
+</tr></thead>
+<tbody>
+
+
+<tr><td><input type="checkbox" name="SELECTED.DUMMY_OCCURRENCES.MENSYS.1" id="SELECTED.DUMMY_OCCURRENCES.MENSYS.1." value="1" class="sv-checkbox" title="Select Row 1"></td><td><input type="hidden" name="DMX.DUMMY_OCCURRENCES.MENSYS.1"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.1-1"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.2-1"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.3-1" value="UDD_NAME">
+<textarea name="VALUE.DUMMY_FIELDS.MENSYS.3-1" id="VALUE.DUMMY_FIELDS.MENSYS.3-1" cols="16" rows="2" class="sv-form-control sv-form-control-sm" title="Description">Vega Grad Schp1</textarea>
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.4-1" id="VALUE.DUMMY_FIELDS.MENSYS.4-1" value="E5133" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Fund ID"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.4-1" value="UDD_UDF1">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.5-1" id="VALUE.DUMMY_FIELDS.MENSYS.5-1" value="51000" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Dept ID"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.5-1" value="UDD_UDF2">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.6-1" id="VALUE.DUMMY_FIELDS.MENSYS.6-1" value="0" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Program"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.6-1" value="UDD_UDF3">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.7-1" id="VALUE.DUMMY_FIELDS.MENSYS.7-1" value="" maxlength="15" size="8" class="sv-form-control sv-form-control-sm" title="Project"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.7-1" value="UDD_UDF4">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.8-1" id="VALUE.DUMMY_FIELDS.MENSYS.8-1" value="500125" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Account"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.8-1" value="UDD_UDF5">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.9-1" id="VALUE.DUMMY_FIELDS.MENSYS.9-1" value="51300" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Class"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.9-1" value="UDD_UDF6">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.10-1" id="VALUE.DUMMY_FIELDS.MENSYS.10-1" value="001SF" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Speedcode"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.10-1" value="UDD_UDF7">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.11-1" id="VALUE.DUMMY_FIELDS.MENSYS.11-1" value="000036126" maxlength="15" size="8" class="sv-form-control sv-form-control-sm" title="Combo Code"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.11-1" value="UDD_UDF8">
+
+</td><td><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.12-1" value="UDD_IUSE">
+<input type="checkbox" name="VALUE.DUMMY_FIELDS.MENSYS.12-1" id="VALUE.DUMMY_FIELDS.MENSYS.12-1" value="Y" checked="checked" title="In Use?">
+<input type="hidden" name="%.DUMMY_FIELDS.MENSYS.1-1"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.2-1"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.3-1"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.4-1"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.5-1"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.6-1"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.7-1"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.8-1"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.9-1"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.10-1"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.11-1"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.12-1"></td></tr><tr><td><input type="checkbox" name="SELECTED.DUMMY_OCCURRENCES.MENSYS.2" id="SELECTED.DUMMY_OCCURRENCES.MENSYS.2." value="1" class="sv-checkbox" title="Select Row 2"></td><td><input type="hidden" name="DMX.DUMMY_OCCURRENCES.MENSYS.2"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.1-2"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.2-2"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.3-2" value="UDD_NAME">
+<textarea name="VALUE.DUMMY_FIELDS.MENSYS.3-2" id="VALUE.DUMMY_FIELDS.MENSYS.3-2" cols="16" rows="2" class="sv-form-control sv-form-control-sm" title="Description">Barns B Memorial Schp</textarea>
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.4-2" id="VALUE.DUMMY_FIELDS.MENSYS.4-2" value="E5192" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Fund ID"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.4-2" value="UDD_UDF1">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.5-2" id="VALUE.DUMMY_FIELDS.MENSYS.5-2" value="51000" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Dept ID"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.5-2" value="UDD_UDF2">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.6-2" id="VALUE.DUMMY_FIELDS.MENSYS.6-2" value="0" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Program"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.6-2" value="UDD_UDF3">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.7-2" id="VALUE.DUMMY_FIELDS.MENSYS.7-2" value="" maxlength="15" size="8" class="sv-form-control sv-form-control-sm" title="Project"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.7-2" value="UDD_UDF4">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.8-2" id="VALUE.DUMMY_FIELDS.MENSYS.8-2" value="500125" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Account"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.8-2" value="UDD_UDF5">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.9-2" id="VALUE.DUMMY_FIELDS.MENSYS.9-2" value="51300" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Class"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.9-2" value="UDD_UDF6">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.10-2" id="VALUE.DUMMY_FIELDS.MENSYS.10-2" value="002SF" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Speedcode"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.10-2" value="UDD_UDF7">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.11-2" id="VALUE.DUMMY_FIELDS.MENSYS.11-2" value="000120120" maxlength="15" size="8" class="sv-form-control sv-form-control-sm" title="Combo Code"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.11-2" value="UDD_UDF8">
+
+</td><td><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.12-2" value="UDD_IUSE">
+<input type="checkbox" name="VALUE.DUMMY_FIELDS.MENSYS.12-2" id="VALUE.DUMMY_FIELDS.MENSYS.12-2" value="Y" checked="checked" title="In Use?">
+<input type="hidden" name="%.DUMMY_FIELDS.MENSYS.1-2"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.2-2"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.3-2"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.4-2"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.5-2"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.6-2"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.7-2"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.8-2"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.9-2"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.10-2"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.11-2"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.12-2"></td></tr><tr><td><input type="checkbox" name="SELECTED.DUMMY_OCCURRENCES.MENSYS.3" id="SELECTED.DUMMY_OCCURRENCES.MENSYS.3." value="1" class="sv-checkbox" title="Select Row 3"></td><td><input type="hidden" name="DMX.DUMMY_OCCURRENCES.MENSYS.3"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.1-3"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.2-3"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.3-3" value="UDD_NAME">
+<textarea name="VALUE.DUMMY_FIELDS.MENSYS.3-3" id="VALUE.DUMMY_FIELDS.MENSYS.3-3" cols="16" rows="2" class="sv-form-control sv-form-control-sm" title="Description">Thomas Farrell Greenhalgh Mem Schp</textarea>
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.4-3" id="VALUE.DUMMY_FIELDS.MENSYS.4-3" value="E5217" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Fund ID"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.4-3" value="UDD_UDF1">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.5-3" id="VALUE.DUMMY_FIELDS.MENSYS.5-3" value="51000" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Dept ID"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.5-3" value="UDD_UDF2">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.6-3" id="VALUE.DUMMY_FIELDS.MENSYS.6-3" value="0" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Program"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.6-3" value="UDD_UDF3">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.7-3" id="VALUE.DUMMY_FIELDS.MENSYS.7-3" value="" maxlength="15" size="8" class="sv-form-control sv-form-control-sm" title="Project"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.7-3" value="UDD_UDF4">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.8-3" id="VALUE.DUMMY_FIELDS.MENSYS.8-3" value="500125" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Account"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.8-3" value="UDD_UDF5">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.9-3" id="VALUE.DUMMY_FIELDS.MENSYS.9-3" value="51300" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Class"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.9-3" value="UDD_UDF6">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.10-3" id="VALUE.DUMMY_FIELDS.MENSYS.10-3" value="003SF" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Speedcode"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.10-3" value="UDD_UDF7">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.11-3" id="VALUE.DUMMY_FIELDS.MENSYS.11-3" value="000036380" maxlength="15" size="8" class="sv-form-control sv-form-control-sm" title="Combo Code"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.11-3" value="UDD_UDF8">
+
+</td><td><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.12-3" value="UDD_IUSE">
+<input type="checkbox" name="VALUE.DUMMY_FIELDS.MENSYS.12-3" id="VALUE.DUMMY_FIELDS.MENSYS.12-3" value="Y" checked="checked" title="In Use?">
+<input type="hidden" name="%.DUMMY_FIELDS.MENSYS.1-3"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.2-3"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.3-3"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.4-3"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.5-3"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.6-3"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.7-3"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.8-3"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.9-3"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.10-3"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.11-3"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.12-3"></td></tr><tr><td><input type="checkbox" name="SELECTED.DUMMY_OCCURRENCES.MENSYS.4" id="SELECTED.DUMMY_OCCURRENCES.MENSYS.4." value="1" class="sv-checkbox" title="Select Row 4"></td><td><input type="hidden" name="DMX.DUMMY_OCCURRENCES.MENSYS.4"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.1-4"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.2-4"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.3-4" value="UDD_NAME">
+<textarea name="VALUE.DUMMY_FIELDS.MENSYS.3-4" id="VALUE.DUMMY_FIELDS.MENSYS.3-4" cols="16" rows="2" class="sv-form-control sv-form-control-sm" title="Description">TD Bank Health Science Student Awards</textarea>
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.4-4" id="VALUE.DUMMY_FIELDS.MENSYS.4-4" value="E7036" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Fund ID"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.4-4" value="UDD_UDF1">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.5-4" id="VALUE.DUMMY_FIELDS.MENSYS.5-4" value="510000" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Dept ID"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.5-4" value="UDD_UDF2">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.6-4" id="VALUE.DUMMY_FIELDS.MENSYS.6-4" value="0" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Program"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.6-4" value="UDD_UDF3">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.7-4" id="VALUE.DUMMY_FIELDS.MENSYS.7-4" value="" maxlength="15" size="8" class="sv-form-control sv-form-control-sm" title="Project"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.7-4" value="UDD_UDF4">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.8-4" id="VALUE.DUMMY_FIELDS.MENSYS.8-4" value="500125" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Account"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.8-4" value="UDD_UDF5">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.9-4" id="VALUE.DUMMY_FIELDS.MENSYS.9-4" value="51300" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Class"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.9-4" value="UDD_UDF6">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.10-4" id="VALUE.DUMMY_FIELDS.MENSYS.10-4" value="004SF" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Speedcode"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.10-4" value="UDD_UDF7">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.11-4" id="VALUE.DUMMY_FIELDS.MENSYS.11-4" value="000068939" maxlength="15" size="8" class="sv-form-control sv-form-control-sm" title="Combo Code"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.11-4" value="UDD_UDF8">
+
+</td><td><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.12-4" value="UDD_IUSE">
+<input type="checkbox" name="VALUE.DUMMY_FIELDS.MENSYS.12-4" id="VALUE.DUMMY_FIELDS.MENSYS.12-4" value="Y" checked="checked" title="In Use?">
+<input type="hidden" name="%.DUMMY_FIELDS.MENSYS.1-4"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.2-4"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.3-4"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.4-4"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.5-4"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.6-4"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.7-4"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.8-4"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.9-4"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.10-4"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.11-4"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.12-4"></td></tr><tr><td><input type="checkbox" name="SELECTED.DUMMY_OCCURRENCES.MENSYS.5" id="SELECTED.DUMMY_OCCURRENCES.MENSYS.5." value="1" class="sv-checkbox" title="Select Row 5"></td><td><input type="hidden" name="DMX.DUMMY_OCCURRENCES.MENSYS.5"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.1-5"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.2-5"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.3-5" value="UDD_NAME">
+<textarea name="VALUE.DUMMY_FIELDS.MENSYS.3-5" id="VALUE.DUMMY_FIELDS.MENSYS.3-5" cols="16" rows="2" class="sv-form-control sv-form-control-sm" title="Description">Helen DeSilva Buchanan Grad Schp</textarea>
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.4-5" id="VALUE.DUMMY_FIELDS.MENSYS.4-5" value="E5648" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Fund ID"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.4-5" value="UDD_UDF1">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.5-5" id="VALUE.DUMMY_FIELDS.MENSYS.5-5" value="510000" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Dept ID"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.5-5" value="UDD_UDF2">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.6-5" id="VALUE.DUMMY_FIELDS.MENSYS.6-5" value="0" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Program"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.6-5" value="UDD_UDF3">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.7-5" id="VALUE.DUMMY_FIELDS.MENSYS.7-5" value="" maxlength="15" size="8" class="sv-form-control sv-form-control-sm" title="Project"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.7-5" value="UDD_UDF4">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.8-5" id="VALUE.DUMMY_FIELDS.MENSYS.8-5" value="500125" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Account"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.8-5" value="UDD_UDF5">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.9-5" id="VALUE.DUMMY_FIELDS.MENSYS.9-5" value="51300" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Class"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.9-5" value="UDD_UDF6">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.10-5" id="VALUE.DUMMY_FIELDS.MENSYS.10-5" value="006SF" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Speedcode"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.10-5" value="UDD_UDF7">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.11-5" id="VALUE.DUMMY_FIELDS.MENSYS.11-5" value="" maxlength="15" size="8" class="sv-form-control sv-form-control-sm" title="Combo Code"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.11-5" value="UDD_UDF8">
+
+</td><td><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.12-5" value="UDD_IUSE">
+<input type="checkbox" name="VALUE.DUMMY_FIELDS.MENSYS.12-5" id="VALUE.DUMMY_FIELDS.MENSYS.12-5" value="Y" checked="checked" title="In Use?">
+<input type="hidden" name="%.DUMMY_FIELDS.MENSYS.1-5"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.2-5"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.3-5"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.4-5"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.5-5"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.6-5"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.7-5"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.8-5"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.9-5"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.10-5"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.11-5"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.12-5"></td></tr><tr><td><input type="checkbox" name="SELECTED.DUMMY_OCCURRENCES.MENSYS.6" id="SELECTED.DUMMY_OCCURRENCES.MENSYS.6." value="1" class="sv-checkbox" title="Select Row 6"></td><td><input type="hidden" name="DMX.DUMMY_OCCURRENCES.MENSYS.6"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.1-6"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.2-6"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.3-6" value="UDD_NAME">
+<textarea name="VALUE.DUMMY_FIELDS.MENSYS.3-6" id="VALUE.DUMMY_FIELDS.MENSYS.3-6" cols="16" rows="2" class="sv-form-control sv-form-control-sm" title="Description">Dallas Cullen Schp Gender & Social Justice Studies</textarea>
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.4-6" id="VALUE.DUMMY_FIELDS.MENSYS.4-6" value="E5096" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Fund ID"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.4-6" value="UDD_UDF1">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.5-6" id="VALUE.DUMMY_FIELDS.MENSYS.5-6" value="150300" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Dept ID"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.5-6" value="UDD_UDF2">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.6-6" id="VALUE.DUMMY_FIELDS.MENSYS.6-6" value="0" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Program"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.6-6" value="UDD_UDF3">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.7-6" id="VALUE.DUMMY_FIELDS.MENSYS.7-6" value="" maxlength="15" size="8" class="sv-form-control sv-form-control-sm" title="Project"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.7-6" value="UDD_UDF4">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.8-6" id="VALUE.DUMMY_FIELDS.MENSYS.8-6" value="500125" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Account"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.8-6" value="UDD_UDF5">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.9-6" id="VALUE.DUMMY_FIELDS.MENSYS.9-6" value="0" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Class"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.9-6" value="UDD_UDF6">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.10-6" id="VALUE.DUMMY_FIELDS.MENSYS.10-6" value="01208" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Speedcode"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.10-6" value="UDD_UDF7">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.11-6" id="VALUE.DUMMY_FIELDS.MENSYS.11-6" value="000027662" maxlength="15" size="8" class="sv-form-control sv-form-control-sm" title="Combo Code"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.11-6" value="UDD_UDF8">
+
+</td><td><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.12-6" value="UDD_IUSE">
+<input type="checkbox" name="VALUE.DUMMY_FIELDS.MENSYS.12-6" id="VALUE.DUMMY_FIELDS.MENSYS.12-6" value="Y" checked="checked" title="In Use?">
+<input type="hidden" name="%.DUMMY_FIELDS.MENSYS.1-6"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.2-6"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.3-6"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.4-6"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.5-6"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.6-6"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.7-6"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.8-6"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.9-6"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.10-6"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.11-6"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.12-6"></td></tr><tr><td><input type="checkbox" name="SELECTED.DUMMY_OCCURRENCES.MENSYS.7" id="SELECTED.DUMMY_OCCURRENCES.MENSYS.7." value="1" class="sv-checkbox" title="Select Row 7"></td><td><input type="hidden" name="DMX.DUMMY_OCCURRENCES.MENSYS.7"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.1-7"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.2-7"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.3-7" value="UDD_NAME">
+<textarea name="VALUE.DUMMY_FIELDS.MENSYS.3-7" id="VALUE.DUMMY_FIELDS.MENSYS.3-7" cols="16" rows="2" class="sv-form-control sv-form-control-sm" title="Description">Dissertation Fellowship</textarea>
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.4-7" id="VALUE.DUMMY_FIELDS.MENSYS.4-7" value="100" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Fund ID"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.4-7" value="UDD_UDF1">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.5-7" id="VALUE.DUMMY_FIELDS.MENSYS.5-7" value="220100" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Dept ID"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.5-7" value="UDD_UDF2">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.6-7" id="VALUE.DUMMY_FIELDS.MENSYS.6-7" value="85000" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Program"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.6-7" value="UDD_UDF3">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.7-7" id="VALUE.DUMMY_FIELDS.MENSYS.7-7" value="" maxlength="15" size="8" class="sv-form-control sv-form-control-sm" title="Project"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.7-7" value="UDD_UDF4">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.8-7" id="VALUE.DUMMY_FIELDS.MENSYS.8-7" value="500125" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Account"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.8-7" value="UDD_UDF5">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.9-7" id="VALUE.DUMMY_FIELDS.MENSYS.9-7" value="0" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Class"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.9-7" value="UDD_UDF6">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.10-7" id="VALUE.DUMMY_FIELDS.MENSYS.10-7" value="02793" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Speedcode"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.10-7" value="UDD_UDF7">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.11-7" id="VALUE.DUMMY_FIELDS.MENSYS.11-7" value="" maxlength="15" size="8" class="sv-form-control sv-form-control-sm" title="Combo Code"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.11-7" value="UDD_UDF8">
+
+</td><td><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.12-7" value="UDD_IUSE">
+<input type="checkbox" name="VALUE.DUMMY_FIELDS.MENSYS.12-7" id="VALUE.DUMMY_FIELDS.MENSYS.12-7" value="Y" checked="checked" title="In Use?">
+<input type="hidden" name="%.DUMMY_FIELDS.MENSYS.1-7"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.2-7"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.3-7"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.4-7"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.5-7"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.6-7"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.7-7"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.8-7"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.9-7"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.10-7"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.11-7"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.12-7"></td></tr><tr><td><input type="checkbox" name="SELECTED.DUMMY_OCCURRENCES.MENSYS.8" id="SELECTED.DUMMY_OCCURRENCES.MENSYS.8." value="1" class="sv-checkbox" title="Select Row 8"></td><td><input type="hidden" name="DMX.DUMMY_OCCURRENCES.MENSYS.8"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.1-8"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.2-8"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.3-8" value="UDD_NAME">
+<textarea name="VALUE.DUMMY_FIELDS.MENSYS.3-8" id="VALUE.DUMMY_FIELDS.MENSYS.3-8" cols="16" rows="2" class="sv-form-control sv-form-control-sm" title="Description">MA Recruit UofA Thesis Master's Schlp</textarea>
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.4-8" id="VALUE.DUMMY_FIELDS.MENSYS.4-8" value="100" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Fund ID"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.4-8" value="UDD_UDF1">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.5-8" id="VALUE.DUMMY_FIELDS.MENSYS.5-8" value="220100" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Dept ID"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.5-8" value="UDD_UDF2">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.6-8" id="VALUE.DUMMY_FIELDS.MENSYS.6-8" value="85001" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Program"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.6-8" value="UDD_UDF3">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.7-8" id="VALUE.DUMMY_FIELDS.MENSYS.7-8" value="" maxlength="15" size="8" class="sv-form-control sv-form-control-sm" title="Project"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.7-8" value="UDD_UDF4">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.8-8" id="VALUE.DUMMY_FIELDS.MENSYS.8-8" value="500125" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Account"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.8-8" value="UDD_UDF5">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.9-8" id="VALUE.DUMMY_FIELDS.MENSYS.9-8" value="0" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Class"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.9-8" value="UDD_UDF6">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.10-8" id="VALUE.DUMMY_FIELDS.MENSYS.10-8" value="02796" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Speedcode"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.10-8" value="UDD_UDF7">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.11-8" id="VALUE.DUMMY_FIELDS.MENSYS.11-8" value="000025906" maxlength="15" size="8" class="sv-form-control sv-form-control-sm" title="Combo Code"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.11-8" value="UDD_UDF8">
+
+</td><td><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.12-8" value="UDD_IUSE">
+<input type="checkbox" name="VALUE.DUMMY_FIELDS.MENSYS.12-8" id="VALUE.DUMMY_FIELDS.MENSYS.12-8" value="Y" checked="checked" title="In Use?">
+<input type="hidden" name="%.DUMMY_FIELDS.MENSYS.1-8"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.2-8"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.3-8"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.4-8"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.5-8"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.6-8"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.7-8"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.8-8"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.9-8"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.10-8"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.11-8"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.12-8"></td></tr><tr><td><input type="checkbox" name="SELECTED.DUMMY_OCCURRENCES.MENSYS.9" id="SELECTED.DUMMY_OCCURRENCES.MENSYS.9." value="1" class="sv-checkbox" title="Select Row 9"></td><td><input type="hidden" name="DMX.DUMMY_OCCURRENCES.MENSYS.9"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.1-9"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.2-9"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.3-9" value="UDD_NAME">
+<textarea name="VALUE.DUMMY_FIELDS.MENSYS.3-9" id="VALUE.DUMMY_FIELDS.MENSYS.3-9" cols="16" rows="2" class="sv-form-control sv-form-control-sm" title="Description">MA Recuitment Fees</textarea>
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.4-9" id="VALUE.DUMMY_FIELDS.MENSYS.4-9" value="100" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Fund ID"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.4-9" value="UDD_UDF1">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.5-9" id="VALUE.DUMMY_FIELDS.MENSYS.5-9" value="220100" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Dept ID"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.5-9" value="UDD_UDF2">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.6-9" id="VALUE.DUMMY_FIELDS.MENSYS.6-9" value="85001" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Program"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.6-9" value="UDD_UDF3">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.7-9" id="VALUE.DUMMY_FIELDS.MENSYS.7-9" value="" maxlength="15" size="8" class="sv-form-control sv-form-control-sm" title="Project"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.7-9" value="UDD_UDF4">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.8-9" id="VALUE.DUMMY_FIELDS.MENSYS.8-9" value="500125" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Account"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.8-9" value="UDD_UDF5">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.9-9" id="VALUE.DUMMY_FIELDS.MENSYS.9-9" value="" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Class"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.9-9" value="UDD_UDF6">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.10-9" id="VALUE.DUMMY_FIELDS.MENSYS.10-9" value="02796" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Speedcode"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.10-9" value="UDD_UDF7">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.11-9" id="VALUE.DUMMY_FIELDS.MENSYS.11-9" value="" maxlength="15" size="8" class="sv-form-control sv-form-control-sm" title="Combo Code"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.11-9" value="UDD_UDF8">
+
+</td><td><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.12-9" value="UDD_IUSE">
+<input type="checkbox" name="VALUE.DUMMY_FIELDS.MENSYS.12-9" id="VALUE.DUMMY_FIELDS.MENSYS.12-9" value="Y" checked="checked" title="In Use?">
+<input type="hidden" name="%.DUMMY_FIELDS.MENSYS.1-9"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.2-9"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.3-9"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.4-9"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.5-9"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.6-9"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.7-9"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.8-9"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.9-9"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.10-9"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.11-9"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.12-9"></td></tr><tr><td><input type="checkbox" name="SELECTED.DUMMY_OCCURRENCES.MENSYS.10" id="SELECTED.DUMMY_OCCURRENCES.MENSYS.10." value="1" class="sv-checkbox" title="Select Row 10"></td><td><input type="hidden" name="DMX.DUMMY_OCCURRENCES.MENSYS.10"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.1-10"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.2-10"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.3-10" value="UDD_NAME">
+<textarea name="VALUE.DUMMY_FIELDS.MENSYS.3-10" id="VALUE.DUMMY_FIELDS.MENSYS.3-10" cols="16" rows="2" class="sv-form-control sv-form-control-sm" title="Description">Graduate Intern Tuition Supplement</textarea>
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.4-10" id="VALUE.DUMMY_FIELDS.MENSYS.4-10" value="100" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Fund ID"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.4-10" value="UDD_UDF1">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.5-10" id="VALUE.DUMMY_FIELDS.MENSYS.5-10" value="220100" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Dept ID"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.5-10" value="UDD_UDF2">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.6-10" id="VALUE.DUMMY_FIELDS.MENSYS.6-10" value="85002" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Program"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.6-10" value="UDD_UDF3">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.7-10" id="VALUE.DUMMY_FIELDS.MENSYS.7-10" value="" maxlength="15" size="8" class="sv-form-control sv-form-control-sm" title="Project"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.7-10" value="UDD_UDF4">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.8-10" id="VALUE.DUMMY_FIELDS.MENSYS.8-10" value="" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Account"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.8-10" value="UDD_UDF5">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.9-10" id="VALUE.DUMMY_FIELDS.MENSYS.9-10" value="0" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Class"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.9-10" value="UDD_UDF6">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.10-10" id="VALUE.DUMMY_FIELDS.MENSYS.10-10" value="02797" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Speedcode"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.10-10" value="UDD_UDF7">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.11-10" id="VALUE.DUMMY_FIELDS.MENSYS.11-10" value="" maxlength="15" size="8" class="sv-form-control sv-form-control-sm" title="Combo Code"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.11-10" value="UDD_UDF8">
+
+</td><td><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.12-10" value="UDD_IUSE">
+<input type="checkbox" name="VALUE.DUMMY_FIELDS.MENSYS.12-10" id="VALUE.DUMMY_FIELDS.MENSYS.12-10" value="Y" checked="checked" title="In Use?">
+<input type="hidden" name="%.DUMMY_FIELDS.MENSYS.1-10"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.2-10"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.3-10"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.4-10"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.5-10"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.6-10"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.7-10"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.8-10"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.9-10"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.10-10"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.11-10"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.12-10"></td></tr><tr><td><input type="checkbox" name="SELECTED.DUMMY_OCCURRENCES.MENSYS.11" id="SELECTED.DUMMY_OCCURRENCES.MENSYS.11." value="1" class="sv-checkbox" title="Select Row 11"></td><td><input type="hidden" name="DMX.DUMMY_OCCURRENCES.MENSYS.11"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.1-11"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.2-11"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.3-11" value="UDD_NAME">
+<textarea name="VALUE.DUMMY_FIELDS.MENSYS.3-11" id="VALUE.DUMMY_FIELDS.MENSYS.3-11" cols="16" rows="2" class="sv-form-control sv-form-control-sm" title="Description">WHJ and PDPD</textarea>
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.4-11" id="VALUE.DUMMY_FIELDS.MENSYS.4-11" value="100" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Fund ID"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.4-11" value="UDD_UDF1">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.5-11" id="VALUE.DUMMY_FIELDS.MENSYS.5-11" value="220100" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Dept ID"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.5-11" value="UDD_UDF2">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.6-11" id="VALUE.DUMMY_FIELDS.MENSYS.6-11" value="85003" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Program"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.6-11" value="UDD_UDF3">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.7-11" id="VALUE.DUMMY_FIELDS.MENSYS.7-11" value="" maxlength="15" size="8" class="sv-form-control sv-form-control-sm" title="Project"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.7-11" value="UDD_UDF4">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.8-11" id="VALUE.DUMMY_FIELDS.MENSYS.8-11" value="500125" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Account"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.8-11" value="UDD_UDF5">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.9-11" id="VALUE.DUMMY_FIELDS.MENSYS.9-11" value="0" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Class"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.9-11" value="UDD_UDF6">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.10-11" id="VALUE.DUMMY_FIELDS.MENSYS.10-11" value="02798" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Speedcode"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.10-11" value="UDD_UDF7">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.11-11" id="VALUE.DUMMY_FIELDS.MENSYS.11-11" value="000025908" maxlength="15" size="8" class="sv-form-control sv-form-control-sm" title="Combo Code"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.11-11" value="UDD_UDF8">
+
+</td><td><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.12-11" value="UDD_IUSE">
+<input type="checkbox" name="VALUE.DUMMY_FIELDS.MENSYS.12-11" id="VALUE.DUMMY_FIELDS.MENSYS.12-11" value="Y" checked="checked" title="In Use?">
+<input type="hidden" name="%.DUMMY_FIELDS.MENSYS.1-11"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.2-11"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.3-11"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.4-11"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.5-11"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.6-11"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.7-11"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.8-11"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.9-11"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.10-11"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.11-11"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.12-11"></td></tr><tr><td><input type="checkbox" name="SELECTED.DUMMY_OCCURRENCES.MENSYS.12" id="SELECTED.DUMMY_OCCURRENCES.MENSYS.12." value="1" class="sv-checkbox" title="Select Row 12"></td><td><input type="hidden" name="DMX.DUMMY_OCCURRENCES.MENSYS.12"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.1-12"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.2-12"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.3-12" value="UDD_NAME">
+<textarea name="VALUE.DUMMY_FIELDS.MENSYS.3-12" id="VALUE.DUMMY_FIELDS.MENSYS.3-12" cols="16" rows="2" class="sv-form-control sv-form-control-sm" title="Description">Rogers Sugar Ltd Scholarship</textarea>
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.4-12" id="VALUE.DUMMY_FIELDS.MENSYS.4-12" value="530" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Fund ID"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.4-12" value="UDD_UDF1">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.5-12" id="VALUE.DUMMY_FIELDS.MENSYS.5-12" value="220100" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Dept ID"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.5-12" value="UDD_UDF2">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.6-12" id="VALUE.DUMMY_FIELDS.MENSYS.6-12" value="GS012" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Program"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.6-12" value="UDD_UDF3">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.7-12" id="VALUE.DUMMY_FIELDS.MENSYS.7-12" value="RES0031092" maxlength="15" size="8" class="sv-form-control sv-form-control-sm" title="Project"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.7-12" value="UDD_UDF4">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.8-12" id="VALUE.DUMMY_FIELDS.MENSYS.8-12" value="500125" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Account"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.8-12" value="UDD_UDF5">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.9-12" id="VALUE.DUMMY_FIELDS.MENSYS.9-12" value="0" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Class"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.9-12" value="UDD_UDF6">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.10-12" id="VALUE.DUMMY_FIELDS.MENSYS.10-12" value="02827" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Speedcode"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.10-12" value="UDD_UDF7">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.11-12" id="VALUE.DUMMY_FIELDS.MENSYS.11-12" value="000025941" maxlength="15" size="8" class="sv-form-control sv-form-control-sm" title="Combo Code"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.11-12" value="UDD_UDF8">
+
+</td><td><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.12-12" value="UDD_IUSE">
+<input type="checkbox" name="VALUE.DUMMY_FIELDS.MENSYS.12-12" id="VALUE.DUMMY_FIELDS.MENSYS.12-12" value="Y" checked="checked" title="In Use?">
+<input type="hidden" name="%.DUMMY_FIELDS.MENSYS.1-12"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.2-12"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.3-12"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.4-12"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.5-12"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.6-12"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.7-12"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.8-12"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.9-12"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.10-12"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.11-12"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.12-12"></td></tr><tr><td><input type="checkbox" name="SELECTED.DUMMY_OCCURRENCES.MENSYS.13" id="SELECTED.DUMMY_OCCURRENCES.MENSYS.13." value="1" class="sv-checkbox" title="Select Row 13"></td><td><input type="hidden" name="DMX.DUMMY_OCCURRENCES.MENSYS.13"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.1-13"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.2-13"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.3-13" value="UDD_NAME">
+<textarea name="VALUE.DUMMY_FIELDS.MENSYS.3-13" id="VALUE.DUMMY_FIELDS.MENSYS.3-13" cols="16" rows="2" class="sv-form-control sv-form-control-sm" title="Description">Alberta Research Council (Karl A Clark) Meml Schp</textarea>
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.4-13" id="VALUE.DUMMY_FIELDS.MENSYS.4-13" value="550" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Fund ID"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.4-13" value="UDD_UDF1">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.5-13" id="VALUE.DUMMY_FIELDS.MENSYS.5-13" value="220100" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Dept ID"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.5-13" value="UDD_UDF2">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.6-13" id="VALUE.DUMMY_FIELDS.MENSYS.6-13" value="0" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Program"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.6-13" value="UDD_UDF3">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.7-13" id="VALUE.DUMMY_FIELDS.MENSYS.7-13" value="S000000007" maxlength="15" size="8" class="sv-form-control sv-form-control-sm" title="Project"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.7-13" value="UDD_UDF4">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.8-13" id="VALUE.DUMMY_FIELDS.MENSYS.8-13" value="" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Account"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.8-13" value="UDD_UDF5">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.9-13" id="VALUE.DUMMY_FIELDS.MENSYS.9-13" value="0" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Class"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.9-13" value="UDD_UDF6">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.10-13" id="VALUE.DUMMY_FIELDS.MENSYS.10-13" value="02828" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Speedcode"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.10-13" value="UDD_UDF7">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.11-13" id="VALUE.DUMMY_FIELDS.MENSYS.11-13" value="" maxlength="15" size="8" class="sv-form-control sv-form-control-sm" title="Combo Code"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.11-13" value="UDD_UDF8">
+
+</td><td><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.12-13" value="UDD_IUSE">
+<input type="checkbox" name="VALUE.DUMMY_FIELDS.MENSYS.12-13" id="VALUE.DUMMY_FIELDS.MENSYS.12-13" value="Y" checked="checked" title="In Use?">
+<input type="hidden" name="%.DUMMY_FIELDS.MENSYS.1-13"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.2-13"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.3-13"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.4-13"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.5-13"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.6-13"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.7-13"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.8-13"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.9-13"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.10-13"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.11-13"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.12-13"></td></tr><tr><td><input type="checkbox" name="SELECTED.DUMMY_OCCURRENCES.MENSYS.14" id="SELECTED.DUMMY_OCCURRENCES.MENSYS.14." value="1" class="sv-checkbox" title="Select Row 14"></td><td><input type="hidden" name="DMX.DUMMY_OCCURRENCES.MENSYS.14"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.1-14"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.2-14"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.3-14" value="UDD_NAME">
+<textarea name="VALUE.DUMMY_FIELDS.MENSYS.3-14" id="VALUE.DUMMY_FIELDS.MENSYS.3-14" cols="16" rows="2" class="sv-form-control sv-form-control-sm" title="Description">Pfizer Research Scholarship</textarea>
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.4-14" id="VALUE.DUMMY_FIELDS.MENSYS.4-14" value="550" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Fund ID"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.4-14" value="UDD_UDF1">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.5-14" id="VALUE.DUMMY_FIELDS.MENSYS.5-14" value="220100" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Dept ID"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.5-14" value="UDD_UDF2">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.6-14" id="VALUE.DUMMY_FIELDS.MENSYS.6-14" value="0" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Program"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.6-14" value="UDD_UDF3">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.7-14" id="VALUE.DUMMY_FIELDS.MENSYS.7-14" value="S000000174" maxlength="15" size="8" class="sv-form-control sv-form-control-sm" title="Project"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.7-14" value="UDD_UDF4">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.8-14" id="VALUE.DUMMY_FIELDS.MENSYS.8-14" value="" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Account"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.8-14" value="UDD_UDF5">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.9-14" id="VALUE.DUMMY_FIELDS.MENSYS.9-14" value="0" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Class"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.9-14" value="UDD_UDF6">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.10-14" id="VALUE.DUMMY_FIELDS.MENSYS.10-14" value="02830" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Speedcode"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.10-14" value="UDD_UDF7">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.11-14" id="VALUE.DUMMY_FIELDS.MENSYS.11-14" value="" maxlength="15" size="8" class="sv-form-control sv-form-control-sm" title="Combo Code"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.11-14" value="UDD_UDF8">
+
+</td><td><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.12-14" value="UDD_IUSE">
+<input type="checkbox" name="VALUE.DUMMY_FIELDS.MENSYS.12-14" id="VALUE.DUMMY_FIELDS.MENSYS.12-14" value="Y" checked="checked" title="In Use?">
+<input type="hidden" name="%.DUMMY_FIELDS.MENSYS.1-14"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.2-14"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.3-14"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.4-14"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.5-14"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.6-14"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.7-14"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.8-14"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.9-14"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.10-14"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.11-14"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.12-14"></td></tr><tr><td><input type="checkbox" name="SELECTED.DUMMY_OCCURRENCES.MENSYS.15" id="SELECTED.DUMMY_OCCURRENCES.MENSYS.15." value="1" class="sv-checkbox" title="Select Row 15"></td><td><input type="hidden" name="DMX.DUMMY_OCCURRENCES.MENSYS.15"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.1-15"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.2-15"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.3-15" value="UDD_NAME">
+<textarea name="VALUE.DUMMY_FIELDS.MENSYS.3-15" id="VALUE.DUMMY_FIELDS.MENSYS.3-15" cols="16" rows="2" class="sv-form-control sv-form-control-sm" title="Description">Parke-Davis Canada Centennial Pharmacy Res Awd</textarea>
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.4-15" id="VALUE.DUMMY_FIELDS.MENSYS.4-15" value="553" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Fund ID"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.4-15" value="UDD_UDF1">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.5-15" id="VALUE.DUMMY_FIELDS.MENSYS.5-15" value="220100" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Dept ID"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.5-15" value="UDD_UDF2">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.6-15" id="VALUE.DUMMY_FIELDS.MENSYS.6-15" value="GS013" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Program"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.6-15" value="UDD_UDF3">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.7-15" id="VALUE.DUMMY_FIELDS.MENSYS.7-15" value="" maxlength="15" size="8" class="sv-form-control sv-form-control-sm" title="Project"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.7-15" value="UDD_UDF4">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.8-15" id="VALUE.DUMMY_FIELDS.MENSYS.8-15" value="" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Account"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.8-15" value="UDD_UDF5">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.9-15" id="VALUE.DUMMY_FIELDS.MENSYS.9-15" value="0" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Class"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.9-15" value="UDD_UDF6">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.10-15" id="VALUE.DUMMY_FIELDS.MENSYS.10-15" value="02832" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Speedcode"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.10-15" value="UDD_UDF7">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.11-15" id="VALUE.DUMMY_FIELDS.MENSYS.11-15" value="" maxlength="15" size="8" class="sv-form-control sv-form-control-sm" title="Combo Code"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.11-15" value="UDD_UDF8">
+
+</td><td><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.12-15" value="UDD_IUSE">
+<input type="checkbox" name="VALUE.DUMMY_FIELDS.MENSYS.12-15" id="VALUE.DUMMY_FIELDS.MENSYS.12-15" value="Y" checked="checked" title="In Use?">
+<input type="hidden" name="%.DUMMY_FIELDS.MENSYS.1-15"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.2-15"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.3-15"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.4-15"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.5-15"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.6-15"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.7-15"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.8-15"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.9-15"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.10-15"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.11-15"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.12-15"></td></tr><tr><td><input type="checkbox" name="SELECTED.DUMMY_OCCURRENCES.MENSYS.16" id="SELECTED.DUMMY_OCCURRENCES.MENSYS.16." value="1" class="sv-checkbox" title="Select Row 16"></td><td><input type="hidden" name="DMX.DUMMY_OCCURRENCES.MENSYS.16"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.1-16"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.2-16"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.3-16" value="UDD_NAME">
+<textarea name="VALUE.DUMMY_FIELDS.MENSYS.3-16" id="VALUE.DUMMY_FIELDS.MENSYS.3-16" cols="16" rows="2" class="sv-form-control sv-form-control-sm" title="Description">St John's Inst Schp in memory of Samuel Woloshyn</textarea>
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.4-16" id="VALUE.DUMMY_FIELDS.MENSYS.4-16" value="550" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Fund ID"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.4-16" value="UDD_UDF1">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.5-16" id="VALUE.DUMMY_FIELDS.MENSYS.5-16" value="220100" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Dept ID"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.5-16" value="UDD_UDF2">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.6-16" id="VALUE.DUMMY_FIELDS.MENSYS.6-16" value="0" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Program"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.6-16" value="UDD_UDF3">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.7-16" id="VALUE.DUMMY_FIELDS.MENSYS.7-16" value="S000000199" maxlength="15" size="8" class="sv-form-control sv-form-control-sm" title="Project"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.7-16" value="UDD_UDF4">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.8-16" id="VALUE.DUMMY_FIELDS.MENSYS.8-16" value="" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Account"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.8-16" value="UDD_UDF5">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.9-16" id="VALUE.DUMMY_FIELDS.MENSYS.9-16" value="0" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Class"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.9-16" value="UDD_UDF6">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.10-16" id="VALUE.DUMMY_FIELDS.MENSYS.10-16" value="02833" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Speedcode"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.10-16" value="UDD_UDF7">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.11-16" id="VALUE.DUMMY_FIELDS.MENSYS.11-16" value="" maxlength="15" size="8" class="sv-form-control sv-form-control-sm" title="Combo Code"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.11-16" value="UDD_UDF8">
+
+</td><td><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.12-16" value="UDD_IUSE">
+<input type="checkbox" name="VALUE.DUMMY_FIELDS.MENSYS.12-16" id="VALUE.DUMMY_FIELDS.MENSYS.12-16" value="Y" checked="checked" title="In Use?">
+<input type="hidden" name="%.DUMMY_FIELDS.MENSYS.1-16"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.2-16"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.3-16"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.4-16"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.5-16"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.6-16"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.7-16"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.8-16"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.9-16"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.10-16"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.11-16"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.12-16"></td></tr><tr><td><input type="checkbox" name="SELECTED.DUMMY_OCCURRENCES.MENSYS.17" id="SELECTED.DUMMY_OCCURRENCES.MENSYS.17." value="1" class="sv-checkbox" title="Select Row 17"></td><td><input type="hidden" name="DMX.DUMMY_OCCURRENCES.MENSYS.17"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.1-17"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.2-17"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.3-17" value="UDD_NAME">
+<textarea name="VALUE.DUMMY_FIELDS.MENSYS.3-17" id="VALUE.DUMMY_FIELDS.MENSYS.3-17" cols="16" rows="2" class="sv-form-control sv-form-control-sm" title="Description">Queen Elizabeth II Scholarship</textarea>
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.4-17" id="VALUE.DUMMY_FIELDS.MENSYS.4-17" value="530" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Fund ID"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.4-17" value="UDD_UDF1">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.5-17" id="VALUE.DUMMY_FIELDS.MENSYS.5-17" value="220100" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Dept ID"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.5-17" value="UDD_UDF2">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.6-17" id="VALUE.DUMMY_FIELDS.MENSYS.6-17" value="GS004" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Program"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.6-17" value="UDD_UDF3">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.7-17" id="VALUE.DUMMY_FIELDS.MENSYS.7-17" value="RES0031058" maxlength="15" size="8" class="sv-form-control sv-form-control-sm" title="Project"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.7-17" value="UDD_UDF4">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.8-17" id="VALUE.DUMMY_FIELDS.MENSYS.8-17" value="500125" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Account"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.8-17" value="UDD_UDF5">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.9-17" id="VALUE.DUMMY_FIELDS.MENSYS.9-17" value="0" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Class"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.9-17" value="UDD_UDF6">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.10-17" id="VALUE.DUMMY_FIELDS.MENSYS.10-17" value="02834" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Speedcode"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.10-17" value="UDD_UDF7">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.11-17" id="VALUE.DUMMY_FIELDS.MENSYS.11-17" value="000025953" maxlength="15" size="8" class="sv-form-control sv-form-control-sm" title="Combo Code"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.11-17" value="UDD_UDF8">
+
+</td><td><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.12-17" value="UDD_IUSE">
+<input type="checkbox" name="VALUE.DUMMY_FIELDS.MENSYS.12-17" id="VALUE.DUMMY_FIELDS.MENSYS.12-17" value="Y" checked="checked" title="In Use?">
+<input type="hidden" name="%.DUMMY_FIELDS.MENSYS.1-17"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.2-17"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.3-17"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.4-17"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.5-17"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.6-17"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.7-17"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.8-17"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.9-17"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.10-17"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.11-17"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.12-17"></td></tr><tr><td><input type="checkbox" name="SELECTED.DUMMY_OCCURRENCES.MENSYS.18" id="SELECTED.DUMMY_OCCURRENCES.MENSYS.18." value="1" class="sv-checkbox" title="Select Row 18"></td><td><input type="hidden" name="DMX.DUMMY_OCCURRENCES.MENSYS.18"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.1-18"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.2-18"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.3-18" value="UDD_NAME">
+<textarea name="VALUE.DUMMY_FIELDS.MENSYS.3-18" id="VALUE.DUMMY_FIELDS.MENSYS.3-18" cols="16" rows="2" class="sv-form-control sv-form-control-sm" title="Description">TRLabs Scholarship</textarea>
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.4-18" id="VALUE.DUMMY_FIELDS.MENSYS.4-18" value="553" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Fund ID"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.4-18" value="UDD_UDF1">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.5-18" id="VALUE.DUMMY_FIELDS.MENSYS.5-18" value="220100" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Dept ID"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.5-18" value="UDD_UDF2">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.6-18" id="VALUE.DUMMY_FIELDS.MENSYS.6-18" value="GS005" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Program"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.6-18" value="UDD_UDF3">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.7-18" id="VALUE.DUMMY_FIELDS.MENSYS.7-18" value="" maxlength="15" size="8" class="sv-form-control sv-form-control-sm" title="Project"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.7-18" value="UDD_UDF4">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.8-18" id="VALUE.DUMMY_FIELDS.MENSYS.8-18" value="" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Account"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.8-18" value="UDD_UDF5">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.9-18" id="VALUE.DUMMY_FIELDS.MENSYS.9-18" value="0" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Class"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.9-18" value="UDD_UDF6">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.10-18" id="VALUE.DUMMY_FIELDS.MENSYS.10-18" value="02835" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Speedcode"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.10-18" value="UDD_UDF7">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.11-18" id="VALUE.DUMMY_FIELDS.MENSYS.11-18" value="" maxlength="15" size="8" class="sv-form-control sv-form-control-sm" title="Combo Code"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.11-18" value="UDD_UDF8">
+
+</td><td><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.12-18" value="UDD_IUSE">
+<input type="checkbox" name="VALUE.DUMMY_FIELDS.MENSYS.12-18" id="VALUE.DUMMY_FIELDS.MENSYS.12-18" value="Y" checked="checked" title="In Use?">
+<input type="hidden" name="%.DUMMY_FIELDS.MENSYS.1-18"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.2-18"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.3-18"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.4-18"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.5-18"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.6-18"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.7-18"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.8-18"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.9-18"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.10-18"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.11-18"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.12-18"></td></tr><tr><td><input type="checkbox" name="SELECTED.DUMMY_OCCURRENCES.MENSYS.19" id="SELECTED.DUMMY_OCCURRENCES.MENSYS.19." value="1" class="sv-checkbox" title="Select Row 19"></td><td><input type="hidden" name="DMX.DUMMY_OCCURRENCES.MENSYS.19"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.1-19"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.2-19"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.3-19" value="UDD_NAME">
+<textarea name="VALUE.DUMMY_FIELDS.MENSYS.3-19" id="VALUE.DUMMY_FIELDS.MENSYS.3-19" cols="16" rows="2" class="sv-form-control sv-form-control-sm" title="Description">Miscellaneous Sundry - Grad Studies</textarea>
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.4-19" id="VALUE.DUMMY_FIELDS.MENSYS.4-19" value="530" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Fund ID"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.4-19" value="UDD_UDF1">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.5-19" id="VALUE.DUMMY_FIELDS.MENSYS.5-19" value="220100" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Dept ID"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.5-19" value="UDD_UDF2">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.6-19" id="VALUE.DUMMY_FIELDS.MENSYS.6-19" value="GS006" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Program"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.6-19" value="UDD_UDF3">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.7-19" id="VALUE.DUMMY_FIELDS.MENSYS.7-19" value="RES0031086" maxlength="15" size="8" class="sv-form-control sv-form-control-sm" title="Project"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.7-19" value="UDD_UDF4">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.8-19" id="VALUE.DUMMY_FIELDS.MENSYS.8-19" value="500125" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Account"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.8-19" value="UDD_UDF5">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.9-19" id="VALUE.DUMMY_FIELDS.MENSYS.9-19" value="0" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Class"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.9-19" value="UDD_UDF6">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.10-19" id="VALUE.DUMMY_FIELDS.MENSYS.10-19" value="02837" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Speedcode"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.10-19" value="UDD_UDF7">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.11-19" id="VALUE.DUMMY_FIELDS.MENSYS.11-19" value="" maxlength="15" size="8" class="sv-form-control sv-form-control-sm" title="Combo Code"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.11-19" value="UDD_UDF8">
+
+</td><td><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.12-19" value="UDD_IUSE">
+<input type="checkbox" name="VALUE.DUMMY_FIELDS.MENSYS.12-19" id="VALUE.DUMMY_FIELDS.MENSYS.12-19" value="Y" checked="checked" title="In Use?">
+<input type="hidden" name="%.DUMMY_FIELDS.MENSYS.1-19"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.2-19"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.3-19"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.4-19"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.5-19"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.6-19"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.7-19"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.8-19"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.9-19"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.10-19"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.11-19"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.12-19"></td></tr><tr><td><input type="checkbox" name="SELECTED.DUMMY_OCCURRENCES.MENSYS.20" id="SELECTED.DUMMY_OCCURRENCES.MENSYS.20." value="1" class="sv-checkbox" title="Select Row 20"></td><td><input type="hidden" name="DMX.DUMMY_OCCURRENCES.MENSYS.20"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.1-20"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.2-20"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.3-20" value="UDD_NAME">
+<textarea name="VALUE.DUMMY_FIELDS.MENSYS.3-20" id="VALUE.DUMMY_FIELDS.MENSYS.3-20" cols="16" rows="2" class="sv-form-control sv-form-control-sm" title="Description">Professor IF Morrison Scholarship</textarea>
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.4-20" id="VALUE.DUMMY_FIELDS.MENSYS.4-20" value="550" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Fund ID"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.4-20" value="UDD_UDF1">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.5-20" id="VALUE.DUMMY_FIELDS.MENSYS.5-20" value="220100" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Dept ID"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.5-20" value="UDD_UDF2">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.6-20" id="VALUE.DUMMY_FIELDS.MENSYS.6-20" value="0" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Program"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.6-20" value="UDD_UDF3">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.7-20" id="VALUE.DUMMY_FIELDS.MENSYS.7-20" value="S000000038" maxlength="15" size="8" class="sv-form-control sv-form-control-sm" title="Project"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.7-20" value="UDD_UDF4">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.8-20" id="VALUE.DUMMY_FIELDS.MENSYS.8-20" value="" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Account"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.8-20" value="UDD_UDF5">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.9-20" id="VALUE.DUMMY_FIELDS.MENSYS.9-20" value="0" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Class"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.9-20" value="UDD_UDF6">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.10-20" id="VALUE.DUMMY_FIELDS.MENSYS.10-20" value="02839" maxlength="15" size="6" class="sv-form-control sv-form-control-xs" title="Speedcode"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.10-20" value="UDD_UDF7">
+
+</td><td><input type="text" name="VALUE.DUMMY_FIELDS.MENSYS.11-20" id="VALUE.DUMMY_FIELDS.MENSYS.11-20" value="" maxlength="15" size="8" class="sv-form-control sv-form-control-sm" title="Combo Code"><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.11-20" value="UDD_UDF8">
+
+</td><td><input type="hidden" name="CODE.DUMMY_FIELDS.MENSYS.12-20" value="UDD_IUSE">
+<input type="checkbox" name="VALUE.DUMMY_FIELDS.MENSYS.12-20" id="VALUE.DUMMY_FIELDS.MENSYS.12-20" value="Y" checked="checked" title="In Use?">
+<input type="hidden" name="%.DUMMY_FIELDS.MENSYS.1-20"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.2-20"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.3-20"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.4-20"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.5-20"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.6-20"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.7-20"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.8-20"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.9-20"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.10-20"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.11-20"><input type="hidden" name="%.DUMMY_FIELDS.MENSYS.12-20"><input type="hidden" name="%.DUMMY_OCCURRENCES.MENSYS.1"><input type="hidden" name="%.DUMMY_OCCURRENCES.MENSYS.2"><input type="hidden" name="%.DUMMY_OCCURRENCES.MENSYS.3"><input type="hidden" name="%.DUMMY_OCCURRENCES.MENSYS.4"><input type="hidden" name="%.DUMMY_OCCURRENCES.MENSYS.5"><input type="hidden" name="%.DUMMY_OCCURRENCES.MENSYS.6"><input type="hidden" name="%.DUMMY_OCCURRENCES.MENSYS.7"><input type="hidden" name="%.DUMMY_OCCURRENCES.MENSYS.8"><input type="hidden" name="%.DUMMY_OCCURRENCES.MENSYS.9"><input type="hidden" name="%.DUMMY_OCCURRENCES.MENSYS.10"><input type="hidden" name="%.DUMMY_OCCURRENCES.MENSYS.11"><input type="hidden" name="%.DUMMY_OCCURRENCES.MENSYS.12"><input type="hidden" name="%.DUMMY_OCCURRENCES.MENSYS.13"><input type="hidden" name="%.DUMMY_OCCURRENCES.MENSYS.14"><input type="hidden" name="%.DUMMY_OCCURRENCES.MENSYS.15"><input type="hidden" name="%.DUMMY_OCCURRENCES.MENSYS.16"><input type="hidden" name="%.DUMMY_OCCURRENCES.MENSYS.17"><input type="hidden" name="%.DUMMY_OCCURRENCES.MENSYS.18"><input type="hidden" name="%.DUMMY_OCCURRENCES.MENSYS.19"><input type="hidden" name="%.DUMMY_OCCURRENCES.MENSYS.20"></td></tr>
+
+</tbody>
+</table>
+</div>
+<!-- ***************************************** Start of paging section *********************************** -->
+<div class="sv-form-group">
+  <nav class="sv-form-pagination">
+    <p class="sv-form-pagination-rec-count">
+      Showing page 1 of 32 with 20 records per page
+    </p>
+    <ul class="sv-pagination">
+      <li class="sv-disabled"><input type="submit" name="FIRST.DUMMY_PAGER.MENSYS.1" title="Goto Start" value="First" aria-label="First page" disabled="disabled">
+      <input type="hidden" name="FIRST_VALUE.DUMMY_PAGER.MENSYS.1" value="1"></li>
+      <li class="sv-disabled"><input type="submit" name="PREVIOUS.DUMMY_PAGER.MENSYS.1" title="Previous 10 Pages" value="Previous" aria-label="Previous page" disabled="disabled">
+      <input type="hidden" name="PREVIOUS_VALUE.DUMMY_PAGER.MENSYS.1" value="-19"></li>
+      
+        <li class="sv-pagination-page sv-active"><input type="submit" name="RANGE.DUMMY_PAGER_RANGE.MENSYS.1-1" value="1">
+        <input type="hidden" name="RANGE_VALUE.DUMMY_PAGER_RANGE.MENSYS.1-1" value="1"></li>
+        <li class="sv-pagination-page"><input type="submit" name="RANGE.DUMMY_PAGER_RANGE.MENSYS.2-1" value="2">
+        <input type="hidden" name="RANGE_VALUE.DUMMY_PAGER_RANGE.MENSYS.2-1" value="21"></li>
+        <li class="sv-pagination-page"><input type="submit" name="RANGE.DUMMY_PAGER_RANGE.MENSYS.3-1" value="3">
+        <input type="hidden" name="RANGE_VALUE.DUMMY_PAGER_RANGE.MENSYS.3-1" value="41"></li>
+        <li class="sv-pagination-page"><input type="submit" name="RANGE.DUMMY_PAGER_RANGE.MENSYS.4-1" value="4">
+        <input type="hidden" name="RANGE_VALUE.DUMMY_PAGER_RANGE.MENSYS.4-1" value="61"></li>
+        <li class="sv-pagination-page"><input type="submit" name="RANGE.DUMMY_PAGER_RANGE.MENSYS.5-1" value="5">
+        <input type="hidden" name="RANGE_VALUE.DUMMY_PAGER_RANGE.MENSYS.5-1" value="81"></li>
+      <li><input type="submit" name="NEXT.DUMMY_PAGER.MENSYS.1" title="Next 10 Pages" value="Next" aria-label="Next page">
+      <input type="hidden" name="NEXT_VALUE.DUMMY_PAGER.MENSYS.1" value="21"></li>
+      <li><input type="submit" name="LAST.DUMMY_PAGER.MENSYS.1" title="Goto End" value="Last" aria-label="Last page">
+      <input type="hidden" name="LAST_VALUE.DUMMY_PAGER.MENSYS.1" value="621"></li>
+    </ul>
+  </nav>
+</div>
+<!-- ***************************************** End of paging section *********************************** -->
+<div class="sv-panel-footer">
+<div class="sv-btn-container">
+
+<div class="sv-col-sm-offset-1 sv-col-sm-2"><input type="submit" name="export.DUMMY_OPTIONS.MENSYS.1" value="Export"  class="sv-btn sv-btn-default sv-btn-block"></div> 
+<div class="sv-col-sm-2"><input type="submit" name="clear.DUMMY_OPTIONS.MENSYS.1" value="Back"  class="sv-btn sv-btn-default sv-btn-block"></div> 
+<div class="sv-col-sm-2"><input type="submit" name="delete.DUMMY_OPTIONS.MENSYS.1" value="Delete"  class="sv-btn sv-btn-default sv-btn-block"></div> 
+<div class="sv-col-sm-2"><input type="submit" name="add.DUMMY_OPTIONS.MENSYS.1" value="Add"  class="sv-btn sv-btn-default sv-btn-block"></div> 
+<div class="sv-col-sm-2"><input type="submit" name="store.DUMMY_OPTIONS.MENSYS.1" value="Save"  class="sv-btn sv-btn-primary sv-btn-block"></div> 
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- end data section  -->
+
+
+<div class='sv-hidden-print sv-btn-container sv-btn-container-inline'>
+<input type='button' class='sv-btn sv-btn-primary sv-col-xs-12 sv-col-sm-6 sv-col-md-4 sv-col-lg-2' onclick='window.close();' value='Close' />
+</div>
+
+<script>var dmxbparray = ["Generating letters","Generating letters, please wait...","Error generating letters","Cancel","OK","Enter selection criteria","Click OK to view generated content (opens in new tab).","Approximate time remaining is"]
+</script>
+<input type="hidden" class="dmx_instance_id" value="8E67280E-06F9-4A31-A56A-BD05EA9AAEB0">
+				<input type="hidden" name="DCTC.DUMMY.MENSYS.1" value="" />
+				<input type="hidden" name="ENTC.DUMMY.MENSYS.1" value="" />
+				<input type="hidden" name="DMVC.DUMMY.MENSYS.1" value="" />
+				<input type="hidden" name="ACCESS.DUMMY.MENSYS.1" value="" />
+				<input type="hidden" name="HITS_LIST.DUMMY.MENSYS.1" value="" />
+				<input type="hidden" name="HITS.DUMMY.MENSYS.1" value="" />
+				<input type="hidden" name="DB.DUMMY.MENSYS.1" value="" />
+				<input type="hidden" name="CURRENT_HIT.DUMMY.MENSYS.1" value="" />
+				<input type="hidden" name="VISTA_MODE.DUMMY.MENSYS.1" value="2" />
+				<input type="hidden" name="TRANSACTION_ID.DUMMY.MENSYS.1" value="1D20CCAF-9469-4626-88D3-4821BD09C11D" />
+                <script> $.extend(sits_page_errors,{"DUMMYITEM":"dummyitem"});</script>
+			
+		<input type="hidden" name="%.DUMMY.MENSYS.1" value="FBYHC8QoCloevnM9St2pcr8mtuTxSudOQEXKFeo4na8=;new;;" />
+	</form>
+
+<!-- body-end.hts page header include starts here -->
+
+	<!-- start of HTML from body-end.hts  -->
+
+        </div>
+        <!-- end of sitspagecontent -->
+</div>
+<footer>
+<div class="bottom-footer-row">
+    <div class="footer-container container">
+        <div class="footer-inner row-fluid">
+            <div class="span12 footer-copyright">
+                <ul class="footer-quick-links">
+                    
+                            
+                            <li><a href="https://www.ualberta.ca/about/contact" target="">Contact Us</a></li>
+                        
+                            <li><a href="https://www.surveymonkey.com/s/ualberta-web-feedback" target="">Feedback</a></li>
+                        
+                            <li><a href="http://www.registrar.ualberta.ca/calendar/" target="">University Calendar</a></li>
+                        
+                            <li><a href="http://www.careers.ualberta.ca/" target="">Careers</a></li>
+                        
+                            <li><a href="http://www.rms.ualberta.ca/en/EmergNumbers.aspx" target="">Emergency</a></li>
+                        
+                            <li><a href="https://policiesonline.ualberta.ca/" target="_blank">Policies</a></li>
+                        
+                            <li><a href="http://www.weatheroffice.gc.ca/city/pages/ab-50_metric_e.html" target="">Weather</a></li>
+                        
+                            <li><a href="http://www.edmonton.ca/" target="">Edmonton</a></li>
+                        
+                            <li><a href="https://www.ualberta.ca/privacy" target="">Privacy</a></li>
+                        
+                            <li><a href="https://www.ualberta.ca/keepintouch" target="">Keep in Touch</a></li>
+                        
+                        
+                    <li><a href="https://training.sitecore.ualberta.ca/departments/another-department#">Back to Top</a></li>
+                </ul>
+                <p>
+                    © 2015
+                    <span id="phfooter_0_ualberta_address">University of Alberta 116 St. and 85 Ave., <br class="visible-phone">Edmonton, AB, Canada T6G 2R3</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+                
+            </footer>
+
+
+<!-- overall background div (opened in header files) -->
+
+<script>
+if(typeof(sits_ajax_version)=="string") {
+	sits_attach_event(window, "load", function(){	
+		sits_include_file("../css/uoa_files/index_files/all.js");
+	})
+}
+</script>
+<!--[if IE]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<!-- end of HTML from body-end.hts  -->
+  </body>
+</html>
+

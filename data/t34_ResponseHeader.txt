@@ -1,0 +1,14 @@
+HTTP/1.1 200 OK
+Cache-Control: private
+Content-Type: text/html;charset=UTF-8
+Content-Encoding: gzip
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Vary: Accept-Encoding
+Set-Cookie: EVISIONLOGINLANG=; HttpOnly,EVISIONLOGINHTV=; HttpOnly,EVISIONID=45F2DD4953574C2891FA8CAE5E69A488; HttpOnly,EVISIONID_TEST=; Max-Age=0; Expires=Thu, 01-Jan-1970 00:00:10 GMT; HttpOnly,EVISIONPQS=; Max-Age=0; Expires=Thu, 01-Jan-1970 00:00:10 GMT; HttpOnly
+X-Frame-Options: deny,SAMEORIGIN
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+X-Powered-By: ARR/3.0,ASP.NET
+Date: Thu, 18 Oct 2018 20:47:42 GMT
+Content-Length: 1524
+

@@ -1,0 +1,26 @@
+[
+    {
+        "actionName": "vuser_init",
+        "steps": [
+            {
+                "stepId": "STEP1",
+                "stepName": "Url: SIW_LGN",
+                "infFile": "t2.inf",
+                "time": 1546453572134
+            },
+            {
+                "stepId": "STEP2",
+                "stepName": "Submit Data: SIW_LGN_2",
+                "infFile": "t3.inf",
+                "time": 1546453574819
+            },
+            {
+                "stepId": "STEP3",
+                "stepName": "Link: here",
+                "infFile": "t5.inf",
+                "time": 1546453575936
+            }
+        ],
+        "transactions": []
+    }
+]

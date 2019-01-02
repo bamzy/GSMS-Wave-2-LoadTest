@@ -1,0 +1,80 @@
+[
+    {
+        "actionName": "Click_Awards_Portal_Tab_ExtrSearchForAwardsLink",
+        "steps": [
+            {
+                "stepId": "STEP4",
+                "stepName": "Url: SIW_YMHD.start_url",
+                "infFile": "t13.inf",
+                "time": 1546453587750
+            }
+        ],
+        "transactions": []
+    },
+    {
+        "actionName": "Click_Search_For_Award_Link",
+        "steps": [
+            {
+                "stepId": "STEP5",
+                "stepName": "Submit Data: SIW_INTRAY.getintray",
+                "infFile": "t14.inf",
+                "time": 1546453589786
+            },
+            {
+                "stepId": "STEP6",
+                "stepName": "Url: SIW_YMHD.start_url",
+                "infFile": "t15.inf",
+                "time": 1546453591720
+            }
+        ],
+        "transactions": []
+    },
+    {
+        "actionName": "Perform_Search_For_An_Award",
+        "steps": [
+            {
+                "stepId": "STEP7",
+                "stepName": "Submit Form: SIW_TTQ",
+                "infFile": "t16.inf",
+                "time": 1546453607150
+            }
+        ],
+        "transactions": []
+    },
+    {
+        "actionName": "Click_Manage_Award_link",
+        "steps": [
+            {
+                "stepId": "STEP8",
+                "stepName": "Link: Manage Award",
+                "infFile": "t17.inf",
+                "time": 1546453609507
+            }
+        ],
+        "transactions": []
+    },
+    {
+        "actionName": "Click_Awards_Portal_Tab_ExtrInterruptionReportLink",
+        "steps": [
+            {
+                "stepId": "STEP9",
+                "stepName": "Url: SIW_YMHD.start_url",
+                "infFile": "t25.inf",
+                "time": 1546453619992
+            }
+        ],
+        "transactions": []
+    },
+    {
+        "actionName": "Perform_Interruption_Report_link",
+        "steps": [
+            {
+                "stepId": "STEP10",
+                "stepName": "Url: SIW_POD.start_url",
+                "infFile": "t27.inf",
+                "time": 1546453621130
+            }
+        ],
+        "transactions": []
+    }
+]

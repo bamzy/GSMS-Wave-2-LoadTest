@@ -1,0 +1,14 @@
+HTTP/1.1 200 OK
+Cache-Control: private
+Content-Type: text/html;charset=UTF-8
+Content-Encoding: gzip
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Vary: Accept-Encoding
+Set-Cookie: JSESSIONID=CE897FB4CE015AB6EDD5F615B73CE045; Path=/urd; HttpOnly,EVISIONLOGINLANG=; HttpOnly,EVISIONLOGINHTV=; HttpOnly,EVISIONID_TEST=COOKIE_TEST; HttpOnly,BIGipServerSITS-Test.app~SITS-Test_pool=1310857900.36895.0000; path=/,BIGipServerSharedIIS-DEV=773986988.20480.0000; path=/
+X-Frame-Options: deny,SAMEORIGIN
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 1; mode=block
+X-Powered-By: ARR/3.0,ASP.NET
+Date: Fri, 19 Oct 2018 00:31:54 GMT
+Content-Length: 5478
+
