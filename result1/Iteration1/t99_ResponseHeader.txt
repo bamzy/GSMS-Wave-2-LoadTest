@@ -1,0 +1,15 @@
+HTTP/1.1 200 OK
+Cache-Control: no-cache
+Content-Type: text/html;charset=UTF-8
+Content-Encoding: gzip
+Expires: Thu, 01 Jan 1970 00:00:00 GMT
+Vary: Accept-Encoding
+Set-Cookie: JSESSIONID=D41CA605CE8F32F96C903C6EF786E6DE; Path=/urd; HttpOnly
+Set-Cookie: BIGipServerSITS-Test.app~SITS-Test_pool=1310857900.36895.0000; path=/
+X-Powered-By: ARR/3.0
+X-Powered-By: ASP.NET
+X-Frame-Options: SAMEORIGIN
+Date: Thu, 03 Jan 2019 06:53:59 GMT
+Content-Length: 3947
+Set-Cookie: BIGipServerSharedIIS-DEV=790764204.20480.0000; path=/
+

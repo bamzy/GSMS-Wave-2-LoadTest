@@ -6,3 +6,11 @@ d:\workspace\gsms.loadtest\gsmsawardswavetwocomprehensive\\pre_cci.c: Perform_In
 d:\workspace\gsms.loadtest\gsmsawardswavetwocomprehensive\\pre_cci.c: Perform_Interruption_Report_link.c:6: warning: unrecognized character escape sequence `\/'
 d:\workspace\gsms.loadtest\gsmsawardswavetwocomprehensive\\pre_cci.c: Perform_Interruption_Report_link.c:6: warning: unrecognized character escape sequence `\/'
 d:\workspace\gsms.loadtest\gsmsawardswavetwocomprehensive\\pre_cci.c: Perform_Interruption_Report_link.c:6: warning: unrecognized character escape sequence `\.'
+d:\workspace\gsms.loadtest\gsmsawardswavetwocomprehensive\\pre_cci.c: Click_Awards_Portal_Tab_ExtrSearchForCompetitionLink.c:53: warning: missing return value
+d:\workspace\gsms.loadtest\gsmsawardswavetwocomprehensive\\pre_cci.c: Export_Financial_Account_Result.c:26: warning: unrecognized character escape sequence `\_'
+d:\workspace\gsms.loadtest\gsmsawardswavetwocomprehensive\\pre_cci.c: Export_Financial_Account_Result.c:65: warning: missing return value
+d:\workspace\gsms.loadtest\gsmsawardswavetwocomprehensive\\pre_cci.c: Perform_Award_Tenure_Report_Search.c:65: warning: unrecognized character escape sequence `\.'
+d:\workspace\gsms.loadtest\gsmsawardswavetwocomprehensive\\pre_cci.c: Perform_Award_Tenure_Report_Search.c:65: warning: unrecognized character escape sequence `\.'
+d:\workspace\gsms.loadtest\gsmsawardswavetwocomprehensive\\pre_cci.c: Perform_Award_Tenure_Report_Search.c:65: warning: unrecognized character escape sequence `\/'
+d:\workspace\gsms.loadtest\gsmsawardswavetwocomprehensive\\pre_cci.c: Perform_Award_Tenure_Report_Search.c:65: warning: unrecognized character escape sequence `\/'
+d:\workspace\gsms.loadtest\gsmsawardswavetwocomprehensive\\pre_cci.c: Perform_Award_Tenure_Report_Search.c:65: warning: unrecognized character escape sequence `\.'

@@ -8,7 +8,7 @@ Perform_Search_For_An_Award()
 		ITEMDATA, 
 		"Name=ANSWER.TTQ.MENSYS.2", "Value=", ENDITEM, 
 		"Name=ANSWER.TTQ.MENSYS.3", "Value=", ENDITEM, 
-		"Name=ANSWER.TTQ.MENSYS.4", "Value=2018/2019", ENDITEM, 
+		"Name=ANSWER.TTQ.MENSYS.4", "Value={AcademicYear}", ENDITEM, 
 		"Name=ANSWER.TTQ.MENSYS.5", "Value=", ENDITEM, 
 		"Name=ANSWER.TTQ.MENSYS.6", "Value=", ENDITEM, 
 		"Name=ANSWER.TTQ.MENSYS.7", "Value=<OFF>", ENDITEM, 

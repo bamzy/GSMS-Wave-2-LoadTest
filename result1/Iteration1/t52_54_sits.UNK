@@ -1,0 +1,723 @@
+var dmx_other_version = "880.1"; //file version number
+var dmx_other_count = 0;
+var dmx_other_flags = []; //array of validation flags (name=flag)
+var dmx_val_params = ""; //cache parameter values
+sits_attach_event(window,"load",dmx_other_onload);
+function dmx_other_onload() {
+  var ele = $("[data-webvalidation=on]"); //get all elements that require web validation
+  if(ele.length>0) {
+    ele.filter("input:checkbox,input:radio,input:text,input:password,textarea,select").blur(dmx_trigger); //attach appropriate events
+    ele.filter("select").change(dmx_trigger);
+    ele.filter("input:checkbox,input:radio,input:submit").click(dmx_trigger);
+    ele.each(function(i) {
+      dmx_set_flag($(this),""); //reset validation status flag
+    });
+  }
+  dmx_srl_menu();
+  sits_add_select_all(".sv-select-all","dmx_toggleSelected","","",{"pullRight":false})  
+  return true;
+}
+function dmx_trigger(evt) {
+  var trg = $(evt.target); //get dmf field
+  if(trg.length==1) {
+    if(trg.hasClass("hasDatepicker") && $("#ui-datepicker-div:visible").length==1) { 
+	    return false; //ignore fields with visible date pickers (will be validated by OnSelect event)
+    }
+    dmx_set_flag(trg,""); //reset validation status flag
+    return dmx_validate(trg); //validate answer field
+  }
+  return false;
+}
+
+function dmx_validate(trg,ext) {
+  if(trg.attr("data-webvalidation")=="on") { //check validation is still on
+    var tid = trg.attr("name"); //get field ID 
+    var tid_id = trg.attr("id"); 
+    if(tid.indexOf("SPLITDATE")>-1) { //special case for split dates only validate if the other 2 are populated
+      if ( ext != "Y" ){
+        setTimeout(function(){dmx_validate(trg,"Y")}, 100)
+        return
+      }        
+      var occ2 = ""
+      try{
+        if( $(":focus").attr("id").indexOf("SPLITDATE") > -1){
+          occ2 =  $(":focus").attr("name").split(".").slice(-1).toString()
+        }   
+      }catch(err){
+      }        
+      var tid1 = tid.split(".");
+      var occ = tid1.slice(-1).toString();
+      var num = 0;
+      var y = $("[name=SPLITDATE_Y\\.DUMMY_FIELDS\\.MENSYS\\."+occ+"]").val();
+      var d = $("[name=SPLITDATE_D\\.DUMMY_FIELDS\\.MENSYS\\."+occ+"]").val(); 
+      var m = $("[name=SPLITDATE_M\\.DUMMY_FIELDS\\.MENSYS\\."+occ+"]").val(); 
+      if(y=="" && d=="" && m=="") {
+         num = 2;
+      }
+      if(y!="" && tid.indexOf("SPLITDATE_Y")<0) {
+        num++;
+      }
+      if(m!="" && tid.indexOf("SPLITDATE_M")<0) {
+        num++;
+      }
+      if(d!="" && tid.indexOf("SPLITDATE_D")<0) {
+        num++;
+      }
+      if (occ != occ2 ){
+      }else{      
+        if ( num < 2  ) {return false};
+      }
+    }          
+    var spn = dmx_get_span(trg); //get related error span   
+    if(spn.length==1 || dmx_responsive_mode(trg)) {     
+      var par = "mode=ONE&indx="+sits_escape_url(tid_id); //build parameters 
+      par += "&valu="+sits_escape_url(dmx_get_value(tid_id,occ)); 
+      par += "&dmfs="+sits_escape_url(trg.attr("data-dmfseqn")); 
+      par += "&dmfocc="+sits_escape_url(trg.attr("data-dmfocc"));       
+      if(!dmx_val_params) {
+        var frm = $(trg).closest("form"); //get form element
+        dmx_val_params = "&ISSC="+sits_escape_url(frm.find("input[name^='TRANSACTION_ID']:first").val());
+        dmx_val_params += "&nkey="+sits_escape_url(frm.find("input[name^='NKEY']:first").val());      
+      }
+      if(sits_send_query("POST","siw_dmx_lite.validation",par+dmx_val_params,true,"dmx_results")) { //send ajax post        
+        if(spn.length==1 ){
+          spn.html("<img src=\"../images/working.gif\" alt=\"...\">"); //show whirlygig
+        }
+      }
+    } 
+  }
+  return true;
+}
+
+function dmx_get_value(id,occ) {
+  var obj = null;
+  if(typeof(id)=="string") {
+    obj = sits_get_object(id); //get object from id
+  }
+  else {
+    obj = id; //object was passed in
+    id = $(obj).attr("id");
+  }
+  if(!obj) {
+    return ""; //object not found
+  }
+  if(id.indexOf("SPLITDATE")>-1) { //special case for record picker
+    var name = obj.name
+    var tid1 = name.split(".");
+    var occ1 = tid1.slice(-1).toString();    
+    return ($("[name=SPLITDATE_Y\\.DUMMY_FIELDS\\.MENSYS\\."+occ1+"]").val()+$("[name=SPLITDATE_M\\.DUMMY_FIELDS\\.MENSYS\\."+occ1+"]").val()+$("[name=SPLITDATE_D\\.DUMMY_FIELDS\\.MENSYS\\."+occ1+"]").val());
+  }  
+  return sits_get_value(obj); //return field value
+}
+
+function dmx_get_span(trg) {
+   
+     
+  var spanobject;
+  var nam = trg.attr("id") || ""; //get field name 
+  if(trg.is(":radio")) { 
+    nam = trg.attr("data-errorspanid");
+  }   
+  var sid = trg.data("webvalspanid"); //get span ID
+  if(!sid) {
+    if(nam.indexOf("SPLITDATE")>-1) {
+      sid = "error-for-VALUE"+nam.substr(11);
+    }
+    else {
+      sid = "error-for-"+nam; //calculate span ID
+    }
+    // THOS1 - 15/10/2015 - PPL:313363: Check if we have the span yet
+    spanobject = $("#"+sits_do_get_object(sid)).attr("id");
+    if( !spanobject ) {
+      sid = nam+"errorblock"; //calculate span ID
+    }
+    if ( $("#"+sits_do_get_object(sid)).length != 1 ){ 
+      if ( trg.attr("type") == "radio" ){
+        nam = trg.attr("name")+"."
+        sid = nam+"errorblock"; //calculate span ID
+      }            
+    } 
+    sid = sits_do_get_object(sid); //encode selector characters   
+    trg.data("webvalspanid",sid); //cache for next time
+  }
+  return $("#"+sid); //return span object
+}
+
+function dmx_results(txt) {
+  //apply class now passed back
+  if(txt.substr(0,4)=="<OK>") { //check response is ok
+    var obj = sits_parse_json(txt.substr(4)); //get results object    
+    var ele = $("#"+sits_do_get_object(obj.indx)); //get answer field
+    var elename = ele.attr("name");
+    var spn = dmx_get_span(ele); //get related error span
+    if(obj.stat==0) {
+      //remove error class      
+      if( dmx_responsive_mode(ele)){
+        //  sits_inline_validation_message(0,obj.html,obj.indx,$(spn).attr("id"),{"showError":false});
+        sits_inline_validation_message(0,obj.html,obj.indx,$(spn).attr("id"));  
+        if ( typeof(auto_get_translations) == "function" ) {
+          auto_get_translations(ele[0],"Y");
+        }        
+      }else{
+        add_error_class(ele,"N",obj.errorclass,"")     
+        spn.html(""); //valid - hide whirlygig
+      }      
+      if(ele.is("input:text:not(.dmu_enabled),input:password,textarea")) { //text inputs (but not dynamic listbox)
+        sits_set_value(ele[0],obj.valu); //set formatted value
+      }
+      if(ele.is("input.dmu_enabled") && !ele.hasClass("dmu_input_icon")) { //dynamic listbox (code mode only)
+        var val = ele.val();        
+        if(val!=obj.valu && val.toUpperCase()==obj.valu.toUpperCase()) { //only case has changed
+          sits_set_value(ele[0],obj.valu); //set formatted value
+        }
+      }      
+      var flg = dmx_get_flag(ele);
+      if(flg!="one" && flg!="two") {
+        dmx_set_flag(ele,"one"); //reset validation status flag
+      }      
+      if(siw_dmx_object && flg!="two") { //check if cross field validation is needed
+        var ts1 = ele.attr("data-dmfseqn");
+        var occ1 = ele.attr("data-dmfocc");
+        var arr = siw_dmx_object[ts1]; //get array of cross validated fields
+        if(arr) {
+          var l = arr.length;
+          if(l>0) {
+            var boo = false; 
+            var ids = sits_escape_url(obj.indx); //start list values
+            var vls = sits_escape_url(obj.valu); 
+            var tss = sits_escape_url(ts1);
+            for(var i=0;i<l;i++) { //loop through items in array
+              var ts2 = arr[i];   
+              var el2 = $("[data-dmfseqn="+ts2+"][data-dmfocc="+occ1+"]"); //get other answer field
+              var flg = dmx_get_flag(el2);
+              if(flg=="one" || flg=="two") { //check if valid value
+                var id2 = el2.attr("id");
+               // debugger;
+                var va2 = dmx_get_value(id2,occ1);
+                ids += "~~~"+sits_escape_url(id2); //build list values
+                vls += "~~~"+sits_escape_url(va2);
+                tss += "~~~"+sits_escape_url(ts2);
+                boo = true;
+              }
+            }
+            if(boo) {
+              var par = "mode=TWO&indx="+ids+"&valu="+vls+"&dmfs="+tss+"&dmfocc="+occ1; //build parameters 
+              if(sits_send_query("POST","siw_dmx_lite.validation",par+dmx_val_params,true,"dmx_results2")) { //send ajax post    
+                spn.html("<img src=\"../images/working.gif\" alt=\"...\">"); //show whirlygig
+              }          
+            }
+          }
+        }
+      }
+    }else{
+      //add error error class
+      if( dmx_responsive_mode(ele)){
+        $("#"+sits_do_get_object(obj.indx)+"transblock").html("");
+
+      sits_inline_validation_message(-1, obj.html, ele.attr("id"), "");      
+      }else{     
+        add_error_class(ele,"Y",obj.errorclass,obj.html);
+        spn.html(obj.html || ""); //invalid - show error message in non responsive mode
+      }  
+      if ( typeof(auto_get_translations) == "function" ){
+        //auto_get_translations(ele[0],"Y");
+      }        
+      dmx_set_flag(ele,"false"); //reset validation status flag
+    }
+  }
+  return true;
+}
+function add_error_class(ele,add,errorclass,error){  
+  try{
+    if(ele.attr("name").indexOf("SPLITDATE")>-1) {
+      var tid1 = ele.attr("name").split(".");
+      var occ = tid1.slice(-1).toString();
+      if ( add == "Y" ){
+        $("[name=SPLITDATE_Y\\.DUMMY_FIELDS\\.MENSYS\\."+occ+"]").addClass(errorclass);
+        $("[name=SPLITDATE_D\\.DUMMY_FIELDS\\.MENSYS\\."+occ+"]").addClass(errorclass); 
+        $("[name=SPLITDATE_M\\.DUMMY_FIELDS\\.MENSYS\\."+occ+"]").addClass(errorclass);                    
+      }      
+      if ( add != "Y" ){
+          $("[name=SPLITDATE_Y\\.DUMMY_FIELDS\\.MENSYS\\."+occ+"]").removeClass(errorclass);
+          $("[name=SPLITDATE_D\\.DUMMY_FIELDS\\.MENSYS\\."+occ+"]").removeClass(errorclass); 
+          $("[name=SPLITDATE_M\\.DUMMY_FIELDS\\.MENSYS\\."+occ+"]").removeClass(errorclass);                    
+      }      
+      return;  
+    }  
+  }catch(err){
+    alert(err.message);
+    return;
+  } 
+
+  if(ele.is(":radio")) {
+    var nam = sits_do_get_object(ele.attr("name"));
+    if ( add == "Y" ){
+      $("[name="+nam+"]").each(function(i) {
+        $(this).addClass(errorclass).parent("label").addClass(errorclass);
+      });    
+    }else{
+      $("[name="+nam+"]").each(function(i) {
+         $(this).removeClass(errorclass).parent("label").removeClass(errorclass);
+      });
+    }
+    return 
+  }
+
+  if ( add != "Y" ) {
+    ele.removeClass(errorclass);             
+  }
+
+  if ( add == "Y" ){
+    // THOS1 - 15/10/2015 - PPL:313363: Handling error classes in different modes
+    ele.addClass(errorclass);       
+  }
+} 
+ 
+function dmx_results2(txt) {
+  if(txt.substr(0,4)=="<OK>") { //check response is ok 
+    var obj = sits_parse_json(txt.substr(4)); //get results object
+    var ids = String(obj.indx).split("~~~"); //get array of field IDs
+    var tid = ids[0]; 
+    var ele = $("#"+sits_do_get_object(tid)); //get answer field
+    var spn = dmx_get_span(ele); //get related error span
+    if(obj.stat==0) {  //no error
+      if(dmx_get_flag(ele)=="one") {
+        if( dmx_responsive_mode(ele)){
+          sits_inline_validation_message(0,"",tid,$(spn).attr("id"));        
+          if ( typeof(auto_get_translations) == "function" ) {
+            auto_get_translations(ele,"Y");
+          }             
+        }else{        
+          spn.html(""); //valid - hide whirlygig
+          add_error_class(ele,"N",obj.errorclass,"")
+        }   
+        dmx_set_flag(ele,"two"); //reset validation status flag
+        if(siw_dmx_object) {
+          var ts1 = ele.attr("data-dmfseqn");
+          var occ1 = ele.attr("data-dmfocc");
+          var arr = siw_dmx_object[ts1]; //get array of cross validated fields
+          if(arr) {
+            var l = arr.length;
+            for(var i=0;i<l;i++) { //loop through items in array
+              var ts2 = arr[i];   
+              var el2 = $("[data-dmfseqn="+ts2+"][data-dmfocc="+occ1+"]"); //get other answer field
+              var flg = dmx_get_flag(el2);
+              if( !dmx_responsive_mode(ele)){
+                add_error_class(el2,"N",obj.errorclass,"")   ;                         
+              }else{
+                if ( typeof(auto_get_translations) == "function" ){
+                  auto_get_translations(el2,"Y")
+                } 
+              }
+              if(flg=="one") { //check if valid value and trigger stored    
+                dmx_validate(el2); //re-validate other answer field
+              }         
+            }
+          }
+        }
+      }
+    }else {  //field in error   
+      var l = ids.length;      
+      if(l==1) {
+        if( dmx_responsive_mode(ele)){
+          $("#"+sits_do_get_object(tid)+"transblock").html("");
+          sits_inline_validation_message(-1,html,tid,$(spn).attr("id"));                 
+        }else{   
+          spn.html(obj.html); //invalid - show error message
+          add_error_class(ele,"Y",obj.errorclass,obj.html)
+        }          
+      }else{     
+        var arr = String(obj.html).split("~~~"); //get array of messages
+        for(var i=0;i<l;i++) { //loop through items in array
+          var htm = arr[i] || "";
+          var id2 = ids[i];
+          var el2 = $("#"+sits_do_get_object(id2)); //get other answer field       
+          if( dmx_responsive_mode(ele)){
+            $("#"+sits_do_get_object(id2)+"transblock").html("");
+            if ( htm != " "){
+              sits_inline_validation_message(-1,htm,id2,$(dmx_get_span(el2)).attr("id"));           
+            }else{
+              sits_inline_validation_message(0,"",id2,$(dmx_get_span(el2)).attr("id"));           
+            }            
+          }else{                    
+            if ( htm != " "){
+              add_error_class(el2,"Y",obj.errorclass,htm)
+              if (htm == "*" ){htm = ""}
+              $(dmx_get_span(el2)).html(htm); //show error message            
+            }else{
+              add_error_class(el2,"N",obj.errorclass,"")
+              $(dmx_get_span(el2)).html(htm); //show error message            
+            }
+          }
+          if(dmx_get_flag(el2)=="two") {
+            dmx_set_flag(el2,"one"); //reset validation status flag
+          }
+        }
+      }
+      if(dmx_get_flag(ele)=="two") {
+        dmx_set_flag(ele,"one"); //reset validation status flag        
+      }
+    } 
+  }
+  return true; 
+}
+  
+function dmx_set_flag(ele,flg) {
+  var nam = ele.attr("name") || ""; //get field name
+  if(nam.indexOf("SPLITDATE")>-1) {
+    nam = "VALUE"+nam.substr(11);
+  }  
+  dmx_other_flags[nam] = flg; //store flag value
+  return true;
+}
+
+function dmx_get_flag(ele) {
+  var nam = ele.attr("name") || ""; //get field name
+  if(nam.indexOf("SPLITDATE")>-1) {
+    nam = "VALUE"+nam.substr(11);
+  }  
+  return dmx_other_flags[nam] || ""; //return flag value
+}
+
+function dmx_set_date(val,obj) {
+  var trg = $(this); //get answer field
+  if(trg) {
+    dmx_set_flag(trg,""); //reset validation status flag
+    return dmx_validate(trg); //validate answer field
+  }
+  return false;
+}
+
+function firstField(string_one) {
+  if(string_one=="") {
+    return false;
+  }
+  else {
+    var index = 0;
+    var found = false;
+    var length_one = string_one.length;
+		var elements = document.f.elements;
+		var count = form.elements.length;
+    while(!found && index<count) {
+      var e = elements[index];
+      sub_string1 = e.name.substr(0,length_one);
+      if(sub_string1==string_one && e.type!= "hidden" && !e.readonly && !e.disabled) {
+        elements[index].focus();
+        found = true;
+      }
+      index ++;
+    }
+  }
+	return found;
+}
+
+function dmx_toggleSelected(mode,e){   // called by select all button in responsive mode
+  var x = $("#"+e).closest(".sv-panel").find("input");
+  for(var i=0;i<x.length;i++) {
+    if(x[i].type=="checkbox" && x[i].name.substr(0,33)=="SELECTED.DUMMY_OCCURRENCES.MENSYS") {       
+      if ( mode == 0 ){
+        x[i].checked = true;
+      }
+      if ( mode == 1 ){
+        x[i].checked = false;
+      }
+      if ( mode == 2 ){
+        if ( x[i].checked == false ){
+          x[i].checked  = true ;
+        }else{
+          x[i].checked  = false ;
+        }
+      }           
+    }
+  }
+	return true;
+}
+
+function toggleSelect(e) { 
+  var x = $(e).closest("form").find("input");
+  for(var i=0;i<x.length;i++) {
+    if(x[i].type=="checkbox" && x[i].name.substr(0,33)=="SELECTED.DUMMY_OCCURRENCES.MENSYS") {       
+      x[i].checked = e.checked;
+    }
+  }
+	return true;
+}
+
+function retrieveButton() {
+  document.f.elements["RETRIEVE.DUMMY_OPTIONS.MENSYS"].click();
+}
+
+function storeButton() {
+  document.f.elements["STORE.DUMMY_OPTIONS.MENSYS"].click();
+}
+
+function addButton() {
+  document.f.elements["ADD.DUMMY_OPTIONS.MENSYS"].click();
+}
+
+function releaseButton() {
+  document.f.elements["RELEASE.DUMMY_OPTIONS.MENSYS"].click();
+}
+
+function dropButton() {
+  document.f.elements["DROP.DUMMY_OPTIONS.MENSYS"].click();
+}
+
+function deleteButton() {
+  document.f.elements["DELETE.DUMMY_OPTIONS.MENSYS"].click();
+}
+
+function eraseButton() {
+  document.f.elements["ERASE.DUMMY_OPTIONS.MENSYS"].click();
+}
+
+function clearButton() {
+  document.f.elements["CLEAR.DUMMY_OPTIONS.MENSYS"].click();
+}
+
+function confirmButton() {
+  document.f.elements["CONFIRM.DUMMY_OPTIONS.MENSYS"].click();
+}
+
+function dmx_other_menu(e) {
+  $("input[name^="+sits_do_get_object("OTHER.DUMMY_OPTIONS.MENSYS")+"]").click(dmx_do_other_menu); //add click event
+  return true;
+}
+
+function dmx_srl_menu(e) {
+  $("input[name^="+sits_do_get_object("SRL_CURRENT.DUMMY_OPTIONS.MENSYS")+"]").bind("click",{mode:"CURR"},dmx_do_srl_menu); //add click event
+  $("input[name^="+sits_do_get_object("SRL_ALL.DUMMY_OPTIONS.MENSYS")+"]").bind("click",{mode:"ALL"},dmx_do_srl_menu); //add click event
+  return true;
+}
+
+function dmx_do_srl_menu(e) { 
+  var mode = e.data.mode || "";
+  // THOS1 - 15/10/2015 - PPL:313363: Find the Other Drop Down
+  var obj;
+  obj = $(this).siblings("[name^=SRL_DROPDOWN]:first")[0];
+  if ( !obj ) { 
+    // current button
+    obj = $(this).parent().prev().children("[name^=SRL_DROPDOWN]:first")[0];  
+  }
+  if ( !obj ) {
+    // all button
+    obj = $(this).parent().prev().prev().children("[name^=SRL_DROPDOWN]:first")[0];  
+  }
+
+  var opt = obj.options[obj.selectedIndex];
+  if(opt.getAttribute("data-neww")=="Y") {
+     var ele = sits_get_target(e);
+     var form = $(ele).closest("form")[0];
+     var par = sits_form_data(form,$(ele).attr("id")); //get form data  
+     par = "PGEN.DUMMY.MENSYS.1=A&"+par;
+     sits_dialog(dmx_bp(250),dmx_bp(251)+" <img src=\"../images/working.gif\" alt=\"...\">","",true,true,true,0,"dmx_sits_dialog");
+     sits_send_query("POST","SIW_DMX_LITE",par,false,"dmx_srl_return"); //send data 
+  }else{
+    return true;
+  }   
+  return false;
+}
+
+function dmx_srl_return(response) {
+  var responsivemode;
+  var sub = response.substr(0,4);
+  response = response.substr(4);
+  if(sub!="<OK>") {
+    return dmx_error_box(response,sub,"");
+  }  
+  var btn = {};
+  var thehtml = "";
+  var obj = sits_parse_json(response);  
+  if(obj.STAT=="PROMPT") {  // build up prompt html
+    // THOS1 - 15/10/2015 - PPL:313363: Work out if we are using new responsive classes
+    ele = $("select[name^="+sits_do_get_object("SRL_DROPDOWN.DUMMY_OPTIONS.MENSYS")+"]");
+    if ( ele.hasClass("sv-form-control") == true ) {
+      responsivemode = "Y";
+    } else {
+      responsivemode = "N";    
+    }
+    var theprompts = obj.DATA;
+    // THOS1 - 15/10/2015 - PPL:313363:
+    if ( responsivemode == "Y" ) {
+      thehtml =  "<div class='sv-container-fluid'>";
+      thehtml += "  <div class='sv-form-container'>";
+      thehtml += "    <div class='sv-form-horizontal'>";
+      thehtml += "      <fieldset>";
+    } else {
+      thehtml = "<div class='table_dialog'> <table class='sitstablegrid'><caption>"+dmx_bp(255)+"</caption>";
+    }
+    var x = 0;
+    $.each(theprompts,function(i,n) {
+      if(i!="DUMMY") {
+        x++;
+        var theid = "";
+        var y = i.indexOf("~~~~");
+        if(y>0) {;
+          theid = i.substr(0,y);
+          var z = i.substr(y+4);
+          // THOS1 - 15/10/2015 - PPL:313363:
+          if ( responsivemode == "Y" ) {
+            thefield = "<textarea class='sv-form-control' data-type='dmx-prompt' id='"+theid+"'>"+n+"</textarea>";
+            thehtml+= "<div class='sv-form-group'>";
+            thehtml+= "  <label class='sv-col-sm-offset-1 sv-col-sm-3 sv-control-label' for='"+theid+"'>"+z+"</label>";
+            thehtml+= "  <div class='sv-col-sm-4'>"+thefield+"</div>";
+            thehtml+= "</div>";
+          } else {
+            thefield = "<textarea class='dmxprompt' id='"+theid+"'>"+n+"</textarea>";
+            thehtml+= "<tr><th><label for='"+theid+"'>"+z+"</label></th><td>"+thefield+"</td></tr>";
+          }
+        }        
+      }       
+    });
+    // THOS1 - 15/10/2015 - PPL:313363:
+    if ( responsivemode == "Y" ) {
+      thehtml+= '      </fieldset>';
+      thehtml+= '    </div>';
+      thehtml+= '  </div>';
+      thehtml+= '</div>';
+    } else {
+      thehtml+= '</table></div>';
+    }
+    // THOS1 - 15/10/2015 - PPL:313363: Button order different in new mode
+    if ( responsivemode == "Y" ) {
+        tid = "dmx_sits_dialog";
+        btn[dmx_bp(253)] = function() { 
+          sits_dialog_close(true,tid); //add "close" button  may want to call from end of other functions 
+          }; 
+        btn[dmx_bp(254)] = function() { // submit answers
+          var prompts = "";
+          $("[data-type='dmx-prompt']").each(function(i) {
+            prompts += this.id+"="+sits_escape_url(this.value)+"~~~~";
+          });        
+          var pars = "NKEY="+sits_escape_url(obj.NKEY)+"&ISSC="+sits_escape_url(obj.ISSC)+"&PROMPTS="+prompts;
+          return sits_send_query("POST","SIW_DMX_LITE.DMX_47",pars,false,"dmx_srl_return");	 
+          //sits_dialog_close(true,tid); //add submit button
+          };     
+    } else {
+        btn[dmx_bp(254)] = function() { // submit answers
+          var prompts = "";
+          $(".dmxprompt").each(function(i) {
+            prompts += this.id+"="+sits_escape_url(this.value)+"~~~~";
+          });
+          var pars = "NKEY="+sits_escape_url(obj.NKEY)+"&ISSC="+sits_escape_url(obj.ISSC)+"&PROMPTS="+prompts;
+          return sits_send_query("POST","SIW_DMX_LITE.DMX_47",pars,false,"dmx_srl_return");	 
+          //sits_dialog_close(true,tid); //add submit button
+          };     
+        tid = "dmx_sits_dialog";
+        btn[dmx_bp(253)] = function() { 
+          sits_dialog_close(true,tid); //add "close" button  may want to call from end of other functions 
+          }; 
+    }
+    sits_dialog_update(thehtml,btn,tid);
+  }
+  if(obj.STAT=="START_ASYNC") {  // build up prompt html
+    var pkey = obj.PKEY;
+    var tid = "dmx_sits_dialog";
+    bar_bp016 = obj.BP16;
+    bar_bp017 = obj.BP17;
+    bar_bp018 = obj.BP18;
+    bar_bp256 = obj.BP256;
+    sits_dialog_close(true,tid);
+    sits_progress(dmx_bp(250),pkey,1,dmx_bp(257)); //advanced mode
+  }  
+}
+
+function dmx_error_box(response,sub,tid) {
+  if(typeof(tid)=="undefined" || tid=="") {
+    tid = "dmx_sits_dialog";
+  }
+  var obj = null;
+  var btn = {};
+  if(sub=="<NO>" || sub=="NO") {
+    obj = sits_parse_json(response);
+    btn[dmx_bp(253)] = function() { 
+      sits_dialog_close(true,tid); //add "close" button  may want to call from end of other functions 
+	  }; 
+    sits_dialog_update("<div class='table_dialog'>"+obj.TEXT+"</div>",btn,tid);
+  }
+  else {
+    var n = response.indexOf("<!-- message box -->");
+    var k = response.indexOf("SIW_LGN_MESSAGE");
+    if(n>0 && k<1) {
+      response = response.substr(n);
+      n = response.indexOf("<!-- end of message box-->");
+      response = response.substr(0,n);      
+    }
+    else {
+      response = "<img src=\"../images/cross.gif\" alt=\"ERROR: \" />"+dmx_bp(253);
+    }  
+    btn[dmx_bp(253)] = function() { 
+      sits_dialog_close(true,tid); //add "close" button  may want to call from end of other functions 
+	  }; 
+    sits_dialog_update("<div class='table_dialog'>"+response+"</div>",btn,tid);         
+  }
+}  
+
+function dmx_bp(num) {
+  num = num - 249
+  return sits_get_bptext(dmxbparray,num);
+}  
+
+function bar_hide() {
+  return true;
+}
+
+function bar_dele(lnk) {
+  return true;
+}
+
+function dmx_do_other_menu(e,responsivemode) {
+  // THOS1 - 15/10/2015 - PPL:313363: Find the Other Drop Down
+  var obj;
+  obj = $(this).siblings("[name^=OTHER]:first")[0];
+  if ( !obj ) {
+    obj = $(this).parent().prev().children("[name^=OTHER]:first")[0];  
+  }
+  if(obj.selectedIndex>-1) {
+		var opt = obj.options[obj.selectedIndex]; //get option object 
+        var form = $(obj).closest("form")
+		if(opt.getAttribute("neww")=="Y" || opt.getAttribute("data-neww")=="Y") {
+  		var chk = $(form).find("input:checkbox[id^=SELECTED]"); //get checkbox objects
+  		if(chk.length>0) { //list mode	
+			  chk = chk.filter(":checked"); //filter checked
+			  if(chk.length>0) {
+			    var arr = chk[0].name.split("."); //split id to get occurrence number
+			    dmx_new_window(opt.value,arr[3],form); //open in new window
+			  }
+				else {
+					//error: no checkbox selected!
+				}
+			}
+			else { //single mode
+				dmx_new_window(opt.value,1,form); //open new window
+			}
+			return false; //cancel form submit
+		}
+	}
+	return true;
+}
+
+function dmx_new_window(dmo,ind,form) {
+  var par = "nkey="+sits_escape_url($(form).find("input[name^=NKEY]").val()); //build parameters
+  par += "&trid="+sits_escape_url($(form).find("input[name^=TRANSACTION_ID]").val());
+	par += "&dmos="+dmo+"&indx="+ind;
+  window.open("siw_dmx_lite.run_dmo?"+par,"dmx_other_"+(++dmx_other_count)); //open in new window
+  return true;
+}
+
+function dmx_filter(vField,vsortfilter,vsort) {
+  var e = document.getElementById(vsortfilter);
+  for ( i = 0; i<e.length; i++) {
+    if(e[i].value==vField) {
+      e[i].selected = "true";
+    }
+  }
+  document.getElementById(vsort).click();
+  return true;
+}
+function dmx_responsive_mode(ele){
+  if ( $(ele).hasClass("sv-form-control") || $(ele).closest("div.sv-form-group").length > 0 || $(ele).closest("table.sv-table").length > 0  ){
+    return true;
+  }  
+  return false  
+}

@@ -1,11 +1,12 @@
-POST /urd/sits.urd/run/SIW_TTQ HTTP/1.1
+POST /urd/sits.urd/run/SIW_INTRAY.getintray HTTP/1.1
 Content-Type: application/x-www-form-urlencoded
-Referer: https://graduate-studies-apply-uat.ualberta.ca/urd/sits.urd/run/SIW_YMHD.start_url?A2F00799EC9C4472l47uKsPFRJSsVG0iZeZS_IcF8CMuZa7GilMB0Wq0dtgXwEGy45ZRnTEUx1QDMAdJ2aQ8iAjumpACKfpdAc--A7LrnuJmiNvbgCy2nxqn2AbF-wgL-FoqgaqbTaFhxufrlpYeMBn7K7S2wJn10n_rR3XTutuffELTrCHlY1CeFOOyMKSwgSCjFVowZPlK1KTWhdfwwwgbL0r6ws2hazWyCsHe9BLZHTeplu0YTLR1vzU
+Referer: https://graduate-studies-apply-uat.ualberta.ca/urd/sits.urd/run/siw_portal.url?E6D46549BE514710z8kjgH7E_d7Ni2d68GI67e1jYfFT9SijkIXs3YAgqpaPxCam2jW27SpZQY9gmqvxWj_lELzbg001Ut5qmv-rkOHlU9-XqJ5F7l_DElnYlZEmhJ5QExBFMMies7PGRWcwGX8uQnoMWM8Dn7nqajsYvxDKK1mcSIGbiByEFWvxVnmwrE0IGfEC9CDGJOPeynmA0IpT5T_Mx5P0JsFyr5PvlQ
+X-Requested-With: XMLHttpRequest
 User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:62.0) Gecko/20100101 Firefox/62.0
 Accept-Encoding: gzip, deflate
 Accept-Language: en-GB,en;q=0.5
 Accept: */*
 Host: graduate-studies-apply-uat.ualberta.ca
-Cookie: EVISIONLOGINLANG=; EVISIONLOGINHTV=; EVISIONID=929E6D0264894915A5F622D092703D79; JSESSIONID=48A11FCA8DB91A46F93292F7E0F6BAF3; BIGipServerSITSAPP-UAT-HTTP.app~SITSAPP-UAT-HTTP_pool=1109531308.36895.0000; BIGipServerSharedIIS-UAT=757209772.20480.0000
-Content-Length: 2721
+Cookie: EVISIONLOGINLANG=; EVISIONLOGINHTV=; EVISIONID=17689E9E42754232A1EBD7F19A04D3E1; JSESSIONID=77B8FAB543B0813785789A8714096EC3; BIGipServerSITSAPP-UAT-HTTP.app~SITSAPP-UAT-HTTP_pool=1109531308.36895.0000; BIGipServerSharedIIS-UAT=740432556.20480.0000
+Content-Length: 354
 

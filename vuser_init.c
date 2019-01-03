@@ -10,6 +10,26 @@ vuser_init()
         "IgnoreRedirections=No",
         "RequestUrl=*/SIW_LGN*",
         LAST);	
+	
+	web_reg_save_param_regexp(
+		"ParamName=DUMMY_MENSYS_1",
+		"RegExp=name=\"%\\.DUMMY\\.MENSYS\\.1\"\\ value=\"(.*?)\"\\ ",
+		SEARCH_FILTERS,
+		"Scope=Body",
+		"IgnoreRedirections=No",
+		"RequestUrl=*/siw_lgn*",
+		LAST);
+	web_reg_save_param_regexp(
+		"ParamName=WEB_HEAD_MENSYS_1",
+		"RegExp=name=\"%\\.WEB_HEAD\\.MENSYS\\.1\"\\ value=\"(.*?)\"\\ ",
+		SEARCH_FILTERS,
+		"Scope=Body",
+		"IgnoreRedirections=No",
+		"RequestUrl=*/siw_lgn*",
+		LAST);
+
+
+
         
         
 	web_url("SIW_LGN",

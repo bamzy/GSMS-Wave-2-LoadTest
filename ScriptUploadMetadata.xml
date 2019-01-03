@@ -14,6 +14,16 @@
     <FileEntry Name="Extract_Interruption_Report_Results.c" Filter="2" />
     <FileEntry Name="Click_Awards_Portal_Tab_ExtrSearchForCompetitionLink.c" Filter="2" />
     <FileEntry Name="Click_Search_For_Competition_Link.c" Filter="2" />
+    <FileEntry Name="Perform_Search_For_Competition.c" Filter="2" />
+    <FileEntry Name="Click_Awards_Portal_Tab_ExtrManageFinancialAccountsLink.c" Filter="2" />
+    <FileEntry Name="Click_Manage_FInancial_Accounts_link.c" Filter="2" />
+    <FileEntry Name="Perform_FInancial_Account_Search.c" Filter="2" />
+    <FileEntry Name="Perform_Financial_Account_Update.c" Filter="2" />
+    <FileEntry Name="Export_Financial_Account_Result.c" Filter="2" />
+    <FileEntry Name="Click_Awards_Portal_Tab_ExtrAwardTenureReportLink.c" Filter="2" />
+    <FileEntry Name="Click_Award_Tenure_Report_link.c" Filter="2" />
+    <FileEntry Name="Perform_Award_Tenure_Report_Search.c" Filter="2" />
+    <FileEntry Name="Perform_Export_Tenure_Report_Result.c" Filter="2" />
     <FileEntry Name="ClickSearchForApplicant.c" Filter="2" />
     <FileEntry Name="PerformApplicantSearch.c" Filter="2" />
     <FileEntry Name="vuser_end.c" Filter="2" />
@@ -24,9 +34,10 @@
     <FileEntry Name="default.usp" Filter="4" />
     <FileEntry Name="GSMSAwardsWaveTwoComprehensive.prm" Filter="2" />
     <FileEntry Name="globals.h" Filter="2" />
+    <FileEntry Name="Citizenship.dat" Filter="2" />
     <FileEntry Name="CourseOrThesis.dat" Filter="2" />
     <FileEntry Name="Department.dat" Filter="2" />
-    <FileEntry Name="Citizenship.dat" Filter="2" />
+    <FileEntry Name="AcademicYear.dat" Filter="2" />
     <FileEntry Name="Password.dat" Filter="2" />
     <FileEntry Name="Program.dat" Filter="2" />
     <FileEntry Name="Watches.xml" Filter="2" />
@@ -35,6 +46,7 @@
     <FileEntry Name="110431234440.idx" Filter="1" />
     <FileEntry Name="169143536440.idx" Filter="1" />
     <FileEntry Name="200075985440.idx" Filter="1" />
+    <FileEntry Name="256362263440.idx" Filter="1" />
     <FileEntry Name="266340683440.idx" Filter="1" />
     <FileEntry Name="39197351440.idx" Filter="1" />
     <FileEntry Name="Bookmarks.xml" Filter="1" />
@@ -59,6 +71,7 @@
     <FileEntry Name="ScriptUploadMetadata.xml" Filter="1" />
     <FileEntry Name="ThumbnailsCache.tmp" Filter="1" />
     <FileEntry Name="UserTasks.xml" Filter="1" />
+    <FileEntry Name=".git\" Filter="1" />
     <FileEntry Name="data\" Filter="1" />
     <FileEntry Name="result1\" Filter="1" />
   </GeneralFiles>

@@ -2605,6 +2605,26 @@ vuser_init()
         "IgnoreRedirections=No",
         "RequestUrl=*/SIW_LGN*",
         "LAST");	
+	
+	web_reg_save_param_regexp(
+		"ParamName=DUMMY_MENSYS_1",
+		"RegExp=name=\"%\\.DUMMY\\.MENSYS\\.1\"\\ value=\"(.*?)\"\\ ",
+		"SEARCH_FILTERS",
+		"Scope=Body",
+		"IgnoreRedirections=No",
+		"RequestUrl=*/siw_lgn*",
+		"LAST");
+	web_reg_save_param_regexp(
+		"ParamName=WEB_HEAD_MENSYS_1",
+		"RegExp=name=\"%\\.WEB_HEAD\\.MENSYS\\.1\"\\ value=\"(.*?)\"\\ ",
+		"SEARCH_FILTERS",
+		"Scope=Body",
+		"IgnoreRedirections=No",
+		"RequestUrl=*/siw_lgn*",
+		"LAST");
+
+
+
         
         
 	web_url("SIW_LGN",
@@ -5101,7 +5121,7 @@ Perform_Search_For_An_Award()
 		"ITEMDATA", 
 		"Name=ANSWER.TTQ.MENSYS.2", "Value=", "ENDITEM", 
 		"Name=ANSWER.TTQ.MENSYS.3", "Value=", "ENDITEM", 
-		"Name=ANSWER.TTQ.MENSYS.4", "Value=2018/2019", "ENDITEM", 
+		"Name=ANSWER.TTQ.MENSYS.4", "Value={AcademicYear}", "ENDITEM", 
 		"Name=ANSWER.TTQ.MENSYS.5", "Value=", "ENDITEM", 
 		"Name=ANSWER.TTQ.MENSYS.6", "Value=", "ENDITEM", 
 		"Name=ANSWER.TTQ.MENSYS.7", "Value=<OFF>", "ENDITEM", 
@@ -5114,8 +5134,8 @@ Perform_Search_For_An_Award()
 }
 # 8 "d:\\workspace\\gsms.loadtest\\gsmsawardswavetwocomprehensive\\\\combined_GSMSAwardsWaveTwoComprehensive.c" 2
 
-# 1 "Click_Manage_Award_link.c" 1
-Click_Manage_Award_link()
+# 1 "Click_Manage_Award_link_of_random_result.c" 1
+Click_Manage_Award_link_of_random_result()
 {
 	
 	
@@ -5269,6 +5289,875 @@ Perform_Interruption_Report_link()
 }
 # 11 "d:\\workspace\\gsms.loadtest\\gsmsawardswavetwocomprehensive\\\\combined_GSMSAwardsWaveTwoComprehensive.c" 2
 
+# 1 "Extract_Interruption_Report_Results.c" 1
+Extract_Interruption_Report_Results()
+{
+		web_url("SIW_YMHD.start_url",
+		"URL=https://graduate-studies-apply-uat.ualberta.ca/urd/sits.urd/run/SIW_YGSL.start_url{ExportLink}",
+		"Resource=0",
+		"RecContentType=text/html",
+		"Referer=https://graduate-studies-apply-uat.ualberta.ca/urd/sits.urd/run/siw_portal.url?40AEB196D50A4297rhwYdDEqWyu83TDyn6bNxZisWwBWy9-jq7MKK2q9zFpx6EAEQtThxEUjZUbb6n9YBuPEgrSdgO47aRcmwBKnSwhQv2Z-aMXn27l8yO-F8IR6B-MgBHZ0aPOpFukS0O3b",
+		"Snapshot=t6.inf",
+		"Mode=HTML",
+		"LAST");
+	
+	return 0;
+}
+# 12 "d:\\workspace\\gsms.loadtest\\gsmsawardswavetwocomprehensive\\\\combined_GSMSAwardsWaveTwoComprehensive.c" 2
+
+# 1 "Click_Awards_Portal_Tab_ExtrSearchForCompetitionLink.c" 1
+Click_Awards_Portal_Tab_ExtrSearchForCompetitionLink()
+{
+		web_reg_save_param_regexp(
+		"ParamName=SearchForCompetitionLink",
+		"RegExp=SIW_YMHD\\.start_url\\?(.*?)\"\\ target",
+		"Ordinal=3",
+		"SEARCH_FILTERS",
+		"Scope=Body",
+		"IgnoreRedirections=No",
+		"RequestUrl=*/siw_portal.url*",
+		"LAST");
+
+		
+	web_reg_save_param_regexp(
+       "ParamName=NKEY",
+       "RegExp=\"NKEY\":\"(.*)\"}",
+        "SEARCH_FILTERS",
+        "Scope=Body",
+        "IgnoreRedirections=No",
+        "LAST");
+	
+	
+	web_reg_save_param_regexp(
+       "ParamName=DIVID",
+       "RegExp={\"DIVID\":\"(.*)\",\"REFRESH",
+        "SEARCH_FILTERS",
+        "Scope=Body",
+        "IgnoreRedirections=No",
+        "LAST");
+	
+	web_reg_save_param_regexp(
+       "ParamName=ISSC",
+       "RegExp=\"ISSC\":\"(.*)\",\"PAGE",
+        "SEARCH_FILTERS",
+        "Scope=Body",
+        "IgnoreRedirections=No",
+        "LAST");
+
+	web_reg_save_param_regexp(
+        "ParamName=AwardsLink",
+        "RegExp=<a href=\"siw_portal.url\?(.*)\" id=\"GSAWD_AWD_01\" >",
+        "LAST");	
+
+	web_url("SIW_YMHD.start_url",
+		"URL=https://graduate-studies-apply-uat.ualberta.ca/urd/sits.urd/run/siw_portal.url{AwardsLink}",
+		"Resource=0",
+		"RecContentType=text/html",
+		"Referer=https://graduate-studies-apply-uat.ualberta.ca/urd/sits.urd/run/siw_portal.url?40AEB196D50A4297rhwYdDEqWyu83TDyn6bNxZisWwBWy9-jq7MKK2q9zFpx6EAEQtThxEUjZUbb6n9YBuPEgrSdgO47aRcmwBKnSwhQv2Z-aMXn27l8yO-F8IR6B-MgBHZ0aPOpFukS0O3b",
+		"Snapshot=t6.inf",
+		"Mode=HTML",
+		"LAST");
+	
+}
+# 13 "d:\\workspace\\gsms.loadtest\\gsmsawardswavetwocomprehensive\\\\combined_GSMSAwardsWaveTwoComprehensive.c" 2
+
+# 1 "Click_Search_For_Competition_Link.c" 1
+Click_Search_For_Competition_Link()
+{
+	
+	
+		web_submit_data("SIW_INTRAY.getintray",
+		"Action=https://graduate-studies-apply-uat.ualberta.ca/urd/sits.urd/run/SIW_INTRAY.getintray",
+		"Method=POST",
+		"RecContentType=text/html",
+		"Referer=https://graduate-studies-apply-uat.ualberta.ca/urd/sits.urd/run/siw_portal.url?{NKEY}",
+		"Snapshot=t12.inf",
+		"Mode=HTML",
+		"ITEMDATA",
+		"Name=NKEY", "Value={NKEY}", "ENDITEM",
+		"Name=MHV_CODE", "Value=GSAWD_001", "ENDITEM",
+		"Name=PAGE", "Value=", "ENDITEM",
+		"Name=ORDR", "Value=", "ENDITEM",
+		"Name=ISSC", "Value={ISSC}", "ENDITEM",
+		"Name=DIVID", "Value={DIVID}", "ENDITEM",
+		"LAST");
+
+
+	
+	
+
+	web_url("SIW_YMHD.start_url",
+		"URL=https://graduate-studies-apply-uat.ualberta.ca/urd/sits.urd/run/SIW_YMHD.start_url?{SearchForCompetitionLink}",
+		"Resource=0",
+		"RecContentType=text/html",
+		"Referer=https://graduate-studies-apply-uat.ualberta.ca/urd/sits.urd/run/siw_portal.url?DA9A0EB5CAC8481Ck9O73XRwDJ5amHaAF16yDCjKKb4t6HXhn7LA9QF6zRqkNa8WtTpUFp7sr36sbT_zICxNoU06zZU_ElQD-92qhkv4giAr1__imMEyibBlo9ZOTQFREdWn6D9SYqlcOFbI",
+		"Snapshot=t20.inf",
+		"Mode=HTML",
+		"LAST");
+
+
+
+
+
+	return 0;
+}
+# 14 "d:\\workspace\\gsms.loadtest\\gsmsawardswavetwocomprehensive\\\\combined_GSMSAwardsWaveTwoComprehensive.c" 2
+
+# 1 "Perform_Search_For_Competition.c" 1
+Perform_Search_For_Competition()
+{
+	
+	
+	web_reg_save_param_regexp(
+		"ParamName=TTE.MENSYS.1-1",
+		"RegExp=name=\"#\\.TTE\\.MENSYS\\.1-1\"\\ value=\"(.*?)\"\\ ",
+		"SEARCH_FILTERS",
+		"Scope=Body",
+		"IgnoreRedirections=No",
+		"RequestUrl=*/SIW_TTQ*",
+		"LAST");
+	
+	web_submit_form("SIW_TTQ", 
+		"Snapshot=t62.inf", 
+		"ITEMDATA", 
+		"Name=ANSWER.TTQ.MENSYS.2", "Value={AcademicYear}", "ENDITEM", 
+		"Name=ANSWER.TTQ.MENSYS.3", "Value=", "ENDITEM", 
+		"Name=ANSWER.TTQ.MENSYS.4", "Value=", "ENDITEM", 
+		"Name=ANSWER.TTQ.MENSYS.5", "Value=<OFF>", "ENDITEM", 
+		"Name=ANSWER.TTQ.MENSYS.6", "Value=<OFF>", "ENDITEM", 
+		"Name=ANSWER.TTQ.MENSYS.7", "Value=Search", "ENDITEM", 
+		"LAST");
+	return 0;
+}
+# 15 "d:\\workspace\\gsms.loadtest\\gsmsawardswavetwocomprehensive\\\\combined_GSMSAwardsWaveTwoComprehensive.c" 2
+
+# 1 "Click_Awards_Portal_Tab_ExtrManageFinancialAccountsLink.c" 1
+Click_Awards_Portal_Tab_ExtrManageFinancialAccountsLink()
+{
+	
+		
+	web_reg_save_param_regexp(
+       "ParamName=NKEY",
+       "RegExp=\"NKEY\":\"(.*)\"}",
+        "SEARCH_FILTERS",
+        "Scope=Body",
+        "IgnoreRedirections=No",
+        "LAST");
+	
+	
+	web_reg_save_param_regexp(
+       "ParamName=DIVID",
+       "RegExp={\"DIVID\":\"(.*)\",\"REFRESH",
+        "SEARCH_FILTERS",
+        "Scope=Body",
+        "IgnoreRedirections=No",
+        "LAST");
+	
+	web_reg_save_param_regexp(
+       "ParamName=ISSC",
+       "RegExp=\"ISSC\":\"(.*)\",\"PAGE",
+        "SEARCH_FILTERS",
+        "Scope=Body",
+        "IgnoreRedirections=No",
+        "LAST");
+	
+	web_reg_save_param_regexp(
+		"ParamName=CorrelationParameter",
+		"RegExp=SIW_YMHD\\.start_url\\?(.*?)\"\\ target",
+		"SEARCH_FILTERS",
+		"Scope=Body",
+		"IgnoreRedirections=No",
+		"RequestUrl=*/siw_portal.url*",
+		"LAST");
+
+
+	web_reg_save_param_regexp(
+		"ParamName=CorrelationParameter_1",
+		"RegExp=name=\"%\\.DUMMY\\.MENSYS\\.1\"\\ value=\"(.*?)\"\\ ",
+		"SEARCH_FILTERS",
+		"Scope=Body",
+		"IgnoreRedirections=No",
+		"RequestUrl=*/siw_portal.url*",
+		"LAST");
+		
+		
+	web_reg_save_param_regexp(
+		"ParamName=CorrelationParameter_2",
+		"RegExp=SIW_POD\\.start_url\\?(.*?)\"\\ target",
+		"SEARCH_FILTERS",
+		"Scope=Body",
+		"IgnoreRedirections=No",
+		"RequestUrl=*/siw_portal.url*",
+		"LAST");
+	
+	
+
+
+ 
+	web_reg_save_param_regexp(
+		"ParamName=MHV_CODE",
+		"RegExp=loading\\.\\\\\">\",\"ORDR\":\"\",\"MHVC\":\"(.*?)\",",
+		"SEARCH_FILTERS",
+		"Scope=Body",
+		"IgnoreRedirections=No",
+		"RequestUrl=*/siw_portal.url*",
+		"LAST");
+		
+	web_reg_save_param_regexp(
+		"ParamName=ManageFinancialAccountsLink",
+		"RegExp=SIW_DMX\\.start_url\\?(.*?)\"\\ target",
+		"SEARCH_FILTERS",
+		"Scope=Body",
+		"IgnoreRedirections=No",
+		"LAST");
+
+
+	web_url("SIW_YMHD.start_url",
+		"URL=https://graduate-studies-apply-uat.ualberta.ca/urd/sits.urd/run/siw_portal.url{AwardsLink}",
+		"Resource=0",
+		"RecContentType=text/html",
+		"Referer=https://graduate-studies-apply-uat.ualberta.ca/urd/sits.urd/run/siw_portal.url?40AEB196D50A4297rhwYdDEqWyu83TDyn6bNxZisWwBWy9-jq7MKK2q9zFpx6EAEQtThxEUjZUbb6n9YBuPEgrSdgO47aRcmwBKnSwhQv2Z-aMXn27l8yO-F8IR6B-MgBHZ0aPOpFukS0O3b",
+		"Snapshot=t6.inf",
+		"Mode=HTML",
+		"LAST");
+	
+	
+	
+
+	return 0;
+}
+# 16 "d:\\workspace\\gsms.loadtest\\gsmsawardswavetwocomprehensive\\\\combined_GSMSAwardsWaveTwoComprehensive.c" 2
+
+# 1 "Click_Manage_FInancial_Accounts_link.c" 1
+Click_Manage_FInancial_Accounts_link()
+{
+	
+	
+	web_submit_data("SIW_INTRAY.getintray",
+		"Action=https://graduate-studies-apply-uat.ualberta.ca/urd/sits.urd/run/SIW_INTRAY.getintray",
+		"Method=POST",
+		"RecContentType=text/html",
+		"Referer=https://graduate-studies-apply-uat.ualberta.ca/urd/sits.urd/run/siw_portal.url?{NKEY}",
+		"Snapshot=t697.inf",
+		"Mode=HTML",
+		"ITEMDATA",
+		"Name=NKEY", "Value={NKEY}", "ENDITEM",
+		"Name=MHV_CODE", "Value={MHV_CODE}", "ENDITEM",
+		"Name=PAGE", "Value=", "ENDITEM",
+		"Name=ORDR", "Value=", "ENDITEM",
+		"Name=ISSC", "Value={ISSC}", "ENDITEM",
+		"Name=DIVID", "Value={DIVID}", "ENDITEM",
+		"LAST");
+	
+	
+	web_url("SIW_DMX.start_url",
+		"URL=https://graduate-studies-apply-uat.ualberta.ca/urd/sits.urd/run/SIW_DMX.start_url?{ManageFinancialAccountsLink}",
+		"Resource=0",
+		"RecContentType=text/html",
+		"Referer=https://graduate-studies-apply-uat.ualberta.ca/urd/sits.urd/run/siw_portal.url?CA19143325B6454CQN8on_gJpVmHPp1a3h-YhyYdUJeBcBNpsYbQA-fwE2812f81AQo7kspvLaminDx_ODS075AXoJxLIOL6aveJwW5N09_vDcUnJ9X8f4EBdi2MyH05GAOgLl4AFv6wwCQq",
+		"Snapshot=t15.inf",
+		"Mode=HTML",
+		"LAST");
+	
+
+
+	return 0;
+}
+# 17 "d:\\workspace\\gsms.loadtest\\gsmsawardswavetwocomprehensive\\\\combined_GSMSAwardsWaveTwoComprehensive.c" 2
+
+# 1 "Perform_FInancial_Account_Search.c" 1
+Perform_FInancial_Account_Search()
+{
+	
+	
+	
+	
+	web_submit_form("SIW_DMX_LITE", 
+		"Snapshot=t75.inf", 
+		"ITEMDATA", 
+		"Name=VALUE.DUMMY_FIELDS.MENSYS.2-1", "Value=001SF", "ENDITEM", 
+		"Name=retrieve.DUMMY_OPTIONS.MENSYS.1", "Value=Search", "ENDITEM", 
+		"EXTRARES", 
+		"Url=http://detectportal.firefox.com/success.txt", "Referer=", "ENDITEM", 
+		"LAST");
+
+	return 0;
+}
+# 18 "d:\\workspace\\gsms.loadtest\\gsmsawardswavetwocomprehensive\\\\combined_GSMSAwardsWaveTwoComprehensive.c" 2
+
+# 1 "Perform_Financial_Account_Update.c" 1
+Perform_Financial_Account_Update()
+{
+	
+web_submit_form("SIW_DMX_LITE_2", 
+		"Snapshot=t104.inf", 
+		"ITEMDATA", 
+		"Name=SELECTED.DUMMY_OCCURRENCES.MENSYS.1", "Value=<OFF>", "ENDITEM", 
+		"Name=VALUE.DUMMY_FIELDS.MENSYS.3-1", "Value=Vega Grad Schp123", "ENDITEM", 
+		"Name=VALUE.DUMMY_FIELDS.MENSYS.4-1", "Value=E5133", "ENDITEM", 
+		"Name=VALUE.DUMMY_FIELDS.MENSYS.5-1", "Value=51000", "ENDITEM", 
+		"Name=VALUE.DUMMY_FIELDS.MENSYS.6-1", "Value=0", "ENDITEM", 
+		"Name=VALUE.DUMMY_FIELDS.MENSYS.7-1", "Value=", "ENDITEM", 
+		"Name=VALUE.DUMMY_FIELDS.MENSYS.8-1", "Value=500125", "ENDITEM", 
+		"Name=VALUE.DUMMY_FIELDS.MENSYS.9-1", "Value=51300", "ENDITEM", 
+		"Name=VALUE.DUMMY_FIELDS.MENSYS.10-1", "Value=001SF", "ENDITEM", 
+		"Name=VALUE.DUMMY_FIELDS.MENSYS.11-1", "Value=000036126", "ENDITEM", 
+		"Name=VALUE.DUMMY_FIELDS.MENSYS.12-1", "Value=Y", "ENDITEM", 
+		"Name=store.DUMMY_OPTIONS.MENSYS.1", "Value=Save", "ENDITEM", 
+		"LAST");
+	
+	
+	return 0;
+}
+# 19 "d:\\workspace\\gsms.loadtest\\gsmsawardswavetwocomprehensive\\\\combined_GSMSAwardsWaveTwoComprehensive.c" 2
+
+# 1 "Export_Financial_Account_Result.c" 1
+Export_Financial_Account_Result()
+{
+	
+	
+	
+	web_submit_form("SIW_DMX_LITE_3", 
+		"Snapshot=t166.inf", 
+		"ITEMDATA", 
+		"Name=SELECTED.DUMMY_OCCURRENCES.MENSYS.1", "Value=<OFF>", "ENDITEM", 
+		"Name=VALUE.DUMMY_FIELDS.MENSYS.3-1", "Value=Vega Grad Schp123", "ENDITEM", 
+		"Name=VALUE.DUMMY_FIELDS.MENSYS.4-1", "Value=E5133", "ENDITEM", 
+		"Name=VALUE.DUMMY_FIELDS.MENSYS.5-1", "Value=51000", "ENDITEM", 
+		"Name=VALUE.DUMMY_FIELDS.MENSYS.6-1", "Value=0", "ENDITEM", 
+		"Name=VALUE.DUMMY_FIELDS.MENSYS.7-1", "Value=", "ENDITEM", 
+		"Name=VALUE.DUMMY_FIELDS.MENSYS.8-1", "Value=500125", "ENDITEM", 
+		"Name=VALUE.DUMMY_FIELDS.MENSYS.9-1", "Value=51300", "ENDITEM", 
+		"Name=VALUE.DUMMY_FIELDS.MENSYS.10-1", "Value=001SF", "ENDITEM", 
+		"Name=VALUE.DUMMY_FIELDS.MENSYS.11-1", "Value=000036126", "ENDITEM", 
+		"Name=VALUE.DUMMY_FIELDS.MENSYS.12-1", "Value=Y", "ENDITEM", 
+		"Name=export.DUMMY_OPTIONS.MENSYS.1", "Value=Export", "ENDITEM", 
+		"LAST");
+	
+	
+		web_reg_save_param_regexp(
+		"ParamName=ExportLink",
+		"RegExp=target='_BLANK'> (.*?)\_mensys_udd.csv",
+		"SEARCH_FILTERS",
+		"Scope=Body",
+		"IgnoreRedirections=No",
+		"RequestUrl=*/SIW_XEPC*",
+		"LAST");
+	
+	
+		web_submit_form("SIW_XEPC", 
+		"Snapshot=t167.inf", 
+		"ITEMDATA", 
+		"Name=EXP_ALL.DUM1.MENSYS.1", "Value=Export all retrieved records", "ENDITEM", 
+		"Name=FILETYPE.DUM1.MENSYS.1", "Value=CSV  (Comma separated)", "ENDITEM", 
+		"Name=NOTIFICATION.DUM1.MENSYS.1", "Value=Create Link", "ENDITEM", 
+		"Name=EMAIL.DUM1.MENSYS.1", "Value=", "ENDITEM", 
+		"Name=XET_CODE.DUM1.MENSYS.1", "Value=", "ENDITEM", 
+		"Name=EXPORT.ENTFLDS.MENSYS.3-1", "Value=1", "ENDITEM", 
+		"Name=EXPORT.ENTFLDS.MENSYS.4-1", "Value=1", "ENDITEM", 
+		"Name=EXPORT.ENTFLDS.MENSYS.5-1", "Value=1", "ENDITEM", 
+		"Name=EXPORT.ENTFLDS.MENSYS.6-1", "Value=1", "ENDITEM", 
+		"Name=EXPORT.ENTFLDS.MENSYS.7-1", "Value=1", "ENDITEM", 
+		"Name=EXPORT.ENTFLDS.MENSYS.8-1", "Value=1", "ENDITEM", 
+		"Name=EXPORT.ENTFLDS.MENSYS.9-1", "Value=1", "ENDITEM", 
+		"Name=EXPORT.ENTFLDS.MENSYS.10-1", "Value=1", "ENDITEM", 
+		"Name=EXPORT.ENTFLDS.MENSYS.11-1", "Value=1", "ENDITEM", 
+		"Name=EXPORT.ENTFLDS.MENSYS.12-1", "Value=1", "ENDITEM", 
+		"Name=BP102.DUMMY_B.MENSYS.1", "Value=Export", "ENDITEM", 
+		"LAST");
+
+
+	
+
+
+	web_link("{ExportLink}_mensys_udd.csv", 
+		"Text={ExportLink}_mensys_udd.csv", 
+		"Snapshot=t34.inf", 
+		"LAST");
+	
+	
+}
+# 20 "d:\\workspace\\gsms.loadtest\\gsmsawardswavetwocomprehensive\\\\combined_GSMSAwardsWaveTwoComprehensive.c" 2
+
+# 1 "Click_Awards_Portal_Tab_ExtrAwardTenureReportLink.c" 1
+Click_Awards_Portal_Tab_ExtrAwardTenureReportLink()
+{
+	(web_remove_auto_header("Upgrade-Insecure-Requests", "ImplicitGen=Yes", "LAST"));
+
+	web_add_auto_header("Upgrade-Insecure-Requests", 
+		"1");
+
+
+
+ 
+	web_reg_save_param_regexp(
+		"ParamName=DIVID",
+		"RegExp=div\\ id=\"(.*?)\"></div",
+		"SEARCH_FILTERS",
+		"Scope=Body",
+		"IgnoreRedirections=No",
+		"RequestUrl=*/siw_portal.url*",
+		"LAST");
+
+ 
+	web_reg_save_param_regexp(
+		"ParamName=ISSC",
+		"RegExp=\"REFRESH\":120000,\"ISSC\":\"(.*?)\",",
+		"SEARCH_FILTERS",
+		"Scope=Body",
+		"IgnoreRedirections=No",
+		"RequestUrl=*/siw_portal.url*",
+		"LAST");
+
+ 
+	web_reg_save_param_regexp(
+		"ParamName=MHV_CODE",
+		"RegExp=loading\\.\\\\\">\",\"ORDR\":\"\",\"MHVC\":\"(.*?)\",",
+		"SEARCH_FILTERS",
+		"Scope=Body",
+		"IgnoreRedirections=No",
+		"RequestUrl=*/siw_portal.url*",
+		"LAST");
+
+ 
+	web_reg_save_param_regexp(
+		"ParamName=NKEY",
+		"RegExp=loading\\.\\\\\">\",\"ORDR\":\"\",\"MHVC\":\"GSAWD_001\",\"NKEY\":\"(.*?)\"}\\)}\\)",
+		"SEARCH_FILTERS",
+		"Scope=Body",
+		"IgnoreRedirections=No",
+		"RequestUrl=*/siw_portal.url*",
+		"LAST");
+
+
+		
+		
+		
+	web_reg_save_param_regexp(
+		"ParamName=AwardTenureReportLink",
+		"RegExp=SIW_YMHD\\.start_url\\?(.*?)\"\\ target",
+		"Ordinal=4",
+		"SEARCH_FILTERS",
+		"Scope=Body",
+		"IgnoreRedirections=No",
+		"RequestUrl=*/siw_portal.url*",
+		"LAST");
+
+
+
+	web_url("SIW_YMHD.start_url",
+		"URL=https://graduate-studies-apply-uat.ualberta.ca/urd/sits.urd/run/siw_portal.url{AwardsLink}",
+		"Resource=0",
+		"RecContentType=text/html",
+		"Referer=https://graduate-studies-apply-uat.ualberta.ca/urd/sits.urd/run/siw_portal.url?40AEB196D50A4297rhwYdDEqWyu83TDyn6bNxZisWwBWy9-jq7MKK2q9zFpx6EAEQtThxEUjZUbb6n9YBuPEgrSdgO47aRcmwBKnSwhQv2Z-aMXn27l8yO-F8IR6B-MgBHZ0aPOpFukS0O3b",
+		"Snapshot=t6.inf",
+		"Mode=HTML",
+		"LAST");
+		
+		
+		
+	
+		
+	return 0;
+}
+# 21 "d:\\workspace\\gsms.loadtest\\gsmsawardswavetwocomprehensive\\\\combined_GSMSAwardsWaveTwoComprehensive.c" 2
+
+# 1 "Click_Award_Tenure_Report_link.c" 1
+Click_Award_Tenure_Report_link()
+{
+	
+	web_reg_save_param_regexp(
+		"ParamName=CorrelationParameter_a1",
+		"RegExp=name=\"\\#\\.TTQ\\.MENSYS\\.1\"\\ value=\"(.*?)\"\\ ",
+		"SEARCH_FILTERS",
+		"Scope=Body",
+		"IgnoreRedirections=No",
+		"RequestUrl=*/SIW_YMHD.start_url*",
+		"LAST");
+	web_reg_save_param_regexp(
+		"ParamName=CorrelationParameter_a2",
+		"RegExp=name=\"\\#\\.TTQ\\.MENSYS\\.2\"\\ value=\"(.*?)\"\\ ",
+		"SEARCH_FILTERS",
+		"Scope=Body",
+		"IgnoreRedirections=No",
+		"RequestUrl=*/SIW_YMHD.start_url*",
+		"LAST");
+	web_reg_save_param_regexp(
+		"ParamName=CorrelationParameter_a3",
+		"RegExp=name=\"\\#\\.TTQ\\.MENSYS\\.3\"\\ value=\"(.*?)\"\\ ",
+		"SEARCH_FILTERS",
+		"Scope=Body",
+		"IgnoreRedirections=No",
+		"RequestUrl=*/SIW_YMHD.start_url*",
+		"LAST");
+	web_reg_save_param_regexp(
+		"ParamName=CorrelationParameter_a4",
+		"RegExp=name=\"\\#\\.TTQ\\.MENSYS\\.4\"\\ value=\"(.*?)\"\\ ",
+		"SEARCH_FILTERS",
+		"Scope=Body",
+		"IgnoreRedirections=No",
+		"RequestUrl=*/SIW_YMHD.start_url*",
+		"LAST");
+	web_reg_save_param_regexp(
+		"ParamName=CorrelationParameter_a5",
+		"RegExp=name=\"\\#\\.TTQ\\.MENSYS\\.5\"\\ value=\"(.*?)\"\\ ",
+		"SEARCH_FILTERS",
+		"Scope=Body",
+		"IgnoreRedirections=No",
+		"RequestUrl=*/SIW_YMHD.start_url*",
+		"LAST");
+	web_reg_save_param_regexp(
+		"ParamName=CorrelationParameter_a6",
+		"RegExp=name=\"\\#\\.TTQ\\.MENSYS\\.6\"\\ value=\"(.*?)\"\\ ",
+		"SEARCH_FILTERS",
+		"Scope=Body",
+		"IgnoreRedirections=No",
+		"RequestUrl=*/SIW_YMHD.start_url*",
+		"LAST");
+	web_reg_save_param_regexp(
+		"ParamName=CorrelationParameter_a7",
+		"RegExp=name=\"\\#\\.TTQ\\.MENSYS\\.7\"\\ value=\"(.*?)\"\\ ",
+		"SEARCH_FILTERS",
+		"Scope=Body",
+		"IgnoreRedirections=No",
+		"RequestUrl=*/SIW_YMHD.start_url*",
+		"LAST");
+	web_reg_save_param_regexp(
+		"ParamName=CorrelationParameter_a8",
+		"RegExp=name=\"\\#\\.TTQ\\.MENSYS\\.8\"\\ value=\"(.*?)\"\\ ",
+		"SEARCH_FILTERS",
+		"Scope=Body",
+		"IgnoreRedirections=No",
+		"RequestUrl=*/SIW_YMHD.start_url*",
+		"LAST");
+	web_reg_save_param_regexp(
+		"ParamName=CorrelationParameter_a9",
+		"RegExp=name=\"\\#\\.TTQ\\.MENSYS\\.9\"\\ value=\"(.*?)\"\\ ",
+		"SEARCH_FILTERS",
+		"Scope=Body",
+		"IgnoreRedirections=No",
+		"RequestUrl=*/SIW_YMHD.start_url*",
+		"LAST");
+	web_reg_save_param_regexp(
+		"ParamName=CorrelationParameter_a10",
+		"RegExp=name=\"\\#\\.TTQ\\.MENSYS\\.10\"\\ value=\"(.*?)\"\\ ",
+		"SEARCH_FILTERS",
+		"Scope=Body",
+		"IgnoreRedirections=No",
+		"RequestUrl=*/SIW_YMHD.start_url*",
+		"LAST");
+	web_reg_save_param_regexp(
+		"ParamName=CorrelationParameter_a11",
+		"RegExp=name=\"\\#\\.TTQ\\.MENSYS\\.11\"\\ value=\"(.*?)\"\\ ",
+		"SEARCH_FILTERS",
+		"Scope=Body",
+		"IgnoreRedirections=No",
+		"RequestUrl=*/SIW_YMHD.start_url*",
+		"LAST");
+	web_reg_save_param_regexp(
+		"ParamName=CorrelationParameter_a12",
+		"RegExp=name=\"\\#\\.TTQ\\.MENSYS\\.12\"\\ value=\"(.*?)\"\\ ",
+		"SEARCH_FILTERS",
+		"Scope=Body",
+		"IgnoreRedirections=No",
+		"RequestUrl=*/SIW_YMHD.start_url*",
+		"LAST");
+	web_reg_save_param_regexp(
+		"ParamName=CorrelationParameter_a13",
+		"RegExp=name=\"\\#\\.TTQ\\.MENSYS\\.13\"\\ value=\"(.*?)\"\\ ",
+		"SEARCH_FILTERS",
+		"Scope=Body",
+		"IgnoreRedirections=No",
+		"RequestUrl=*/SIW_YMHD.start_url*",
+		"LAST");
+	
+	web_reg_save_param_regexp(
+		"ParamName=CorrelationParameter_a14",
+		"RegExp=name=\"\\#\\.TTQ\\.MENSYS\\.14\"\\ value=\"(.*?)\"\\ ",
+		"SEARCH_FILTERS",
+		"Scope=Body",
+		"IgnoreRedirections=No",
+		"RequestUrl=*/SIW_YMHD.start_url*",
+		"LAST");
+	
+	web_reg_save_param_regexp(
+		"ParamName=MHDC",
+		"RegExp=name=\"MHDC\\.DUMMY\\.MENSYS\\.1\"\\ value=\"(.*?)\"\\ ",
+		"SEARCH_FILTERS",
+		"Scope=Body",
+		"IgnoreRedirections=No",
+		"RequestUrl=*/SIW_YMHD.start_url*",
+		"LAST");
+	
+	web_reg_save_param_regexp(
+		"ParamName=RUN_MODE.DUMMY.MENSYS.1_1",
+		"RegExp=name=\"RUN_MODE\\.DUMMY\\.MENSYS\\.1\"\\ value=\"(.*?)\"\\ ",
+		"SEARCH_FILTERS",
+		"Scope=Body",
+		"IgnoreRedirections=No",
+		"RequestUrl=*/SIW_YMHD.start_url*",
+		"LAST");
+	
+	
+	
+	web_reg_save_param_regexp(
+		"ParamName=CorrelationParameter1",
+		"RegExp=name=\"\\#\\.TTQ\\.MENSYS\\.1\"\\ value=\"(.*?)\"\\ ",
+		"SEARCH_FILTERS",
+		"Scope=Body",
+		"IgnoreRedirections=No",
+		"RequestUrl=*/SIW_YMHD.start_url*",
+		"LAST");
+	 
+	web_reg_save_param_regexp(
+		"ParamName=CorrelationParameter2",
+		"RegExp=name=\"\\#\\.TTQ\\.MENSYS\\.2\"\\ value=\"(.*?)\"\\ ",
+		"SEARCH_FILTERS",
+		"Scope=Body",
+		"IgnoreRedirections=No",
+		"RequestUrl=*/SIW_YMHD.start_url*",
+		"LAST");
+
+ 
+	web_reg_save_param_regexp(
+		"ParamName=CorrelationParameter3",
+		"RegExp=name=\"\\#\\.TTQ\\.MENSYS\\.3\"\\ value=\"(.*?)\"\\ ",
+		"SEARCH_FILTERS",
+		"Scope=Body",
+		"IgnoreRedirections=No",
+		"RequestUrl=*/SIW_YMHD.start_url*",
+		"LAST");
+
+ 
+	web_reg_save_param_regexp(
+		"ParamName=CorrelationParameter4",
+		"RegExp=name=\"\\#\\.TTQ\\.MENSYS\\.4\"\\ value=\"(.*?)\"\\ ",
+		"SEARCH_FILTERS",
+		"Scope=Body",
+		"IgnoreRedirections=No",
+		"RequestUrl=*/SIW_YMHD.start_url*",
+		"LAST");
+
+ 
+	web_reg_save_param_regexp(
+		"ParamName=CorrelationParameter5",
+		"RegExp=name=\"\\#\\.TTQ\\.MENSYS\\.5\"\\ value=\"(.*?)\"\\ ",
+		"SEARCH_FILTERS",
+		"Scope=Body",
+		"IgnoreRedirections=No",
+		"RequestUrl=*/SIW_YMHD.start_url*",
+		"LAST");
+
+ 
+	web_reg_save_param_regexp(
+		"ParamName=CorrelationParameter6",
+		"RegExp=name=\"\\#\\.TTQ\\.MENSYS\\.6\"\\ value=\"(.*?)\"\\ ",
+		"SEARCH_FILTERS",
+		"Scope=Body",
+		"IgnoreRedirections=No",
+		"RequestUrl=*/SIW_YMHD.start_url*",
+		"LAST");
+
+ 
+	web_reg_save_param_regexp(
+		"ParamName=CorrelationParameter7",
+		"RegExp=name=\"\\#\\.TTQ\\.MENSYS\\.7\"\\ value=\"(.*?)\"\\ ",
+		"SEARCH_FILTERS",
+		"Scope=Body",
+		"IgnoreRedirections=No",
+		"RequestUrl=*/SIW_YMHD.start_url*",
+		"LAST");
+
+ 
+	web_reg_save_param_regexp(
+		"ParamName=CorrelationParameter8",
+		"RegExp=name=\"\\#\\.TTQ\\.MENSYS\\.8\"\\ value=\"(.*?)\"\\ ",
+		"SEARCH_FILTERS",
+		"Scope=Body",
+		"IgnoreRedirections=No",
+		"RequestUrl=*/SIW_YMHD.start_url*",
+		"LAST");
+
+ 
+	web_reg_save_param_regexp(
+		"ParamName=CorrelationParameter9",
+		"RegExp=name=\"\\#\\.TTQ\\.MENSYS\\.9\"\\ value=\"(.*?)\"\\ ",
+		"SEARCH_FILTERS",
+		"Scope=Body",
+		"IgnoreRedirections=No",
+		"RequestUrl=*/SIW_YMHD.start_url*",
+		"LAST");
+
+ 
+	web_reg_save_param_regexp(
+		"ParamName=CorrelationParameter10",
+		"RegExp=name=\"\\#\\.TTQ\\.MENSYS\\.10\"\\ value=\"(.*?)\"\\ ",
+		"SEARCH_FILTERS",
+		"Scope=Body",
+		"IgnoreRedirections=No",
+		"RequestUrl=*/SIW_YMHD.start_url*",
+		"LAST");
+
+ 
+	web_reg_save_param_regexp(
+		"ParamName=CorrelationParameter11",
+		"RegExp=name=\"\\#\\.TTQ\\.MENSYS\\.11\"\\ value=\"(.*?)\"\\ ",
+		"SEARCH_FILTERS",
+		"Scope=Body",
+		"IgnoreRedirections=No",
+		"RequestUrl=*/SIW_YMHD.start_url*",
+		"LAST");
+
+ 
+	web_reg_save_param_regexp(
+		"ParamName=CorrelationParameter12",
+		"RegExp=name=\"\\#\\.TTQ\\.MENSYS\\.12\"\\ value=\"(.*?)\"\\ ",
+		"SEARCH_FILTERS",
+		"Scope=Body",
+		"IgnoreRedirections=No",
+		"RequestUrl=*/SIW_YMHD.start_url*",
+		"LAST");
+
+ 
+	web_reg_save_param_regexp(
+		"ParamName=CorrelationParameter13",
+		"RegExp=name=\"\\#\\.TTQ\\.MENSYS\\.13\"\\ value=\"(.*?)\"\\ ",
+		"SEARCH_FILTERS",
+		"Scope=Body",
+		"IgnoreRedirections=No",
+		"RequestUrl=*/SIW_YMHD.start_url*",
+		"LAST");
+
+ 
+	web_reg_save_param_regexp(
+		"ParamName=CorrelationParameter14",
+		"RegExp=name=\"\\#\\.TTQ\\.MENSYS\\.14\"\\ value=\"(.*?)\"\\ ",
+		"SEARCH_FILTERS",
+		"Scope=Body",
+		"IgnoreRedirections=No",
+		"RequestUrl=*/SIW_YMHD.start_url*",
+		"LAST");
+
+	
+	web_url("SIW_YMHD.start_url",
+		"URL=https://graduate-studies-apply-uat.ualberta.ca/urd/sits.urd/run/SIW_YMHD.start_url?{AwardTenureReportLink}",
+		"Resource=0",
+		"RecContentType=text/html",
+		"Referer=https://graduate-studies-apply-uat.ualberta.ca/urd/sits.urd/run/siw_portal.url?566BF8A69C9443FDGPqtQaxTDU4ej9RIw6JJtR97Vzmj2t0GyM_akWZvYHj7uQuRXE6Pq1j32Spn0cIj2QUcL6Qwjg9vQJ37uwuAudK6ORoE7daqvbWCV2oUJlo",
+		"Snapshot=t180.inf",
+		"Mode=HTML",
+		"EXTRARES",
+		"URL=../plugins/css/chosen/chosen.css?v=930.1", "Referer=https://graduate-studies-apply-uat.ualberta.ca/urd/sits.urd/run/SIW_YMHD.start_url?{AwardTenureReportLink}", "ENDITEM",
+		"URL=../plugins/javascript/chosen/chosen.jquery.min.js?v=930.1", "Referer=https://graduate-studies-apply-uat.ualberta.ca/urd/sits.urd/run/SIW_YMHD.start_url?{AwardTenureReportLink}", "ENDITEM",
+		"URL=../plugins/css/chosen/chosen-sprite.png", "Referer=https://graduate-studies-apply-uat.ualberta.ca/urd/sits.urd/plugins/css/chosen/chosen.css?v=930.1", "ENDITEM",
+		"LAST");
+	return 0;
+}
+# 22 "d:\\workspace\\gsms.loadtest\\gsmsawardswavetwocomprehensive\\\\combined_GSMSAwardsWaveTwoComprehensive.c" 2
+
+# 1 "Perform_Award_Tenure_Report_Search.c" 1
+Perform_Award_Tenure_Report_Search()
+{
+	
+	
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+web_reg_save_param_regexp(
+		"ParamName=ExportLink2",
+		"RegExp=\"\.\.\/run\/SIW_YGSL\.start_url\?(?:([^,;]*)\"(?:[^,;]|$))\' value=\'Export\'>",
+		"LAST");
+		
+		
+web_submit_form("SIW_TTQ_3", 
+		"Snapshot=t42.inf", 
+		"ITEMDATA", 
+		"Name=ANSWER.TTQ.MENSYS.3", "Value=2012/2013", "ENDITEM", 
+		"Name=ANSWER.TTQ.MENSYS.4", "Value=", "ENDITEM", 
+		"Name=ANSWER.TTQ.MENSYS.5", "Value=", "ENDITEM", 
+		"Name=ANSWER.TTQ.MENSYS.6", "Value=", "ENDITEM", 
+		"Name=ANSWER.TTQ.MENSYS.7", "Value=Chemistry (Faculty of Science)", "ENDITEM", 
+		"Name=ANSWER.TTQ.MENSYS.8", "Value=<OFF>", "ENDITEM", 
+		"Name=ANSWER.TTQ.MENSYS.9", "Value=", "ENDITEM", 
+		"Name=ANSWER.TTQ.MENSYS.10", "Value=<OFF>", "ENDITEM", 
+		"Name=ANSWER.TTQ.MENSYS.12", "Value=Search", "ENDITEM", 
+		"LAST");
+	
+	return 0;
+}
+# 23 "d:\\workspace\\gsms.loadtest\\gsmsawardswavetwocomprehensive\\\\combined_GSMSAwardsWaveTwoComprehensive.c" 2
+
+# 1 "Perform_Export_Tenure_Report_Result.c" 1
+Perform_Export_Tenure_Report_Result()
+{
+	
+	web_url("SIW_YMHD.start_url",
+		"URL=https://graduate-studies-apply-uat.ualberta.ca/urd/sits.urd/run/SIW_YGSL.start_url{ExportLink2}",
+		"Resource=0",
+		"RecContentType=text/html",
+		"Referer=https://graduate-studies-apply-uat.ualberta.ca/urd/sits.urd/run/siw_portal.url?40AEB196D50A4297rhwYdDEqWyu83TDyn6bNxZisWwBWy9-jq7MKK2q9zFpx6EAEQtThxEUjZUbb6n9YBuPEgrSdgO47aRcmwBKnSwhQv2Z-aMXn27l8yO-F8IR6B-MgBHZ0aPOpFukS0O3b",
+		"Snapshot=t6.inf",
+		"Mode=HTML",
+		"LAST");
+	return 0;
+}
+# 24 "d:\\workspace\\gsms.loadtest\\gsmsawardswavetwocomprehensive\\\\combined_GSMSAwardsWaveTwoComprehensive.c" 2
+
 # 1 "ClickSearchForApplicant.c" 1
 ClickSearchForApplicant()
 {
@@ -5343,7 +6232,7 @@ ClickSearchForApplicant()
 	
 	return 0;
 }
-# 12 "d:\\workspace\\gsms.loadtest\\gsmsawardswavetwocomprehensive\\\\combined_GSMSAwardsWaveTwoComprehensive.c" 2
+# 25 "d:\\workspace\\gsms.loadtest\\gsmsawardswavetwocomprehensive\\\\combined_GSMSAwardsWaveTwoComprehensive.c" 2
 
 # 1 "PerformApplicantSearch.c" 1
 PerformApplicantSearch()
@@ -5364,7 +6253,7 @@ PerformApplicantSearch()
 	
 	return 0;
 }
-# 13 "d:\\workspace\\gsms.loadtest\\gsmsawardswavetwocomprehensive\\\\combined_GSMSAwardsWaveTwoComprehensive.c" 2
+# 26 "d:\\workspace\\gsms.loadtest\\gsmsawardswavetwocomprehensive\\\\combined_GSMSAwardsWaveTwoComprehensive.c" 2
 
 # 1 "vuser_end.c" 1
 vuser_end()
@@ -5379,5 +6268,5 @@ vuser_end()
 		"LAST");
 	return 0;
 }
-# 14 "d:\\workspace\\gsms.loadtest\\gsmsawardswavetwocomprehensive\\\\combined_GSMSAwardsWaveTwoComprehensive.c" 2
+# 27 "d:\\workspace\\gsms.loadtest\\gsmsawardswavetwocomprehensive\\\\combined_GSMSAwardsWaveTwoComprehensive.c" 2
 

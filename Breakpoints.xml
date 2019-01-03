@@ -3,5 +3,6 @@
   <Breakpoint Line="148" Enabled="True" FilePath="dummy.c" />
   <Breakpoint Line="136" Enabled="True" FilePath="dummy.c" />
   <Breakpoint Line="121" Enabled="True" FilePath="dummy.c" />
-  <Breakpoint Line="32" Enabled="True" FilePath="Perform_Interruption_Report_link.c" />
+  <Breakpoint Line="5" Enabled="True" FilePath="Perform_Award_Tenure_Report_Search.c" />
+  <Breakpoint Line="4" Enabled="True" FilePath="Perform_Export_Tenure_Report_Result.c" />
 </BreakpointsRoot>
