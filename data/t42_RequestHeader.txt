@@ -1,9 +1,0 @@
-GET https://graduate-studies-apply-test.ualberta.ca/favicon.ico HTTP/1.1
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:62.0) Gecko/20100101 Firefox/62.0
-Accept: */*
-Accept-Language: en-GB,en;q=0.5
-Accept-Encoding: gzip, deflate
-Cookie: BIGipServerSharedIIS-DEV=790764204.20480.0000
-DNT: 1
-Host: graduate-studies-apply-test.ualberta.ca
-

@@ -1,7 +1,0 @@
-[t218]
-SnapshotXmlFile=snapshot_218.xml
-RequestHeaderFile=t218_RequestHeader.txt
-RequestBodyFile=NONE
-ResponseHeaderFile=t218_ResponseHeader.txt
-[ProtocolInfo]
-ProtocolId=QTWeb

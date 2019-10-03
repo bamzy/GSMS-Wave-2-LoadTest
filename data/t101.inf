@@ -1,7 +1,0 @@
-[t101]
-SnapshotXmlFile=snapshot_101.xml
-RequestHeaderFile=t101_RequestHeader.txt
-RequestBodyFile=NONE
-ResponseHeaderFile=t101_ResponseHeader.txt
-[ProtocolInfo]
-ProtocolId=QTWeb
